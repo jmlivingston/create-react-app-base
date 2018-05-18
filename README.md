@@ -1,42 +1,37 @@
-# create-react-app 2.0 + storybook 3.x with SASS and SVG
+# react-base
 
 ## Summary
 
-I had some difficulty getting create-react-app 2.0 (beta) and storybook working properly with SASS and SVG.
-It turns out the new SASS compilation provided in create-react-app 2.0 doesn't automatically work in storybook.
-In a nutshell, you need to extend storybook's webpack.config.js with some rules. 
+This project is an opinionated template for future react projects.
 
-> Note: At the time of this writing, this does not work with storybook 4.0 Alpha versions.
+## Technologies
 
-## Instructions
+- React
+- create-react-app 2.0
+- Bootstrap 4.0 using SASS
+- storybook
+- reactstrap
 
-### 1. Install dependencies
+## Features
 
-> Note: Assumes you have [create-react-app 2.0](https://github.com/facebook/create-react-app) and [@storybook/cli 3.x](https://github.com/storybooks/storybook) installed globally
+- Theme and themability support
+- Component Style Guide and Documentation (using storybook)
+  - Common controls
+  - Forms (including inputs)
+  - Table
+  - Pagination / Infinite Scroll
+- Localization (Resource Patterns)
+- Authentication / Authorization
+- Opinionated structure
+- Centralized logging
+- Centralized data helper
+- Unit tests
+- Screenshots with Puppeteer
 
-```bash
-create-react-app cra2-storybook-svg-sass
-cd cra2-storybook-svg-sass
-getstorybook
-yarn add -D css-loader node-sass sass-loader style-loader
-```
+## Dependency Notes
 
-### 2. Add a webpack.config.js to .storybook directory
-
-```javascript
-module.exports = (storybookBaseConfig, configType, defaultConfig) => {
-  defaultConfig.module.rules.push({
-    test: /\.scss$/,
-    use: [require.resolve('style-loader'), require.resolve('css-loader'), require.resolve('sass-loader')]
-  })
-
-  return defaultConfig
-}
-```
-
-### 3. Create a sample SASS file and reference it in App.js
-
-### 4. Update index.js under stories to add App as a test.
+- Once storybook supports create-react-app's SASS integration, we can remove css-loader, sass-loader, and style-loader
+- We can remove fs-extra, yargs, and rimraf if we don't need build-reactstrap anymore
 
 ---
 
