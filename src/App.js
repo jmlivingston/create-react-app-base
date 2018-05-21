@@ -1,22 +1,40 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
-import './AppSass.scss';
+import React, { Component } from 'react'
+
+import { ThemeContainer } from './components/theme/ThemeContainer'
+import { Alert, Button, Dropdown, DropdownItem, DropdownToggle, DropdownMenu } from './components/common'
+import ThemeSelector from './components/theme/ThemeSelector'
 
 class App extends Component {
+
+  state = {
+    dropdownOpen: false
+  }
+
+  toggle() {
+    this.setState(prevState => ({
+      dropdownOpen: !prevState.dropdownOpen
+    }));
+  }
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
+      <ThemeContainer>
+        <ThemeSelector />
+        <Alert>Test</Alert>
+        <Button>Test</Button>
+        <Dropdown toggle={() => this.toggle()} isOpen={this.state.dropdownOpen}>
+          <DropdownToggle caret>Dropdown</DropdownToggle>
+          <DropdownMenu>
+            <DropdownItem header>Header</DropdownItem>
+            <DropdownItem disabled>Action</DropdownItem>
+            <DropdownItem>Another Action</DropdownItem>
+            <DropdownItem divider />
+            <DropdownItem>Another Action</DropdownItem>
+          </DropdownMenu>
+        </Dropdown>
+      </ThemeContainer>
+    )
   }
 }
 
-export default App;
+export default App

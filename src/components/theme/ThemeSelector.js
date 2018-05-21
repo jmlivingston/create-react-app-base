@@ -1,5 +1,4 @@
-import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap'
-import PropTypes from 'prop-types'
+import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from '../common'
 import React, { Component } from 'react'
 
 import { ThemeContainerContext } from './ThemeContainer'

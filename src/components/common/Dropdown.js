@@ -1,16 +1,13 @@
 import { Dropdown as ReactStrapDropdown } from 'reactstrap'
-import PropTypes from 'prop-types'
-import React, { Fragment } from 'react'
+import React from 'react'
 
 import ThemeImporter from '../theme/ThemeImporter'
 
 const Dropdown = props => {
   return (
-    <Fragment>
-      <ThemeImporter path="_dropdown">
-        <ReactStrapDropdown {...props} />
-      </ThemeImporter>
-    </Fragment>
+    <ThemeImporter path="_dropdown">
+      <ReactStrapDropdown {...props}>{props.children}</ReactStrapDropdown>
+    </ThemeImporter>
   )
 }
 
