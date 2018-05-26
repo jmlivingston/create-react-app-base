@@ -7,7 +7,7 @@ import ThemeImporter from '../theme/ThemeImporter'
 const UncontrolledTooltip = props => {
   return (
     <Fragment>
-      <ThemeImporter path="_uncontrolledtooltip">
+      <ThemeImporter path="_tooltip">
         <ReactStrapUncontrolledTooltip {...props} />
       </ThemeImporter>
     </Fragment>

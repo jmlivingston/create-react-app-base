@@ -7,7 +7,7 @@ import ThemeImporter from '../theme/ThemeImporter'
 const Form = props => {
   return (
     <Fragment>
-      <ThemeImporter path="_form">
+      <ThemeImporter path="_forms">
         <ReactStrapForm {...props} />
       </ThemeImporter>
     </Fragment>

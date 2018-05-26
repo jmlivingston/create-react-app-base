@@ -1,17 +1,9 @@
 import { Container as ReactStrapContainer } from 'reactstrap'
 
-import React, { Fragment } from 'react'
-
-import ThemeImporter from '../theme/ThemeImporter'
+import React from 'react'
 
 const Container = props => {
-  return (
-    <Fragment>
-      <ThemeImporter path="_container">
-        <ReactStrapContainer {...props} />
-      </ThemeImporter>
-    </Fragment>
-  )
+  return <ReactStrapContainer {...props} />
 }
 
 Container.propTypes = ReactStrapContainer.propTypes

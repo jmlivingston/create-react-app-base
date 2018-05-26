@@ -7,7 +7,7 @@ import ThemeImporter from '../theme/ThemeImporter'
 const CustomInput = props => {
   return (
     <Fragment>
-      <ThemeImporter path="_custominput">
+      <ThemeImporter path="_custom-forms">
         <ReactStrapCustomInput {...props} />
       </ThemeImporter>
     </Fragment>

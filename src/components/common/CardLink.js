@@ -1,17 +1,9 @@
 import { CardLink as ReactStrapCardLink } from 'reactstrap'
 
-import React, { Fragment } from 'react'
-
-import ThemeImporter from '../theme/ThemeImporter'
+import React from 'react'
 
 const CardLink = props => {
-  return (
-    <Fragment>
-      <ThemeImporter path="_cardlink">
-        <ReactStrapCardLink {...props} />
-      </ThemeImporter>
-    </Fragment>
-  )
+  return <ReactStrapCardLink {...props} />
 }
 
 CardLink.propTypes = ReactStrapCardLink.propTypes

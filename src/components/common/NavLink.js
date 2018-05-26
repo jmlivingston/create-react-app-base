@@ -1,17 +1,9 @@
 import { NavLink as ReactStrapNavLink } from 'reactstrap'
 
-import React, { Fragment } from 'react'
-
-import ThemeImporter from '../theme/ThemeImporter'
+import React from 'react'
 
 const NavLink = props => {
-  return (
-    <Fragment>
-      <ThemeImporter path="_navlink">
-        <ReactStrapNavLink {...props} />
-      </ThemeImporter>
-    </Fragment>
-  )
+  return <ReactStrapNavLink {...props} />
 }
 
 NavLink.propTypes = ReactStrapNavLink.propTypes

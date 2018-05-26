@@ -1,17 +1,9 @@
 import { ListGroupItemHeading as ReactStrapListGroupItemHeading } from 'reactstrap'
 
-import React, { Fragment } from 'react'
-
-import ThemeImporter from '../theme/ThemeImporter'
+import React from 'react'
 
 const ListGroupItemHeading = props => {
-  return (
-    <Fragment>
-      <ThemeImporter path="_listgroupitemheading">
-        <ReactStrapListGroupItemHeading {...props} />
-      </ThemeImporter>
-    </Fragment>
-  )
+  return <ReactStrapListGroupItemHeading {...props} />
 }
 
 ListGroupItemHeading.propTypes = ReactStrapListGroupItemHeading.propTypes

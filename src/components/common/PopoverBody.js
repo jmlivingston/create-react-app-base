@@ -1,17 +1,9 @@
 import { PopoverBody as ReactStrapPopoverBody } from 'reactstrap'
 
-import React, { Fragment } from 'react'
-
-import ThemeImporter from '../theme/ThemeImporter'
+import React from 'react'
 
 const PopoverBody = props => {
-  return (
-    <Fragment>
-      <ThemeImporter path="_popoverbody">
-        <ReactStrapPopoverBody {...props} />
-      </ThemeImporter>
-    </Fragment>
-  )
+  return <ReactStrapPopoverBody {...props} />
 }
 
 PopoverBody.propTypes = ReactStrapPopoverBody.propTypes

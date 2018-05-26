@@ -1,17 +1,9 @@
 import { CardFooter as ReactStrapCardFooter } from 'reactstrap'
 
-import React, { Fragment } from 'react'
-
-import ThemeImporter from '../theme/ThemeImporter'
+import React from 'react'
 
 const CardFooter = props => {
-  return (
-    <Fragment>
-      <ThemeImporter path="_cardfooter">
-        <ReactStrapCardFooter {...props} />
-      </ThemeImporter>
-    </Fragment>
-  )
+  return <ReactStrapCardFooter {...props} />
 }
 
 CardFooter.propTypes = ReactStrapCardFooter.propTypes

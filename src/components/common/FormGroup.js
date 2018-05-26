@@ -1,17 +1,9 @@
 import { FormGroup as ReactStrapFormGroup } from 'reactstrap'
 
-import React, { Fragment } from 'react'
-
-import ThemeImporter from '../theme/ThemeImporter'
+import React from 'react'
 
 const FormGroup = props => {
-  return (
-    <Fragment>
-      <ThemeImporter path="_formgroup">
-        <ReactStrapFormGroup {...props} />
-      </ThemeImporter>
-    </Fragment>
-  )
+  return <ReactStrapFormGroup {...props} />
 }
 
 FormGroup.propTypes = ReactStrapFormGroup.propTypes

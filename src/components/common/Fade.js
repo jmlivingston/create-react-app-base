@@ -1,17 +1,9 @@
 import { Fade as ReactStrapFade } from 'reactstrap'
 
-import React, { Fragment } from 'react'
-
-import ThemeImporter from '../theme/ThemeImporter'
+import React from 'react'
 
 const Fade = props => {
-  return (
-    <Fragment>
-      <ThemeImporter path="_fade">
-        <ReactStrapFade {...props} />
-      </ThemeImporter>
-    </Fragment>
-  )
+  return <ReactStrapFade {...props} />
 }
 
 Fade.propTypes = ReactStrapFade.propTypes

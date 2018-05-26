@@ -7,7 +7,7 @@ import ThemeImporter from '../theme/ThemeImporter'
 const BreadcrumbItem = props => {
   return (
     <Fragment>
-      <ThemeImporter path="_breadcrumbitem">
+      <ThemeImporter path="_breadcrumb">
         <ReactStrapBreadcrumbItem {...props} />
       </ThemeImporter>
     </Fragment>

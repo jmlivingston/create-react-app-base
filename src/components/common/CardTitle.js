@@ -1,17 +1,9 @@
 import { CardTitle as ReactStrapCardTitle } from 'reactstrap'
 
-import React, { Fragment } from 'react'
-
-import ThemeImporter from '../theme/ThemeImporter'
+import React from 'react'
 
 const CardTitle = props => {
-  return (
-    <Fragment>
-      <ThemeImporter path="_cardtitle">
-        <ReactStrapCardTitle {...props} />
-      </ThemeImporter>
-    </Fragment>
-  )
+  return <ReactStrapCardTitle {...props} />
 }
 
 CardTitle.propTypes = ReactStrapCardTitle.propTypes

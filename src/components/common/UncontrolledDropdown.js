@@ -7,7 +7,7 @@ import ThemeImporter from '../theme/ThemeImporter'
 const UncontrolledDropdown = props => {
   return (
     <Fragment>
-      <ThemeImporter path="_uncontrolleddropdown">
+      <ThemeImporter path="_dropdown">
         <ReactStrapUncontrolledDropdown {...props} />
       </ThemeImporter>
     </Fragment>

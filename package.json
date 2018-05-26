@@ -3,13 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "bootstrap": "^4.1.1",
-    "bootswatch": "^4.1.1",
-    "prop-types": "^15.6.1",
-    "react": "^16.3.2",
-    "react-dom": "^16.3.2",
-    "react-scripts": "^2.0.0-next.66cc7a90",
-    "reactstrap": "^6.0.1"
+    "bootstrap": "4.1.1",
+    "bootswatch": "4.1.1",
+    "popper.js": "1.14.3",
+    "prop-types": "15.6.1",
+    "react": "16.4.0",
+    "react-dom": "16.4.0",
+    "react-popper": "^0.10.4",
+    "react-scripts": "2.0.0-next.66cc7a90",
+    "react-transition-group": "^2.2.1",
+    "reactstrap": "6.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -21,19 +24,19 @@
     "style-guide-build": "build-storybook -s public"
   },
   "devDependencies": {
-    "@storybook/addon-actions": "^3.4.4",
-    "@storybook/addon-links": "^3.4.4",
-    "@storybook/addons": "^3.4.4",
-    "@storybook/react": "^3.4.4",
-    "babel-core": "^6.26.3",
-    "babel-runtime": "^6.26.0",
-    "css-loader": "^0.28.11",
-    "fs-extra": "^6.0.1",
-    "node-sass": "^4.9.0",
-    "rimraf": "^2.6.2",
-    "sass-loader": "^7.0.1",
-    "style-loader": "^0.21.0",
-    "yargs": "^11.0.0"
+    "@storybook/addon-actions": "3.4.4",
+    "@storybook/addon-links": "3.4.4",
+    "@storybook/addons": "3.4.4",
+    "@storybook/react": "3.4.4",
+    "babel-core": "6.26.3",
+    "babel-runtime": "6.26.0",
+    "css-loader": "0.28.11",
+    "fs-extra": "6.0.1",
+    "node-sass": "4.9.0",
+    "rimraf": "2.6.2",
+    "sass-loader": "7.0.1",
+    "style-loader": "0.21.0",
+    "yargs": "11.0.0"
   },
   "browserslist": {
     "development": [

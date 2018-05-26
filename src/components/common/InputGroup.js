@@ -7,7 +7,7 @@ import ThemeImporter from '../theme/ThemeImporter'
 const InputGroup = props => {
   return (
     <Fragment>
-      <ThemeImporter path="_inputgroup">
+      <ThemeImporter path="_forms">
         <ReactStrapInputGroup {...props} />
       </ThemeImporter>
     </Fragment>

@@ -1,17 +1,9 @@
 import { FormText as ReactStrapFormText } from 'reactstrap'
 
-import React, { Fragment } from 'react'
-
-import ThemeImporter from '../theme/ThemeImporter'
+import React from 'react'
 
 const FormText = props => {
-  return (
-    <Fragment>
-      <ThemeImporter path="_formtext">
-        <ReactStrapFormText {...props} />
-      </ThemeImporter>
-    </Fragment>
-  )
+  return <ReactStrapFormText {...props} />
 }
 
 FormText.propTypes = ReactStrapFormText.propTypes

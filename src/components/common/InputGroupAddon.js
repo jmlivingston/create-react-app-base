@@ -1,17 +1,9 @@
 import { InputGroupAddon as ReactStrapInputGroupAddon } from 'reactstrap'
 
-import React, { Fragment } from 'react'
-
-import ThemeImporter from '../theme/ThemeImporter'
+import React from 'react'
 
 const InputGroupAddon = props => {
-  return (
-    <Fragment>
-      <ThemeImporter path="_inputgroupaddon">
-        <ReactStrapInputGroupAddon {...props} />
-      </ThemeImporter>
-    </Fragment>
-  )
+  return <ReactStrapInputGroupAddon {...props} />
 }
 
 InputGroupAddon.propTypes = ReactStrapInputGroupAddon.propTypes

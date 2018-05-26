@@ -1,17 +1,9 @@
 import { FormFeedback as ReactStrapFormFeedback } from 'reactstrap'
 
-import React, { Fragment } from 'react'
-
-import ThemeImporter from '../theme/ThemeImporter'
+import React from 'react'
 
 const FormFeedback = props => {
-  return (
-    <Fragment>
-      <ThemeImporter path="_formfeedback">
-        <ReactStrapFormFeedback {...props} />
-      </ThemeImporter>
-    </Fragment>
-  )
+  return <ReactStrapFormFeedback {...props} />
 }
 
 FormFeedback.propTypes = ReactStrapFormFeedback.propTypes

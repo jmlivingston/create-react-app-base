@@ -7,7 +7,6 @@ import ButtonDropdown from './ButtonDropdown'
 import ButtonGroup from './ButtonGroup'
 import ButtonToolbar from './ButtonToolbar'
 import Card from './Card'
-import CardBlock from './CardBlock'
 import CardBody from './CardBody'
 import CardColumns from './CardColumns'
 import CardDeck from './CardDeck'
@@ -41,7 +40,6 @@ import FormText from './FormText'
 import Input from './Input'
 import InputGroup from './InputGroup'
 import InputGroupAddon from './InputGroupAddon'
-import InputGroupButton from './InputGroupButton'
 import InputGroupButtonDropdown from './InputGroupButtonDropdown'
 import InputGroupText from './InputGroupText'
 import Jumbotron from './Jumbotron'
@@ -59,7 +57,6 @@ import Nav from './Nav'
 import Navbar from './Navbar'
 import NavbarBrand from './NavbarBrand'
 import NavbarToggler from './NavbarToggler'
-import NavDropdown from './NavDropdown'
 import NavItem from './NavItem'
 import NavLink from './NavLink'
 import Pagination from './Pagination'
@@ -67,11 +64,7 @@ import PaginationItem from './PaginationItem'
 import PaginationLink from './PaginationLink'
 import Popover from './Popover'
 import PopoverBody from './PopoverBody'
-import PopoverContent from './PopoverContent'
 import PopoverHeader from './PopoverHeader'
-import PopoverTitle from './PopoverTitle'
-import PopperContent from './PopperContent'
-import PopperTargetHelper from './PopperTargetHelper'
 import Progress from './Progress'
 import Row from './Row'
 import TabContent from './TabContent'
@@ -82,7 +75,6 @@ import UncontrolledAlert from './UncontrolledAlert'
 import UncontrolledButtonDropdown from './UncontrolledButtonDropdown'
 import UncontrolledCarousel from './UncontrolledCarousel'
 import UncontrolledDropdown from './UncontrolledDropdown'
-import UncontrolledNavDropdown from './UncontrolledNavDropdown'
 import UncontrolledTooltip from './UncontrolledTooltip'
 
 export {
@@ -95,7 +87,6 @@ export {
   ButtonGroup,
   ButtonToolbar,
   Card,
-  CardBlock,
   CardBody,
   CardColumns,
   CardDeck,
@@ -129,7 +120,6 @@ export {
   Input,
   InputGroup,
   InputGroupAddon,
-  InputGroupButton,
   InputGroupButtonDropdown,
   InputGroupText,
   Jumbotron,
@@ -147,7 +137,6 @@ export {
   Navbar,
   NavbarBrand,
   NavbarToggler,
-  NavDropdown,
   NavItem,
   NavLink,
   Pagination,
@@ -155,11 +144,7 @@ export {
   PaginationLink,
   Popover,
   PopoverBody,
-  PopoverContent,
   PopoverHeader,
-  PopoverTitle,
-  PopperContent,
-  PopperTargetHelper,
   Progress,
   Row,
   TabContent,
@@ -170,6 +155,5 @@ export {
   UncontrolledButtonDropdown,
   UncontrolledCarousel,
   UncontrolledDropdown,
-  UncontrolledNavDropdown,
   UncontrolledTooltip
 }

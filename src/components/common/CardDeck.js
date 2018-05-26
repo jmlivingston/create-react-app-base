@@ -1,17 +1,9 @@
 import { CardDeck as ReactStrapCardDeck } from 'reactstrap'
 
-import React, { Fragment } from 'react'
-
-import ThemeImporter from '../theme/ThemeImporter'
+import React from 'react'
 
 const CardDeck = props => {
-  return (
-    <Fragment>
-      <ThemeImporter path="_carddeck">
-        <ReactStrapCardDeck {...props} />
-      </ThemeImporter>
-    </Fragment>
-  )
+  return <ReactStrapCardDeck {...props} />
 }
 
 CardDeck.propTypes = ReactStrapCardDeck.propTypes

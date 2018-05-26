@@ -1,17 +1,9 @@
 import { Collapse as ReactStrapCollapse } from 'reactstrap'
 
-import React, { Fragment } from 'react'
-
-import ThemeImporter from '../theme/ThemeImporter'
+import React from 'react'
 
 const Collapse = props => {
-  return (
-    <Fragment>
-      <ThemeImporter path="_collapse">
-        <ReactStrapCollapse {...props} />
-      </ThemeImporter>
-    </Fragment>
-  )
+  return <ReactStrapCollapse {...props} />
 }
 
 Collapse.propTypes = ReactStrapCollapse.propTypes

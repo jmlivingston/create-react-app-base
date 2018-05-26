@@ -5,9 +5,10 @@ import React, { Fragment } from 'react'
 import ThemeImporter from '../theme/ThemeImporter'
 
 const UncontrolledButtonDropdown = props => {
+  // TODO: PROBABLY NEEDS dropdown as well. need to refactor ThemeImporter to use paths instead of path
   return (
     <Fragment>
-      <ThemeImporter path="_uncontrolledbuttondropdown">
+      <ThemeImporter path="_buttons">
         <ReactStrapUncontrolledButtonDropdown {...props} />
       </ThemeImporter>
     </Fragment>

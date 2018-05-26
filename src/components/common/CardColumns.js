@@ -1,17 +1,9 @@
 import { CardColumns as ReactStrapCardColumns } from 'reactstrap'
 
-import React, { Fragment } from 'react'
-
-import ThemeImporter from '../theme/ThemeImporter'
+import React from 'react'
 
 const CardColumns = props => {
-  return (
-    <Fragment>
-      <ThemeImporter path="_cardcolumns">
-        <ReactStrapCardColumns {...props} />
-      </ThemeImporter>
-    </Fragment>
-  )
+  return <ReactStrapCardColumns {...props} />
 }
 
 CardColumns.propTypes = ReactStrapCardColumns.propTypes

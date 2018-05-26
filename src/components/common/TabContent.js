@@ -7,7 +7,7 @@ import ThemeImporter from '../theme/ThemeImporter'
 const TabContent = props => {
   return (
     <Fragment>
-      <ThemeImporter path="_tabcontent">
+      <ThemeImporter path="_nav">
         <ReactStrapTabContent {...props} />
       </ThemeImporter>
     </Fragment>

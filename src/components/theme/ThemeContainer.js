@@ -1,4 +1,3 @@
-// 
 import React, { Component } from 'react'
 
 const ThemeContainerContext = React.createContext()
@@ -7,24 +6,19 @@ class ThemeContainer extends Component {
   static displayName = 'ThemeContainer'
   static propTypes = {}
   state = {
-    theme: 'Dark',
-    componentsLoaded: {},
-    updateComponentLoaded: componentName => {
-      this.setState(prevState => {
-        return {
-          componentsLoaded: {
-            ...prevState.componentsLoaded,
-            [componentName]: true
-          }
-        }
-      })
-    },
+    theme: localStorage.getItem('theme') || 'original',
     updateTheme: theme => {
-      this.setState({
-        theme
-      })
+      if (this.state.theme !== theme) {
+        localStorage.setItem('theme', theme)
+        window.location.reload()
+      }
     }
   }
+
+  componentDidMount() {
+    localStorage.setItem('theme', this.state.theme)
+  }
+
   render() {
     return (
       <ThemeContainerContext.Provider value={{ state: this.state }}>

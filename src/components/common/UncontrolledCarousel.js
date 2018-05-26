@@ -7,7 +7,7 @@ import ThemeImporter from '../theme/ThemeImporter'
 const UncontrolledCarousel = props => {
   return (
     <Fragment>
-      <ThemeImporter path="_uncontrolledcarousel">
+      <ThemeImporter path="_carousel">
         <ReactStrapUncontrolledCarousel {...props} />
       </ThemeImporter>
     </Fragment>

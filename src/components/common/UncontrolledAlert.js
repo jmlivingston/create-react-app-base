@@ -7,7 +7,7 @@ import ThemeImporter from '../theme/ThemeImporter'
 const UncontrolledAlert = props => {
   return (
     <Fragment>
-      <ThemeImporter path="_uncontrolledalert">
+      <ThemeImporter path="_alert">
         <ReactStrapUncontrolledAlert {...props} />
       </ThemeImporter>
     </Fragment>

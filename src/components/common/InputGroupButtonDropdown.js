@@ -1,17 +1,9 @@
 import { InputGroupButtonDropdown as ReactStrapInputGroupButtonDropdown } from 'reactstrap'
 
-import React, { Fragment } from 'react'
-
-import ThemeImporter from '../theme/ThemeImporter'
+import React from 'react'
 
 const InputGroupButtonDropdown = props => {
-  return (
-    <Fragment>
-      <ThemeImporter path="_inputgroupbuttondropdown">
-        <ReactStrapInputGroupButtonDropdown {...props} />
-      </ThemeImporter>
-    </Fragment>
-  )
+  return <ReactStrapInputGroupButtonDropdown {...props} />
 }
 
 InputGroupButtonDropdown.propTypes = ReactStrapInputGroupButtonDropdown.propTypes

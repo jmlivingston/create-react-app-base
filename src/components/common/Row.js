@@ -1,17 +1,9 @@
 import { Row as ReactStrapRow } from 'reactstrap'
 
-import React, { Fragment } from 'react'
-
-import ThemeImporter from '../theme/ThemeImporter'
+import React from 'react'
 
 const Row = props => {
-  return (
-    <Fragment>
-      <ThemeImporter path="_row">
-        <ReactStrapRow {...props} />
-      </ThemeImporter>
-    </Fragment>
-  )
+  return <ReactStrapRow {...props} />
 }
 
 Row.propTypes = ReactStrapRow.propTypes

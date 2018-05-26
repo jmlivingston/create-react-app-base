@@ -1,17 +1,9 @@
 import { NavbarBrand as ReactStrapNavbarBrand } from 'reactstrap'
 
-import React, { Fragment } from 'react'
-
-import ThemeImporter from '../theme/ThemeImporter'
+import React from 'react'
 
 const NavbarBrand = props => {
-  return (
-    <Fragment>
-      <ThemeImporter path="_navbarbrand">
-        <ReactStrapNavbarBrand {...props} />
-      </ThemeImporter>
-    </Fragment>
-  )
+  return <ReactStrapNavbarBrand {...props} />
 }
 
 NavbarBrand.propTypes = ReactStrapNavbarBrand.propTypes

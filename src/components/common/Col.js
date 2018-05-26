@@ -1,17 +1,9 @@
 import { Col as ReactStrapCol } from 'reactstrap'
 
-import React, { Fragment } from 'react'
-
-import ThemeImporter from '../theme/ThemeImporter'
+import React from 'react'
 
 const Col = props => {
-  return (
-    <Fragment>
-      <ThemeImporter path="_col">
-        <ReactStrapCol {...props} />
-      </ThemeImporter>
-    </Fragment>
-  )
+  return <ReactStrapCol {...props} />
 }
 
 Col.propTypes = ReactStrapCol.propTypes

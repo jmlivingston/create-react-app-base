@@ -1,28 +1,33 @@
-// 
 import React, { Component } from 'react'
 
 import { ThemeContainerContext } from './ThemeContainer'
 
-class ThemeImporter extends Component {
+class ThemeImporterInnerComponent extends Component {
   state = {
     isLoaded: false
   }
 
+  componentDidMount() {
+    import(`../../styles/themes/${this.props.theme}/_bootstrap.scss`)
+    import(`../../styles/themes/${this.props.theme}/components/${this.props.path}.scss`).then(() => {
+      this.setState({
+        isLoaded: true
+      })
+    })
+  }
+
+  render() {
+    return this.state.isLoaded ? this.props.children : null
+  }
+}
+
+class ThemeImporter extends Component {
   render() {
     return (
       <ThemeContainerContext.Consumer>
         {context => {
-          if (this.props.path) {
-            if (!context.state.componentsLoaded[this.props.path]) {
-              import(`../../styles/components/${this.props.path}.scss`).then(() => {
-                context.state.updateComponentLoaded(this.props.path)
-                this.setState({
-                  isLoaded: true
-                })
-              })
-            }
-          }
-          return this.state.isLoaded ? this.props.children : null
+          const props = { ...context.state, ...this.props }
+          return <ThemeImporterInnerComponent {...props} />
         }}
       </ThemeContainerContext.Consumer>
     )

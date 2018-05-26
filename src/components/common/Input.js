@@ -1,17 +1,9 @@
 import { Input as ReactStrapInput } from 'reactstrap'
 
-import React, { Fragment } from 'react'
-
-import ThemeImporter from '../theme/ThemeImporter'
+import React from 'react'
 
 const Input = props => {
-  return (
-    <Fragment>
-      <ThemeImporter path="_input">
-        <ReactStrapInput {...props} />
-      </ThemeImporter>
-    </Fragment>
-  )
+  return <ReactStrapInput {...props} />
 }
 
 Input.propTypes = ReactStrapInput.propTypes

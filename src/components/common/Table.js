@@ -7,7 +7,7 @@ import ThemeImporter from '../theme/ThemeImporter'
 const Table = props => {
   return (
     <Fragment>
-      <ThemeImporter path="_table">
+      <ThemeImporter path="_tables">
         <ReactStrapTable {...props} />
       </ThemeImporter>
     </Fragment>

@@ -1,17 +1,9 @@
 import { TabPane as ReactStrapTabPane } from 'reactstrap'
 
-import React, { Fragment } from 'react'
-
-import ThemeImporter from '../theme/ThemeImporter'
+import React from 'react'
 
 const TabPane = props => {
-  return (
-    <Fragment>
-      <ThemeImporter path="_tabpane">
-        <ReactStrapTabPane {...props} />
-      </ThemeImporter>
-    </Fragment>
-  )
+  return <ReactStrapTabPane {...props} />
 }
 
 TabPane.propTypes = ReactStrapTabPane.propTypes

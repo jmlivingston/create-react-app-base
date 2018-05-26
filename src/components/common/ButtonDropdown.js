@@ -7,7 +7,7 @@ import ThemeImporter from '../theme/ThemeImporter'
 const ButtonDropdown = props => {
   return (
     <Fragment>
-      <ThemeImporter path="_buttondropdown">
+      <ThemeImporter path="_buttons">
         <ReactStrapButtonDropdown {...props} />
       </ThemeImporter>
     </Fragment>

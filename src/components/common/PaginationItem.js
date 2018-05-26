@@ -1,17 +1,9 @@
 import { PaginationItem as ReactStrapPaginationItem } from 'reactstrap'
 
-import React, { Fragment } from 'react'
-
-import ThemeImporter from '../theme/ThemeImporter'
+import React from 'react'
 
 const PaginationItem = props => {
-  return (
-    <Fragment>
-      <ThemeImporter path="_paginationitem">
-        <ReactStrapPaginationItem {...props} />
-      </ThemeImporter>
-    </Fragment>
-  )
+  return <ReactStrapPaginationItem {...props} />
 }
 
 PaginationItem.propTypes = ReactStrapPaginationItem.propTypes

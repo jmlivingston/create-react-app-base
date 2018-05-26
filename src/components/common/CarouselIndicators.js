@@ -1,17 +1,9 @@
 import { CarouselIndicators as ReactStrapCarouselIndicators } from 'reactstrap'
 
-import React, { Fragment } from 'react'
-
-import ThemeImporter from '../theme/ThemeImporter'
+import React from 'react'
 
 const CarouselIndicators = props => {
-  return (
-    <Fragment>
-      <ThemeImporter path="_carouselindicators">
-        <ReactStrapCarouselIndicators {...props} />
-      </ThemeImporter>
-    </Fragment>
-  )
+  return <ReactStrapCarouselIndicators {...props} />
 }
 
 CarouselIndicators.propTypes = ReactStrapCarouselIndicators.propTypes

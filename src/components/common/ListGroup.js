@@ -7,7 +7,7 @@ import ThemeImporter from '../theme/ThemeImporter'
 const ListGroup = props => {
   return (
     <Fragment>
-      <ThemeImporter path="_listgroup">
+      <ThemeImporter path="_list-group">
         <ReactStrapListGroup {...props} />
       </ThemeImporter>
     </Fragment>

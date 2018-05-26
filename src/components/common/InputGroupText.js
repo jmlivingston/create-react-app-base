@@ -1,17 +1,9 @@
 import { InputGroupText as ReactStrapInputGroupText } from 'reactstrap'
 
-import React, { Fragment } from 'react'
-
-import ThemeImporter from '../theme/ThemeImporter'
+import React from 'react'
 
 const InputGroupText = props => {
-  return (
-    <Fragment>
-      <ThemeImporter path="_inputgrouptext">
-        <ReactStrapInputGroupText {...props} />
-      </ThemeImporter>
-    </Fragment>
-  )
+  return <ReactStrapInputGroupText {...props} />
 }
 
 InputGroupText.propTypes = ReactStrapInputGroupText.propTypes

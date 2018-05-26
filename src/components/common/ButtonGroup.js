@@ -7,7 +7,7 @@ import ThemeImporter from '../theme/ThemeImporter'
 const ButtonGroup = props => {
   return (
     <Fragment>
-      <ThemeImporter path="_buttongroup">
+      <ThemeImporter path="_button-group">
         <ReactStrapButtonGroup {...props} />
       </ThemeImporter>
     </Fragment>

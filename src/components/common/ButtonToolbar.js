@@ -1,17 +1,9 @@
 import { ButtonToolbar as ReactStrapButtonToolbar } from 'reactstrap'
 
-import React, { Fragment } from 'react'
-
-import ThemeImporter from '../theme/ThemeImporter'
+import React from 'react'
 
 const ButtonToolbar = props => {
-  return (
-    <Fragment>
-      <ThemeImporter path="_buttontoolbar">
-        <ReactStrapButtonToolbar {...props} />
-      </ThemeImporter>
-    </Fragment>
-  )
+  return <ReactStrapButtonToolbar {...props} />
 }
 
 ButtonToolbar.propTypes = ReactStrapButtonToolbar.propTypes

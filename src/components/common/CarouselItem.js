@@ -1,17 +1,9 @@
 import { CarouselItem as ReactStrapCarouselItem } from 'reactstrap'
 
-import React, { Fragment } from 'react'
-
-import ThemeImporter from '../theme/ThemeImporter'
+import React from 'react'
 
 const CarouselItem = props => {
-  return (
-    <Fragment>
-      <ThemeImporter path="_carouselitem">
-        <ReactStrapCarouselItem {...props} />
-      </ThemeImporter>
-    </Fragment>
-  )
+  return <ReactStrapCarouselItem {...props} />
 }
 
 CarouselItem.propTypes = ReactStrapCarouselItem.propTypes

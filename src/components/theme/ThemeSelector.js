@@ -19,8 +19,11 @@ class ThemeSelector extends Component {
           <Dropdown isOpen={this.state.dropdownOpen} toggle={() => this.toggle()}>
             <DropdownToggle caret>{context.state.theme}</DropdownToggle>
             <DropdownMenu>
-              <DropdownItem onClick={() => context.state.updateTheme('Dark')}>Dark</DropdownItem>
-              <DropdownItem onClick={() => context.state.updateTheme('Original')}>Original</DropdownItem>
+              <DropdownItem onClick={() => context.state.updateTheme('custom')}>Custom</DropdownItem>
+              <DropdownItem onClick={() => context.state.updateTheme('darkly')}>Darkly</DropdownItem> 
+              <DropdownItem onClick={() => context.state.updateTheme('original')}>Original</DropdownItem>
+              <DropdownItem onClick={() => context.state.updateTheme('yeti')}>Yeti</DropdownItem>
+             
             </DropdownMenu>
           </Dropdown>
         )}
