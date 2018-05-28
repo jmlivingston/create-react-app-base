@@ -1,10 +1,13 @@
 import React, { Component, Fragment } from 'react'
-import { GlobalContainer } from '../../src/components/global/GlobalContainer'
-import ThemeSelector from '../../src/components/global/ThemeSelector'
+import { GlobalContainer } from 'components/global/GlobalContainer'
+import ThemeSelector from 'components/global/ThemeSelector'
 
 const Wrapper = ({ storyFn }) => (
   <GlobalContainer>
-    <ThemeSelector />
+    <div className="float-right">
+      <ThemeSelector />
+    </div>
+    <div className="clearfix" />
     <Fragment>{storyFn()}</Fragment>
   </GlobalContainer>
 )
