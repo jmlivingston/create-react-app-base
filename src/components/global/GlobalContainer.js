@@ -76,10 +76,8 @@ class GlobalContainer extends Component {
           user
         })
         localStorage.setItem('user', JSON.stringify(user))
-        if (this.state.theme !== user.theme) {
-          // NOTE: Required for theme reloading due to SASS limitations
-          window.location.reload()
-        }
+        // NOTE: Required for theme reloading due to SASS limitations and GlobalImporter
+        window.location.reload()
       } else {
         this.setState({
           userIsValid
@@ -92,6 +90,8 @@ class GlobalContainer extends Component {
         user: undefined
       })
       localStorage.removeItem('user')
+      // NOTE: Required for theme reloading due to SASS limitations
+      window.location.reload()
     }
   }
 

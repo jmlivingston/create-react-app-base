@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import { GlobalContainer } from 'components/global/GlobalContainer'
 // import KitchenSink from 'components/kitchenSink/KitchenSink'
 import Login from 'components/auth/Login'
-// import Tester from 'components/tester/Tester'
+import Tester from 'components/tester/Tester'
 import LanguageSelector from 'components/global/LanguageSelector'
 import ThemeSelector from 'components/global/ThemeSelector'
 import ThemeImporter from 'components/global/ThemeImporter'
@@ -31,7 +31,7 @@ class App extends Component {
             <div className="clearfix" />
           </div>
           <Login />
-          {/* <Tester /> */}
+          <Tester />
           {/* <KitchenSink /> */}
         </ThemeImporter>
       </GlobalContainer>

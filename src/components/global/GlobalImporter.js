@@ -2,11 +2,10 @@ import React, { Component, Fragment } from 'react'
 
 import { GlobalContainerContext } from './GlobalContainer'
 
-// NOTE: THIS USES IN MEMORY AUTH AND IS NOT
-
 class GlobalImporterInnerComponent extends Component {
   state = {
-    strings: {}
+    strings: {},
+    user: localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')) : {}
   }
 
   getStrings = async name => {
