@@ -151,7 +151,7 @@ if (fs.existsSync(reactStrapBasePath)) {
 
 import React, { Fragment } from 'react'
 
-import ThemeImporter from '../theme/ThemeImporter'
+import ThemeImporter from '../global/ThemeImporter'
 
 const ${component} = props => {
   return (

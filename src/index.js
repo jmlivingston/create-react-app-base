@@ -6,7 +6,7 @@ import ReactDOM from 'react-dom'
 // import 'react-popper/dist/cjs/react-popper'
 // import 'reactstrap/dist/reactstrap.full.min.js'
 
-import App from './App'
+import App from './components/layout/App'
 
 
 ReactDOM.render(<App />, document.getElementById('root'))

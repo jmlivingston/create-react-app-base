@@ -2,7 +2,7 @@ import { UncontrolledDropdown as ReactStrapUncontrolledDropdown } from 'reactstr
 
 import React, { Fragment } from 'react'
 
-import ThemeImporter from '../theme/ThemeImporter'
+import ThemeImporter from '../global/ThemeImporter'
 
 const UncontrolledDropdown = props => {
   return (

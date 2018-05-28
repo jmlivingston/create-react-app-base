@@ -2,7 +2,7 @@ import { Button as ReactStrapButton } from 'reactstrap'
 
 import React, { Fragment } from 'react'
 
-import ThemeImporter from '../theme/ThemeImporter'
+import ThemeImporter from '../global/ThemeImporter'
 
 const Button = props => {
   return (

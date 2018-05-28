@@ -2,7 +2,7 @@ import { Card as ReactStrapCard } from 'reactstrap'
 
 import React, { Fragment } from 'react'
 
-import ThemeImporter from '../theme/ThemeImporter'
+import ThemeImporter from '../global/ThemeImporter'
 
 const Card = props => {
   return (

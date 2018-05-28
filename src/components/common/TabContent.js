@@ -2,7 +2,7 @@ import { TabContent as ReactStrapTabContent } from 'reactstrap'
 
 import React, { Fragment } from 'react'
 
-import ThemeImporter from '../theme/ThemeImporter'
+import ThemeImporter from '../global/ThemeImporter'
 
 const TabContent = props => {
   return (

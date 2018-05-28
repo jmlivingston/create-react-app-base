@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import { ThemeContainerContext } from './ThemeContainer'
+import { GlobalContainerContext } from './GlobalContainer'
 
 class ThemeImporterInnerComponent extends Component {
   state = {
@@ -24,12 +24,12 @@ class ThemeImporterInnerComponent extends Component {
 class ThemeImporter extends Component {
   render() {
     return (
-      <ThemeContainerContext.Consumer>
+      <GlobalContainerContext.Consumer>
         {context => {
           const props = { ...context.state, ...this.props }
           return <ThemeImporterInnerComponent {...props} />
         }}
-      </ThemeContainerContext.Consumer>
+      </GlobalContainerContext.Consumer>
     )
   }
 }

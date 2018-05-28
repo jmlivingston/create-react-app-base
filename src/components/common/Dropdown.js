@@ -1,7 +1,7 @@
 import { Dropdown as ReactStrapDropdown } from 'reactstrap'
 import React from 'react'
 
-import ThemeImporter from '../theme/ThemeImporter'
+import ThemeImporter from '../global/ThemeImporter'
 
 const Dropdown = props => {
   return (

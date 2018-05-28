@@ -2,7 +2,7 @@ import { UncontrolledCarousel as ReactStrapUncontrolledCarousel } from 'reactstr
 
 import React, { Fragment } from 'react'
 
-import ThemeImporter from '../theme/ThemeImporter'
+import ThemeImporter from '../global/ThemeImporter'
 
 const UncontrolledCarousel = props => {
   return (

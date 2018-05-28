@@ -2,7 +2,7 @@ import { Form as ReactStrapForm } from 'reactstrap'
 
 import React, { Fragment } from 'react'
 
-import ThemeImporter from '../theme/ThemeImporter'
+import ThemeImporter from '../global/ThemeImporter'
 
 const Form = props => {
   return (

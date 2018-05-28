@@ -1,7 +1,7 @@
 import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from '../common'
 import React, { Component } from 'react'
 
-import { ThemeContainerContext } from './ThemeContainer'
+import { GlobalContainerContext } from './GlobalContainer'
 
 class ThemeSelector extends Component {
   state = {}
@@ -14,7 +14,7 @@ class ThemeSelector extends Component {
 
   render() {
     return (
-      <ThemeContainerContext.Consumer>
+      <GlobalContainerContext.Consumer>
         {context => (
           <Dropdown isOpen={this.state.dropdownOpen} toggle={() => this.toggle()}>
             <DropdownToggle caret>{context.state.theme}</DropdownToggle>
@@ -27,7 +27,7 @@ class ThemeSelector extends Component {
             </DropdownMenu>
           </Dropdown>
         )}
-      </ThemeContainerContext.Consumer>
+      </GlobalContainerContext.Consumer>
     )
   }
 }
