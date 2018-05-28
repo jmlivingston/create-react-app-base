@@ -1,16 +1,13 @@
 import { Tooltip as ReactStrapTooltip } from 'reactstrap'
-
-import React, { Fragment } from 'react'
+import React from 'react'
 
 import ThemeImporter from '../global/ThemeImporter'
 
 const Tooltip = props => {
   return (
-    <Fragment>
-      <ThemeImporter path="_tooltip">
-        <ReactStrapTooltip {...props} />
-      </ThemeImporter>
-    </Fragment>
+    <ThemeImporter sassNames={['_tooltip']}>
+      <ReactStrapTooltip {...props} />
+    </ThemeImporter>
   )
 }
 

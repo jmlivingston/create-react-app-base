@@ -1,16 +1,13 @@
 import { Media as ReactStrapMedia } from 'reactstrap'
-
-import React, { Fragment } from 'react'
+import React from 'react'
 
 import ThemeImporter from '../global/ThemeImporter'
 
 const Media = props => {
   return (
-    <Fragment>
-      <ThemeImporter path="_media">
-        <ReactStrapMedia {...props} />
-      </ThemeImporter>
-    </Fragment>
+    <ThemeImporter sassNames={['_media']}>
+      <ReactStrapMedia {...props} />
+    </ThemeImporter>
   )
 }
 

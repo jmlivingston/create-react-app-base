@@ -1,8 +1,14 @@
 import { DropdownMenu as ReactStrapDropdownMenu } from 'reactstrap'
 import React from 'react'
 
+import ThemeImporter from '../global/ThemeImporter'
+
 const DropdownMenu = props => {
-  return <ReactStrapDropdownMenu {...props}>{props.children}</ReactStrapDropdownMenu>
+  return (
+    <ThemeImporter>
+      <ReactStrapDropdownMenu {...props}>{props.children}</ReactStrapDropdownMenu>
+    </ThemeImporter>
+  )
 }
 
 DropdownMenu.propTypes = ReactStrapDropdownMenu.propTypes

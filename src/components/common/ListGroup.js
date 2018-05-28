@@ -1,16 +1,13 @@
 import { ListGroup as ReactStrapListGroup } from 'reactstrap'
-
-import React, { Fragment } from 'react'
+import React from 'react'
 
 import ThemeImporter from '../global/ThemeImporter'
 
 const ListGroup = props => {
   return (
-    <Fragment>
-      <ThemeImporter path="_list-group">
-        <ReactStrapListGroup {...props} />
-      </ThemeImporter>
-    </Fragment>
+    <ThemeImporter sassNames={['_list-group']}>
+      <ReactStrapListGroup {...props} />
+    </ThemeImporter>
   )
 }
 

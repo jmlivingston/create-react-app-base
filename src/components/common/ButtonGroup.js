@@ -1,16 +1,13 @@
 import { ButtonGroup as ReactStrapButtonGroup } from 'reactstrap'
-
-import React, { Fragment } from 'react'
+import React from 'react'
 
 import ThemeImporter from '../global/ThemeImporter'
 
 const ButtonGroup = props => {
   return (
-    <Fragment>
-      <ThemeImporter path="_button-group">
-        <ReactStrapButtonGroup {...props} />
-      </ThemeImporter>
-    </Fragment>
+    <ThemeImporter sassNames={['_button-group']}>
+      <ReactStrapButtonGroup {...props} />
+    </ThemeImporter>
   )
 }
 

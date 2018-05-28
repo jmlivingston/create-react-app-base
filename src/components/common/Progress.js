@@ -1,16 +1,13 @@
 import { Progress as ReactStrapProgress } from 'reactstrap'
-
-import React, { Fragment } from 'react'
+import React from 'react'
 
 import ThemeImporter from '../global/ThemeImporter'
 
 const Progress = props => {
   return (
-    <Fragment>
-      <ThemeImporter path="_progress">
-        <ReactStrapProgress {...props} />
-      </ThemeImporter>
-    </Fragment>
+    <ThemeImporter sassNames={['_progress']}>
+      <ReactStrapProgress {...props} />
+    </ThemeImporter>
   )
 }
 

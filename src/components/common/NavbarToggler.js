@@ -1,9 +1,14 @@
 import { NavbarToggler as ReactStrapNavbarToggler } from 'reactstrap'
-
 import React from 'react'
 
+import ThemeImporter from '../global/ThemeImporter'
+
 const NavbarToggler = props => {
-  return <ReactStrapNavbarToggler {...props} />
+  return (
+    <ThemeImporter>
+      <ReactStrapNavbarToggler {...props} />
+    </ThemeImporter>
+  )
 }
 
 NavbarToggler.propTypes = ReactStrapNavbarToggler.propTypes

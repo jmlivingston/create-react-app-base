@@ -5,6 +5,7 @@ import { GlobalContainer } from '../global/GlobalContainer'
 import Tester from '../tester/Tester'
 import LanguageSelector from '../global/LanguageSelector'
 import ThemeSelector from '../global/ThemeSelector'
+import ThemeImporter from '../global/ThemeImporter'
 
 class App extends Component {
   state = {
@@ -20,15 +21,17 @@ class App extends Component {
   render() {
     return (
       <GlobalContainer>
-        <div className="container-fluid">
-          <div className="float-right pt-2 pb-2">
-            <ThemeSelector />
-            <LanguageSelector />
+        <ThemeImporter>
+          <div className="container-fluid">
+            <div className="float-right pt-2 pb-2">
+              <ThemeSelector />
+              <LanguageSelector />
+            </div>
+            <div className="clearfix" />
           </div>
-          <div className="clearfix" />
-        </div>
-        <Tester />
-        {/* <KitchenSink /> */}
+          <Tester />
+          {/* <KitchenSink /> */}
+        </ThemeImporter>
       </GlobalContainer>
     )
   }

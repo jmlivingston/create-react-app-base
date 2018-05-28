@@ -1,15 +1,13 @@
 import { Alert as ReactStrapAlert } from 'reactstrap'
-import React, { Fragment } from 'react'
+import React from 'react'
 
 import ThemeImporter from '../global/ThemeImporter'
 
 const Alert = props => {
   return (
-    <Fragment>
-      <ThemeImporter path="_alert">
-        <ReactStrapAlert {...props} />
-      </ThemeImporter>
-    </Fragment>
+    <ThemeImporter sassNames={['_alert']}>
+      <ReactStrapAlert {...props} />
+    </ThemeImporter>
   )
 }
 

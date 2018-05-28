@@ -1,16 +1,13 @@
 import { UncontrolledDropdown as ReactStrapUncontrolledDropdown } from 'reactstrap'
-
-import React, { Fragment } from 'react'
+import React from 'react'
 
 import ThemeImporter from '../global/ThemeImporter'
 
 const UncontrolledDropdown = props => {
   return (
-    <Fragment>
-      <ThemeImporter path="_dropdown">
-        <ReactStrapUncontrolledDropdown {...props} />
-      </ThemeImporter>
-    </Fragment>
+    <ThemeImporter sassNames={['_dropdown', '_buttons']}>
+      <ReactStrapUncontrolledDropdown {...props} />
+    </ThemeImporter>
   )
 }
 

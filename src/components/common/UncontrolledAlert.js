@@ -1,16 +1,13 @@
 import { UncontrolledAlert as ReactStrapUncontrolledAlert } from 'reactstrap'
-
-import React, { Fragment } from 'react'
+import React from 'react'
 
 import ThemeImporter from '../global/ThemeImporter'
 
 const UncontrolledAlert = props => {
   return (
-    <Fragment>
-      <ThemeImporter path="_alert">
-        <ReactStrapUncontrolledAlert {...props} />
-      </ThemeImporter>
-    </Fragment>
+    <ThemeImporter sassNames={['_alert']}>
+      <ReactStrapUncontrolledAlert {...props} />
+    </ThemeImporter>
   )
 }
 

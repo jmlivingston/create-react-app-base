@@ -8,12 +8,23 @@ class ThemeImporterInnerComponent extends Component {
   }
 
   componentDidMount() {
-    import(`../../styles/themes/${this.props.theme}/_bootstrap.scss`)
-    import(`../../styles/themes/${this.props.theme}/components/${this.props.path}.scss`).then(() => {
-      this.setState({
-        isLoaded: true
+    if (this.props.theme) {
+      import(`../../styles/themes/${this.props.theme}/_bootstrap.scss`).then(() => {
+        if (this.props.sassNames) {
+          this.props.sassNames.forEach(sassName => {
+            import(`../../styles/themes/${this.props.theme}/components/${sassName}.scss`).then(() => {
+              this.setState({
+                isLoaded: true
+              })
+            })
+          })
+        } else {
+          this.setState({
+            isLoaded: true
+          })
+        }
       })
-    })
+    }
   }
 
   render() {
@@ -26,7 +37,12 @@ class ThemeImporter extends Component {
     return (
       <GlobalContainerContext.Consumer>
         {context => {
-          const props = { ...context.state, ...this.props }
+          let props = {}
+          if (context) {
+            props = { ...context.state, ...this.props }
+          } else {
+            props = { ...this.props }
+          }
           return <ThemeImporterInnerComponent {...props} />
         }}
       </GlobalContainerContext.Consumer>

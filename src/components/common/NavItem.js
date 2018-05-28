@@ -1,9 +1,14 @@
 import { NavItem as ReactStrapNavItem } from 'reactstrap'
-
 import React from 'react'
 
+import ThemeImporter from '../global/ThemeImporter'
+
 const NavItem = props => {
-  return <ReactStrapNavItem {...props} />
+  return (
+    <ThemeImporter>
+      <ReactStrapNavItem {...props} />
+    </ThemeImporter>
+  )
 }
 
 NavItem.propTypes = ReactStrapNavItem.propTypes

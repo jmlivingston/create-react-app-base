@@ -1,5 +1,4 @@
 import { PopoverHeader as ReactStrapPopoverHeader } from 'reactstrap'
-
 import React from 'react'
 
 const PopoverHeader = props => {

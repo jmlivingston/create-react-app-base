@@ -1,9 +1,14 @@
 import { CardText as ReactStrapCardText } from 'reactstrap'
-
 import React from 'react'
 
+import ThemeImporter from '../global/ThemeImporter'
+
 const CardText = props => {
-  return <ReactStrapCardText {...props} />
+  return (
+    <ThemeImporter>
+      <ReactStrapCardText {...props} />
+    </ThemeImporter>
+  )
 }
 
 CardText.propTypes = ReactStrapCardText.propTypes

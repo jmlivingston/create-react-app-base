@@ -1,16 +1,13 @@
 import { Card as ReactStrapCard } from 'reactstrap'
-
-import React, { Fragment } from 'react'
+import React from 'react'
 
 import ThemeImporter from '../global/ThemeImporter'
 
 const Card = props => {
   return (
-    <Fragment>
-      <ThemeImporter path="_card">
-        <ReactStrapCard {...props} />
-      </ThemeImporter>
-    </Fragment>
+    <ThemeImporter sassNames={['_card']}>
+      <ReactStrapCard {...props} />
+    </ThemeImporter>
   )
 }
 

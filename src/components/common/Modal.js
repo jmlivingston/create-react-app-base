@@ -1,16 +1,13 @@
 import { Modal as ReactStrapModal } from 'reactstrap'
-
-import React, { Fragment } from 'react'
+import React from 'react'
 
 import ThemeImporter from '../global/ThemeImporter'
 
 const Modal = props => {
   return (
-    <Fragment>
-      <ThemeImporter path="_modal">
-        <ReactStrapModal {...props} />
-      </ThemeImporter>
-    </Fragment>
+    <ThemeImporter sassNames={['_modal']}>
+      <ReactStrapModal {...props} />
+    </ThemeImporter>
   )
 }
 

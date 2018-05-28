@@ -1,16 +1,13 @@
 import { Popover as ReactStrapPopover } from 'reactstrap'
-
-import React, { Fragment } from 'react'
+import React from 'react'
 
 import ThemeImporter from '../global/ThemeImporter'
 
 const Popover = props => {
   return (
-    <Fragment>
-      <ThemeImporter path="_popover">
-        <ReactStrapPopover {...props} />
-      </ThemeImporter>
-    </Fragment>
+    <ThemeImporter sassNames={['_popover']}>
+      <ReactStrapPopover {...props} />
+    </ThemeImporter>
   )
 }
 

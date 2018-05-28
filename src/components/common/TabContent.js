@@ -1,16 +1,13 @@
 import { TabContent as ReactStrapTabContent } from 'reactstrap'
-
-import React, { Fragment } from 'react'
+import React from 'react'
 
 import ThemeImporter from '../global/ThemeImporter'
 
 const TabContent = props => {
   return (
-    <Fragment>
-      <ThemeImporter path="_nav">
-        <ReactStrapTabContent {...props} />
-      </ThemeImporter>
-    </Fragment>
+    <ThemeImporter sassNames={['_nav']}>
+      <ReactStrapTabContent {...props} />
+    </ThemeImporter>
   )
 }
 

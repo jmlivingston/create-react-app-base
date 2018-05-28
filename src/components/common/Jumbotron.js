@@ -1,16 +1,13 @@
 import { Jumbotron as ReactStrapJumbotron } from 'reactstrap'
-
-import React, { Fragment } from 'react'
+import React from 'react'
 
 import ThemeImporter from '../global/ThemeImporter'
 
 const Jumbotron = props => {
   return (
-    <Fragment>
-      <ThemeImporter path="_jumbotron">
-        <ReactStrapJumbotron {...props} />
-      </ThemeImporter>
-    </Fragment>
+    <ThemeImporter sassNames={['_jumbotron']}>
+      <ReactStrapJumbotron {...props} />
+    </ThemeImporter>
   )
 }
 

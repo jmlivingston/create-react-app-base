@@ -1,9 +1,14 @@
 import { FormFeedback as ReactStrapFormFeedback } from 'reactstrap'
-
 import React from 'react'
 
+import ThemeImporter from '../global/ThemeImporter'
+
 const FormFeedback = props => {
-  return <ReactStrapFormFeedback {...props} />
+  return (
+    <ThemeImporter>
+      <ReactStrapFormFeedback {...props} />
+    </ThemeImporter>
+  )
 }
 
 FormFeedback.propTypes = ReactStrapFormFeedback.propTypes

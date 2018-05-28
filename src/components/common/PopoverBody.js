@@ -1,5 +1,4 @@
 import { PopoverBody as ReactStrapPopoverBody } from 'reactstrap'
-
 import React from 'react'
 
 const PopoverBody = props => {

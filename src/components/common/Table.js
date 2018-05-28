@@ -1,16 +1,13 @@
 import { Table as ReactStrapTable } from 'reactstrap'
-
-import React, { Fragment } from 'react'
+import React from 'react'
 
 import ThemeImporter from '../global/ThemeImporter'
 
 const Table = props => {
   return (
-    <Fragment>
-      <ThemeImporter path="_tables">
-        <ReactStrapTable {...props} />
-      </ThemeImporter>
-    </Fragment>
+    <ThemeImporter sassNames={['_tables']}>
+      <ReactStrapTable {...props} />
+    </ThemeImporter>
   )
 }
 

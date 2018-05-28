@@ -1,8 +1,14 @@
 import { DropdownToggle as ReactStrapDropdownToggle } from 'reactstrap'
 import React from 'react'
 
+import ThemeImporter from '../global/ThemeImporter'
+
 const DropdownToggle = props => {
-  return <ReactStrapDropdownToggle {...props}>{props.children}</ReactStrapDropdownToggle>
+  return (
+    <ThemeImporter>
+      <ReactStrapDropdownToggle {...props}>{props.children}</ReactStrapDropdownToggle>
+    </ThemeImporter>
+  )
 }
 
 DropdownToggle.propTypes = ReactStrapDropdownToggle.propTypes

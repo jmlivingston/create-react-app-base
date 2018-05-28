@@ -2,9 +2,12 @@ import React, { Component, Fragment } from 'react'
 
 import { GlobalContainerContext } from './GlobalContainer'
 
-class LanguageImporterInnerComponent extends Component {
+// Cache for better performance
+
+class GlobalImporterInnerComponent extends Component {
   state = {
-    strings: {}
+    strings: {},
+    user: {}
   }
 
   getStrings = async name => {
@@ -25,6 +28,15 @@ class LanguageImporterInnerComponent extends Component {
     })
   }
 
+  getUser = async () => {
+    this.setState({
+      user: {
+        firstName: 'John',
+        lastName: 'Livingston'
+      }
+    })
+  }
+
   componentDidUpdate(props, state) {
     if (this.props.language !== this.state.language) {
       this.getStrings(this.props.languagePath)
@@ -33,24 +45,25 @@ class LanguageImporterInnerComponent extends Component {
 
   componentDidMount() {
     this.getStrings(this.props.languagePath)
+    this.getUser()
   }
 
   render() {
-    return <Fragment>{this.props.render(this.state.strings)}</Fragment>
+    return <Fragment>{this.props.render({ ...this.state })}</Fragment>
   }
 }
 
-class LanguageImporter extends Component {
+class GlobalImporter extends Component {
   render() {
     return (
       <GlobalContainerContext.Consumer>
         {context => {
           const props = { ...context.state, ...this.props }
-          return <LanguageImporterInnerComponent {...props} />
+          return <GlobalImporterInnerComponent {...props} />
         }}
       </GlobalContainerContext.Consumer>
     )
   }
 }
 
-export default LanguageImporter
+export default GlobalImporter

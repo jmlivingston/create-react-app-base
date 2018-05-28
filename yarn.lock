@@ -7935,7 +7935,7 @@ pn@^1.0.0, pn@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/pn/-/pn-1.1.0.tgz#e2f4cef0e219f463c179ab37463e4e1ecdccbafb"
 
-popper.js@1.14.3, popper.js@^1.14.1:
+popper.js@^1.14.1:
   version "1.14.3"
   resolved "https://registry.yarnpkg.com/popper.js/-/popper.js-1.14.3.tgz#1438f98d046acf7b4d78cd502bf418ac64d4f095"
 
@@ -8681,7 +8681,7 @@ react-style-proptype@^3.0.0:
   dependencies:
     prop-types "^15.5.4"
 
-react-transition-group@^2.0.0, react-transition-group@^2.2.1, react-transition-group@^2.3.1:
+react-transition-group@^2.0.0, react-transition-group@^2.3.1:
   version "2.3.1"
   resolved "https://registry.yarnpkg.com/react-transition-group/-/react-transition-group-2.3.1.tgz#31d611b33e143a5e0f2d94c348e026a0f3b474b6"
   dependencies:

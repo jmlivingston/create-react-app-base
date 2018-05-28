@@ -1,17 +1,17 @@
 import React, { Component } from 'react'
 import { Button } from '../common'
 
-import LanguageImporter from '../global/LanguageImporter'
+import GlobalImporter from '../global/GlobalImporter'
 
 export default class Tester extends Component {
   render() {
     return (
-      <LanguageImporter
+      <GlobalImporter
         languagePath="tester"
         componentName="Tester"
-        render={strings => (
+        render={({ strings, user }) => (
           <div className="container-fluid">
-            <Button>{strings.hello}</Button>
+            <Button>{strings.hello} {user.firstName}</Button>
             <Button>{strings.hello2}</Button>
           </div>
         )}

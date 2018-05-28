@@ -1,16 +1,13 @@
 import { Breadcrumb as ReactStrapBreadcrumb } from 'reactstrap'
-
-import React, { Fragment } from 'react'
+import React from 'react'
 
 import ThemeImporter from '../global/ThemeImporter'
 
 const Breadcrumb = props => {
   return (
-    <Fragment>
-      <ThemeImporter path="_breadcrumb">
-        <ReactStrapBreadcrumb {...props} />
-      </ThemeImporter>
-    </Fragment>
+    <ThemeImporter sassNames={['_breadcrumb']}>
+      <ReactStrapBreadcrumb {...props} />
+    </ThemeImporter>
   )
 }
 

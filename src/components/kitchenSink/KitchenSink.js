@@ -239,17 +239,23 @@ class KitchenSink extends Component {
     return (
       <div className="container-fluid">
         <Alert color="primary">This is a primary alert — check it out!</Alert>
+        <Alert color="warning">This is a warning alert — check it out!</Alert>
+        <Alert color="danger">This is a danger alert — check it out!</Alert>
         <h1>
-          <Badge color="secondary">New</Badge>
+          <Badge color="primary">New</Badge>
+          <Badge color="warning">New</Badge>
+          <Badge color="danger">New</Badge>
         </h1>
-
         <Breadcrumb>
-          <BreadcrumbItem active>Home</BreadcrumbItem>
-          <BreadcrumbItem>About</BreadcrumbItem>
+          <BreadcrumbItem>
+            <a href="/">Home</a>
+          </BreadcrumbItem>
+          <BreadcrumbItem>
+            <a href="/">Library</a>
+          </BreadcrumbItem>
+          <BreadcrumbItem active>Data</BreadcrumbItem>
         </Breadcrumb>
-
         <Button color="primary">test</Button>
-
         <ButtonDropdown isOpen={this.state.buttonDropdownOpen} toggle={() => this.toggleButtonDropdown()}>
           <DropdownToggle caret>Button Dropdown</DropdownToggle>
           <DropdownMenu>
@@ -260,13 +266,11 @@ class KitchenSink extends Component {
             <DropdownItem>Another Action</DropdownItem>
           </DropdownMenu>
         </ButtonDropdown>
-
         <ButtonGroup>
           <Button>Left</Button>
           <Button>Middle</Button>
           <Button>Right</Button>
         </ButtonGroup>
-
         <ButtonToolbar>
           <ButtonGroup>
             <Button>1</Button>
@@ -283,7 +287,6 @@ class KitchenSink extends Component {
             <Button>8</Button>
           </ButtonGroup>
         </ButtonToolbar>
-
         <CardColumns>
           <Card>
             <CardHeader>Header</CardHeader>
@@ -310,7 +313,6 @@ class KitchenSink extends Component {
             <CardFooter className="text-muted">Footer</CardFooter>
           </Card>
         </CardColumns>
-        <br />
         <CardDeck>
           <Card>
             <CardHeader>Header</CardHeader>
@@ -337,7 +339,6 @@ class KitchenSink extends Component {
             <CardFooter className="text-muted">Footer</CardFooter>
           </Card>
         </CardDeck>
-
         <CardGroup>
           <Card>
             <CardHeader>Header</CardHeader>
@@ -364,7 +365,6 @@ class KitchenSink extends Component {
             <CardFooter className="text-muted">Footer</CardFooter>
           </Card>
         </CardGroup>
-
         <div className="row">
           <div className="col-sm-3">
             <Card>
@@ -406,7 +406,6 @@ class KitchenSink extends Component {
             </Card>
           </div>
         </div>
-
         <Carousel
           activeIndex={this.state.carouselActiveIndex}
           next={() => this.carouselNext()}
@@ -420,19 +419,16 @@ class KitchenSink extends Component {
           <CarouselControl direction="prev" directionText="Previous" onClickHandler={() => this.carouselPrevious()} />
           <CarouselControl direction="next" directionText="Next" onClickHandler={() => this.carouselNext()} />
         </Carousel>
-
         <button onClick={() => this.toggleCollapse()}>Toggle Collapse</button>
         <Collapse isOpen={this.state.isCollapsed} timeout={1}>
           <div>I am collapse content</div>
         </Collapse>
-
         <Container>
           <Row>
             <Col xs="6">.col-6</Col>
             <Col xs="6">.col-6</Col>
           </Row>
         </Container>
-
         <Form>
           <FormGroup>
             <Label for="exampleCheckbox">Checkboxes</Label>
@@ -484,7 +480,6 @@ class KitchenSink extends Component {
             <CustomInput type="file" id="exampleCustomFileBrowser" name="customFile" />
           </FormGroup>
         </Form>
-
         <Dropdown isOpen={this.state.dropdownOpen} toggle={() => this.toggleDropdown()}>
           <DropdownToggle caret>Dropdown</DropdownToggle>
           <DropdownMenu>
@@ -495,14 +490,12 @@ class KitchenSink extends Component {
             <DropdownItem>Another Action</DropdownItem>
           </DropdownMenu>
         </Dropdown>
-
         <Button color="primary" onClick={() => this.toggleFade()}>
           Toggle Fade
         </Button>
         <Fade in={this.state.fadeIn} tag="h5" className="mt-3" timeout={0}>
           This content will fade in and out as the button is pressed
         </Fade>
-
         <Form>
           <FormGroup>
             <Label for="exampleEmail">Valid input</Label>
@@ -517,7 +510,6 @@ class KitchenSink extends Component {
             <FormText>Example help text that remains unchanged.</FormText>
           </FormGroup>
         </Form>
-
         <InputGroup>
           <InputGroupAddon addonType="prepend">
             <InputGroupText>
@@ -526,7 +518,6 @@ class KitchenSink extends Component {
           </InputGroupAddon>
           <Input placeholder="Check it out" />
         </InputGroup>
-
         <InputGroup>
           <Input />
           <InputGroupButtonDropdown
@@ -543,7 +534,6 @@ class KitchenSink extends Component {
             </DropdownMenu>
           </InputGroupButtonDropdown>
         </InputGroup>
-
         <Jumbotron>
           <h1 className="display-3">Hello, world!</h1>
           <p className="lead">
@@ -553,7 +543,6 @@ class KitchenSink extends Component {
           <hr className="my-2" />
           <p>It uses utility classes for typgraphy and spacing to space content out within the larger container.</p>
         </Jumbotron>
-
         <ListGroup>
           <ListGroupItem>Cras justo odio</ListGroupItem>
           <ListGroupItem>Dapibus ac facilisis in</ListGroupItem>
@@ -561,7 +550,6 @@ class KitchenSink extends Component {
           <ListGroupItem>Porta ac consectetur ac</ListGroupItem>
           <ListGroupItem>Vestibulum at eros</ListGroupItem>
         </ListGroup>
-
         <ListGroup>
           <ListGroupItem active>
             <ListGroupItemHeading>List group item heading</ListGroupItemHeading>
@@ -582,7 +570,6 @@ class KitchenSink extends Component {
             </ListGroupItemText>
           </ListGroupItem>
         </ListGroup>
-
         <Media>
           <Media left href="/">
             <Media object src="http://via.placeholder.com/64x64" alt="Generic placeholder image" />
@@ -594,7 +581,6 @@ class KitchenSink extends Component {
             fringilla. Donec lacinia congue felis in faucibus.
           </Media>
         </Media>
-
         <Button color="danger" onClick={() => this.toggleModal()}>
           Open Modal
         </Button>
@@ -616,12 +602,10 @@ class KitchenSink extends Component {
             </Button>
           </ModalFooter>
         </Modal>
-
         <Navbar color="light" light expand="md">
           <NavbarBrand href="/">reactstrap</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
         </Navbar>
-
         <Nav>
           <NavItem>
             <NavLink href="/">Link</NavLink>
@@ -638,7 +622,6 @@ class KitchenSink extends Component {
             </NavLink>
           </NavItem>
         </Nav>
-
         <Pagination>
           <PaginationItem>
             <PaginationLink previous href="/" />
@@ -656,7 +639,8 @@ class KitchenSink extends Component {
             <PaginationLink next href="/" />
           </PaginationItem>
         </Pagination>
-
+        {/* TODO: Fix popover / Race conditions prevents this from working every timeout. You can refresh multiple times to see.
+        May need to abstract */}
         <Button id="Popover1" onClick={() => this.togglePopover()}>
           Launch Popover
         </Button>
@@ -671,7 +655,6 @@ class KitchenSink extends Component {
             vestibulum.
           </PopoverBody>
         </Popover>
-
         <div>
           <div className="text-center">0%</div>
           <Progress />
@@ -692,7 +675,6 @@ class KitchenSink extends Component {
             <Progress bar color="danger" value="5" />
           </Progress>
         </div>
-
         <div className="pt-2">
           <Nav tabs>
             <NavItem>
@@ -742,7 +724,6 @@ class KitchenSink extends Component {
             </TabPane>
           </TabContent>
         </div>
-
         <Table>
           <thead>
             <tr>
@@ -773,7 +754,6 @@ class KitchenSink extends Component {
             </tr>
           </tbody>
         </Table>
-
         <p>
           Somewhere in here is a{' '}
           <a href="/" id="TooltipExample">
@@ -787,9 +767,7 @@ class KitchenSink extends Component {
           toggle={() => this.toggleTooltip()}>
           Hello world!
         </Tooltip>
-
         <UncontrolledAlert color="info">I am an alert and I can be dismissed!</UncontrolledAlert>
-
         <UncontrolledDropdown>
           <DropdownToggle caret>Dropdown</DropdownToggle>
           <DropdownMenu>
@@ -800,7 +778,6 @@ class KitchenSink extends Component {
             <DropdownItem>Another Action</DropdownItem>
           </DropdownMenu>
         </UncontrolledDropdown>
-
         <UncontrolledButtonDropdown>
           <DropdownToggle caret>Button Dropdown</DropdownToggle>
           <DropdownMenu>
@@ -811,7 +788,6 @@ class KitchenSink extends Component {
             <DropdownItem>Another Action</DropdownItem>
           </DropdownMenu>
         </UncontrolledButtonDropdown>
-
         <p>
           Somewhere in here is a{' '}
           <a href="/" id="UncontrolledTooltipExample">
@@ -821,7 +797,6 @@ class KitchenSink extends Component {
         <UncontrolledTooltip placement="top" target="UncontrolledTooltipExample">
           Hello world!
         </UncontrolledTooltip>
-
         <UncontrolledCarousel items={uncontrolledCarouselItems} />
       </div>
     )

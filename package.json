@@ -5,13 +5,10 @@
   "dependencies": {
     "bootstrap": "4.1.1",
     "bootswatch": "4.1.1",
-    "popper.js": "1.14.3",
     "prop-types": "15.6.1",
     "react": "16.4.0",
     "react-dom": "16.4.0",
-    "react-popper": "^0.10.4",
     "react-scripts": "2.0.0-next.66cc7a90",
-    "react-transition-group": "^2.2.1",
     "reactstrap": "6.0.1"
   },
   "scripts": {
@@ -39,16 +36,7 @@
     "yargs": "11.0.0"
   },
   "browserslist": {
-    "development": [
-      "last 2 chrome versions",
-      "last 2 firefox versions",
-      "last 2 edge versions"
-    ],
-    "production": [
-      ">1%",
-      "last 4 versions",
-      "Firefox ESR",
-      "not ie < 11"
-    ]
+    "development": ["last 2 chrome versions", "last 2 firefox versions", "last 2 edge versions"],
+    "production": [">1%", "last 4 versions", "Firefox ESR", "not ie < 11"]
   }
 }
