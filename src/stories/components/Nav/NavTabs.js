@@ -1,5 +1,5 @@
 import React from 'react';
-import { Nav, NavItem, Dropdown, DropdownItem, DropdownToggle, DropdownMenu, NavLink } from '../../../components/common';
+import { Nav, NavItem, Dropdown, DropdownItem, DropdownToggle, DropdownMenu, NavLink } from 'components/common';
 
 export default class Example extends React.Component {
   constructor(props) {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Fade } from '../../../components/common';
+import { Button, Fade } from 'components/common';
 
 export default class Example extends React.Component {
     constructor(props) {

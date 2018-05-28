@@ -1,5 +1,5 @@
 import React from 'react';
-import { Badge } from '../../../components/common';
+import { Badge } from 'components/common';
 
 export default class Example extends React.Component {
   render() {

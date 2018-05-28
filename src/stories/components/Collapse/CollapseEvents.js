@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Collapse, Button, CardBody, Card } from '../../../components/common';
+import { Collapse, Button, CardBody, Card } from 'components/common';
 
 class Example extends Component {
   constructor(props) {

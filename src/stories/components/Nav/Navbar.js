@@ -10,7 +10,7 @@ import {
   UncontrolledDropdown,
   DropdownToggle,
   DropdownMenu,
-  DropdownItem } from '../../../components/common';
+  DropdownItem } from 'components/common';
 
 export default class Example extends React.Component {
   constructor(props) {

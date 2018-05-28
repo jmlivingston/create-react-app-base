@@ -1,5 +1,5 @@
 import React from 'react';
-import { ListGroup, ListGroupItem, ListGroupItemHeading, ListGroupItemText } from '../../../components/common';
+import { ListGroup, ListGroupItem, ListGroupItemHeading, ListGroupItemText } from 'components/common';
 
 export default class Example extends React.Component {
   render() {

@@ -178,7 +178,7 @@ export default ${component}
       .split('\n')
       .map(line => {
         if (line.includes("'reactstrap'")) {
-          line = line.replace('reactstrap', '../../../components/common')
+          line = line.replace('reactstrap', 'components/common')
         }
         return line
       })

@@ -1,6 +1,6 @@
 /* eslint react/no-multi-comp: 0, react/prop-types: 0 */
 import React from 'react';
-import { Button, Popover, PopoverHeader, PopoverBody } from '../../../components/common';
+import { Button, Popover, PopoverHeader, PopoverBody } from 'components/common';
 
 export default class Example extends React.Component {
   constructor(props) {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Breadcrumb, BreadcrumbItem } from '../../../components/common';
+import { Breadcrumb, BreadcrumbItem } from 'components/common';
 
 const Example = (props) => {
   return (

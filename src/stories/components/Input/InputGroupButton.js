@@ -10,7 +10,7 @@ import {
   DropdownToggle,
   DropdownMenu,
   DropdownItem
- } from '../../../components/common';
+ } from 'components/common';
 
 export default class Example extends React.Component {
   constructor(props) {

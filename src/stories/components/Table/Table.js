@@ -1,5 +1,5 @@
 import React from 'react';
-import { Table } from '../../../components/common';
+import { Table } from 'components/common';
 
 export default class Example extends React.Component {
   render() {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem } from '../../../components/common';
+import { UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'components/common';
 
 export default function Example () {
   return (

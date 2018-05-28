@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Row, Col } from '../../../components/common';
+import { Container, Row, Col } from 'components/common';
 
 export default class Example extends React.Component {
   render() {

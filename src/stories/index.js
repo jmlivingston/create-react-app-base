@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
 import { linkTo } from '@storybook/addon-links'
 
-import App from '../App'
+import App from 'components/layout/App'
 import config from './config'
 import Example from './components/Alert/Alert'
 

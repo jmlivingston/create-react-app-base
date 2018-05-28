@@ -1,5 +1,5 @@
 import React from 'react';
-import { UncontrolledCarousel } from '../../../components/common';
+import { UncontrolledCarousel } from 'components/common';
 
 const items = [
   {

@@ -1,6 +1,6 @@
 import React from 'react';
 ;
-import { InputGroupButtonDropdown, DropdownToggle, DropdownMenu, DropdownItem } from '../../../components/common';
+import { InputGroupButtonDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'components/common';
 
 const propTypes = {
   addonType: PropTypes.oneOf(['prepend', 'append']).isRequired,
