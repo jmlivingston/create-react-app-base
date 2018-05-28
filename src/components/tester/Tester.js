@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import { Button } from '../common'
+import { Button } from 'components/common'
 
-import GlobalImporter from '../global/GlobalImporter'
+import GlobalImporter from 'components/global/GlobalImporter'
 
 export default class Tester extends Component {
   render() {

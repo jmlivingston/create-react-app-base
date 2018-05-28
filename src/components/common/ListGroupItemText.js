@@ -1,7 +1,7 @@
 import { ListGroupItemText as ReactStrapListGroupItemText } from 'reactstrap'
 import React from 'react'
 
-import ThemeImporter from '../global/ThemeImporter'
+import ThemeImporter from 'components/global/ThemeImporter'
 
 const ListGroupItemText = props => {
   return (

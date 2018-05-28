@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
 
-import { GlobalContainer } from '../global/GlobalContainer'
+import { GlobalContainer } from 'components/global/GlobalContainer'
 // import KitchenSink from '../kitchenSink/KitchenSink'
-import Tester from '../tester/Tester'
-import LanguageSelector from '../global/LanguageSelector'
-import ThemeSelector from '../global/ThemeSelector'
-import ThemeImporter from '../global/ThemeImporter'
+import Login from 'components/auth/Login'
+// import Tester from 'components/tester/Tester'
+import LanguageSelector from 'components/global/LanguageSelector'
+import ThemeSelector from 'components/global/ThemeSelector'
+import ThemeImporter from 'components/global/ThemeImporter'
 
 class App extends Component {
   state = {
@@ -29,7 +30,8 @@ class App extends Component {
             </div>
             <div className="clearfix" />
           </div>
-          <Tester />
+          <Login />
+          {/* <Tester /> */}
           {/* <KitchenSink /> */}
         </ThemeImporter>
       </GlobalContainer>

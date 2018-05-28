@@ -2,12 +2,11 @@ import React, { Component, Fragment } from 'react'
 
 import { GlobalContainerContext } from './GlobalContainer'
 
-// Cache for better performance
+// NOTE: THIS USES IN MEMORY AUTH AND IS NOT
 
 class GlobalImporterInnerComponent extends Component {
   state = {
-    strings: {},
-    user: {}
+    strings: {}
   }
 
   getStrings = async name => {
@@ -28,15 +27,6 @@ class GlobalImporterInnerComponent extends Component {
     })
   }
 
-  getUser = async () => {
-    this.setState({
-      user: {
-        firstName: 'John',
-        lastName: 'Livingston'
-      }
-    })
-  }
-
   componentDidUpdate(props, state) {
     if (this.props.language !== this.state.language) {
       this.getStrings(this.props.languagePath)
@@ -45,7 +35,6 @@ class GlobalImporterInnerComponent extends Component {
 
   componentDidMount() {
     this.getStrings(this.props.languagePath)
-    this.getUser()
   }
 
   render() {

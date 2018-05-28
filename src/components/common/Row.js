@@ -1,7 +1,7 @@
 import { Row as ReactStrapRow } from 'reactstrap'
 import React from 'react'
 
-import ThemeImporter from '../global/ThemeImporter'
+import ThemeImporter from 'components/global/ThemeImporter'
 
 const Row = props => {
   return (

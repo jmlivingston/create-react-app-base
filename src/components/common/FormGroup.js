@@ -1,7 +1,7 @@
 import { FormGroup as ReactStrapFormGroup } from 'reactstrap'
 import React from 'react'
 
-import ThemeImporter from '../global/ThemeImporter'
+import ThemeImporter from 'components/global/ThemeImporter'
 
 const FormGroup = props => {
   return (
