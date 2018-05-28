@@ -42,7 +42,7 @@ class ModalExample extends React.Component {
             </Input>
           </FormGroup>
           {' '}
-          <Button color="danger" onClick={this.toggle}>{this.props.buttonLabel}</Button>
+          <Button color="danger" onClick={this.toggle}>Open Modal</Button>
         </Form>
         <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className} backdrop={this.state.backdrop}>
           <ModalHeader toggle={this.toggle}>Modal title</ModalHeader>

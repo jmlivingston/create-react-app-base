@@ -1,35 +1,34 @@
-import React from 'react';
-;
-import { InputGroupButtonDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'components/common';
+import PropTypes from 'prop-types'
+import React from 'react'
+
+import { InputGroupButtonDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'components/common'
 
 const propTypes = {
-  addonType: PropTypes.oneOf(['prepend', 'append']).isRequired,
-};
+  addonType: PropTypes.oneOf(['prepend', 'append']).isRequired
+}
 
 class Example extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
 
-    this.toggle = this.toggle.bind(this);
+    this.toggle = this.toggle.bind(this)
     this.state = {
       dropdownOpen: false
-    };
+    }
   }
 
   toggle() {
     this.setState({
       dropdownOpen: !this.state.dropdownOpen
-    });
+    })
   }
 
   render() {
-    const { addonType } = this.props;
+    const { addonType } = this.props
 
     return (
       <InputGroupButtonDropdown addonType={addonType} isOpen={this.state.dropdownOpen} toggle={this.toggle}>
-        <DropdownToggle caret>
-          Button Dropdown
-        </DropdownToggle>
+        <DropdownToggle caret>Button Dropdown</DropdownToggle>
         <DropdownMenu>
           <DropdownItem header>Header</DropdownItem>
           <DropdownItem disabled>Action</DropdownItem>
@@ -38,10 +37,10 @@ class Example extends React.Component {
           <DropdownItem>Another Action</DropdownItem>
         </DropdownMenu>
       </InputGroupButtonDropdown>
-    );
+    )
   }
 }
 
-Example.propTypes = propTypes;
+Example.propTypes = propTypes
 
-export default Example;
+export default Example

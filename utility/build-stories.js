@@ -33,20 +33,39 @@ const componentCategories = [
   'Tooltip'
 ]
 
-componentCategories.forEach(component => {
-  getAllFiles(path.join(__dirname, '../src/stories/components')).forEach(file => {
-    const lines = fs
-      .readFileSync(file)
-      .toString()
-      .split('\n')
-      .map(line => {
-        if (line.includes("'reactstrap'")) {
-          line = line.replace('reactstrap', 'components/common')
-        }
-        return line
-      })
-    fs.writeFileSync(file, lines.join('\n'))
-  })
-})
+const getName = file => {
+  return path.basename(file, '.js')
+}
 
-console.log(reactStrapBasePath)
+const getTitle = (file, component) => {
+  let title = path.basename(file, '.js').replace(component, '')
+  if (title === '') {
+    title = 'Default'
+  }
+  return title
+}
+
+componentCategories.forEach(component => {
+  const baseDir = path.join(__dirname, '../src/stories/components', component)
+  const files = getAllFiles(baseDir).filter(x => x !== path.join(baseDir, 'index.js'))
+  const code = `import React from 'react'
+
+import { storiesOf } from '@storybook/react'
+import { action } from '@storybook/addon-actions'
+import { linkTo } from '@storybook/addon-links'
+
+import App from 'components/layout/App'
+import config from 'stories/config'
+${files.map(file => `\timport { default as ${getName(file)} } from './${getName(file)}'`).join('\r\n')}
+
+storiesOf('${component}', module)
+  .addDecorator(config.wrapper)
+  ${files
+    .map(file => {
+      return `.add('${getTitle(file, component)}', () => <${getName(file)} />)`
+    })
+    .join('\r\n')}
+`
+
+  fs.writeFileSync(path.join(baseDir, 'index.js'), code)
+})

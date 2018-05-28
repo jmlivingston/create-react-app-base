@@ -1,7 +1,31 @@
-import { configure } from '@storybook/react';
+import { configure } from '@storybook/react'
 
 function loadStories() {
-  require('../src/stories/components/Alert');
+  require('../src/stories/components/Alert')
+  require('../src/stories/components/Badge')
+  require('../src/stories/components/Breadcrumb')
+  require('../src/stories/components/Button')
+  require('../src/stories/components/Card')
+  require('../src/stories/components/Carousel')
+  require('../src/stories/components/Collapse')
+  require('../src/stories/components/Color')
+  require('../src/stories/components/Dropdown')
+  require('../src/stories/components/Fade')
+  require('../src/stories/components/Form')
+  require('../src/stories/components/Input')
+  require('../src/stories/components/Jumbotron')
+  require('../src/stories/components/Label')
+  require('../src/stories/components/ListGroup')
+  require('../src/stories/components/Media')
+  require('../src/stories/components/Misc')
+  require('../src/stories/components/Modal')
+  require('../src/stories/components/Nav')
+  require('../src/stories/components/Pagination')
+  require('../src/stories/components/Popover')
+  require('../src/stories/components/Progress')
+  require('../src/stories/components/Table')
+  require('../src/stories/components/Tabs')
+  require('../src/stories/components/Tooltip')
 }
 
-configure(loadStories, module);
+configure(loadStories, module)

@@ -5,7 +5,7 @@ const Example = () => {
   return (
     <Media>
       <Media left href="#">
-        <Media object data-src="holder.js/64x64" alt="Generic placeholder image" />
+        <Media object src="http://via.placeholder.com/64x64" alt="Generic placeholder image" />
       </Media>
       <Media body>
         <Media heading>

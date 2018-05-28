@@ -6,8 +6,10 @@ import { linkTo } from '@storybook/addon-links'
 
 import App from 'components/layout/App'
 import config from 'stories/config'
-import Example from 'stories/components/Alert/Alert'
+	import { default as Popover } from './Popover'
+	import { default as PopoverMulti } from './PopoverMulti'
 
-storiesOf('App', module)
+storiesOf('Popover', module)
   .addDecorator(config.wrapper)
-  .add('Example', () => <Example />)
+  .add('Default', () => <Popover />)
+.add('Multi', () => <PopoverMulti />)
