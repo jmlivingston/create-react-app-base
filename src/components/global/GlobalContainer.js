@@ -16,7 +16,7 @@ class GlobalContainer extends Component {
     'editor@x.com': {
       password: 'x',
       theme: 'original',
-      language: 'en',
+      language: 'ja',
       firstName: 'Joe',
       lastName: 'Editor'
     },
@@ -29,11 +29,15 @@ class GlobalContainer extends Component {
     }
   }
 
+  getUserOrDefault(property, defaultValue) {
+    return localStorage.getItem('user')
+      ? JSON.parse(localStorage.getItem('user'))[property]
+      : localStorage.getItem(property) || defaultValue
+  }
+
   state = {
-    theme: localStorage.getItem('user')
-      ? JSON.parse(localStorage.getItem('user')).theme
-      : localStorage.getItem('theme') || 'original',
-    language: localStorage.getItem('language') || 'en',
+    theme: this.getUserOrDefault('theme', 'original'),
+    language: this.getUserOrDefault('language', 'en'),
     defaultLanguage: 'en',
     user: localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')) : null,
     updateTheme: theme => {
@@ -42,7 +46,7 @@ class GlobalContainer extends Component {
         if (this.state.user) {
           const user = {
             ...this.state.user,
-            theme: theme
+            theme
           }
           this.setState(prevState => ({
             user
@@ -56,9 +60,17 @@ class GlobalContainer extends Component {
     updateLanguage: language => {
       if (this.state.language !== language) {
         localStorage.setItem('language', language)
-        this.setState({
-          language
-        })
+        if (this.state.user) {
+          const user = {
+            ...this.state.user,
+            language
+          }
+          this.setState(prevState => ({
+            language,
+            user
+          }))
+          localStorage.setItem('user', JSON.stringify(user))
+        }
       }
     },
     login: async user => {
@@ -90,8 +102,6 @@ class GlobalContainer extends Component {
         user: undefined
       })
       localStorage.removeItem('user')
-      // NOTE: Required for theme reloading due to SASS limitations
-      window.location.reload()
     }
   }
 
