@@ -1,5 +1,5 @@
-import React from 'react';
-import { Button, Form, FormGroup, Label, Input, FormText } from 'components/Common';
+import React from 'react'
+import { Form, FormGroup, Label, Input, FormText } from 'components/Common'
 
 export default class Example extends React.Component {
   render() {
@@ -73,23 +73,21 @@ export default class Example extends React.Component {
           <Label for="exampleFile">File</Label>
           <Input type="file" name="file" id="exampleFile" />
           <FormText color="muted">
-            This is some placeholder block-level help text for the above input.
-            It's a bit lighter and easily wraps to a new line.
+            This is some placeholder block-level help text for the above input. It's a bit lighter and easily wraps to a
+            new line.
           </FormText>
         </FormGroup>
         <FormGroup check>
           <Label check>
-            <Input type="radio" />{' '}
-            Option one is this and that—be sure to include why it's great
+            <Input type="radio" /> Option one is this and that—be sure to include why it's great
           </Label>
         </FormGroup>
         <FormGroup check>
           <Label check>
-            <Input type="checkbox" />{' '}
-            Check me out
+            <Input type="checkbox" /> Check me out
           </Label>
         </FormGroup>
       </Form>
-    );
+    )
   }
 }

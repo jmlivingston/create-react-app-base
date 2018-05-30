@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 
 import { GlobalContainerContext } from './GlobalContainer'
@@ -5,6 +6,12 @@ import { GlobalContainerContext } from './GlobalContainer'
 class ThemeImporterInnerComponent extends Component {
   state = {
     isLoaded: false
+  }
+
+  static propTypes = {
+    children: PropTypes.node.isRequired,
+    sassNames: PropTypes.arrayOf(PropTypes.string),
+    theme: PropTypes.string.isRequired
   }
 
   componentDidMount() {

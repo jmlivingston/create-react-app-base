@@ -1,9 +1,14 @@
+import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 
 const GlobalContainerContext = React.createContext()
 
 class GlobalContainer extends Component {
   static displayName = 'GlobalContainer'
+
+  static propTypes = {
+    children: PropTypes.node.isRequired
+  }
 
   users = {
     'admin@x.com': {

@@ -17,9 +17,10 @@
     "build": "react-scripts build",
     "build-reactstrap": "node ./utility/build-reactstrap.js",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject",
     "style-guide-start": "start-storybook -p 9009 -s public",
-    "style-guide-build": "build-storybook -s public"
+    "style-guide-build": "build-storybook -s public",
+    "lint": "node node_modules/eslint/bin/eslint.js --max-warnings=0 src",
+    "precommit": "lint-staged"
   },
   "devDependencies": {
     "@storybook/addon-actions": "3.4.4",
@@ -30,23 +31,41 @@
     "babel-runtime": "6.26.0",
     "css-loader": "0.28.11",
     "fs-extra": "6.0.1",
+    "husky": "^0.14.3",
+    "lint-staged": "^7.1.2",
     "node-sass": "4.9.0",
+    "puppeteer": "^1.4.0",
     "rimraf": "2.6.2",
     "sass-loader": "7.0.1",
     "style-loader": "0.21.0",
     "yargs": "11.0.0"
   },
   "browserslist": {
-    "development": [
-      "last 2 chrome versions",
-      "last 2 firefox versions",
-      "last 2 edge versions"
-    ],
-    "production": [
-      ">1%",
-      "last 4 versions",
-      "Firefox ESR",
-      "not ie < 11"
-    ]
+    "development": ["last 2 chrome versions", "last 2 firefox versions", "last 2 edge versions"],
+    "production": [">1%", "last 4 versions", "Firefox ESR", "not ie < 11"]
+  },
+  "eslintConfig": {
+    "extends": "./node_modules/eslint-config-react-app/index.js",
+    "rules": {
+      "no-console": 1,
+      "react/default-props-match-prop-types": 1,
+      "react/prop-types": 1,
+      "react/no-unused-prop-types": 1,
+      "react/sort-prop-types": 1,
+      "jsx-a11y/href-no-hash": 0
+    }
+  },
+  "lint-staged": {
+    "linters": {
+      "*.{js,json,css}": ["prettier --write", "git add"],
+      "*.js": ["npm run lint", "git add"]
+    }
+  },
+  "prettier": {
+    "filepath": "src",
+    "jsxBracketSameLine": true,
+    "printWidth": 120,
+    "semi": false,
+    "singleQuote": true
   }
 }

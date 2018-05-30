@@ -1,27 +1,27 @@
-import React from 'react';
-import { ButtonDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'components/Common';
+import React from 'react'
+import { ButtonDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'components/Common'
 
 export default class Example extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
 
-    this.toggle = this.toggle.bind(this);
+    this.toggle = this.toggle.bind(this)
     this.state = {
       dropdownOpen: false
-    };
+    }
   }
 
   toggle() {
     this.setState({
       dropdownOpen: !this.state.dropdownOpen
-    });
+    })
   }
 
   render() {
     return (
       <ButtonDropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
-        <DropdownToggle color={this.props.color} caret>
-          {this.props.text}
+        <DropdownToggle color="primary" caret>
+          Select
         </DropdownToggle>
         <DropdownMenu>
           <DropdownItem header>Header</DropdownItem>
@@ -31,6 +31,6 @@ export default class Example extends React.Component {
           <DropdownItem>Another Action</DropdownItem>
         </DropdownMenu>
       </ButtonDropdown>
-    );
+    )
   }
 }

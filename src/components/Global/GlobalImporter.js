@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import React, { Component, Fragment } from 'react'
 
 import { GlobalContainerContext } from './GlobalContainer'
@@ -6,6 +7,14 @@ class GlobalImporterInnerComponent extends Component {
   state = {
     strings: {},
     user: localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')) : {}
+  }
+
+  static propTypes = {
+    componentName: PropTypes.string.isRequired,
+    defaultLanguage: PropTypes.string.isRequired,
+    language: PropTypes.string.isRequired,
+    languagePath: PropTypes.string.isRequired,
+    render: PropTypes.func.isRequired
   }
 
   getStrings = async name => {
