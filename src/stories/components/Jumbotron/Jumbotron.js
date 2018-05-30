@@ -1,5 +1,5 @@
 import React from 'react';
-import { Jumbotron, Button } from 'components/common';
+import { Jumbotron, Button } from 'components/Common';
 
 const Example = (props) => {
   return (

@@ -1,5 +1,5 @@
 import React from 'react';
-import { UncontrolledAlert } from 'components/common';
+import { UncontrolledAlert } from 'components/Common';
 
 function AlertExample() {
   return (

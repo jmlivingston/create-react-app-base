@@ -1,5 +1,5 @@
 import React from 'react';
-import { Alert } from 'components/common';
+import { Alert } from 'components/Common';
 
 const Example = (props) => {
   return (

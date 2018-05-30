@@ -1,5 +1,5 @@
 import React from 'react';
-import { Progress } from 'components/common';
+import { Progress } from 'components/Common';
 
 const Example = (props) => {
   return (

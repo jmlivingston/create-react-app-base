@@ -79,7 +79,7 @@ import {
   UncontrolledCarousel,
   UncontrolledDropdown,
   UncontrolledTooltip
-} from 'components/common'
+} from 'components/Common'
 
 class KitchenSink extends Component {
   state = {

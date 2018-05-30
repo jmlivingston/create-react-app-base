@@ -1,7 +1,7 @@
 import { Nav as ReactStrapNav } from 'reactstrap'
 import React from 'react'
 
-import ThemeImporter from 'components/global/ThemeImporter'
+import ThemeImporter from 'components/Global/ThemeImporter'
 
 const Nav = props => {
   return (

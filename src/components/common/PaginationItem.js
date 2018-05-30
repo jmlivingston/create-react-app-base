@@ -1,7 +1,7 @@
 import { PaginationItem as ReactStrapPaginationItem } from 'reactstrap'
 import React from 'react'
 
-import ThemeImporter from 'components/global/ThemeImporter'
+import ThemeImporter from 'components/Global/ThemeImporter'
 
 const PaginationItem = props => {
   return (

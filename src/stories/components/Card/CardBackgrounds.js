@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Button, CardTitle, CardText } from 'components/common';
+import { Card, Button, CardTitle, CardText } from 'components/Common';
 
 const Example = (props) => {
   return (

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Badge, Button } from 'components/common';
+import { Badge, Button } from 'components/Common';
 
 export default class Example extends React.Component {
   render() {

@@ -1,6 +1,6 @@
 /* eslint react/no-multi-comp: 0, react/prop-types: 0 */
 import React from 'react';
-import { UncontrolledTooltip } from 'components/common';
+import { UncontrolledTooltip } from 'components/Common';
 
 export default function Example() {
   return (

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'components/common';
+import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'components/Common';
 
 export default class Example extends React.Component {
   constructor(props) {

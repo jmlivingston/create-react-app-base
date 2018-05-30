@@ -1,5 +1,5 @@
 import React from 'react';
-import { Media } from 'components/common';
+import { Media } from 'components/Common';
 
 const Example = () => {
   return (

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from 'components/common';
+import { Button } from 'components/Common';
 
 export default class Example extends React.Component {
   render() {

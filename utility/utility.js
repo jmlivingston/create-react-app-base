@@ -10,8 +10,8 @@ const getAllFiles = dir =>
 
 module.exports = { getAllFiles }
 
-const foo = getAllFiles('./src/components/common')
+const foo = getAllFiles('./src/components/Common')
 
 foo.forEach(f => {
-  console.log('<' + f.replace('src/components/common/', '').replace('.js', '') + ' />')
+  console.log('<' + f.replace('src/components/Common/', '').replace('.js', '') + ' />')
 })

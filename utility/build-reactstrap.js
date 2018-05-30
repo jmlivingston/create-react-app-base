@@ -151,7 +151,7 @@ if (fs.existsSync(reactStrapBasePath)) {
 
 import React, { Fragment } from 'react'
 
-import ThemeImporter from 'components/global/ThemeImporter'
+import ThemeImporter from 'components/Global/ThemeImporter'
 
 const ${component} = props => {
   return (
@@ -167,7 +167,7 @@ ${component}.propTypes = ReactStrap${component}.propTypes
 
 export default ${component}
 `
-    fs.writeFileSync(path.join(__dirname, '../src/components/common/' + component + '.js'), code)
+    fs.writeFileSync(path.join(__dirname, '../src/components/Common/' + component + '.js'), code)
   })
 
   // Copy over examples into stories but create reference to wrapped versions
@@ -178,7 +178,7 @@ export default ${component}
       .split('\n')
       .map(line => {
         if (line.includes("'reactstrap'")) {
-          line = line.replace('reactstrap', 'components/common')
+          line = line.replace('reactstrap', 'components/Common')
         }
         return line
       })

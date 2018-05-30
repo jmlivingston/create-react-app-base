@@ -28,15 +28,20 @@ import Col from './Col'
 import Collapse from './Collapse'
 import Container from './Container'
 import CustomInput from './CustomInput'
+import DatePicker from './DatePicker'
+import DateTime from './DateTime'
+import Debugger from './Debugger'
 import Dropdown from './Dropdown'
 import DropdownItem from './DropdownItem'
 import DropdownMenu from './DropdownMenu'
 import DropdownToggle from './DropdownToggle'
+import Error from './Error'
 import Fade from './Fade'
 import Form from './Form'
 import FormFeedback from './FormFeedback'
 import FormGroup from './FormGroup'
 import FormText from './FormText'
+import Icon from './Error'
 import Input from './Input'
 import InputGroup from './InputGroup'
 import InputGroupAddon from './InputGroupAddon'
@@ -48,6 +53,7 @@ import ListGroup from './ListGroup'
 import ListGroupItem from './ListGroupItem'
 import ListGroupItemHeading from './ListGroupItemHeading'
 import ListGroupItemText from './ListGroupItemText'
+import Loader from './Loader'
 import Media from './Media'
 import Modal from './Modal'
 import ModalBody from './ModalBody'
@@ -108,15 +114,20 @@ export {
   Collapse,
   Container,
   CustomInput,
+  DatePicker,
+  DateTime,
+  Debugger,
   Dropdown,
   DropdownItem,
   DropdownMenu,
   DropdownToggle,
+  Error,
   Fade,
   Form,
   FormFeedback,
   FormGroup,
   FormText,
+  Icon,
   Input,
   InputGroup,
   InputGroupAddon,
@@ -128,6 +139,7 @@ export {
   ListGroupItem,
   ListGroupItemHeading,
   ListGroupItemText,
+  Loader,
   Media,
   Modal,
   ModalBody,

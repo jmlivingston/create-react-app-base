@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react'
-import { GlobalContainer } from 'components/global/GlobalContainer'
-import ThemeSelector from 'components/global/ThemeSelector'
+import { GlobalContainer } from 'components/Global/GlobalContainer'
+import ThemeSelector from 'components/Global/ThemeSelector'
 
 const Wrapper = ({ storyFn }) => (
   <GlobalContainer>

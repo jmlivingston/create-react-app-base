@@ -1,6 +1,6 @@
 /* eslint react/no-multi-comp: 0, react/prop-types: 0 */
 import React from 'react';
-import { Tooltip } from 'components/common';
+import { Tooltip } from 'components/Common';
 
 export default class Example extends React.Component {
   constructor(props) {

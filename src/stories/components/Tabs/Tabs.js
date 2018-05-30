@@ -1,5 +1,5 @@
 import React from 'react';
-import { TabContent, TabPane, Nav, NavItem, NavLink, Card, Button, CardTitle, CardText, Row, Col } from 'components/common';
+import { TabContent, TabPane, Nav, NavItem, NavLink, Card, Button, CardTitle, CardText, Row, Col } from 'components/Common';
 import classnames from 'classnames';
 
 export default class Example extends React.Component {

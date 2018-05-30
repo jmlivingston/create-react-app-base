@@ -1,7 +1,7 @@
 /* eslint react/no-multi-comp: 0, react/prop-types: 0 */
 
 import React from 'react';
-import { Button, Popover, PopoverHeader, PopoverBody } from 'components/common';
+import { Button, Popover, PopoverHeader, PopoverBody } from 'components/Common';
 
 class PopoverItem extends React.Component {
   constructor(props) {

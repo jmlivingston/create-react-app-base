@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Form, FormGroup, Label, Input, FormText } from 'components/common';
+import { Button, Form, FormGroup, Label, Input, FormText } from 'components/Common';
 
 export default class Example extends React.Component {
   render() {

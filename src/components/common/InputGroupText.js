@@ -1,7 +1,7 @@
 import { InputGroupText as ReactStrapInputGroupText } from 'reactstrap'
 import React from 'react'
 
-import ThemeImporter from 'components/global/ThemeImporter'
+import ThemeImporter from 'components/Global/ThemeImporter'
 
 const InputGroupText = props => {
   return (

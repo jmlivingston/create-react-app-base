@@ -1,5 +1,5 @@
 import React from 'react';
-import { Nav, NavItem, NavLink } from 'components/common';
+import { Nav, NavItem, NavLink } from 'components/Common';
 
 export default class Example extends React.Component {
   render() {

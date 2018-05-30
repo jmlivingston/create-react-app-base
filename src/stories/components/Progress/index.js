@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
 import { linkTo } from '@storybook/addon-links'
 
-import App from 'components/layout/App'
+import App from 'components/Global/App'
 import config from 'stories/config'
 	import { default as Progress } from './Progress'
 	import { default as ProgressAnimated } from './ProgressAnimated'

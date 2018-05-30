@@ -1,4 +1,4 @@
-import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'components/common'
+import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'components/Common'
 import React, { Component } from 'react'
 
 import { GlobalContainerContext } from './GlobalContainer'

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, ButtonGroup } from 'components/common';
+import { Button, ButtonGroup } from 'components/Common';
 
 class Example extends Component {
   constructor (props) {

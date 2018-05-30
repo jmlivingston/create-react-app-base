@@ -1,7 +1,7 @@
 import { DropdownMenu as ReactStrapDropdownMenu } from 'reactstrap'
 import React from 'react'
 
-import ThemeImporter from 'components/global/ThemeImporter'
+import ThemeImporter from 'components/Global/ThemeImporter'
 
 const DropdownMenu = props => {
   return (

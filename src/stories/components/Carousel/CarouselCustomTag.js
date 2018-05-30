@@ -5,7 +5,7 @@ import {
   CarouselControl,
   CarouselIndicators,
   CarouselCaption
-} from 'components/common';
+} from 'components/Common';
 
 const items = [
   {

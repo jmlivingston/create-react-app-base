@@ -1,7 +1,7 @@
-import { Alert, Button, Form, FormGroup, Input, Label } from 'components/common'
+import { Alert, Button, Form, FormGroup, Input, Label } from 'components/Common'
 import React, { Component } from 'react'
 
-import { GlobalContainerContext } from 'components/global/GlobalContainer'
+import { GlobalContainerContext } from 'components/Global/GlobalContainer'
 
 import './Login.scss'
 

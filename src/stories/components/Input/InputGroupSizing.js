@@ -1,5 +1,5 @@
 import React from 'react';
-import { InputGroup, InputGroupAddon, Input } from 'components/common';
+import { InputGroup, InputGroupAddon, Input } from 'components/Common';
 
 const Example = (props) => {
   return (
