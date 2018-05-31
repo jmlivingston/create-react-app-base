@@ -1,10 +1,6 @@
 const fs = require('fs-extra')
 const getAllFiles = require('./utility').getAllFiles
 const path = require('path')
-const rimraf = require('rimraf')
-const argv = require('yargs').argv
-
-const storyComponentsPath = path.join(__dirname, '../src/stories/components')
 
 const componentCategories = [
   'Alert',
@@ -55,7 +51,7 @@ import { action } from '@storybook/addon-actions'
 import { linkTo } from '@storybook/addon-links'
 
 import App from 'components/Global/App'
-import config from 'stories/config'
+import config from '../../config'
 ${files.map(file => `\timport { default as ${getName(file)} } from './${getName(file)}'`).join('\r\n')}
 
 storiesOf('${component}', module)

@@ -16,9 +16,12 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "build-reactstrap": "node ./utility/build-reactstrap.js",
+    "build-screenshots": "node ./integration-screenshots.js",
     "test": "react-scripts test --env=jsdom",
-    "style-guide-start": "start-storybook -p 9009 -s public",
-    "style-guide-build": "build-storybook -s public",
+    "style-guide-start": "cross-env NODE_PATH=src start-storybook -p 3002 -c ./style-guide -s ./public",
+    "style-guide-build":
+      "cross-env NODE_PATH=src build-style-guide -c ./style-guide -o ../react-base-style-guide -s ./public",
+    "style-guide-start-build": "./node_modules/.bin/serve -s ../react-base-style-guide",
     "lint": "node node_modules/eslint/bin/eslint.js --max-warnings=0 src",
     "precommit": "lint-staged"
   },
@@ -29,6 +32,7 @@
     "@storybook/react": "3.4.4",
     "babel-core": "6.26.3",
     "babel-runtime": "6.26.0",
+    "cross-env": "^5.1.6",
     "css-loader": "0.28.11",
     "fs-extra": "6.0.1",
     "husky": "^0.14.3",
@@ -37,6 +41,7 @@
     "puppeteer": "^1.4.0",
     "rimraf": "2.6.2",
     "sass-loader": "7.0.1",
+    "serve": "^7.1.5",
     "style-loader": "0.21.0",
     "yargs": "11.0.0"
   },
