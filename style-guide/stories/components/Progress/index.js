@@ -1,4 +1,5 @@
 import { storiesOf } from '@storybook/react'
+import { withInfo } from '@storybook/addon-info'
 import React from 'react'
 
 import config from '../../config'
@@ -12,10 +13,10 @@ import { default as ProgressStriped } from './ProgressStriped'
 
 storiesOf('Progress', module)
   .addDecorator(config.wrapper)
-  .add('Default', () => <Progress />)
-  .add('Animated', () => <ProgressAnimated />)
-  .add('Color', () => <ProgressColor />)
-  .add('Labels', () => <ProgressLabels />)
-  .add('Max', () => <ProgressMax />)
-  .add('Multi', () => <ProgressMulti />)
-  .add('Striped', () => <ProgressStriped />)
+  .add('Default', withInfo(config.defaults.info)(() => <Progress />))
+  .add('Animated', withInfo(config.defaults.info)(() => <ProgressAnimated />))
+  .add('Color', withInfo(config.defaults.info)(() => <ProgressColor />))
+  .add('Labels', withInfo(config.defaults.info)(() => <ProgressLabels />))
+  .add('Max', withInfo(config.defaults.info)(() => <ProgressMax />))
+  .add('Multi', withInfo(config.defaults.info)(() => <ProgressMulti />))
+  .add('Striped', withInfo(config.defaults.info)(() => <ProgressStriped />))

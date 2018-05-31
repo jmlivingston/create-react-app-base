@@ -18,7 +18,19 @@ Wrapper.propTypes = {
 }
 
 const config = {
-  wrapper: storyFn => <Wrapper storyFn={storyFn} />
+  wrapper: storyFn => <Wrapper storyFn={storyFn} />,
+  defaults: {
+    info: {
+      inline: true,
+      header: false
+    },
+    hideInfo: {
+      inline: true,
+      header: false,
+      source: false,
+      styles: styles => ({ ...styles })
+    }
+  }
 }
 
 export default config

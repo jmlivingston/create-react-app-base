@@ -1,4 +1,5 @@
 import { storiesOf } from '@storybook/react'
+import { withInfo } from '@storybook/addon-info'
 import React from 'react'
 
 import config from '../../config'
@@ -17,15 +18,15 @@ import { default as CardSizing } from './CardSizing'
 
 storiesOf('Card', module)
   .addDecorator(config.wrapper)
-  .add('Default', () => <Card />)
-  .add('Alignment', () => <CardAlignment />)
-  .add('Backgrounds', () => <CardBackgrounds />)
-  .add('Columns', () => <CardColumns />)
-  .add('ContentTypes', () => <CardContentTypes />)
-  .add('Decks', () => <CardDecks />)
-  .add('Groups', () => <CardGroups />)
-  .add('HeaderFooter', () => <CardHeaderFooter />)
-  .add('ImageCaps', () => <CardImageCaps />)
-  .add('ImageOverlay', () => <CardImageOverlay />)
-  .add('Outline', () => <CardOutline />)
-  .add('Sizing', () => <CardSizing />)
+  .add('Default', withInfo(config.defaults.info)(() => <Card />))
+  .add('Alignment', withInfo(config.defaults.info)(() => <CardAlignment />))
+  .add('Backgrounds', withInfo(config.defaults.info)(() => <CardBackgrounds />))
+  .add('Columns', withInfo(config.defaults.info)(() => <CardColumns />))
+  .add('ContentTypes', withInfo(config.defaults.info)(() => <CardContentTypes />))
+  .add('Decks', withInfo(config.defaults.info)(() => <CardDecks />))
+  .add('Groups', withInfo(config.defaults.info)(() => <CardGroups />))
+  .add('HeaderFooter', withInfo(config.defaults.info)(() => <CardHeaderFooter />))
+  .add('ImageCaps', withInfo(config.defaults.info)(() => <CardImageCaps />))
+  .add('ImageOverlay', withInfo(config.defaults.info)(() => <CardImageOverlay />))
+  .add('Outline', withInfo(config.defaults.info)(() => <CardOutline />))
+  .add('Sizing', withInfo(config.defaults.info)(() => <CardSizing />))

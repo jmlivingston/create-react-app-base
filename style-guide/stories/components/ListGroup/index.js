@@ -1,4 +1,5 @@
 import { storiesOf } from '@storybook/react'
+import { withInfo } from '@storybook/addon-info'
 import React from 'react'
 
 import config from '../../config'
@@ -11,9 +12,9 @@ import { default as ListGroupDisabledItems } from './ListGroupDisabledItems'
 
 storiesOf('ListGroup', module)
   .addDecorator(config.wrapper)
-  .add('Default', () => <ListGroup />)
-  .add('AnchorsAndButtons', () => <ListGroupAnchorsAndButtons />)
-  .add('Badge', () => <ListGroupBadge />)
-  .add('ContextualClasses', () => <ListGroupContextualClasses />)
-  .add('CustomContent', () => <ListGroupCustomContent />)
-  .add('DisabledItems', () => <ListGroupDisabledItems />)
+  .add('Default', withInfo(config.defaults.info)(() => <ListGroup />))
+  .add('AnchorsAndButtons', withInfo(config.defaults.info)(() => <ListGroupAnchorsAndButtons />))
+  .add('Badge', withInfo(config.defaults.info)(() => <ListGroupBadge />))
+  .add('ContextualClasses', withInfo(config.defaults.info)(() => <ListGroupContextualClasses />))
+  .add('CustomContent', withInfo(config.defaults.info)(() => <ListGroupCustomContent />))
+  .add('DisabledItems', withInfo(config.defaults.info)(() => <ListGroupDisabledItems />))

@@ -1,4 +1,5 @@
 import { storiesOf } from '@storybook/react'
+import { withInfo } from '@storybook/addon-info'
 import React from 'react'
 
 import config from '../../config'
@@ -11,9 +12,9 @@ import { default as Navs } from './Navs'
 
 storiesOf('Nav', module)
   .addDecorator(config.wrapper)
-  .add('Pills', () => <NavPills />)
-  .add('Tabs', () => <NavTabs />)
-  .add('Vertical', () => <NavVertical />)
-  .add('bar', () => <Navbar />)
-  .add('barToggler', () => <NavbarToggler />)
-  .add('s', () => <Navs />)
+  .add('Pills', withInfo(config.defaults.info)(() => <NavPills />))
+  .add('Tabs', withInfo(config.defaults.info)(() => <NavTabs />))
+  .add('Vertical', withInfo(config.defaults.info)(() => <NavVertical />))
+  .add('bar', withInfo(config.defaults.info)(() => <Navbar />))
+  .add('barToggler', withInfo(config.defaults.info)(() => <NavbarToggler />))
+  .add('s', withInfo(config.defaults.info)(() => <Navs />))

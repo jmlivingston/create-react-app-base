@@ -1,4 +1,5 @@
 import { storiesOf } from '@storybook/react'
+import { withInfo } from '@storybook/addon-info'
 import React from 'react'
 
 import config from '../../config'
@@ -13,11 +14,11 @@ import { default as TableStriped } from './TableStriped'
 
 storiesOf('Table', module)
   .addDecorator(config.wrapper)
-  .add('Default', () => <Table />)
-  .add('Bordered', () => <TableBordered />)
-  .add('Borderless', () => <TableBorderless />)
-  .add('Dark', () => <TableDark />)
-  .add('Hover', () => <TableHover />)
-  .add('Responsive', () => <TableResponsive />)
-  .add('Sizing', () => <TableSizing />)
-  .add('Striped', () => <TableStriped />)
+  .add('Default', withInfo(config.defaults.info)(() => <Table />))
+  .add('Bordered', withInfo(config.defaults.info)(() => <TableBordered />))
+  .add('Borderless', withInfo(config.defaults.info)(() => <TableBorderless />))
+  .add('Dark', withInfo(config.defaults.info)(() => <TableDark />))
+  .add('Hover', withInfo(config.defaults.info)(() => <TableHover />))
+  .add('Responsive', withInfo(config.defaults.info)(() => <TableResponsive />))
+  .add('Sizing', withInfo(config.defaults.info)(() => <TableSizing />))
+  .add('Striped', withInfo(config.defaults.info)(() => <TableStriped />))

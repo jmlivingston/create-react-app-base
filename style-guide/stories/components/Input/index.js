@@ -1,4 +1,5 @@
 import { storiesOf } from '@storybook/react'
+import { withInfo } from '@storybook/addon-info'
 import React from 'react'
 
 import config from '../../config'
@@ -14,12 +15,12 @@ import { default as InputType } from './InputType'
 
 storiesOf('Input', module)
   .addDecorator(config.wrapper)
-  .add('GridSizing', () => <InputGridSizing />)
-  .add('GroupAddon', () => <InputGroupAddon />)
-  .add('GroupButton', () => <InputGroupButton />)
-  .add('GroupButtonDropdown', () => <InputGroupButtonDropdown />)
-  .add('GroupButtonShorthand', () => <InputGroupButtonShorthand />)
-  .add('GroupOverview', () => <InputGroupOverview />)
-  .add('GroupSizing', () => <InputGroupSizing />)
-  .add('Sizing', () => <InputSizing />)
-  .add('Type', () => <InputType />)
+  .add('GridSizing', withInfo(config.defaults.info)(() => <InputGridSizing />))
+  .add('GroupAddon', withInfo(config.defaults.info)(() => <InputGroupAddon />))
+  .add('GroupButton', withInfo(config.defaults.info)(() => <InputGroupButton />))
+  .add('GroupButtonDropdown', withInfo(config.defaults.info)(() => <InputGroupButtonDropdown />))
+  .add('GroupButtonShorthand', withInfo(config.defaults.info)(() => <InputGroupButtonShorthand />))
+  .add('GroupOverview', withInfo(config.defaults.info)(() => <InputGroupOverview />))
+  .add('GroupSizing', withInfo(config.defaults.info)(() => <InputGroupSizing />))
+  .add('Sizing', withInfo(config.defaults.info)(() => <InputSizing />))
+  .add('Type', withInfo(config.defaults.info)(() => <InputType />))

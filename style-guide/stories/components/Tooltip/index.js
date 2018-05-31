@@ -1,4 +1,5 @@
 import { storiesOf } from '@storybook/react'
+import { withInfo } from '@storybook/addon-info'
 import React from 'react'
 
 import config from '../../config'
@@ -9,7 +10,7 @@ import { default as TooltipUncontrolled } from './TooltipUncontrolled'
 
 storiesOf('Tooltip', module)
   .addDecorator(config.wrapper)
-  .add('Default', () => <Tooltip />)
-  .add('AutoHide', () => <TooltipAutoHide />)
-  .add('Multi', () => <TooltipMulti />)
-  .add('Uncontrolled', () => <TooltipUncontrolled />)
+  .add('Default', withInfo(config.defaults.info)(() => <Tooltip />))
+  .add('AutoHide', withInfo(config.defaults.info)(() => <TooltipAutoHide />))
+  .add('Multi', withInfo(config.defaults.info)(() => <TooltipMulti />))
+  .add('Uncontrolled', withInfo(config.defaults.info)(() => <TooltipUncontrolled />))

@@ -1,4 +1,5 @@
 import { storiesOf } from '@storybook/react'
+import { withInfo } from '@storybook/addon-info'
 import React from 'react'
 
 import config from '../../config'
@@ -10,8 +11,8 @@ import { default as BadgeVariations } from './BadgeVariations'
 
 storiesOf('Badge', module)
   .addDecorator(config.wrapper)
-  .add('Default', () => <Badge />)
-  .add('Button', () => <BadgeButton />)
-  .add('Links', () => <BadgeLinks />)
-  .add('Pills', () => <BadgePills />)
-  .add('Variations', () => <BadgeVariations />)
+  .add('Default', withInfo(config.defaults.info)(() => <Badge />))
+  .add('Button', withInfo(config.defaults.info)(() => <BadgeButton />))
+  .add('Links', withInfo(config.defaults.info)(() => <BadgeLinks />))
+  .add('Pills', withInfo(config.defaults.info)(() => <BadgePills />))
+  .add('Variations', withInfo(config.defaults.info)(() => <BadgeVariations />))

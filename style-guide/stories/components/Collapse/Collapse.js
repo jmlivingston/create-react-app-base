@@ -18,7 +18,7 @@ class Example extends Component {
         <Button color="primary" onClick={this.toggle} style={{ marginBottom: '1rem' }}>
           Toggle
         </Button>
-        <Collapse isOpen={this.state.collapse}>
+        <Collapse isOpen={this.state.collapse} timeout={0}>
           <Card>
             <CardBody>
               Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim

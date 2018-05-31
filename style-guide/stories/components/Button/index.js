@@ -1,4 +1,5 @@
 import { storiesOf } from '@storybook/react'
+import { withInfo } from '@storybook/addon-info'
 import React from 'react'
 
 import config from '../../config'
@@ -13,11 +14,11 @@ import { default as ButtonToolbar } from './ButtonToolbar'
 
 storiesOf('Button', module)
   .addDecorator(config.wrapper)
-  .add('Default', () => <Button />)
-  .add('Dropdown', () => <ButtonDropdown />)
-  .add('DropdownMulti', () => <ButtonDropdownMulti />)
-  .add('DropdownMultiSplit', () => <ButtonDropdownMultiSplit />)
-  .add('Group', () => <ButtonGroup />)
-  .add('Outline', () => <ButtonOutline />)
-  .add('Stateful', () => <ButtonStateful />)
-  .add('Toolbar', () => <ButtonToolbar />)
+  .add('Default', withInfo(config.defaults.info)(() => <Button />))
+  .add('Dropdown', withInfo(config.defaults.info)(() => <ButtonDropdown />))
+  .add('DropdownMulti', withInfo(config.defaults.info)(() => <ButtonDropdownMulti />))
+  .add('DropdownMultiSplit', withInfo(config.defaults.info)(() => <ButtonDropdownMultiSplit />))
+  .add('Group', withInfo(config.defaults.info)(() => <ButtonGroup />))
+  .add('Outline', withInfo(config.defaults.info)(() => <ButtonOutline />))
+  .add('Stateful', withInfo(config.defaults.info)(() => <ButtonStateful />))
+  .add('Toolbar', withInfo(config.defaults.info)(() => <ButtonToolbar />))
