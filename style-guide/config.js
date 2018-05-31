@@ -2,6 +2,7 @@ import { configure } from '@storybook/react'
 
 function loadStories() {
   require('./stories/components/Alert')
+  require('./stories/components/Alert/Alert.js')
   require('./stories/components/Badge')
   require('./stories/components/Breadcrumb')
   require('./stories/components/Button')
