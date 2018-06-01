@@ -1,21 +1,24 @@
 {
-  "name": "cra2-storybook-svg-sass",
-  "version": "0.1.0",
+  "name": "react-base",
+  "version": "0.1.1",
   "private": true,
   "dependencies": {
     "bootstrap": "4.1.1",
     "bootswatch": "4.1.1",
     "dayjs": "^1.6.4",
+    "loaders.css": "^0.1.2",
     "prop-types": "15.6.1",
     "react": "16.4.0",
     "react-dom": "16.4.0",
+    "react-loadable": "^5.4.0",
+    "react-loaders": "^3.0.1",
     "react-router-dom": "^4.2.2",
     "react-scripts": "2.0.0-next.66cc7a90",
     "reactstrap": "6.0.1"
   },
   "scripts": {
-    "start": "REACT_APP_VERSION=$npm_package_version react-scripts start",
-    "build": "REACT_APP_VERSION=$npm_package_version react-scripts build",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
     "build-reactstrap": "node ./utility/build-reactstrap.js",
     "build-screenshots": "node ./integration-screenshots.js",
     "test": "react-scripts test --env=jsdom",
