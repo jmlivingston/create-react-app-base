@@ -55,7 +55,10 @@ class Header extends Component {
               <Collapse isOpen={this.state.isOpen} navbar timeout={0}>
                 <Nav className="ml-auto" navbar>
                   <NavItem>
-                    <NavLink href="/">{this.props.strings.about}</NavLink>
+                    <NavLink href="/about">{this.props.strings.about}</NavLink>
+                  </NavItem>
+                  <NavItem>
+                    <NavLink href="/todo">{this.props.strings.todo}</NavLink>
                   </NavItem>
                   {this.props.user.firstName ? (
                     <UncontrolledDropdown nav inNavbar>
@@ -63,7 +66,7 @@ class Header extends Component {
                         {this.props.user.firstName} {this.props.user.lastName}
                       </DropdownToggle>
                       <DropdownMenu right>
-                        <DropdownItem>{this.props.strings.userSettings}</DropdownItem>
+                        <DropdownItem href="/user-settings">{this.props.strings.userSettings}</DropdownItem>
                         <DropdownItem divider />
                         <DropdownItem onClick={() => context.state.logOut()}>{this.props.strings.logOut}</DropdownItem>
                       </DropdownMenu>

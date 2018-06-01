@@ -1,7 +1,7 @@
 import React from 'react'
 
 const UserSettings = () => {
-  return <div>TODO</div>
+  return <div>User Settings</div>
 }
 
 export default UserSettings
