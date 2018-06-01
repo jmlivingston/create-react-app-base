@@ -1,6 +1,6 @@
 // Simple utility for creating basic tests where they don't exist
 
-const fs = require('fs-extra')
+const fs = require('fs')
 const path = require('path')
 
 const fileFilter = file => file.includes('.js') && !file.includes('index.js') && !file.includes('.test.js')

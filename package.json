@@ -19,8 +19,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "build-reactstrap": "node ./utility/build-reactstrap.js",
-    "build-screenshots": "node ./integration-screenshots.js",
+    "build-screenshots": "node ./utility/build-screenshots.js",
+    "build-tests": "node ./utility/build-test.js",
     "test": "react-scripts test --env=jsdom",
     "style-guide-start": "cross-env NODE_PATH=src start-storybook -p 3002 -c ./style-guide -s ./public",
     "style-guide-build":
