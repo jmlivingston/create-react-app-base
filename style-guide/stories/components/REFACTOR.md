@@ -28,4 +28,9 @@ storiesOf('2_CHANGE_TO_PARENT_DIR', module)
   )
 ```
 
-4. Make sure storybook still looks fine for all pages.
+4. Hit Shift+Windows+F to format
+5. Hit Alt+S to save
+
+Once this has been done for all the files, do the following:
+
+6. Make sure storybook still looks fine for all pages.
