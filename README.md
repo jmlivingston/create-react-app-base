@@ -31,7 +31,6 @@ This project is an opinionated template for future react projects.
 ## Dependency Notes
 
 - Once storybook supports create-react-app's SASS integration, we can remove css-loader, sass-loader, and style-loader
-- We can remove fs-extra, yargs, and rimraf if we don't need build-reactstrap anymore
 
 ---
 
