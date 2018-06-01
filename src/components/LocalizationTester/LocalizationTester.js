@@ -1,21 +1,20 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import { Button } from 'components/Common'
 
 import GlobalImporter from 'components/Global/GlobalImporter'
 
-export default class Tester extends Component {
+export default class LocalizationTester extends Component {
   render() {
     return (
       <GlobalImporter
-        languagePath="Tester"
-        componentName="Tester"
+        stringName="localizationTester"
         render={({ strings, user }) => (
-          <div className="container-fluid">
+          <Fragment>
             <Button>
               {strings.hello} {user.firstName} {user.lastName}
             </Button>
             <Button>{strings.hello2}</Button>
-          </div>
+          </Fragment>
         )}
       />
     )

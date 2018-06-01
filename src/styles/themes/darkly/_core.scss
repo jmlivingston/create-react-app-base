@@ -10,3 +10,8 @@
 @import '../../../../node_modules/bootstrap/scss/_variables';
 @import '../../../../node_modules/bootstrap/scss/mixins';
 @import '../../../../node_modules/bootswatch/dist/darkly/_bootswatch';
+
+.main {
+  padding: 85px 15px 0 !important;
+  min-height: calc(100vh - 92px) !important;
+}

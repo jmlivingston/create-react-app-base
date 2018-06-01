@@ -10,39 +10,42 @@ class GlobalImporterInnerComponent extends Component {
   }
 
   static propTypes = {
-    componentName: PropTypes.string.isRequired,
     defaultLanguage: PropTypes.string.isRequired,
     language: PropTypes.string.isRequired,
-    languagePath: PropTypes.string.isRequired,
-    render: PropTypes.func.isRequired
+    render: PropTypes.func.isRequired,
+    stringName: PropTypes.string.isRequired
   }
 
-  getStrings = async name => {
+  // TODO: CACHE FOR OPTIMIZATION
+  getStrings = async () => {
     let strings = {}
-    await import(`../${this.props.languagePath}/strings/${this.props.componentName}.${this.props.defaultLanguage}.json`)
+    await import(`../../strings/${this.props.stringName}/${this.props.stringName}.${this.props.defaultLanguage}.json`)
       .then(values => {
         strings = values
       })
       .catch(() => {})
-    await import(`../${this.props.languagePath}/strings/${this.props.componentName}.${this.props.language}.json`)
+    await import(`../../strings/${this.props.stringName}/${this.props.stringName}.${this.props.language}.json`)
       .then(values => {
         strings = { ...strings, ...values }
       })
       .catch(() => {})
-    this.setState({
-      strings,
+    this.setState(prevState => ({
+      strings: {
+        ...prevState.strings,
+        ...strings
+      },
       language: this.props.language
-    })
+    }))
   }
 
   componentDidUpdate(props, state) {
     if (this.props.language !== this.state.language) {
-      this.getStrings(this.props.languagePath)
+      this.getStrings()
     }
   }
 
   componentDidMount() {
-    this.getStrings(this.props.languagePath)
+    this.getStrings()
   }
 
   render() {

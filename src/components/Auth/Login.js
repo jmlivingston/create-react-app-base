@@ -38,8 +38,7 @@ class Login extends Component {
       <GlobalContainerContext.Consumer>
         {context => {
           return !context.state.user ? (
-            <Form className="form-signin bg-secondary rounded">
-              <h1 className="h3 mb-3 font-weight-normal">Please sign in</h1>
+            <Form>
               <FormGroup>
                 <Label for="inputEmail">Email address</Label>
                 <Input

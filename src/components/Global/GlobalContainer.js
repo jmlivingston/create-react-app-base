@@ -76,6 +76,8 @@ class GlobalContainer extends Component {
           }))
           localStorage.setItem('user', JSON.stringify(user))
         }
+        // NOTE: Required for theme reloading due to SASS limitations
+        window.location.reload()
       }
     },
     login: async user => {
@@ -107,6 +109,8 @@ class GlobalContainer extends Component {
         user: undefined
       })
       localStorage.removeItem('user')
+      // NOTE: Required for theme reloading due to SASS limitations and GlobalImporter
+      window.location.reload()
     }
   }
 

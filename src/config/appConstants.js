@@ -1,4 +1,5 @@
 const APP = {
+  COMPANY_NAME: 'Acme.com, Inc.',
   ERROR: {
     GENERIC: `An unknown error has occurred!`
   },
