@@ -12,7 +12,7 @@ class GlobalContainer extends Component {
 
   defaultLanguage = 'en'
 
-  defaultTheme = 'origin'
+  defaultTheme = 'original'
 
   defaultUser = {
     isAuthenticated: false,
