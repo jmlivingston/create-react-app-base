@@ -23,8 +23,7 @@
     "build-tests": "node ./utility/build-test.js",
     "test": "react-scripts test --env=jsdom",
     "style-guide-start": "cross-env NODE_PATH=src start-storybook -p 3002 -c ./style-guide -s ./public",
-    "style-guide-build":
-      "cross-env NODE_PATH=src build-style-guide -c ./style-guide -o ../react-base-style-guide -s ./public",
+    "style-guide-build": "cross-env NODE_PATH=src build-style-guide -c ./style-guide -o ../react-base-style-guide -s ./public",
     "style-guide-start-build": "./node_modules/.bin/serve -s ../react-base-style-guide",
     "lint": "node node_modules/eslint/bin/eslint.js --max-warnings=0 src",
     "precommit": "lint-staged"
@@ -42,14 +41,24 @@
     "husky": "^0.14.3",
     "lint-staged": "^7.1.2",
     "node-sass": "4.9.0",
+    "prettier": "^1.13.4",
     "puppeteer": "^1.4.0",
     "sass-loader": "7.0.1",
     "serve": "^7.1.5",
     "style-loader": "0.21.0"
   },
   "browserslist": {
-    "development": ["last 2 chrome versions", "last 2 firefox versions", "last 2 edge versions"],
-    "production": [">1%", "last 4 versions", "Firefox ESR", "not ie < 11"]
+    "development": [
+      "last 2 chrome versions",
+      "last 2 firefox versions",
+      "last 2 edge versions"
+    ],
+    "production": [
+      ">1%",
+      "last 4 versions",
+      "Firefox ESR",
+      "not ie < 11"
+    ]
   },
   "eslintConfig": {
     "extends": "./node_modules/eslint-config-react-app/index.js",
@@ -64,8 +73,14 @@
   },
   "lint-staged": {
     "linters": {
-      "*.{js,json,css}": ["prettier --write", "git add"],
-      "*.js": ["npm run lint", "git add"]
+      "*.{js,json,css}": [
+        "prettier --write",
+        "git add"
+      ],
+      "*.js": [
+        "npm run lint",
+        "git add"
+      ]
     }
   },
   "prettier": {
