@@ -21,7 +21,9 @@ const Routes = () => {
                   loader: () => import('components/Home/Home'),
                   render(loaded, props) {
                     const Home = loaded.default
-                    return <Home />
+                    return (
+                      <GlobalImporter stringNames={['home']} render={({ strings }) => <Home strings={strings} />} />
+                    )
                   }
                 })}
               />
@@ -33,7 +35,9 @@ const Routes = () => {
                   loader: () => import('components/About/About'),
                   render(loaded, props) {
                     const About = loaded.default
-                    return <About />
+                    return (
+                      <GlobalImporter stringNames={['about']} render={({ strings }) => <About strings={strings} />} />
+                    )
                   }
                 })}
               />

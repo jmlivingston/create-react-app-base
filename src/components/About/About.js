@@ -1,19 +1,17 @@
+import PropTypes from 'prop-types'
 import React, { Fragment } from 'react'
 
-import GlobalImporter from 'components/Global/GlobalImporter'
-
-const About = () => {
+const About = ({ strings }) => {
   return (
-    <GlobalImporter
-      stringNames={['about']}
-      render={({ strings, user }) => (
-        <Fragment>
-          <h1>{strings.title}</h1>
-          <p>{strings.description}</p>
-        </Fragment>
-      )}
-    />
+    <Fragment>
+      <h1>{strings.title}</h1>
+      <p>{strings.description}</p>
+    </Fragment>
   )
+}
+
+About.propTypes = {
+  strings: PropTypes.object.isRequired
 }
 
 export default About

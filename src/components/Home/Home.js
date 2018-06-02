@@ -1,21 +1,20 @@
+import PropTypes from 'prop-types'
 import React, { Fragment } from 'react'
 
-import GlobalImporter from 'components/Global/GlobalImporter'
 import LocalizationTester from 'components/LocalizationTester/LocalizationTester'
 
-const Home = () => {
+const Home = ({ strings }) => {
   return (
-    <GlobalImporter
-      stringNames={['home']}
-      render={({ strings, user }) => (
-        <Fragment>
-          <h1>{strings.title}</h1>
-          <p>{strings.description}</p>
-          <LocalizationTester />
-        </Fragment>
-      )}
-    />
+    <Fragment>
+      <h1>{strings.title}</h1>
+      <p>{strings.description}</p>
+      <LocalizationTester />
+    </Fragment>
   )
+}
+
+Home.propTypes = {
+  strings: PropTypes.object.isRequired
 }
 
 export default Home
