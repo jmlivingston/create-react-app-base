@@ -1,32 +1,15 @@
-import React, { Component } from 'react'
+import { storiesOf } from '@storybook/react'
+import { withInfo } from '@storybook/addon-info'
+import React from 'react'
+
 import { Button, ButtonGroup } from 'components/Common'
+import config from '../../config'
 
-class Example extends Component {
-  constructor(props) {
-    super(props)
-
-    this.state = { cSelected: [] }
-
-    this.onRadioBtnClick = this.onRadioBtnClick.bind(this)
-    this.onCheckboxBtnClick = this.onCheckboxBtnClick.bind(this)
-  }
-
-  onRadioBtnClick(rSelected) {
-    this.setState({ rSelected })
-  }
-
-  onCheckboxBtnClick(selected) {
-    const index = this.state.cSelected.indexOf(selected)
-    if (index < 0) {
-      this.state.cSelected.push(selected)
-    } else {
-      this.state.cSelected.splice(index, 1)
-    }
-    this.setState({ cSelected: [...this.state.cSelected] })
-  }
-
-  render() {
-    return (
+storiesOf('Button', module)
+  .addDecorator(config.wrapper)
+  .add(
+    'Stateful',
+    withInfo(config.defaults.info)(() => (
       <div>
         <h5>Radio Buttons</h5>
         <ButtonGroup>
@@ -56,8 +39,5 @@ class Example extends Component {
         </ButtonGroup>
         <p>Selected: {JSON.stringify(this.state.cSelected)}</p>
       </div>
-    )
-  }
-}
-
-export default Example
+    ))
+  )

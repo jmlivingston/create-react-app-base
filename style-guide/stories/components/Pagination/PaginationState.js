@@ -1,9 +1,15 @@
+import { storiesOf } from '@storybook/react'
+import { withInfo } from '@storybook/addon-info'
 import React from 'react'
-import { Pagination, PaginationItem, PaginationLink } from 'components/Common'
 
-export default class Example extends React.Component {
-  render() {
-    return (
+import { Pagination, PaginationItem, PaginationLink } from 'components/Common'
+import config from '../../config'
+
+storiesOf('Pagination', module)
+  .addDecorator(config.wrapper)
+  .add(
+    'State',
+    withInfo(config.defaults.info)(() => (
       <Pagination>
         <PaginationItem disabled>
           <PaginationLink previous href="/" />
@@ -27,6 +33,5 @@ export default class Example extends React.Component {
           <PaginationLink next href="/" />
         </PaginationItem>
       </Pagination>
-    )
-  }
-}
+    ))
+  )

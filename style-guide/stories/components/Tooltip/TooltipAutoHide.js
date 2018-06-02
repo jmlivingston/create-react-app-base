@@ -1,25 +1,15 @@
-/* eslint react/no-multi-comp: 0, react/prop-types: 0 */
+import { storiesOf } from '@storybook/react'
+import { withInfo } from '@storybook/addon-info'
 import React from 'react'
+
 import { Tooltip } from 'components/Common'
+import config from '../../config'
 
-export default class Example extends React.Component {
-  constructor(props) {
-    super(props)
-
-    this.toggle = this.toggle.bind(this)
-    this.state = {
-      tooltipOpen: false
-    }
-  }
-
-  toggle() {
-    this.setState({
-      tooltipOpen: !this.state.tooltipOpen
-    })
-  }
-
-  render() {
-    return (
+storiesOf('ToolTip', module)
+  .addDecorator(config.wrapper)
+  .add(
+    'AutoHide',
+    withInfo(config.defaults.info)(() => (
       <div>
         <p>
           Sometimes you need to allow users to select text within a{' '}
@@ -36,6 +26,5 @@ export default class Example extends React.Component {
           Try to select this text!
         </Tooltip>
       </div>
-    )
-  }
-}
+    ))
+  )

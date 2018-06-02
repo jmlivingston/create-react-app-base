@@ -1,9 +1,15 @@
+import { storiesOf } from '@storybook/react'
+import { withInfo } from '@storybook/addon-info'
 import React from 'react'
-import { Table } from 'components/Common'
 
-export default class Example extends React.Component {
-  render() {
-    return (
+import { Table } from 'components/Common'
+import config from '../../config'
+
+storiesOf('Table', module)
+  .addDecorator(config.wrapper)
+  .add(
+    'Default',
+    withInfo(config.defaults.info)(() => (
       <Table>
         <thead>
           <tr>
@@ -34,6 +40,5 @@ export default class Example extends React.Component {
           </tr>
         </tbody>
       </Table>
-    )
-  }
-}
+    ))
+  )

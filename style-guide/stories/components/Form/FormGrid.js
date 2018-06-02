@@ -1,9 +1,15 @@
+import { storiesOf } from '@storybook/react'
+import { withInfo } from '@storybook/addon-info'
 import React from 'react'
-import { Col, Button, Form, FormGroup, Label, Input, FormText } from 'components/Common'
 
-export default class Example extends React.Component {
-  render() {
-    return (
+import { Col, Button, Form, FormGroup, Label, Input, FormText } from 'components/Common'
+import config from '../../config'
+
+storiesOf('Form', module)
+  .addDecorator(config.wrapper)
+  .add(
+    'Grid',
+    withInfo(config.defaults.info)(() => (
       <Form>
         <FormGroup row>
           <Label for="exampleEmail" sm={2}>
@@ -96,6 +102,5 @@ export default class Example extends React.Component {
           </Col>
         </FormGroup>
       </Form>
-    )
-  }
-}
+    ))
+  )

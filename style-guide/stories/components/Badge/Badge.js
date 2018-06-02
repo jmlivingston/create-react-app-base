@@ -1,9 +1,15 @@
+import { storiesOf } from '@storybook/react'
+import { withInfo } from '@storybook/addon-info'
 import React from 'react'
-import { Badge } from 'components/Common'
 
-export default class Example extends React.Component {
-  render() {
-    return (
+import { Badge } from 'components/Common'
+import config from '../../config'
+
+storiesOf('Badge', module)
+  .addDecorator(config.wrapper)
+  .add(
+    'Default',
+    withInfo(config.defaults.info)(() => (
       <div>
         <h1>
           Heading <Badge color="secondary">New</Badge>
@@ -24,6 +30,5 @@ export default class Example extends React.Component {
           Heading <Badge color="secondary">New</Badge>
         </h6>
       </div>
-    )
-  }
-}
+    ))
+  )

@@ -1,24 +1,15 @@
+import { storiesOf } from '@storybook/react'
+import { withInfo } from '@storybook/addon-info'
 import React from 'react'
+
 import { ButtonDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'components/Common'
+import config from '../../config'
 
-export default class Example extends React.Component {
-  constructor(props) {
-    super(props)
-
-    this.toggle = this.toggle.bind(this)
-    this.state = {
-      dropdownOpen: false
-    }
-  }
-
-  toggle() {
-    this.setState({
-      dropdownOpen: !this.state.dropdownOpen
-    })
-  }
-
-  render() {
-    return (
+storiesOf('Button', module)
+  .addDecorator(config.wrapper)
+  .add(
+    'DropdownMulti',
+    withInfo(config.defaults.info)(() => (
       <ButtonDropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
         <DropdownToggle color="primary" caret>
           Select
@@ -31,6 +22,5 @@ export default class Example extends React.Component {
           <DropdownItem>Another Action</DropdownItem>
         </DropdownMenu>
       </ButtonDropdown>
-    )
-  }
-}
+    ))
+  )

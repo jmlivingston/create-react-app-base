@@ -1,24 +1,15 @@
+import { storiesOf } from '@storybook/react'
+import { withInfo } from '@storybook/addon-info'
 import React from 'react'
+
 import { Nav, NavItem, Dropdown, DropdownItem, DropdownToggle, DropdownMenu, NavLink } from 'components/Common'
+import config from '../../config'
 
-export default class Example extends React.Component {
-  constructor(props) {
-    super(props)
-
-    this.toggle = this.toggle.bind(this)
-    this.state = {
-      dropdownOpen: false
-    }
-  }
-
-  toggle() {
-    this.setState({
-      dropdownOpen: !this.state.dropdownOpen
-    })
-  }
-
-  render() {
-    return (
+storiesOf('Nav', module)
+  .addDecorator(config.wrapper)
+  .add(
+    'Pills',
+    withInfo(config.defaults.info)(() => (
       <div>
         <Nav pills>
           <NavItem>
@@ -51,6 +42,5 @@ export default class Example extends React.Component {
           </NavItem>
         </Nav>
       </div>
-    )
-  }
-}
+    ))
+  )

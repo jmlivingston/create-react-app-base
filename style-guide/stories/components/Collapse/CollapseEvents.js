@@ -1,39 +1,15 @@
-import React, { Component } from 'react'
+import { storiesOf } from '@storybook/react'
+import { withInfo } from '@storybook/addon-info'
+import React from 'react'
+
 import { Collapse, Button, CardBody, Card } from 'components/Common'
+import config from '../../config'
 
-class Example extends Component {
-  constructor(props) {
-    super(props)
-    this.onEntering = this.onEntering.bind(this)
-    this.onEntered = this.onEntered.bind(this)
-    this.onExiting = this.onExiting.bind(this)
-    this.onExited = this.onExited.bind(this)
-    this.toggle = this.toggle.bind(this)
-    this.state = { collapse: false, status: 'Closed' }
-  }
-
-  onEntering() {
-    this.setState({ status: 'Opening...' })
-  }
-
-  onEntered() {
-    this.setState({ status: 'Opened' })
-  }
-
-  onExiting() {
-    this.setState({ status: 'Closing...' })
-  }
-
-  onExited() {
-    this.setState({ status: 'Closed' })
-  }
-
-  toggle() {
-    this.setState({ collapse: !this.state.collapse })
-  }
-
-  render() {
-    return (
+storiesOf('Collapse', module)
+  .addDecorator(config.wrapper)
+  .add(
+    'Events',
+    withInfo(config.defaults.info)(() => (
       <div>
         <Button color="primary" onClick={this.toggle} style={{ marginBottom: '1rem' }}>
           Toggle
@@ -53,8 +29,5 @@ class Example extends Component {
           </Card>
         </Collapse>
       </div>
-    )
-  }
-}
-
-export default Example
+    ))
+  )

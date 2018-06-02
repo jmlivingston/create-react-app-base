@@ -1,25 +1,15 @@
-/* eslint react/no-multi-comp: 0, react/prop-types: 0 */
+import { storiesOf } from '@storybook/react'
+import { withInfo } from '@storybook/addon-info'
 import React from 'react'
+
 import { Tooltip } from 'components/Common'
+import config from '../../config'
 
-export default class Example extends React.Component {
-  constructor(props) {
-    super(props)
-
-    this.toggle = this.toggle.bind(this)
-    this.state = {
-      tooltipOpen: false
-    }
-  }
-
-  toggle() {
-    this.setState({
-      tooltipOpen: !this.state.tooltipOpen
-    })
-  }
-
-  render() {
-    return (
+storiesOf('Tooltip', module)
+  .addDecorator(config.wrapper)
+  .add(
+    'Default',
+    withInfo(config.defaults.info)(() => (
       <div>
         <p>
           Somewhere in here is a{' '}
@@ -31,6 +21,5 @@ export default class Example extends React.Component {
           Hello world!
         </Tooltip>
       </div>
-    )
-  }
-}
+    ))
+  )

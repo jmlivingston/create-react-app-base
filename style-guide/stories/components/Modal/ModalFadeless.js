@@ -1,26 +1,15 @@
-/* eslint react/no-multi-comp: 0, react/prop-types: 0 */
-
+import { storiesOf } from '@storybook/react'
+import { withInfo } from '@storybook/addon-info'
 import React from 'react'
+
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'components/Common'
+import config from '../../config'
 
-class ModalExample extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      modal: false
-    }
-
-    this.toggle = this.toggle.bind(this)
-  }
-
-  toggle() {
-    this.setState({
-      modal: !this.state.modal
-    })
-  }
-
-  render() {
-    return (
+storiesOf('Modal', module)
+  .addDecorator(config.wrapper)
+  .add(
+    'Fadeless',
+    withInfo(config.defaults.info)(() => (
       <div>
         <Button color="danger" onClick={this.toggle}>
           Open Modal
@@ -44,8 +33,5 @@ class ModalExample extends React.Component {
           </ModalFooter>
         </Modal>
       </div>
-    )
-  }
-}
-
-export default ModalExample
+    ))
+  )

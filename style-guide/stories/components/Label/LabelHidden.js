@@ -1,9 +1,15 @@
+import { storiesOf } from '@storybook/react'
+import { withInfo } from '@storybook/addon-info'
 import React from 'react'
-import { Button, Form, FormGroup, Label, Input } from 'components/Common'
 
-export default class Example extends React.Component {
-  render() {
-    return (
+import { Button, Form, FormGroup, Label, Input } from 'components/Common'
+import config from '../../config'
+
+storiesOf('Label', module)
+  .addDecorator(config.wrapper)
+  .add(
+    'Hidden',
+    withInfo(config.defaults.info)(() => (
       <Form inline>
         <FormGroup>
           <Label for="exampleEmail" hidden>
@@ -19,6 +25,5 @@ export default class Example extends React.Component {
         </FormGroup>{' '}
         <Button>Submit</Button>
       </Form>
-    )
-  }
-}
+    ))
+  )

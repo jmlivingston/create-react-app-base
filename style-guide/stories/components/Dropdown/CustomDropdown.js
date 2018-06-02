@@ -1,24 +1,15 @@
+import { storiesOf } from '@storybook/react'
+import { withInfo } from '@storybook/addon-info'
 import React from 'react'
+
 import { Dropdown, DropdownMenu, DropdownToggle } from 'components/Common'
+import config from '../../config'
 
-export default class Example extends React.Component {
-  constructor(props) {
-    super(props)
-
-    this.toggle = this.toggle.bind(this)
-    this.state = {
-      dropdownOpen: false
-    }
-  }
-
-  toggle() {
-    this.setState({
-      dropdownOpen: !this.state.dropdownOpen
-    })
-  }
-
-  render() {
-    return (
+storiesOf('Dropdown', module)
+  .addDecorator(config.wrapper)
+  .add(
+    'CustomDropdown',
+    withInfo(config.defaults.info)(() => (
       <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
         <DropdownToggle tag="span" onClick={this.toggle} data-toggle="dropdown" aria-expanded={this.state.dropdownOpen}>
           Custom Dropdown Content
@@ -30,6 +21,5 @@ export default class Example extends React.Component {
           <div onClick={this.toggle}>Custom dropdown item</div>
         </DropdownMenu>
       </Dropdown>
-    )
-  }
-}
+    ))
+  )

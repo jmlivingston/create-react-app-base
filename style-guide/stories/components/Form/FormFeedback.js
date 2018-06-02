@@ -1,9 +1,15 @@
+import { storiesOf } from '@storybook/react'
+import { withInfo } from '@storybook/addon-info'
 import React from 'react'
-import { Form, FormGroup, Label, Input, FormFeedback, FormText } from 'components/Common'
 
-export default class Example extends React.Component {
-  render() {
-    return (
+import { Form, FormGroup, Label, Input, FormFeedback, FormText } from 'components/Common'
+import config from '../../config'
+
+storiesOf('Form', module)
+  .addDecorator(config.wrapper)
+  .add(
+    'Feedback',
+    withInfo(config.defaults.info)(() => (
       <Form>
         <FormGroup>
           <Label for="exampleEmail">Input without validation</Label>
@@ -24,6 +30,5 @@ export default class Example extends React.Component {
           <FormText>Example help text that remains unchanged.</FormText>
         </FormGroup>
       </Form>
-    )
-  }
-}
+    ))
+  )

@@ -1,33 +1,17 @@
-/* eslint react/no-multi-comp: 0, react/prop-types: 0 */
-
+import { storiesOf } from '@storybook/react'
+import { withInfo } from '@storybook/addon-info'
 import React from 'react'
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'components/Common'
 
-class ModalExample extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      modal: false
-    }
+// import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'components/Common'
+import config from '../../config'
 
-    this.toggle = this.toggle.bind(this)
-  }
-
-  toggle() {
-    this.setState({
-      modal: !this.state.modal
-    })
-  }
-
-  render() {
-    const externalCloseBtn = (
-      <button className="close" style={{ position: 'absolute', top: '15px', right: '15px' }} onClick={this.toggle}>
-        &times;
-      </button>
-    )
-    return (
+storiesOf('Modal', module)
+  .addDecorator(config.wrapper)
+  .add(
+    'External',
+    withInfo(config.defaults.info)(() => (
       <div>
-        <Button color="danger" onClick={this.toggle}>
+        {/* <Button color="danger" onClick={this.toggle}>
           Open Modal
         </Button>
         <Modal
@@ -53,10 +37,8 @@ class ModalExample extends React.Component {
               Cancel
             </Button>
           </ModalFooter>
-        </Modal>
+        </Modal> */}
+        <div>todo</div>
       </div>
-    )
-  }
-}
-
-export default ModalExample
+    ))
+  )

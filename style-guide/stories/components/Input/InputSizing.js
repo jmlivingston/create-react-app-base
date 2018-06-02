@@ -1,9 +1,15 @@
+import { storiesOf } from '@storybook/react'
+import { withInfo } from '@storybook/addon-info'
 import React from 'react'
-import { Form, Input } from 'components/Common'
 
-export default class Example extends React.Component {
-  render() {
-    return (
+import { Form, Input } from 'components/Common'
+import config from '../../config'
+
+storiesOf('Input', module)
+  .addDecorator(config.wrapper)
+  .add(
+    'Sizing',
+    withInfo(config.defaults.info)(() => (
       <Form>
         <Input placeholder="lg" bsSize="lg" />
         <Input placeholder="default" />
@@ -18,6 +24,5 @@ export default class Example extends React.Component {
           <option>Small Select</option>
         </Input>
       </Form>
-    )
-  }
-}
+    ))
+  )

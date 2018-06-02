@@ -1,9 +1,15 @@
+import { storiesOf } from '@storybook/react'
+import { withInfo } from '@storybook/addon-info'
 import React from 'react'
-import { Button, ButtonGroup, ButtonToolbar } from 'components/Common'
 
-export default class Example extends React.Component {
-  render() {
-    return (
+import { Button, ButtonGroup, ButtonToolbar } from 'components/Common'
+import config from '../../config'
+
+storiesOf('Button', module)
+  .addDecorator(config.wrapper)
+  .add(
+    'Toolbar',
+    withInfo(config.defaults.info)(() => (
       <ButtonToolbar>
         <ButtonGroup>
           <Button>1</Button>
@@ -20,6 +26,5 @@ export default class Example extends React.Component {
           <Button>8</Button>
         </ButtonGroup>
       </ButtonToolbar>
-    )
-  }
-}
+    ))
+  )

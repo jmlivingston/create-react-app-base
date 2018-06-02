@@ -1,23 +1,15 @@
+import { storiesOf } from '@storybook/react'
+import { withInfo } from '@storybook/addon-info'
 import React from 'react'
+
 import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'components/Common'
+import config from '../../config'
 
-export default class Example extends React.Component {
-  constructor(props) {
-    super(props)
-
-    this.toggleNavbar = this.toggleNavbar.bind(this)
-    this.state = {
-      collapsed: true
-    }
-  }
-
-  toggleNavbar() {
-    this.setState({
-      collapsed: !this.state.collapsed
-    })
-  }
-  render() {
-    return (
+storiesOf('Nav', module)
+  .addDecorator(config.wrapper)
+  .add(
+    'NavbarToggler',
+    withInfo(config.defaults.info)(() => (
       <div>
         <Navbar color="faded" light>
           <NavbarBrand href="/" className="mr-auto">
@@ -36,6 +28,5 @@ export default class Example extends React.Component {
           </Collapse>
         </Navbar>
       </div>
-    )
-  }
-}
+    ))
+  )

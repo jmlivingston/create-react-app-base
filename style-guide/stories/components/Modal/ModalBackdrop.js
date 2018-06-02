@@ -1,36 +1,15 @@
-/* eslint react/no-multi-comp: 0, react/prop-types: 0 */
-
+import { storiesOf } from '@storybook/react'
+import { withInfo } from '@storybook/addon-info'
 import React from 'react'
+
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Input, Label, Form, FormGroup } from 'components/Common'
+import config from '../../config'
 
-class ModalExample extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      modal: false,
-      backdrop: true
-    }
-
-    this.toggle = this.toggle.bind(this)
-    this.changeBackdrop = this.changeBackdrop.bind(this)
-  }
-
-  toggle() {
-    this.setState({
-      modal: !this.state.modal
-    })
-  }
-
-  changeBackdrop(e) {
-    let value = e.target.value
-    if (value !== 'static') {
-      value = JSON.parse(value)
-    }
-    this.setState({ backdrop: value })
-  }
-
-  render() {
-    return (
+storiesOf('Modal', module)
+  .addDecorator(config.wrapper)
+  .add(
+    'Backdrop',
+    withInfo(config.defaults.info)(() => (
       <div>
         <Form inline onSubmit={e => e.preventDefault()}>
           <FormGroup>
@@ -68,8 +47,5 @@ class ModalExample extends React.Component {
           </ModalFooter>
         </Modal>
       </div>
-    )
-  }
-}
-
-export default ModalExample
+    ))
+  )

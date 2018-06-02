@@ -1,9 +1,15 @@
+import { storiesOf } from '@storybook/react'
+import { withInfo } from '@storybook/addon-info'
 import React from 'react'
-import { ListGroup, ListGroupItem, Badge } from 'components/Common'
 
-export default class Example extends React.Component {
-  render() {
-    return (
+import { ListGroup, ListGroupItem, Badge } from 'components/Common'
+import config from '../../config'
+
+storiesOf('ListGroup', module)
+  .addDecorator(config.wrapper)
+  .add(
+    'Badge',
+    withInfo(config.defaults.info)(() => (
       <ListGroup>
         <ListGroupItem className="justify-content-between">
           Cras justo odio <Badge pill>14</Badge>
@@ -15,6 +21,5 @@ export default class Example extends React.Component {
           Morbi leo risus <Badge pill>1</Badge>
         </ListGroupItem>
       </ListGroup>
-    )
-  }
-}
+    ))
+  )

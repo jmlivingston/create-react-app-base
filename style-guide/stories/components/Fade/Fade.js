@@ -1,15 +1,15 @@
+import { storiesOf } from '@storybook/react'
+import { withInfo } from '@storybook/addon-info'
 import React from 'react'
+
 import { Button, Fade } from 'components/Common'
+import config from '../../config'
 
-export default class Example extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = { fadeIn: true }
-    this.toggle = this.toggle.bind(this)
-  }
-
-  render() {
-    return (
+storiesOf('Fade', module)
+  .addDecorator(config.wrapper)
+  .add(
+    'Default',
+    withInfo(config.defaults.info)(() => (
       <div>
         <Button color="primary" onClick={this.toggle}>
           Toggle Fade
@@ -18,12 +18,5 @@ export default class Example extends React.Component {
           This content will fade in and out as the button is pressed
         </Fade>
       </div>
-    )
-  }
-
-  toggle() {
-    this.setState({
-      fadeIn: !this.state.fadeIn
-    })
-  }
-}
+    ))
+  )

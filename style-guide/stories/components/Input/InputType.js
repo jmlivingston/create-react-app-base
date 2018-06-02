@@ -1,9 +1,15 @@
+import { storiesOf } from '@storybook/react'
+import { withInfo } from '@storybook/addon-info'
 import React from 'react'
-import { Form, FormGroup, Label, Input, FormText } from 'components/Common'
 
-export default class Example extends React.Component {
-  render() {
-    return (
+import { Form, FormGroup, Label, Input, FormText } from 'components/Common'
+import config from '../../config'
+
+storiesOf('Input', module)
+  .addDecorator(config.wrapper)
+  .add(
+    'Type',
+    withInfo(config.defaults.info)(() => (
       <Form>
         <FormGroup>
           <Label for="exampleEmail">Plain Text (Static)</Label>
@@ -88,6 +94,5 @@ export default class Example extends React.Component {
           </Label>
         </FormGroup>
       </Form>
-    )
-  }
-}
+    ))
+  )

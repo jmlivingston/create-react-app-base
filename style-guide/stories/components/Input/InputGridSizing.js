@@ -1,9 +1,15 @@
+import { storiesOf } from '@storybook/react'
+import { withInfo } from '@storybook/addon-info'
 import React from 'react'
-import { Col, Form, FormGroup, Label, Input } from 'components/Common'
 
-export default class Example extends React.Component {
-  render() {
-    return (
+import { Col, Form, FormGroup, Label, Input } from 'components/Common'
+import config from '../../config'
+
+storiesOf('Input', module)
+  .addDecorator(config.wrapper)
+  .add(
+    'GridSizing',
+    withInfo(config.defaults.info)(() => (
       <Form>
         <FormGroup row>
           <Label for="exampleEmail" sm={2} size="lg">
@@ -22,6 +28,5 @@ export default class Example extends React.Component {
           </Col>
         </FormGroup>
       </Form>
-    )
-  }
-}
+    ))
+  )

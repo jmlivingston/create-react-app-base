@@ -1,9 +1,15 @@
+import { storiesOf } from '@storybook/react'
+import { withInfo } from '@storybook/addon-info'
 import React from 'react'
-import { Nav, NavItem, NavLink } from 'components/Common'
 
-export default class Example extends React.Component {
-  render() {
-    return (
+import { Nav, NavItem, NavLink } from 'components/Common'
+import config from '../../config'
+
+storiesOf('Nav', module)
+  .addDecorator(config.wrapper)
+  .add(
+    'Navs',
+    withInfo(config.defaults.info)(() => (
       <div>
         <p>List Based</p>
         <Nav>
@@ -31,6 +37,5 @@ export default class Example extends React.Component {
           </NavLink>
         </Nav>
       </div>
-    )
-  }
-}
+    ))
+  )

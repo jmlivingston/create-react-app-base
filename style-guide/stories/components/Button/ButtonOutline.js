@@ -1,9 +1,15 @@
+import { storiesOf } from '@storybook/react'
+import { withInfo } from '@storybook/addon-info'
 import React from 'react'
-import { Button } from 'components/Common'
 
-export default class Example extends React.Component {
-  render() {
-    return (
+import { Button } from 'components/Common'
+import config from '../../config'
+
+storiesOf('Button', module)
+  .addDecorator(config.wrapper)
+  .add(
+    'Outline',
+    withInfo(config.defaults.info)(() => (
       <div>
         <Button outline color="primary">
           primary
@@ -24,6 +30,5 @@ export default class Example extends React.Component {
           danger
         </Button>
       </div>
-    )
-  }
-}
+    ))
+  )

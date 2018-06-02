@@ -1,9 +1,15 @@
+import { storiesOf } from '@storybook/react'
+import { withInfo } from '@storybook/addon-info'
 import React from 'react'
-import { ListGroup, ListGroupItem } from 'components/Common'
 
-export default class Example extends React.Component {
-  render() {
-    return (
+import { ListGroup, ListGroupItem } from 'components/Common'
+import config from '../../config'
+
+storiesOf('ListGroup', module)
+  .addDecorator(config.wrapper)
+  .add(
+    'AnchorsAndButtons',
+    withInfo(config.defaults.info)(() => (
       <div>
         <h3>Anchors </h3>
         <p>
@@ -49,6 +55,5 @@ export default class Example extends React.Component {
           </ListGroupItem>
         </ListGroup>
       </div>
-    )
-  }
-}
+    ))
+  )
