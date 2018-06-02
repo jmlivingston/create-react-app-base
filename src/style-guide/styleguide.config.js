@@ -1,13 +1,48 @@
 const fs = require('fs')
 const path = require('path')
 
+const componentCategories = [
+  'Alert',
+  'Badge',
+  'Breadcrumb',
+  'Button',
+  'Card',
+  'Carousel',
+  'Collapse',
+  'Color',
+  'Dropdown',
+  'Fade',
+  'Form',
+  'Jumbotron',
+  'Layout',
+  'ListGroup',
+  'Media',
+  'Misc',
+  'Modal',
+  'Nav',
+  'Pagination',
+  'Popover',
+  'Progress',
+  'Table',
+  'Tabs',
+  'Tooltip'
+]
+
+const sections = componentCategories.map(name => ({
+  name,
+  components: `./components/${name}/**/[A-Z]*.js`
+}))
+
 module.exports = {
+  title: 'react-base',
   components: './**/*.js',
   showCode: false,
   skipComponentsWithoutExample: true,
   styleguideComponents: {
-    Wrapper: path.join(__dirname, './Wrapper')
+    Wrapper: path.join(__dirname, './wrappers/ComponentWrapper')
   },
+  pagePerSection: true,
+  sections,
   updateExample(props, exampleFilePath) {
     const { settings, lang } = props
     if (typeof settings.file === 'string') {

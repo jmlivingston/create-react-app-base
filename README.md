@@ -7,10 +7,10 @@ This project is an opinionated template for future react projects.
 ## Technologies
 
 - React
-- create-react-app 2.0
-- Bootstrap 4.0 using SASS
-- storybook
-- reactstrap
+- create-react-app 2.0 (Currently Alpha)
+- Bootstrap 4.1 using SASS
+- style-guidist (Note: Using 6.5.3 until the following is fixed - https://github.com/styleguidist/react-styleguidist/issues/987)
+- reactstrap - We wrap these to optimize Bootstrap and provide theming capabilities
 
 ## Features
 

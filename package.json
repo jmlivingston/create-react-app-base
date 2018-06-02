@@ -22,32 +22,18 @@
     "build-screenshots": "node ./utility/build-screenshots.js",
     "build-tests": "node ./utility/build-test.js",
     "test": "react-scripts test --env=jsdom",
-    "style-guide-start2": "styleguidist server --config ./src/style-guide/styleguide.config.js",
-    "style-guide-start": "cross-env NODE_PATH=src start-storybook -p 3002 -c ./style-guide -s ./public",
-    "style-guide-build": "cross-env NODE_PATH=src build-style-guide -c ./style-guide -o ../react-base-style-guide -s ./public",
-    "style-guide-start-build": "./node_modules/.bin/serve -s ../react-base-style-guide",
+    "style-guide-start": "styleguidist server --config ./src/style-guide/styleguide.config.js",
     "lint": "node node_modules/eslint/bin/eslint.js --max-warnings=0 src",
     "precommit": "lint-staged"
   },
   "devDependencies": {
-    "@storybook/addon-actions": "3.4.4",
-    "@storybook/addon-info": "3.4.4",
-    "@storybook/addon-links": "3.4.4",
-    "@storybook/addons": "3.4.4",
-    "@storybook/react": "3.4.4",
-    "babel-core": "6.26.3",
-    "babel-runtime": "6.26.0",
-    "cross-env": "^5.1.6",
-    "css-loader": "0.28.11",
     "husky": "^0.14.3",
     "lint-staged": "^7.1.2",
     "node-sass": "4.9.0",
     "prettier": "^1.13.4",
     "puppeteer": "^1.4.0",
     "react-styleguidist": "6.5.3",
-    "sass-loader": "7.0.1",
-    "serve": "^7.1.5",
-    "style-loader": "0.21.0"
+    "serve": "^7.1.5"
   },
   "browserslist": {
     "development": [
