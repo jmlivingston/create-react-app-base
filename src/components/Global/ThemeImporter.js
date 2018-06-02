@@ -11,15 +11,15 @@ class ThemeImporterInnerComponent extends Component {
   static propTypes = {
     children: PropTypes.node.isRequired,
     sassNames: PropTypes.arrayOf(PropTypes.string),
-    theme: PropTypes.string.isRequired
+    user: PropTypes.object.isRequired
   }
 
   componentDidMount() {
-    if (this.props.theme) {
-      import(`../../styles/themes/${this.props.theme}/_bootstrap.scss`).then(() => {
+    if (this.props.user.theme) {
+      import(`../../styles/themes/${this.props.user.theme}/_bootstrap.scss`).then(() => {
         if (this.props.sassNames) {
           this.props.sassNames.forEach(sassName => {
-            import(`../../styles/themes/${this.props.theme}/components/${sassName}.scss`).then(() => {
+            import(`../../styles/themes/${this.props.user.theme}/components/${sassName}.scss`).then(() => {
               this.setState({
                 isLoaded: true
               })

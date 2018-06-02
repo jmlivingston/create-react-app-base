@@ -5,51 +5,51 @@ import { GlobalContainerContext } from './GlobalContainer'
 
 class GlobalImporterInnerComponent extends Component {
   state = {
-    strings: {},
-    user: localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')) : {}
+    strings: {}
   }
 
   static propTypes = {
     defaultLanguage: PropTypes.string.isRequired,
-    language: PropTypes.string.isRequired,
     render: PropTypes.func.isRequired,
-    stringName: PropTypes.string.isRequired
+    stringNames: PropTypes.arrayOf(PropTypes.string).isRequired,
+    user: PropTypes.object.isRequired
   }
 
   // TODO: CACHE FOR OPTIMIZATION
   getStrings = async () => {
     let strings = {}
-    await import(`../../strings/${this.props.stringName}/${this.props.stringName}.${this.props.defaultLanguage}.json`)
+    const defaultLanguagePromises = this.props.stringNames.map(stringName =>
+      import(`../../strings/${stringName}/${stringName}.${this.props.defaultLanguage}.json`)
+    )
+    const languagePromises = this.props.stringNames.map(stringName =>
+      import(`../../strings/${stringName}/${stringName}.${this.props.user.language}.json`)
+    )
+    await Promise.all(defaultLanguagePromises)
       .then(values => {
-        strings = values
+        strings = values.reduce((acc = {}, value) => ({ ...acc, ...value }), {})
       })
       .catch(() => {})
-    await import(`../../strings/${this.props.stringName}/${this.props.stringName}.${this.props.language}.json`)
+
+    await Promise.all(languagePromises)
       .then(values => {
-        strings = { ...strings, ...values }
+        const foo = values.reduce((acc = {}, value) => ({ ...acc, ...value }), {})
+        strings = { ...strings, ...foo }
       })
       .catch(() => {})
     this.setState(prevState => ({
       strings: {
         ...prevState.strings,
         ...strings
-      },
-      language: this.props.language
+      }
     }))
   }
 
-  componentDidUpdate(props, state) {
-    if (this.props.language !== this.state.language) {
-      this.getStrings()
-    }
-  }
-
-  componentDidMount() {
+  componentWillMount() {
     this.getStrings()
   }
 
   render() {
-    return <Fragment>{this.props.render({ ...this.state })}</Fragment>
+    return <Fragment>{this.props.render({ ...this.state, user: this.props.user })}</Fragment>
   }
 }
 

@@ -50,15 +50,21 @@ class Header extends Component {
         {context => (
           <header>
             <Navbar color="dark" dark fixed="top" expand="md">
-              <NavbarBrand href="/">{this.props.strings.home}</NavbarBrand>
+              <NavbarBrand href={this.props.strings.routes.home.path}>
+                {this.props.strings.routes.home.displayName}
+              </NavbarBrand>
               <NavbarToggler onClick={() => this.toggle()} />
               <Collapse isOpen={this.state.isOpen} navbar timeout={0}>
                 <Nav className="ml-auto" navbar>
                   <NavItem>
-                    <NavLink href="/about">{this.props.strings.about}</NavLink>
+                    <NavLink href={this.props.strings.routes.about.path}>
+                      {this.props.strings.routes.about.displayName}
+                    </NavLink>
                   </NavItem>
                   <NavItem>
-                    <NavLink href="/todo">{this.props.strings.todo}</NavLink>
+                    <NavLink href={this.props.strings.routes.todo.path}>
+                      {this.props.strings.routes.todo.displayName}
+                    </NavLink>
                   </NavItem>
                   {this.props.user.firstName ? (
                     <UncontrolledDropdown nav inNavbar>
@@ -66,7 +72,9 @@ class Header extends Component {
                         {this.props.user.firstName} {this.props.user.lastName}
                       </DropdownToggle>
                       <DropdownMenu right>
-                        <DropdownItem href="/user-settings">{this.props.strings.userSettings}</DropdownItem>
+                        <DropdownItem href={this.props.strings.routes.userSettings.path}>
+                          {this.props.strings.routes.userSettings.displayName}
+                        </DropdownItem>
                         <DropdownItem divider />
                         <DropdownItem onClick={() => context.state.logOut()}>{this.props.strings.logOut}</DropdownItem>
                       </DropdownMenu>

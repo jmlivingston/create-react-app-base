@@ -7,7 +7,7 @@ export default class LocalizationTester extends Component {
   render() {
     return (
       <GlobalImporter
-        stringName="localizationTester"
+        stringNames={['localizationTester']}
         render={({ strings, user }) => (
           <Fragment>
             <Button>

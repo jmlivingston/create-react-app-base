@@ -26,10 +26,10 @@ class App extends Component {
         <GlobalContainerContext.Consumer>
           {context => (
             <GlobalImporter
-              stringName="app"
-              render={({ strings, user }) => (
+              stringNames={['app', 'routes']}
+              render={({ strings }) => (
                 <ThemeImporter>
-                  <Header strings={strings} user={user} context={context} />
+                  <Header strings={strings} user={context.state.user} context={context} />
                   <main role="main" className="main container-fluid">
                     <Routes />
                   </main>

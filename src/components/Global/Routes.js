@@ -8,7 +8,7 @@ import { Loader } from 'components/Common'
 const Routes = () => {
   return (
     <GlobalImporter
-      stringName="routes"
+      stringNames={['routes']}
       render={({ strings, user }) => {
         return Object.keys(strings).length > 0 ? (
           <BrowserRouter>

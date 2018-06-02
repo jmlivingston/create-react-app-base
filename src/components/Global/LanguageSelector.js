@@ -29,11 +29,15 @@ class LanguageSelector extends Component {
         {context => (
           <Dropdown isOpen={this.state.dropdownOpen} toggle={() => this.toggle()} nav={this.props.nav} inNavbar>
             <DropdownToggle nav={this.props.nav} caret>
-              {context.state.language.toUpperCase()}
+              {context.state.user.language.toUpperCase()}
             </DropdownToggle>
             <DropdownMenu right={this.props.right}>
-              <DropdownItem onClick={() => context.state.updateLanguage('en')}>English</DropdownItem>
-              <DropdownItem onClick={() => context.state.updateLanguage('ja')}>Japanese</DropdownItem>
+              <DropdownItem onClick={() => context.state.updateUserByPropertyValue('language', 'en')}>
+                English
+              </DropdownItem>
+              <DropdownItem onClick={() => context.state.updateUserByPropertyValue('language', 'ja')}>
+                Japanese
+              </DropdownItem>
             </DropdownMenu>
           </Dropdown>
         )}

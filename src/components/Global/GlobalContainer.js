@@ -10,75 +10,71 @@ class GlobalContainer extends Component {
     children: PropTypes.node.isRequired
   }
 
+  defaultLanguage = 'en'
+
+  defaultTheme = 'origin'
+
+  defaultUser = {
+    isAuthenticated: false,
+    theme: this.defaultTheme,
+    language: this.defaultLanguage
+  }
+
   users = {
     'admin@x.com': {
       password: 'x',
       theme: 'darkly',
       language: 'en',
       firstName: 'Joe',
-      lastName: 'Admin'
+      lastName: 'Admin',
+      isAuthenticated: false
     },
     'editor@x.com': {
       password: 'x',
       theme: 'original',
       language: 'ja',
       firstName: 'Joe',
-      lastName: 'Editor'
+      lastName: 'Editor',
+      isAuthenticated: false
     },
     'view@x.com': {
       password: 'x',
       theme: 'yeti',
       language: 'en',
       firstName: 'Joe',
-      lastName: 'View'
+      lastName: 'View',
+      isAuthenticated: false
+    },
+    'custom@x.com': {
+      password: 'x',
+      theme: 'custom',
+      language: 'ja',
+      firstName: '明',
+      lastName: '黒沢',
+      isAuthenticated: false
     }
   }
 
-  getUserOrDefault(property, defaultValue) {
-    return localStorage.getItem('user')
-      ? JSON.parse(localStorage.getItem('user'))[property]
-      : localStorage.getItem(property) || defaultValue
-  }
-
   state = {
-    theme: this.getUserOrDefault('theme', 'original'),
-    language: this.getUserOrDefault('language', 'en'),
-    defaultLanguage: 'en',
-    user: localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')) : null,
-    updateTheme: theme => {
-      if (this.state.theme !== theme) {
-        localStorage.setItem('theme', theme)
-        if (this.state.user) {
-          const user = {
-            ...this.state.user,
-            theme
-          }
-          this.setState(prevState => ({
-            user
-          }))
-          localStorage.setItem('user', JSON.stringify(user))
+    user: localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')) : this.defaultUser,
+    defaultTheme: this.defaultTheme,
+    defaultLanguage: this.defaultLanguage,
+    updateUser: user => {
+      if (this.state.user) {
+        const updatedUser = {
+          ...this.state.user,
+          ...user
         }
-        // NOTE: Required for theme reloading due to SASS limitations
-        window.location.reload()
+        this.setState(prevState => ({
+          updatedUser
+        }))
+        localStorage.setItem('user', JSON.stringify(updatedUser))
       }
+      // NOTE: Required for theme reloading due to SASS limitations
+      window.location.reload()
     },
-    updateLanguage: language => {
-      if (this.state.language !== language) {
-        localStorage.setItem('language', language)
-        if (this.state.user) {
-          const user = {
-            ...this.state.user,
-            language
-          }
-          this.setState(prevState => ({
-            language,
-            user
-          }))
-          localStorage.setItem('user', JSON.stringify(user))
-        }
-        // NOTE: Required for theme reloading due to SASS limitations
-        window.location.reload()
-      }
+    updateUserByPropertyValue: (property, value) => {
+      this.state.updateUser({ ...this.state.user, [property]: value })
     },
     login: async user => {
       let userIsValid = false
@@ -105,18 +101,11 @@ class GlobalContainer extends Component {
       return userIsValid
     },
     logOut: () => {
-      this.setState({
-        user: undefined
-      })
-      localStorage.removeItem('user')
+      const { firstName, lastName, ...user } = { ...this.state.user, isAuthenticated: false }
+      localStorage.setItem('user', JSON.stringify(user))
       // NOTE: Required for theme reloading due to SASS limitations and GlobalImporter
       window.location.reload()
     }
-  }
-
-  componentDidMount() {
-    localStorage.setItem('theme', this.state.theme)
-    localStorage.setItem('language', this.state.language)
   }
 
   render() {

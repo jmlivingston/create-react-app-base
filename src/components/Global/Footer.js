@@ -26,7 +26,7 @@ class Footer extends Component {
       <div className="footer">
         <div className="container-fluid text-center py-3">
           &copy; {date.getFullYear() - 1}-{date.getFullYear()} {APP.COMPANY_NAME} {this.props.strings.copyrightSuffix} |
-          Version {process.env.REACT_APP_VERSION} |&nbsp;
+          {this.props.strings.version} {process.env.REACT_APP_VERSION} |&nbsp;
           <span className="cursor-pointer" onClick={() => this.toggleTermsConditionsModal()}>
             {this.props.strings.termsConditions}
           </span>

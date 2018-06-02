@@ -17,13 +17,18 @@ class ThemeSelector extends Component {
       <GlobalContainerContext.Consumer>
         {context => (
           <Dropdown isOpen={this.state.dropdownOpen} toggle={() => this.toggle()}>
-            <DropdownToggle caret>{context.state.theme}</DropdownToggle>
+            <DropdownToggle caret>{context.state.user.theme}</DropdownToggle>
             <DropdownMenu>
-              <DropdownItem onClick={() => context.state.updateTheme('custom')}>Custom</DropdownItem>
-              <DropdownItem onClick={() => context.state.updateTheme('darkly')}>Darkly</DropdownItem> 
-              <DropdownItem onClick={() => context.state.updateTheme('original')}>Original</DropdownItem>
-              <DropdownItem onClick={() => context.state.updateTheme('yeti')}>Yeti</DropdownItem>
-             
+              <DropdownItem onClick={() => context.state.updateUserByPropertyValue('theme', 'custom')}>
+                Custom
+              </DropdownItem>
+              <DropdownItem onClick={() => context.state.updateUserByPropertyValue('theme', 'darkly')}>
+                Darkly
+              </DropdownItem>
+              <DropdownItem onClick={() => context.state.updateUserByPropertyValue('theme', 'original')}>
+                Original
+              </DropdownItem>
+              <DropdownItem onClick={() => context.state.updateUserByPropertyValue('theme', 'yeti')}>Yeti</DropdownItem>
             </DropdownMenu>
           </Dropdown>
         )}
