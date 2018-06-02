@@ -15,23 +15,24 @@ class ThemeImporterInnerComponent extends Component {
   }
 
   componentDidMount() {
-    if (this.props.user.theme) {
-      import(`../../styles/themes/${this.props.user.theme}/_bootstrap.scss`).then(() => {
-        if (this.props.sassNames) {
-          this.props.sassNames.forEach(sassName => {
-            import(`../../styles/themes/${this.props.user.theme}/components/${sassName}.scss`).then(() => {
-              this.setState({
-                isLoaded: true
-              })
+    // if (this.props.user.theme) {
+    const theme = this.props.user ? this.props.user.theme : 'original'
+    import(`../../styles/themes/${theme}/_bootstrap.scss`).then(() => {
+      if (this.props.sassNames) {
+        this.props.sassNames.forEach(sassName => {
+          import(`../../styles/themes/${theme}/components/${sassName}.scss`).then(() => {
+            this.setState({
+              isLoaded: true
             })
           })
-        } else {
-          this.setState({
-            isLoaded: true
-          })
-        }
-      })
-    }
+        })
+      } else {
+        this.setState({
+          isLoaded: true
+        })
+      }
+    })
+    // }
   }
 
   render() {

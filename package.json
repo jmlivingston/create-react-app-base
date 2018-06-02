@@ -22,6 +22,7 @@
     "build-screenshots": "node ./utility/build-screenshots.js",
     "build-tests": "node ./utility/build-test.js",
     "test": "react-scripts test --env=jsdom",
+    "style-guide-start2": "styleguidist server --config ./src/style-guide/styleguide.config.js",
     "style-guide-start": "cross-env NODE_PATH=src start-storybook -p 3002 -c ./style-guide -s ./public",
     "style-guide-build": "cross-env NODE_PATH=src build-style-guide -c ./style-guide -o ../react-base-style-guide -s ./public",
     "style-guide-start-build": "./node_modules/.bin/serve -s ../react-base-style-guide",
@@ -43,6 +44,7 @@
     "node-sass": "4.9.0",
     "prettier": "^1.13.4",
     "puppeteer": "^1.4.0",
+    "react-styleguidist": "6.5.3",
     "sass-loader": "7.0.1",
     "serve": "^7.1.5",
     "style-loader": "0.21.0"
