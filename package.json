@@ -2,11 +2,23 @@
   "name": "react-base",
   "version": "0.1.1",
   "private": true,
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "build-screenshots": "node ./utility/build-screenshots.js",
+    "build-stories": "node ./utility/build-stories.js",
+    "build-tests": "node ./utility/build-test.js",
+    "test": "react-scripts test --env=jsdom",
+    "style-guide-start": "cross-env REACT_APP_TYPE=STYLE_GUIDE react-scripts start",
+    "lint": "node node_modules/eslint/bin/eslint.js --max-warnings=0 src",
+    "precommit": "lint-staged"
+  },
   "dependencies": {
     "bootstrap": "4.1.1",
     "bootswatch": "4.1.1",
     "dayjs": "^1.6.4",
     "loaders.css": "^0.1.2",
+    "parse-prop-types": "^0.2.0",
     "prop-types": "15.6.1",
     "react": "16.4.0",
     "react-dom": "16.4.0",
@@ -14,18 +26,8 @@
     "react-loaders": "^3.0.1",
     "react-router-dom": "^4.2.2",
     "react-scripts": "2.0.0-next.66cc7a90",
+    "react-syntax-highlighter": "^7.0.4",
     "reactstrap": "6.0.1"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "build-screenshots": "node ./utility/build-screenshots.js",
-    "build-tests": "node ./utility/build-test.js",
-    "test": "react-scripts test --env=jsdom",
-    "style-guide-start": "styleguidist server --config ./src/style-guide/styleguide.config.js",
-    "style-guide-start2": "cross-env REACT_APP_TYPE=STYLE_GUIDE react-scripts start",
-    "lint": "node node_modules/eslint/bin/eslint.js --max-warnings=0 src",
-    "precommit": "lint-staged"
   },
   "devDependencies": {
     "cross-env": "^5.1.6",
@@ -34,7 +36,6 @@
     "node-sass": "4.9.0",
     "prettier": "^1.13.4",
     "puppeteer": "^1.4.0",
-    "react-styleguidist": "6.5.3",
     "serve": "^7.1.5"
   },
   "browserslist": {
