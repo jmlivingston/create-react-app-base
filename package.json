@@ -23,10 +23,12 @@
     "build-tests": "node ./utility/build-test.js",
     "test": "react-scripts test --env=jsdom",
     "style-guide-start": "styleguidist server --config ./src/style-guide/styleguide.config.js",
+    "style-guide-start2": "cross-env REACT_APP_TYPE=STYLE_GUIDE react-scripts start",
     "lint": "node node_modules/eslint/bin/eslint.js --max-warnings=0 src",
     "precommit": "lint-staged"
   },
   "devDependencies": {
+    "cross-env": "^5.1.6",
     "husky": "^0.14.3",
     "lint-staged": "^7.1.2",
     "node-sass": "4.9.0",
