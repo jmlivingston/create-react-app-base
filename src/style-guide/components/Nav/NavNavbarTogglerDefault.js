@@ -1,7 +1,7 @@
 import React from 'react'
 import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'components/Common'
 
-export default class NavbarTogglerDefault extends React.Component {
+export default class NavNavbarTogglerDefault extends React.Component {
   constructor(props) {
     super(props)
 

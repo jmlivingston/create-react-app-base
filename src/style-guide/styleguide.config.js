@@ -34,15 +34,18 @@ const sections = componentCategories.map(name => ({
 }))
 
 module.exports = {
-  title: 'react-base',
   components: './**/*.js',
+  pagePerSection: true,
+  sections,
   showCode: false,
+  // showSidebar: false,
   skipComponentsWithoutExample: true,
   styleguideComponents: {
     Wrapper: path.join(__dirname, './wrappers/ComponentWrapper')
+    // StyleGuideRenderer: path.join(__dirname, './wrappers/StyleGuideWrapper'),
+    // SectionsRenderer: path.join(__dirname, './wrappers/SectionsWrapper')
   },
-  pagePerSection: true,
-  sections,
+  title: 'react-base',
   updateExample(props, exampleFilePath) {
     const { settings, lang } = props
     if (typeof settings.file === 'string') {

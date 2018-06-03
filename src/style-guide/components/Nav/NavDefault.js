@@ -1,7 +1,7 @@
 import React from 'react'
 import { Nav, NavItem, NavLink } from 'components/Common'
 
-export default class Navs extends React.Component {
+export default class NavDefault extends React.Component {
   render() {
     return (
       <div>

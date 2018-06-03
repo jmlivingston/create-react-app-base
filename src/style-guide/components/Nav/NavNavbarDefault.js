@@ -13,7 +13,7 @@ import {
   DropdownItem
 } from 'components/Common'
 
-export default class NavbarDefault extends React.Component {
+export default class NavNavbarDefault extends React.Component {
   constructor(props) {
     super(props)
 

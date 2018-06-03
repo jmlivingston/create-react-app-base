@@ -15,7 +15,6 @@ class ThemeImporterInnerComponent extends Component {
   }
 
   componentDidMount() {
-    // if (this.props.user.theme) {
     const theme = this.props.user ? this.props.user.theme : 'original'
     import(`../../styles/themes/${theme}/_bootstrap.scss`).then(() => {
       if (this.props.sassNames) {
@@ -32,7 +31,6 @@ class ThemeImporterInnerComponent extends Component {
         })
       }
     })
-    // }
   }
 
   render() {
