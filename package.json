@@ -3,7 +3,7 @@
   "version": "0.1.1",
   "private": true,
   "scripts": {
-    "start": "react-scripts start",
+    "start": "cross-env REACT_APP_TYPE=APP react-scripts start",
     "build": "react-scripts build",
     "build-screenshots": "node ./utility/build-screenshots.js",
     "build-stories": "node ./utility/build-stories.js",
