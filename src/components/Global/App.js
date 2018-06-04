@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 
 import { GlobalContainer, GlobalContainerContext } from 'components/Global/GlobalContainer'
 import Footer from './Footer'
@@ -9,7 +9,7 @@ import ThemeImporter from 'components/Global/ThemeImporter'
 
 import './App.scss'
 
-class App extends Component {
+class App extends PureComponent {
   state = {
     dropdownOpen: false
   }

@@ -1,9 +1,9 @@
 import { Table } from 'components/Common'
 import parsePropTypes from 'parse-prop-types'
 import PropTypes from 'prop-types'
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 
-export default class PropTypesTable extends Component {
+export default class PropTypesTable extends PureComponent {
   state = {
     componentPropTypes: {}
   }

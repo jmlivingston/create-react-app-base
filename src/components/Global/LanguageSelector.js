@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types'
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 
 import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'components/Common'
 import { GlobalContainerContext } from './GlobalContainer'
 
-class LanguageSelector extends Component {
+class LanguageSelector extends PureComponent {
   state = {}
 
   static propTypes = {

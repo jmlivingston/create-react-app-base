@@ -1,12 +1,12 @@
 import { Alert, Button, Form, FormGroup, Input, Label } from 'components/Common'
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 
 import { GlobalContainerContext } from 'components/Global/GlobalContainer'
 import GlobalImporter from 'components/Global/GlobalImporter'
 
 import './Login.scss'
 
-class Login extends Component {
+class Login extends PureComponent {
   state = {
     email: '',
     password: ''

@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 
 import { GlobalContainerContext } from 'components/Global/GlobalContainer'
 import LanguageSelector from 'components/Global/LanguageSelector'
@@ -22,7 +22,7 @@ import {
 } from 'components/Common'
 import Login from 'components/Auth/Login'
 
-class Header extends Component {
+class Header extends PureComponent {
   state = {
     isOpen: false
   }

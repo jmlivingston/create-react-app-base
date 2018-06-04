@@ -1,9 +1,9 @@
-import React, { Component, Fragment } from 'react'
+import React, { PureComponent, Fragment } from 'react'
 import { Button } from 'components/Common'
 
 import GlobalImporter from 'components/Global/GlobalImporter'
 
-export default class LocalizationTester extends Component {
+export default class LocalizationTester extends PureComponent {
   render() {
     return (
       <GlobalImporter

@@ -1,11 +1,11 @@
 import PropTypes from 'prop-types'
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 
 import { Modal, ModalHeader, ModalBody } from 'components/Common'
 import APP from 'config/appConstants'
 import TermsConditions from 'components/TermsConditions/TermsConditions'
 
-class Footer extends Component {
+class Footer extends PureComponent {
   state = {
     isTermsConditionsModalOpen: false
   }

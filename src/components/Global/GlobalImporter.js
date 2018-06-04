@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types'
-import React, { Component, Fragment } from 'react'
+import React, { PureComponent, Fragment } from 'react'
 
 import { GlobalContainerContext } from './GlobalContainer'
 
-class GlobalImporterInnerComponent extends Component {
+class GlobalImporterInnerComponent extends PureComponent {
   state = {
     strings: {}
   }
@@ -53,7 +53,7 @@ class GlobalImporterInnerComponent extends Component {
   }
 }
 
-class GlobalImporter extends Component {
+class GlobalImporter extends PureComponent {
   render() {
     return (
       <GlobalContainerContext.Consumer>

@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types'
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 
 const GlobalContainerContext = React.createContext()
 
-class GlobalContainer extends Component {
+class GlobalContainer extends PureComponent {
   static displayName = 'GlobalContainer'
 
   static propTypes = {

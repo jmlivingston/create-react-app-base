@@ -1,9 +1,9 @@
 import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'components/Common'
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 
 import { GlobalContainerContext } from './GlobalContainer'
 
-class ThemeSelector extends Component {
+class ThemeSelector extends PureComponent {
   state = {}
 
   toggle() {

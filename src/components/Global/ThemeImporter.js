@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types'
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 
 import { GlobalContainerContext } from './GlobalContainer'
 
-class ThemeImporterInnerComponent extends Component {
+class ThemeImporterInnerComponent extends PureComponent {
   state = {
     isLoaded: false
   }
@@ -38,7 +38,7 @@ class ThemeImporterInnerComponent extends Component {
   }
 }
 
-class ThemeImporter extends Component {
+class ThemeImporter extends PureComponent {
   render() {
     return (
       <GlobalContainerContext.Consumer>

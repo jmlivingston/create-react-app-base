@@ -1,9 +1,9 @@
 import { okaidia } from 'react-syntax-highlighter/styles/prism'
 import PropTypes from 'prop-types'
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import SyntaxHighlighter from 'react-syntax-highlighter/prism'
 
-export default class PropTypesTable extends Component {
+export default class PropTypesTable extends PureComponent {
   state = {
     code: ''
   }

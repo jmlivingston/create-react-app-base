@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 
 import {
   Alert,
@@ -81,7 +81,7 @@ import {
   UncontrolledTooltip
 } from 'components/Common'
 
-class KitchenSink extends Component {
+class KitchenSink extends PureComponent {
   state = {
     buttonDropdownOpen: false,
     isCollapsed: false,
