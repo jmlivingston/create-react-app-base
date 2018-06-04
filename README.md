@@ -1,21 +1,13 @@
-# react-base
+# create-react-app-base
 
 ## Summary
 
-This project is an opinionated template for future react projects.
-
-## Technologies
-
-- React
-- create-react-app 2.0 (Currently Alpha)
-- Bootstrap 4.1 using SASS
-- style-guidist (Note: Using 6.5.3 until the following is fixed - https://github.com/styleguidist/react-styleguidist/issues/987)
-- reactstrap - We wrap these to optimize Bootstrap and provide theming capabilities
+This project is an opinionated template based on create-react-app
 
 ## Features
 
 - Theme and themability support
-- Component Style Guide and Documentation (using storybook)
+- Component Style Guide and Documentation
   - Common controls
   - Forms (including inputs)
   - Table
@@ -28,9 +20,12 @@ This project is an opinionated template for future react projects.
 - Unit tests
 - Screenshots with Puppeteer
 
-## Dependency Notes
+## Technologies
 
-- Once storybook supports create-react-app's SASS integration, we can remove css-loader, sass-loader, and style-loader
+- React
+- create-react-app 2.0 (Currently Alpha)
+- Bootstrap 4.1 using SASS
+- reactstrap - We wrap these to optimize Bootstrap and provide theming capabilities
 
 ---
 
