@@ -19,6 +19,12 @@
       "inSiteMap": true,
       "inHeader": true
     },
+    "styleGuide": {
+      "displayName": "Style Guide",
+      "path": "/style-guide",
+      "inSiteMap": true,
+      "inHeader": true
+    },
     "todo": {
       "displayName": "Todo",
       "path": "/todo",

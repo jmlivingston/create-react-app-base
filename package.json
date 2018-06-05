@@ -3,8 +3,10 @@
   "version": "0.1.1",
   "private": true,
   "scripts": {
-    "start": "cross-env REACT_APP_TYPE=APP react-scripts start",
+    "start": "react-scripts start",
+    "start-build": "cd build && serve -s",
     "build": "react-scripts build",
+    "deploy": "git subtree build --prefix build origin build",
     "build-screenshots": "node ./utility/build-screenshots.js",
     "build-stories": "node ./utility/build-stories.js",
     "build-tests": "node ./utility/build-test.js",
@@ -36,7 +38,7 @@
     "node-sass": "4.9.0",
     "prettier": "^1.13.4",
     "puppeteer": "^1.4.0",
-    "serve": "^7.1.5"
+    "serve": "^7.2.0"
   },
   "browserslist": {
     "development": [

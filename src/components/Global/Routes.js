@@ -17,7 +17,7 @@ const Routes = () => {
                 exact
                 path={strings.routes.home.path}
                 component={Loadable({
-                  loading: () => <Loader strings={`${strings.loading} ${strings.routes.home}...`} />,
+                  loading: () => <Loader strings={`${strings.loading} ${strings.routes.home.displayName}...`} />,
                   loader: () => import('components/Home/Home'),
                   render(loaded, props) {
                     const Home = loaded.default
@@ -31,7 +31,7 @@ const Routes = () => {
                 exact
                 path={strings.routes.about.path}
                 component={Loadable({
-                  loading: () => <Loader strings={`${strings.loading} ${strings.routes.home}...`} />,
+                  loading: () => <Loader strings={`${strings.loading} ${strings.routes.home.displayName}...`} />,
                   loader: () => import('components/About/About'),
                   render(loaded, props) {
                     const About = loaded.default
@@ -45,7 +45,7 @@ const Routes = () => {
                 exact
                 path={strings.routes.siteMap.path}
                 component={Loadable({
-                  loading: () => <Loader strings={`${strings.loading} ${strings.routes.siteMap}...`} />,
+                  loading: () => <Loader strings={`${strings.loading} ${strings.routes.siteMap.displayName}...`} />,
                   loader: () => import('components/Global/SiteMap'),
                   render(loaded, props) {
                     const SiteMap = loaded.default
@@ -57,7 +57,7 @@ const Routes = () => {
                 exact
                 path={strings.routes.todo.path}
                 component={Loadable({
-                  loading: () => <Loader strings={`${strings.loading} ${strings.routes.todo}...`} />,
+                  loading: () => <Loader strings={`${strings.loading} ${strings.routes.todo.displayName}...`} />,
                   loader: () => import('components/Todo/TodoContainer'),
                   render(loaded, props) {
                     const TodoContainer = loaded.default
@@ -69,11 +69,25 @@ const Routes = () => {
                 exact
                 path={strings.routes.userSettings.path}
                 component={Loadable({
-                  loading: () => <Loader strings={`${strings.loading} ${strings.routes.userSettings}...`} />,
+                  loading: () => (
+                    <Loader strings={`${strings.loading} ${strings.routes.userSettings.displayName}...`} />
+                  ),
                   loader: () => import('components/Auth/UserSettings'),
                   render(loaded, props) {
                     const UserSettings = loaded.default
                     return <UserSettings />
+                  }
+                })}
+              />
+              <Route
+                exact
+                path={strings.routes.styleGuide.path}
+                component={Loadable({
+                  loading: () => <Loader strings={`${strings.loading} ${strings.routes.styleGuide.displayName}...`} />,
+                  loader: () => import('style-guide/StyleGuideAppGrouped'),
+                  render(loaded, props) {
+                    const StyleGuideAppGrouped = loaded.default
+                    return <StyleGuideAppGrouped />
                   }
                 })}
               />

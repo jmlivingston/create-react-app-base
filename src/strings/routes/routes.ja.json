@@ -19,6 +19,12 @@
       "inSiteMap": true,
       "inHeader": true
     },
+    "styleGuide": {
+      "displayName": "スタイルガイド",
+      "path": "/スタイルガイド",
+      "inSiteMap": true,
+      "inHeader": true
+    },
     "todo": {
       "displayName": "タスク",
       "path": "/タスク",

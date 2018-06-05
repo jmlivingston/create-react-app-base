@@ -62,6 +62,11 @@ class Header extends PureComponent {
                     </NavLink>
                   </NavItem>
                   <NavItem>
+                    <NavLink href={this.props.strings.routes.styleGuide.path}>
+                      {this.props.strings.routes.styleGuide.displayName}
+                    </NavLink>
+                  </NavItem>
+                  <NavItem>
                     <NavLink href={this.props.strings.routes.todo.path}>
                       {this.props.strings.routes.todo.displayName}
                     </NavLink>

@@ -14,15 +14,15 @@ class ThemeImporterInnerComponent extends PureComponent {
     user: PropTypes.object.isRequired
   }
 
-  componentDidMount() {
+  importStyle = () => {
     const theme = this.props.user ? this.props.user.theme : 'original'
     import(`../../styles/themes/${theme}/_bootstrap.scss`).then(() => {
       if (this.props.sassNames) {
-        this.props.sassNames.forEach(sassName => {
-          import(`../../styles/themes/${theme}/components/${sassName}.scss`).then(() => {
-            this.setState({
-              isLoaded: true
-            })
+        Promise.all(
+          this.props.sassNames.map(sassName => import(`../../styles/themes/${theme}/components/${sassName}.scss`))
+        ).then(() => {
+          this.setState({
+            isLoaded: true
           })
         })
       } else {
@@ -31,6 +31,10 @@ class ThemeImporterInnerComponent extends PureComponent {
         })
       }
     })
+  }
+
+  componentDidMount() {
+    this.importStyle()
   }
 
   render() {

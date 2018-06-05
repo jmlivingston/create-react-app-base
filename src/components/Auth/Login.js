@@ -4,8 +4,6 @@ import React, { PureComponent } from 'react'
 import { GlobalContainerContext } from 'components/Global/GlobalContainer'
 import GlobalImporter from 'components/Global/GlobalImporter'
 
-import './Login.scss'
-
 class Login extends PureComponent {
   state = {
     email: '',

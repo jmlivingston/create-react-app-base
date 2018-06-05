@@ -1,25 +1,24 @@
-import React, { PureComponent } from 'react'
+import Loadable from 'react-loadable'
+import React, { Component } from 'react'
 
 import { GlobalContainer, GlobalContainerContext } from 'components/Global/GlobalContainer'
-import Footer from './Footer'
 import GlobalImporter from 'components/Global/GlobalImporter'
-import Header from './Header'
 import Routes from './Routes'
 import ThemeImporter from 'components/Global/ThemeImporter'
 
 import './App.scss'
 
-class App extends PureComponent {
-  state = {
-    dropdownOpen: false
-  }
+const Footer = Loadable({
+  loader: () => import('./Footer'),
+  loading: () => null
+})
 
-  toggle() {
-    this.setState(prevState => ({
-      dropdownOpen: !prevState.dropdownOpen
-    }))
-  }
+const Header = Loadable({
+  loader: () => import('./Header'),
+  loading: () => null
+})
 
+class App extends Component {
   render() {
     return (
       <GlobalContainer>
