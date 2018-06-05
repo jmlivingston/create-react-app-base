@@ -1,45 +1,38 @@
-import { Table } from 'components/Common'
-import parsePropTypes from 'parse-prop-types'
 import PropTypes from 'prop-types'
-import React, { PureComponent } from 'react'
+import React, { Fragment } from 'react'
 
-export default class PropTypesTable extends PureComponent {
-  state = {
-    componentPropTypes: {}
-  }
+import { Table } from 'components/Common'
 
-  static propTypes = {
-    name: PropTypes.string.isRequired
-  }
-
-  componentDidMount() {
-    import('../components/Common').then(component => {
-      const componentPropTypes = parsePropTypes(component[this.props.name])
-      this.setState({
-        componentPropTypes
-      })
-    })
-  }
-  render() {
-    return (
-      <Table>
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Type</th>
-            <th>Required</th>
-          </tr>
-        </thead>
-        <tbody>
-          {Object.keys(this.state.componentPropTypes).map(key => (
-            <tr key={key}>
-              <td>{key}</td>
-              <td>{this.state.componentPropTypes[key].type.name}</td>
-              <td>{this.state.componentPropTypes[key].required.toString()}</td>
-            </tr>
-          ))}
-        </tbody>
-      </Table>
-    )
-  }
+const PropTypesTable = ({ componentPropTypes }) => {
+  return Object.keys(componentPropTypes).length > 0
+    ? Object.keys(componentPropTypes).map(rootKey => (
+        <Fragment key={rootKey}>
+          <h3>{rootKey} Prop Types</h3>
+          <Table>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Required</th>
+              </tr>
+            </thead>
+            <tbody>
+              {Object.keys(componentPropTypes[rootKey]).map(key => (
+                <tr key={key}>
+                  <td>{key}</td>
+                  <td>{componentPropTypes[rootKey][key].type ? componentPropTypes[rootKey][key].type.name : ''}</td>
+                  <td>{componentPropTypes[rootKey][key].required.toString()}</td>
+                </tr>
+              ))}
+            </tbody>
+          </Table>
+        </Fragment>
+      ))
+    : null
 }
+
+PropTypesTable.propTypes = {
+  componentPropTypes: PropTypes.object.isRequired
+}
+
+export default PropTypesTable

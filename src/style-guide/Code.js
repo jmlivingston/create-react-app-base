@@ -12,7 +12,7 @@ export default class PropTypesTable extends PureComponent {
     parent: PropTypes.string.isRequired
   }
   componentDidMount() {
-    import(`style-guide/code/components/${this.props.parent}/${this.props.child}`).then(component => {
+    import(`./code/components/${this.props.parent}/${this.props.child}`).then(component => {
       this.setState({
         code: component.default
       })

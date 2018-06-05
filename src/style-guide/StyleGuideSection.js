@@ -10,8 +10,8 @@ import PropTypesTable from './PropTypesTable'
 
 const DynamicComponent = ({ parent, child }) => {
   const Comp = Loadable({
-    loading: () => <Loader />,
-    loader: () => import(`style-guide/examples/components/${parent}/${child}`),
+    loading: () => <Loader message={`Loading ${parent} - ${child}...`} />,
+    loader: () => import(`./examples/components/${parent}/${child}`),
     render(loaded, props) {
       const Comp = loaded.default
       return <Comp />
@@ -41,12 +41,7 @@ const StyleGuideSection = ({ rootKey }) => {
           <DynamicComponent parent={rootKey} child={childKey} />
           <h2>Code</h2>
           <Code parent={rootKey} child={childKey + 'Code'} />
-          {styleGuideConfig[rootKey].children[childKey].components.map(componentKey => (
-            <Fragment key={componentKey}>
-              <h3>{componentKey} Prop Types</h3>
-              <PropTypesTable name={componentKey} />
-            </Fragment>
-          ))}
+          <PropTypesTable componentPropTypes={styleGuideConfig[rootKey].children[childKey].componentPropTypes} />
         </Fragment>
       ))}
     </Fragment>
