@@ -66,11 +66,11 @@
   },
   "lint-staged": {
     "linters": {
-      "*.{js,json,css}": [
+      "src/*.{js,json,css}": [
         "prettier --write",
         "git add"
       ],
-      "*.js": [
+      "src/*.js": [
         "npm run lint",
         "git add"
       ]
