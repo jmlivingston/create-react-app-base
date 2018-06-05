@@ -13,6 +13,12 @@
       "inSiteMap": true,
       "inHeader": true
     },
+    "languageTester": {
+      "displayName": "言語テスター",
+      "path": "/言語テスター",
+      "inSiteMap": true,
+      "inHeader": true
+    },      
     "siteMap": {
       "displayName": "サイトーマップ",
       "path": "/サイトーマップ",

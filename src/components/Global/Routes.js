@@ -43,6 +43,20 @@ const Routes = () => {
               />
               <Route
                 exact
+                path={strings.routes.languageTester.path}
+                component={Loadable({
+                  loading: () => (
+                    <Loader message={`${strings.loading} ${strings.routes.languageTester.displayName}...`} />
+                  ),
+                  loader: () => import('components/LocalizationTester/LocalizationTester'),
+                  render(loaded, props) {
+                    const LocalizationTester = loaded.default
+                    return <LocalizationTester strings={strings} />
+                  }
+                })}
+              />
+              <Route
+                exact
                 path={strings.routes.siteMap.path}
                 component={Loadable({
                   loading: () => <Loader message={`${strings.loading} ${strings.routes.siteMap.displayName}...`} />,

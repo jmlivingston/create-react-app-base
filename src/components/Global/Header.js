@@ -3,6 +3,7 @@ import React, { PureComponent } from 'react'
 
 import { GlobalContainerContext } from 'components/Global/GlobalContainer'
 import LanguageSelector from 'components/Global/LanguageSelector'
+import ThemeSelector from 'components/Global/ThemeSelector'
 
 import {
   Collapse,
@@ -67,6 +68,11 @@ class Header extends PureComponent {
                     </NavLink>
                   </NavItem>
                   <NavItem>
+                    <NavLink href={this.props.strings.routes.languageTester.path}>
+                      {this.props.strings.routes.languageTester.displayName}
+                    </NavLink>
+                  </NavItem>
+                  <NavItem>
                     <NavLink href={this.props.strings.routes.todo.path}>
                       {this.props.strings.routes.todo.displayName}
                     </NavLink>
@@ -91,6 +97,9 @@ class Header extends PureComponent {
                       </span>
                     </NavItem>
                   )}
+                  <NavItem>
+                    <ThemeSelector />
+                  </NavItem>
                   <LanguageSelector />
                 </Nav>
               </Collapse>

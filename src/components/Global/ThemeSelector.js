@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'components/Common'
 import React, { PureComponent } from 'react'
 
@@ -17,7 +18,9 @@ class ThemeSelector extends PureComponent {
       <GlobalContainerContext.Consumer>
         {context => (
           <Dropdown isOpen={this.state.dropdownOpen} toggle={() => this.toggle()}>
-            <DropdownToggle caret>{context.state.user.theme}</DropdownToggle>
+            <DropdownToggle nav={this.props.nav} caret>
+              {context.state.user.theme.toUpperCase()}
+            </DropdownToggle>
             <DropdownMenu>
               <DropdownItem onClick={() => context.state.updateUserByPropertyValue('theme', 'custom')}>
                 Custom
@@ -35,6 +38,14 @@ class ThemeSelector extends PureComponent {
       </GlobalContainerContext.Consumer>
     )
   }
+}
+
+ThemeSelector.defaultProps = {
+  nav: true
+}
+
+ThemeSelector.propTypes = {
+  nav: PropTypes.bool
 }
 
 export default ThemeSelector

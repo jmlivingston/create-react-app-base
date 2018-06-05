@@ -19,7 +19,7 @@ const UserSettings = () => {
             </FormGroup>
             <FormGroup>
               <Label>{strings.theme}</Label>
-              <ThemeSelector />
+              <ThemeSelector nav={false} />
             </FormGroup>
           </Form>
         </Fragment>
