@@ -6,7 +6,7 @@
     "start": "react-scripts start",
     "start-build": "cd build && serve -s",
     "build": "react-scripts build",
-    "deploy": "git subtree build --prefix build origin build",
+    "deploy": "git subtree push --prefix build origin build",
     "build-screenshots": "node ./utility/build-screenshots.js",
     "build-stories": "node ./utility/build-stories.js",
     "build-tests": "node ./utility/build-test.js",
