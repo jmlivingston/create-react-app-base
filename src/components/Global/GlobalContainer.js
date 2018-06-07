@@ -1,9 +1,8 @@
 import PropTypes from 'prop-types'
 import React, { PureComponent } from 'react'
 
-import API from 'config/apiConstants'
 import APP from 'config/appConstants'
-import dataHelper from 'helpers/dataHelper'
+import authHelper from 'helpers/authHelper'
 
 const GlobalContainerContext = React.createContext()
 
@@ -14,56 +13,46 @@ class GlobalContainer extends PureComponent {
     children: PropTypes.node.isRequired
   }
 
-  getUser = () =>
-    localStorage.getItem(APP.LOCAL_STORAGE_KEYS.AUTH)
-      ? JSON.parse(localStorage.getItem(APP.LOCAL_STORAGE_KEYS.AUTH))
-      : APP.DEFAULT_PROFILE
-
-  setUser = user => {
-    this.setState(prevState => {
-      localStorage.setItem(APP.LOCAL_STORAGE_KEYS.AUTH, JSON.stringify(user))
-      if (prevState.user.theme !== user.theme) {
-        // NOTE: Required for theme reloading due to SASS limitations
-        window.location.reload()
-      }
-      return {
-        user
-      }
-    })
-  }
+  user = null
 
   state = {
-    user: this.getUser(),
-    updateUser: user => {
-      if (this.state.user) {
-        this.setUser({
-          ...this.state.user,
-          ...user
+    user: {
+      get: () => {
+        if (this.user === null) {
+          this.user = authHelper.user.get()
+        }
+        return this.user
+      },
+      set: async user => {
+        this.setState(async prevState => {
+          await authHelper.user.set(user)
+          if (prevState.user.get().theme !== user.theme) {
+            window.location.reload() // NOTE: Required for theme reloading due to SASS limitations
+          }
+          return {
+            user
+          }
         })
+      },
+      updateProperties: async properties => {
+        this.state.user.set({ ...this.state.user.get(), ...properties })
+      },
+      logIn: async emailPassword => {
+        const user = await authHelper.user.logIn(emailPassword)
+        if (user) {
+          this.state.user.set(user)
+        }
+        return !!user
+      },
+      logOut: async () => {
+        this.state.user.set(APP.DEFAULT_PROFILE)
       }
-    },
-    updateUserByPropertyValue: (property, value) => {
-      this.state.updateUser({ ...this.state.user, [property]: value })
-    },
-    login: async user => {
-      const loginResponse = await dataHelper.post(API.LOGIN.BASE, user)
-      if (loginResponse.status.ok) {
-        const userResponse = await dataHelper.get(`${API.USER.BASE}/${loginResponse.data.user.id}`)
-        this.setUser({
-          ...loginResponse.data.user,
-          ...userResponse.data
-        })
-      }
-      return loginResponse.status.ok
-    },
-    logOut: () => {
-      this.setUser(APP.DEFAULT_PROFILE)
     }
   }
 
   render() {
     return (
-      <GlobalContainerContext.Provider value={{ state: this.state }}>
+      <GlobalContainerContext.Provider value={{ user: this.state.user }}>
         {this.props.children}
       </GlobalContainerContext.Provider>
     )

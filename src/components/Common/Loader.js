@@ -3,8 +3,9 @@ import PropTypes from 'prop-types'
 import React, { Fragment } from 'react'
 
 import APP from 'config/appConstants'
+import { Error } from 'components/Common'
 
-const Loader = ({ name = APP.LOADER_NAME, message = 'Loading...', children, data }) => {
+const Loader = ({ name = APP.LOADER_NAME, message = 'Loading...', children, isLoaded, error }) => {
   import(`loaders.css/src/animations/${name}.scss`)
   const Loading = ({ message }) => (
     <div className="text-center">
@@ -13,8 +14,12 @@ const Loader = ({ name = APP.LOADER_NAME, message = 'Loading...', children, data
     </div>
   )
   return children ? (
-    data ? (
-      <Fragment>{children}</Fragment>
+    isLoaded ? (
+      error ? (
+        <Error friendlyError={error} />
+      ) : (
+        <Fragment>{children}</Fragment>
+      )
     ) : (
       <Loading message={message} />
     )

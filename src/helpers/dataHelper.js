@@ -12,24 +12,19 @@ const config = {
 const request = async (url, config) => {
   try {
     const response = await fetch(url, config)
-    const data = await response.json()
-    const status = {
+    const returnValue = {
       ok: response.ok,
       status: response.status,
       statusText: response.statusText || APP.ERROR.GENERIC
     }
     if (response.ok) {
+      const data = await response.json()
       return {
-        data,
-        status
+        ...returnValue,
+        data
       }
     } else {
-      return {
-        status: {
-          ...status,
-          statusDetails: data.detail ? JSON.parse(data.detail) : data
-        }
-      }
+      return returnValue
     }
   } catch (error) {
     return {

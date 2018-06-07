@@ -8,14 +8,23 @@ import TodoList from 'components/Todo/TodoList'
 
 class TodoContainer extends PureComponent {
   state = {
-    todos: {}
+    isLoaded: false,
+    todos: []
   }
 
   bindData = async () => {
-    const todos = await dataHelper.get(API.TODOS.BASE)
-    this.setState({
-      todos
-    })
+    const todosResponse = await dataHelper.get(API.TODO.BASE)
+    if (todosResponse.ok) {
+      this.setState({
+        isLoaded: true,
+        todos: todosResponse.data
+      })
+    } else {
+      this.setState({
+        isLoaded: true,
+        error: todosResponse.statusText
+      })
+    }
   }
 
   componentDidMount() {
@@ -24,8 +33,8 @@ class TodoContainer extends PureComponent {
 
   render() {
     return (
-      <Loader data={this.state.todos.data}>
-        <TodoList todos={this.state.todos.data || []} onClick={() => {}} />
+      <Loader data={this.state.todos} error={this.state.error} isLoaded={this.state.isLoaded}>
+        <TodoList todos={this.state.todos || []} onClick={() => {}} />
       </Loader>
     )
   }

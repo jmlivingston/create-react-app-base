@@ -21,7 +21,7 @@ import {
   NavLink,
   UncontrolledDropdown
 } from 'components/Common'
-import Login from 'components/Auth/Login'
+import LogIn from 'components/Auth/LogIn'
 
 class Header extends PureComponent {
   state = {
@@ -39,9 +39,9 @@ class Header extends PureComponent {
     }))
   }
 
-  toggleLoginModal() {
+  togglelogInModal() {
     this.setState(prevState => ({
-      isLoginModalOpen: !prevState.isLoginModalOpen
+      islogInModalOpen: !prevState.islogInModalOpen
     }))
   }
 
@@ -77,22 +77,22 @@ class Header extends PureComponent {
                       {this.props.strings.routes.todo.displayName}
                     </NavLink>
                   </NavItem>
-                  {this.props.user.firstName ? (
+                  {this.props.user.get().firstName ? (
                     <UncontrolledDropdown nav inNavbar>
                       <DropdownToggle nav caret>
-                        {this.props.user.firstName} {this.props.user.lastName}
+                        {this.props.user.get().firstName} {this.props.user.get().lastName}
                       </DropdownToggle>
                       <DropdownMenu right>
                         <DropdownItem href={this.props.strings.routes.userSettings.path}>
                           {this.props.strings.routes.userSettings.displayName}
                         </DropdownItem>
                         <DropdownItem divider />
-                        <DropdownItem onClick={() => context.state.logOut()}>{this.props.strings.logOut}</DropdownItem>
+                        <DropdownItem onClick={() => context.user.logOut()}>{this.props.strings.logOut}</DropdownItem>
                       </DropdownMenu>
                     </UncontrolledDropdown>
                   ) : (
                     <NavItem>
-                      <span className="nav-link cursor-pointer" onClick={() => this.toggleLoginModal()}>
+                      <span className="nav-link cursor-pointer" onClick={() => this.togglelogInModal()}>
                         {this.props.strings.logIn}
                       </span>
                     </NavItem>
@@ -104,10 +104,10 @@ class Header extends PureComponent {
                 </Nav>
               </Collapse>
             </Navbar>`
-            <Modal isOpen={this.state.isLoginModalOpen} toggle={() => this.toggleLoginModal()}>
-              <ModalHeader toggle={() => this.toggleLoginModal()}>{this.props.strings.logIn}</ModalHeader>
+            <Modal isOpen={this.state.islogInModalOpen} toggle={() => this.togglelogInModal()}>
+              <ModalHeader toggle={() => this.togglelogInModal()}>{this.props.strings.logIn}</ModalHeader>
               <ModalBody>
-                <Login onLoggedIn={() => this.toggleLoginModal()} />
+                <LogIn onLoggedIn={() => this.togglelogInModal()} />
               </ModalBody>
             </Modal>
           </header>

@@ -3,6 +3,8 @@ import React, { PureComponent } from 'react'
 
 import { GlobalContainerContext } from './GlobalContainer'
 
+import APP from 'config/appConstants'
+
 class ThemeImporterInnerComponent extends PureComponent {
   state = {
     isLoaded: false
@@ -15,7 +17,7 @@ class ThemeImporterInnerComponent extends PureComponent {
   }
 
   importStyle = () => {
-    const theme = this.props.user ? this.props.user.theme : 'original'
+    const theme = this.props.user ? this.props.user.get().theme : APP.DEFAULT_PROFILE.theme
     import(`../../styles/themes/${theme}/_bootstrap.scss`).then(() => {
       if (this.props.sassNames) {
         Promise.all(
@@ -49,7 +51,7 @@ class ThemeImporter extends PureComponent {
         {context => {
           let props = {}
           if (context) {
-            props = { ...context.state, ...this.props }
+            props = { ...context, ...this.props }
           } else {
             props = { ...this.props }
           }

@@ -6,8 +6,8 @@ import APP from 'config/appConstants'
 const Error = ({ friendlyError = APP.ERROR.GENERIC, error, info }) => {
   return (
     <Fragment>
-      <div className="bs4-container-fluid bs4-text-center">
-        <h1 className="bs4-display-1">Oops!</h1>
+      <div className="container-fluid text-center">
+        <h1 className="display-1">Oops!</h1>
         <br />
         <h2>Error: {friendlyError}</h2>
       </div>

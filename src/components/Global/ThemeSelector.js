@@ -19,19 +19,13 @@ class ThemeSelector extends PureComponent {
         {context => (
           <Dropdown isOpen={this.state.dropdownOpen} toggle={() => this.toggle()}>
             <DropdownToggle nav={this.props.nav} caret>
-              {context.state.user.theme.toUpperCase()}
+              {context.user.get().theme.toUpperCase()}
             </DropdownToggle>
             <DropdownMenu>
-              <DropdownItem onClick={() => context.state.updateUserByPropertyValue('theme', 'custom')}>
-                Custom
-              </DropdownItem>
-              <DropdownItem onClick={() => context.state.updateUserByPropertyValue('theme', 'darkly')}>
-                Darkly
-              </DropdownItem>
-              <DropdownItem onClick={() => context.state.updateUserByPropertyValue('theme', 'original')}>
-                Original
-              </DropdownItem>
-              <DropdownItem onClick={() => context.state.updateUserByPropertyValue('theme', 'yeti')}>Yeti</DropdownItem>
+              <DropdownItem onClick={() => context.user.updateProperties({ theme: 'custom' })}>Custom</DropdownItem>
+              <DropdownItem onClick={() => context.user.updateProperties({ theme: 'darkly' })}>Darkly</DropdownItem>
+              <DropdownItem onClick={() => context.user.updateProperties({ theme: 'original' })}>Original</DropdownItem>
+              <DropdownItem onClick={() => context.user.updateProperties({ theme: 'yeti' })}>Yeti</DropdownItem>
             </DropdownMenu>
           </Dropdown>
         )}

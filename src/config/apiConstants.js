@@ -3,11 +3,11 @@ const localUrl = 'http://localhost:3001'
 const baseUrl = localUrl
 
 const API = {
-  LOGIN: {
-    BASE: `${baseUrl}/auth/login`
+  LOG_IN: {
+    BASE: `${baseUrl}/Auth/LogIn`
   },
   TODO: {
-    BASE: `${baseUrl}/to-do`
+    BASE: `${baseUrl}/post` //to-do or post to test
   },
   USER: {
     BASE: `${baseUrl}/user`

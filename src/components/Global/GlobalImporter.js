@@ -17,13 +17,13 @@ class GlobalImporterInnerComponent extends PureComponent {
 
   // TODO: CACHE FOR OPTIMIZATION
   getStrings = async () => {
-    const defaultLanguage = APP.DEFAULT_PROFILE.LANGUAGE
+    const defaultLanguage = APP.DEFAULT_PROFILE.language
     let strings = {}
     const defaultLanguagePromises = this.props.stringNames.map(stringName =>
       import(`../../strings/${stringName}/${stringName}.${defaultLanguage}.json`)
     )
     const languagePromises = this.props.stringNames.map(stringName =>
-      import(`../../strings/${stringName}/${stringName}.${this.props.user.language}.json`)
+      import(`../../strings/${stringName}/${stringName}.${this.props.user.get().language}.json`)
     )
     await Promise.all(defaultLanguagePromises)
       .then(values => {
@@ -33,8 +33,8 @@ class GlobalImporterInnerComponent extends PureComponent {
 
     await Promise.all(languagePromises)
       .then(values => {
-        const foo = values.reduce((acc = {}, value) => ({ ...acc, ...value }), {})
-        strings = { ...strings, ...foo }
+        const newStrings = values.reduce((acc = {}, value) => ({ ...acc, ...value }), {})
+        strings = { ...strings, ...newStrings }
       })
       .catch(() => {})
     this.setState(prevState => ({
@@ -59,7 +59,7 @@ class GlobalImporter extends PureComponent {
     return (
       <GlobalContainerContext.Consumer>
         {context => {
-          const props = { ...context.state, ...this.props }
+          const props = { ...context, ...this.props }
           return <GlobalImporterInnerComponent {...props} />
         }}
       </GlobalContainerContext.Consumer>

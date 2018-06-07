@@ -5,7 +5,7 @@ import { Alert, Button, Form, FormGroup, Input, Label } from 'components/Common'
 import { GlobalContainerContext } from 'components/Global/GlobalContainer'
 import GlobalImporter from 'components/Global/GlobalImporter'
 
-class Login extends PureComponent {
+class LogIn extends PureComponent {
   defaultState = {
     email: '',
     password: '',
@@ -26,8 +26,8 @@ class Login extends PureComponent {
     })
   }
 
-  login = async context => {
-    const userValid = await context.state.login({ email: this.state.email, password: this.state.password })
+  logIn = async context => {
+    const userValid = await context.user.logIn({ email: this.state.email, password: this.state.password })
     if (userValid) {
       this.setState({
         ...this.defaultState
@@ -42,7 +42,7 @@ class Login extends PureComponent {
 
   passworkKeyDown(input, context) {
     if (input.key === 'Enter') {
-      this.login(context)
+      this.logIn(context)
     }
   }
 
@@ -53,7 +53,7 @@ class Login extends PureComponent {
         render={({ strings, user }) => (
           <GlobalContainerContext.Consumer>
             {context => {
-              return !context.state.user.email ? (
+              return !context.user.get().email ? (
                 <Form>
                   <FormGroup>
                     <Label for="inputEmail">{strings.email}</Label>
@@ -86,7 +86,7 @@ class Login extends PureComponent {
                       <Input type="checkbox" /> {strings.remember}
                     </Label>
                   </FormGroup>
-                  <Button block={true} className="mt-3" color="primary" onClick={() => this.login(context)}>
+                  <Button block={true} className="mt-3" color="primary" onClick={() => this.logIn(context)}>
                     {strings.logIn}
                   </Button>
                   {this.state.userIsValid === false && (
@@ -97,8 +97,8 @@ class Login extends PureComponent {
                 </Form>
               ) : (
                 <div className="text-center">
-                  <Button onClick={() => context.state.logOut()}>
-                    {strings.logOut} {context.state.user.firstName} {context.state.user.lastName}
+                  <Button onClick={() => context.user.logOut()}>
+                    {strings.logOut} {context.user.get().firstName} {context.user.get().lastName}
                   </Button>
                 </div>
               )
@@ -110,4 +110,4 @@ class Login extends PureComponent {
   }
 }
 
-export default Login
+export default LogIn
