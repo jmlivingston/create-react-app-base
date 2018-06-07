@@ -1,18 +1,30 @@
 import { default as LoaderControl } from 'react-loaders'
 import PropTypes from 'prop-types'
-import React from 'react'
+import React, { Fragment } from 'react'
 
-const Loader = ({ name = 'line-scale-pulse-out-rapid', message = 'Loading...' }) => {
+import APP from 'config/appConstants'
+
+const Loader = ({ name = APP.LOADER_NAME, message = 'Loading...', children, data }) => {
   import(`loaders.css/src/animations/${name}.scss`)
-  return (
+  const Loading = ({ message }) => (
     <div className="text-center">
-      <LoaderControl type="line-scale-pulse-out-rapid" />
+      <LoaderControl type={name} />
       <h3 className="pt-3">{message}</h3>
     </div>
+  )
+  return children ? (
+    data ? (
+      <Fragment>{children}</Fragment>
+    ) : (
+      <Loading message={message} />
+    )
+  ) : (
+    <Loading message={message} />
   )
 }
 
 Loader.propTypes = {
+  children: PropTypes.node,
   message: PropTypes.string,
   name: PropTypes.oneOf([
     'ball-pulse',

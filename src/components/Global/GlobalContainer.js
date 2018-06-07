@@ -1,6 +1,10 @@
 import PropTypes from 'prop-types'
 import React, { PureComponent } from 'react'
 
+import API from 'config/apiConstants'
+import APP from 'config/appConstants'
+import dataHelper from 'helpers/dataHelper'
+
 const GlobalContainerContext = React.createContext()
 
 class GlobalContainer extends PureComponent {
@@ -10,101 +14,50 @@ class GlobalContainer extends PureComponent {
     children: PropTypes.node.isRequired
   }
 
-  defaultLanguage = 'en'
+  getUser = () =>
+    localStorage.getItem(APP.LOCAL_STORAGE_KEYS.AUTH)
+      ? JSON.parse(localStorage.getItem(APP.LOCAL_STORAGE_KEYS.AUTH))
+      : APP.DEFAULT_PROFILE
 
-  defaultTheme = 'original'
-
-  defaultUser = {
-    isAuthenticated: false,
-    theme: this.defaultTheme,
-    language: this.defaultLanguage
-  }
-
-  users = {
-    'admin@x.com': {
-      password: 'x',
-      theme: 'darkly',
-      language: 'en',
-      firstName: 'Joe',
-      lastName: 'Admin',
-      isAuthenticated: false
-    },
-    'editor@x.com': {
-      password: 'x',
-      theme: 'original',
-      language: 'ja',
-      firstName: 'Joe',
-      lastName: 'Editor',
-      isAuthenticated: false
-    },
-    'view@x.com': {
-      password: 'x',
-      theme: 'yeti',
-      language: 'en',
-      firstName: 'Joe',
-      lastName: 'View',
-      isAuthenticated: false
-    },
-    'custom@x.com': {
-      password: 'x',
-      theme: 'custom',
-      language: 'ja',
-      firstName: '明',
-      lastName: '黒沢',
-      isAuthenticated: false
-    }
+  setUser = user => {
+    this.setState(prevState => {
+      localStorage.setItem(APP.LOCAL_STORAGE_KEYS.AUTH, JSON.stringify(user))
+      if (prevState.user.theme !== user.theme) {
+        // NOTE: Required for theme reloading due to SASS limitations
+        window.location.reload()
+      }
+      return {
+        user
+      }
+    })
   }
 
   state = {
-    user: localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')) : this.defaultUser,
-    defaultTheme: this.defaultTheme,
-    defaultLanguage: this.defaultLanguage,
+    user: this.getUser(),
     updateUser: user => {
       if (this.state.user) {
-        const updatedUser = {
+        this.setUser({
           ...this.state.user,
           ...user
-        }
-        this.setState(prevState => ({
-          updatedUser
-        }))
-        localStorage.setItem('user', JSON.stringify(updatedUser))
+        })
       }
-      // NOTE: Required for theme reloading due to SASS limitations
-      window.location.reload()
     },
     updateUserByPropertyValue: (property, value) => {
       this.state.updateUser({ ...this.state.user, [property]: value })
     },
     login: async user => {
-      let userIsValid = false
-      const filteredUser = this.users[user.email]
-      if (filteredUser) {
-        if (filteredUser.password === user.password) {
-          userIsValid = true
-        }
-      }
-      if (userIsValid) {
-        const { password, ...user } = filteredUser
-        this.setState({
-          userIsValid,
-          user
-        })
-        localStorage.setItem('user', JSON.stringify(user))
-        // NOTE: Required for theme reloading due to SASS limitations and GlobalImporter
-        window.location.reload()
-      } else {
-        this.setState({
-          userIsValid
+      const loginResponse = await dataHelper.post(API.LOGIN.BASE, user)
+      if (loginResponse.status.ok) {
+        const userResponse = await dataHelper.get(`${API.USER.BASE}/${loginResponse.data.user.id}`)
+        this.setUser({
+          ...loginResponse.data.user,
+          ...userResponse.data
         })
       }
-      return userIsValid
+      return loginResponse.status.ok
     },
     logOut: () => {
-      const { firstName, lastName, ...user } = { ...this.state.user, isAuthenticated: false }
-      localStorage.setItem('user', JSON.stringify(user))
-      // NOTE: Required for theme reloading due to SASS limitations and GlobalImporter
-      window.location.reload()
+      this.setUser(APP.DEFAULT_PROFILE)
     }
   }
 

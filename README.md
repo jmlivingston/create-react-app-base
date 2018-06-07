@@ -1,5 +1,7 @@
 # create-react-app-base
 
+> IMPORTANT: This project is still under development. It currently relies on the following API - https://github.com/jmlivingston/dev-auth-rest-api
+
 ## Summary
 
 This project is an opinionated template based on create-react-app

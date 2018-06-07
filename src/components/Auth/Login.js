@@ -1,13 +1,23 @@
-import { Alert, Button, Form, FormGroup, Input, Label } from 'components/Common'
+import PropTypes from 'prop-types'
 import React, { PureComponent } from 'react'
 
+import { Alert, Button, Form, FormGroup, Input, Label } from 'components/Common'
 import { GlobalContainerContext } from 'components/Global/GlobalContainer'
 import GlobalImporter from 'components/Global/GlobalImporter'
 
 class Login extends PureComponent {
-  state = {
+  defaultState = {
     email: '',
-    password: ''
+    password: '',
+    userIsValid: true
+  }
+
+  state = {
+    ...this.defaultState
+  }
+
+  static propTypes = {
+    onLoggedIn: PropTypes.func
   }
 
   onChange(input) {
@@ -20,8 +30,12 @@ class Login extends PureComponent {
     const userValid = await context.state.login({ email: this.state.email, password: this.state.password })
     if (userValid) {
       this.setState({
-        email: '',
-        password: ''
+        ...this.defaultState
+      })
+      this.props.onLoggedIn()
+    } else {
+      this.setState({
+        userIsValid: false
       })
     }
   }
@@ -39,7 +53,7 @@ class Login extends PureComponent {
         render={({ strings, user }) => (
           <GlobalContainerContext.Consumer>
             {context => {
-              return !context.state.user.isAuthenticated ? (
+              return !context.state.user.email ? (
                 <Form>
                   <FormGroup>
                     <Label for="inputEmail">{strings.email}</Label>
@@ -69,13 +83,13 @@ class Login extends PureComponent {
                   </FormGroup>
                   <FormGroup check>
                     <Label check>
-                      <Input type="checkbox" value="remember-me" /> {strings.remember}
+                      <Input type="checkbox" /> {strings.remember}
                     </Label>
                   </FormGroup>
                   <Button block={true} className="mt-3" color="primary" onClick={() => this.login(context)}>
                     {strings.logIn}
                   </Button>
-                  {context.state.userIsValid === false && (
+                  {this.state.userIsValid === false && (
                     <Alert color="danger" className="mt-3">
                       {strings.userNamePasswordInvalid}
                     </Alert>

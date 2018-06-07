@@ -107,7 +107,7 @@ class Header extends PureComponent {
             <Modal isOpen={this.state.isLoginModalOpen} toggle={() => this.toggleLoginModal()}>
               <ModalHeader toggle={() => this.toggleLoginModal()}>{this.props.strings.logIn}</ModalHeader>
               <ModalBody>
-                <Login />
+                <Login onLoggedIn={() => this.toggleLoginModal()} />
               </ModalBody>
             </Modal>
           </header>

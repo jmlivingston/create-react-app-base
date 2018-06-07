@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types'
 import React, { PureComponent, Fragment } from 'react'
 
+import APP from 'config/appConstants'
 import { GlobalContainerContext } from './GlobalContainer'
 
 class GlobalImporterInnerComponent extends PureComponent {
@@ -9,7 +10,6 @@ class GlobalImporterInnerComponent extends PureComponent {
   }
 
   static propTypes = {
-    defaultLanguage: PropTypes.string.isRequired,
     render: PropTypes.func.isRequired,
     stringNames: PropTypes.arrayOf(PropTypes.string).isRequired,
     user: PropTypes.object.isRequired
@@ -17,9 +17,10 @@ class GlobalImporterInnerComponent extends PureComponent {
 
   // TODO: CACHE FOR OPTIMIZATION
   getStrings = async () => {
+    const defaultLanguage = APP.DEFAULT_PROFILE.LANGUAGE
     let strings = {}
     const defaultLanguagePromises = this.props.stringNames.map(stringName =>
-      import(`../../strings/${stringName}/${stringName}.${this.props.defaultLanguage}.json`)
+      import(`../../strings/${stringName}/${stringName}.${defaultLanguage}.json`)
     )
     const languagePromises = this.props.stringNames.map(stringName =>
       import(`../../strings/${stringName}/${stringName}.${this.props.user.language}.json`)
