@@ -41,7 +41,7 @@ const StyleGuideSection = ({ rootKey }) => {
           <DynamicComponent parent={rootKey} child={childKey} />
           <h2>Code</h2>
           <Code parent={rootKey} child={childKey + 'Code'} />
-          <PropTypesTable componentPropTypes={styleGuideConfig[rootKey].children[childKey].componentPropTypes} />
+          <PropTypesTable components={styleGuideConfig[rootKey].children[childKey].components} />
         </Fragment>
       ))}
     </Fragment>

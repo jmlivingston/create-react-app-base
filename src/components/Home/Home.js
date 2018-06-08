@@ -1,16 +1,30 @@
 import PropTypes from 'prop-types'
-import React, { Fragment } from 'react'
+import React, { Component, Fragment } from 'react'
 
+import { DatePicker } from 'components/Common'
 import LocalizationTester from 'components/LocalizationTester/LocalizationTester'
 
-const Home = ({ strings }) => {
-  return (
-    <Fragment>
-      <h1>{strings.title}</h1>
-      <p>{strings.description}</p>
-      <LocalizationTester />
-    </Fragment>
-  )
+class Home extends Component {
+  state = {
+    date: new Date().toISOString()
+  }
+
+  dateChange = date => {
+    this.setState({ date })
+  }
+
+  render() {
+    return (
+      <Fragment>
+        <h1>{this.props.strings.title}</h1>
+        <p>{this.props.strings.description}</p>
+        <LocalizationTester />
+        <div className="pb-2" />
+        <DatePicker value={this.state.date} onChange={this.dateChange} />
+        {/* <Input /> */}
+      </Fragment>
+    )
+  }
 }
 
 Home.propTypes = {

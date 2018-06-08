@@ -25,8 +25,10 @@ class GlobalContainer extends PureComponent {
       },
       set: async user => {
         this.setState(async prevState => {
+          const themeLanguageChanged =
+            prevState.user.get().theme !== user.theme || prevState.user.get().language !== user.language
           await authHelper.user.set(user)
-          if (prevState.user.get().theme !== user.theme) {
+          if (themeLanguageChanged) {
             window.location.reload() // NOTE: Required for theme reloading due to SASS limitations
           }
           return {
