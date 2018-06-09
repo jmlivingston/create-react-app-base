@@ -10,8 +10,8 @@ class DatePicker extends PureComponent {
   }
 
   static propTypes = {
-    value: PropTypes.string,
-    onChange: PropTypes.func.isRequired
+    onChange: PropTypes.func.isRequired,
+    value: PropTypes.string
   }
 
   onChange = date => {

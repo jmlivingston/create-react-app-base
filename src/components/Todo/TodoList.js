@@ -14,6 +14,7 @@ const TodoList = ({ todos, onClick }) => (
 )
 
 TodoList.propTypes = {
+  onClick: PropTypes.func.isRequired,
   todos: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number,
@@ -22,8 +23,7 @@ TodoList.propTypes = {
       createdDate: PropTypes.string,
       modifiedDate: PropTypes.string
     }).isRequired
-  ).isRequired,
-  onClick: PropTypes.func.isRequired
+  ).isRequired
 }
 
 export default TodoList

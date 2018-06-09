@@ -41,7 +41,7 @@
     "node-sass": "4.9.0",
     "prettier": "^1.13.4",
     "puppeteer": "^1.4.0",
-    "serve": "^7.2.0"
+    "serve": "^8.1.2"
   },
   "browserslist": {
     "development": [

@@ -3,7 +3,7 @@ import React, { Fragment } from 'react'
 
 import Error from './Error'
 
-const TodoForm = ({ error, change, submit, todo: {} }) => {
+const TodoForm = ({ error, change, submit, todo }) => {
   const inputChange = e => {
     change({ text: e.target.value })
   }
@@ -26,9 +26,10 @@ const TodoForm = ({ error, change, submit, todo: {} }) => {
 }
 
 TodoForm.propTypes = {
-  todoAddValue: PropTypes.string.isRequired,
-  todoChange: PropTypes.func.isRequired,
-  todoSubmit: PropTypes.func.isRequired
+  change: PropTypes.func, 
+  error: PropTypes.string, 
+  submit: PropTypes.func, 
+  todo: PropTypes.object
 }
 
 export default TodoForm

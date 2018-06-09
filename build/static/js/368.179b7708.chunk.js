@@ -1,0 +1,2 @@
+webpackJsonp([368],{331:function(e,t){e.exports={terms:"These are my terms: Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo."}}});
+//# sourceMappingURL=368.179b7708.chunk.js.map

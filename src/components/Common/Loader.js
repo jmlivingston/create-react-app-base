@@ -30,6 +30,8 @@ const Loader = ({ name = APP.LOADER_NAME, message = 'Loading...', children, isLo
 
 Loader.propTypes = {
   children: PropTypes.node,
+  error: PropTypes.string,
+  isLoaded: PropTypes.bool,
   message: PropTypes.string,
   name: PropTypes.oneOf([
     'ball-pulse',

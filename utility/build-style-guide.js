@@ -2,11 +2,11 @@ const fs = require('fs')
 const path = require('path')
 const prettier = require('prettier')
 
-const codeDir = path.join(__dirname, '../src/style-guide/code/components')
+const codeDir = path.join(__dirname, '../src/styleGuide/code/components')
 const componentsCommonDir = path.join(__dirname, '../src/components/Common')
-const componentsDir = path.join(__dirname, '../src/style-guide/examples/components')
+const componentsDir = path.join(__dirname, '../src/styleGuide/examples/components')
 const getFilesFolders = require('./utility.js').getFilesFolders
-const styleGuideImportComponentFile = path.join(__dirname, '../src/style-guide/styleGuideData.js')
+const styleGuideImportComponentFile = path.join(__dirname, '../src/styleGuide/styleGuideData.js')
 
 const prettierConfig = {
   jsxBracketSameLine: true,
@@ -62,24 +62,27 @@ const buildStyleGuide = () => {
   code = 'const styleGuideData = ' + JSON.stringify(code)
 
   const files = getFilesFolders(componentsCommonDir, false, 'file').filter(file => file.indexOf('index.js') === -1)
-  code += `\r\nconst importComponentByName = async name => {
-    let component
-    switch (name) {
-      ${files
-        .map(file => {
-          const baseName = path.basename(file).replace('.js', '')
-          return `case '${baseName}':
-      component = await import('components/Common/${baseName}')
-      break`
-        })
-        .join('\n')}
-      default:
-        break
-    }
-    return component
-  }
 
-  export { importComponentByName, styleGuideData }`
+  //TODO: This should work, but create-react-app has some limitations with async...await and dynamic imports
+  // code += `\r\nconst importComponentByName = async name => {
+  //   let component
+  //   switch (name) {
+  //     ${files
+  //       .map(file => {
+  //         const baseName = path.basename(file).replace('.js', '')
+  //         return `case '${baseName}':
+  //     component = await import('components/Common/${baseName}')
+  //     break`
+  //       })
+  //       .join('\n')}
+  //     default:
+  //       break
+  //   }
+  //   return component
+  // }
+
+  // export { importComponentByName, styleGuideData }`
+  code += '\r\nexport { styleGuideData }'
   code = prettier.format(code, prettierConfig)
   console.log(code)
   fs.writeFileSync(styleGuideImportComponentFile, code)

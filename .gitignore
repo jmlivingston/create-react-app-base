@@ -22,6 +22,5 @@ yarn-error.log*
 
 /src/**/*.css
 /utility/screenshots
-/build-style-guide
 
 /.vscode

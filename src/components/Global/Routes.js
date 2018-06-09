@@ -98,7 +98,7 @@ const Routes = () => {
                 path={strings.routes.styleGuide.path}
                 component={Loadable({
                   loading: () => <Loader message={`${strings.loading} ${strings.routes.styleGuide.displayName}...`} />,
-                  loader: () => import('../../style-guide/StyleGuideApp'),
+                  loader: () => import('styleGuide/StyleGuideApp'),
                   render(loaded, props) {
                     const StyleGuideApp = loaded.default
                     return <StyleGuideApp />
