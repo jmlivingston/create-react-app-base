@@ -1,15 +1,16 @@
+
 import React, { Fragment, PureComponent } from 'react'
 
 import { Button, Row } from 'components/Common'
 import StyleGuideSection from './StyleGuideSection'
-import { styleGuideData } from './styleGuideData'
+import styleGuideConfig from 'strings/styleGuide/styleGuide.en.json'
 import ThemeSelector from 'components/Global/ThemeSelector'
 
 import './StyleGuideApp.scss'
 
 class StyleGuideApp extends PureComponent {
   state = {
-    rootKey: Object.keys(styleGuideData)[0]
+    rootKey: Object.keys(styleGuideConfig)[0]
   }
   render() {
     return (
@@ -18,9 +19,12 @@ class StyleGuideApp extends PureComponent {
           <div className="sidebar-sticky py-2">
             <ThemeSelector />
             <br />
-            {Object.keys(styleGuideData).map(rootKey => (
+            {Object.keys(styleGuideConfig).map(rootKey => (
               <p key={rootKey}>
-                <Button active={this.state.rootKey === rootKey} onClick={() => this.setState({ rootKey })} size="sm">
+                <Button
+                  active={this.state.rootKey === rootKey}
+                  onClick={() => this.setState({ rootKey })}
+                  size="sm">
                   {this.state.rootKey === rootKey ? <strong>{rootKey}</strong> : <Fragment>{rootKey}</Fragment>}
                 </Button>
               </p>

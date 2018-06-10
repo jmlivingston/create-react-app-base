@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import React, { Fragment } from 'react'
 
-import { styleGuideData } from './styleGuideData'
+import styleGuideConfig from 'strings/styleGuide/styleGuide.en.json'
 import { Loader } from 'components/Common'
 
 import Loadable from 'react-loadable'
@@ -30,7 +30,7 @@ const StyleGuideSection = ({ rootKey }) => {
     <Fragment>
       <h1>{rootKey}</h1>
       <hr />
-      {Object.keys(styleGuideData[rootKey].children).map(childKey => (
+      {Object.keys(styleGuideConfig[rootKey].children).map(childKey => (
         <Fragment key={childKey}>
           <h2>
             {childKey
@@ -41,7 +41,7 @@ const StyleGuideSection = ({ rootKey }) => {
           <DynamicComponent parent={rootKey} child={childKey} />
           <h2>Code</h2>
           <Code parent={rootKey} child={childKey + 'Code'} />
-          <PropTypesTable components={styleGuideData[rootKey].children[childKey].components} />
+          <PropTypesTable componentPropTypes={styleGuideConfig[rootKey].children[childKey].componentPropTypes} />
         </Fragment>
       ))}
     </Fragment>

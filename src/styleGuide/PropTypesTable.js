@@ -1,77 +1,41 @@
-import parsePropTypes from 'parse-prop-types'
 import PropTypes from 'prop-types'
-import React, { Component, Fragment } from 'react'
+import React, { Fragment } from 'react'
 
-import { Alert, Table } from 'components/Common'
-// import { Alert } from 'reactstrap'
+import { Table } from 'components/Common'
 
-class PropTypesTableInner extends Component {
-  state = {
-    propTypesInfo: {} // parsePropTypes(Alert)
-  }
-
-  static propTypes = {
-    name: PropTypes.string
-  }
-
-  alertPropTypes = parsePropTypes(Alert)
-
-  // getPropTypes = name => {
-  //   const propTypesInfo
-  //   switch(name) {
-  //     case 'Alert':
-
-  //       break;
-  //     default:
-  //   }
-  // }
-
-  componentDidMount() {
-    this.setState({
-      propTypesInfo: this.alertPropTypes
-    })
-  }
-
-  render() {
-    return (
-      <Fragment>
-        <h3>{this.props.name} Prop Types</h3>
-        <Table>
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Type</th>
-              <th>Required</th>
-            </tr>
-          </thead>
-          <tbody>
-            {this.state.propTypesInfo &&
-              Object.keys(this.state.propTypesInfo).map(key => {
-                return (
-                  <tr key={key}>
-                    <td>{key}</td>
-                    <td>{this.state.propTypesInfo[key].type ? this.state.propTypesInfo[key].type.name : ''}</td>
-                    <td>{this.state.propTypesInfo[key].required.toString()}</td>
+const PropTypesTable = ({ componentPropTypes }) => {
+  return Object.keys(componentPropTypes).length > 0
+    ? Object.keys(componentPropTypes).map(
+        rootKey =>
+          Object.keys(componentPropTypes[rootKey]).length > 0 ? (
+            <Fragment key={rootKey}>
+              <h3>{rootKey} Prop Types</h3>
+              <Table>
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th>Required</th>
                   </tr>
-                )
-              })}
-          </tbody>
-        </Table>
-      </Fragment>
-    )
-  }
-}
-
-const PropTypesTable = ({ components }) => {
-  return Object.keys(components).length > 0
-    ? components.map(component => {
-        return <PropTypesTableInner key={component} name={component} />
-      })
+                </thead>
+                <tbody>
+                  {Object.keys(componentPropTypes[rootKey]).map(key => (
+                    <tr key={key}>
+                      <td>{key}</td>
+                      <td>{componentPropTypes[rootKey][key].type ? componentPropTypes[rootKey][key].type.name : ''}</td>
+                      <td>{componentPropTypes[rootKey][key].required.toString()}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </Table>
+            </Fragment>
+          ) : null
+      )
     : null
 }
 
 PropTypesTable.propTypes = {
-  components: PropTypes.arrayOf(PropTypes.string)
+  componentPropTypes: PropTypes.object.isRequired
 }
 
 export default PropTypesTable
