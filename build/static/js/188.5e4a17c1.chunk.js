@@ -1,2 +1,0 @@
-webpackJsonp([188],{132:function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});t.default="import React, { PureComponent } from 'react'\n\nimport { DatePicker } from 'components/Common'\n\nclass DatePickerDefault extends PureComponent {\n  state = {\n    date: new Date().toISOString()\n  }\n\n  dateChange = date => {\n    this.setState({ date })\n  }\n\n  render() {\n    return <DatePicker value={this.state.date} onChange={this.dateChange} />\n  }\n}\n\nexport default DatePickerDefault\n"}});
-//# sourceMappingURL=188.5e4a17c1.chunk.js.map

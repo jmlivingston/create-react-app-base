@@ -95,13 +95,25 @@ const Routes = () => {
               />
               <Route
                 exact
-                path={strings.routes.styleGuide.path}
+                path={`${strings.routes.styleGuide.path}`}
                 component={Loadable({
                   loading: () => <Loader message={`${strings.loading} ${strings.routes.styleGuide.displayName}...`} />,
                   loader: () => import('styleGuide/StyleGuideApp'),
                   render(loaded, props) {
                     const StyleGuideApp = loaded.default
-                    return <StyleGuideApp />
+                    return <StyleGuideApp {...props} />
+                  }
+                })}
+              />
+              <Route
+                exact
+                path={`${strings.routes.styleGuide.path}/:id`}
+                component={Loadable({
+                  loading: () => <Loader message={`${strings.loading} ${strings.routes.styleGuide.displayName}...`} />,
+                  loader: () => import('styleGuide/StyleGuideApp'),
+                  render(loaded, props) {
+                    const StyleGuideApp = loaded.default
+                    return <StyleGuideApp {...props} />
                   }
                 })}
               />

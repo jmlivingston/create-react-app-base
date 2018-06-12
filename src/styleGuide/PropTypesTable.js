@@ -1,37 +1,60 @@
 import PropTypes from 'prop-types'
-import React, { Fragment } from 'react'
+import React, { Component } from 'react'
 
-import { Table } from 'components/Common'
+import { Card, CardBody, CardHeader, Collapse, Table } from 'components/Common'
 
-const PropTypesTable = ({ componentPropTypes }) => {
-  return Object.keys(componentPropTypes).length > 0
-    ? Object.keys(componentPropTypes).map(
-        rootKey =>
-          Object.keys(componentPropTypes[rootKey]).length > 0 ? (
-            <Fragment key={rootKey}>
-              <h3>{rootKey} Prop Types</h3>
-              <Table>
-                <thead>
-                  <tr>
-                    <th>Name</th>
-                    <th>Type</th>
-                    <th>Required</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {Object.keys(componentPropTypes[rootKey]).map(key => (
-                    <tr key={key}>
-                      <td>{key}</td>
-                      <td>{componentPropTypes[rootKey][key].type ? componentPropTypes[rootKey][key].type.name : ''}</td>
-                      <td>{componentPropTypes[rootKey][key].required.toString()}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </Table>
-            </Fragment>
-          ) : null
-      )
-    : null
+class PropTypesTable extends Component {
+  state = {
+    collapse: false
+  }
+
+  columns = [
+    {
+      Header: 'Name',
+      accessor: 'name'
+    },
+    {
+      Header: 'Type',
+      accessor: 'type'
+    },
+    {
+      Header: 'Required',
+      accessor: 'required'
+    }
+  ]
+
+  toggle() {
+    this.setState({ collapse: !this.state.collapse })
+  }
+
+  render() {
+    return Object.keys(this.props.componentPropTypes).length > 0
+      ? Object.keys(this.props.componentPropTypes).map(
+          rootKey =>
+            Object.keys(this.props.componentPropTypes[rootKey]).length > 0 ? (
+              <Card key={rootKey}>
+                <CardHeader onClick={() => this.toggle()}>{rootKey}</CardHeader>
+                <Collapse isOpen={this.state.collapse} timeout={0}>
+                  <CardBody>
+                    <Table
+                      columns={this.columns}
+                      data={Object.keys(this.props.componentPropTypes[rootKey]).map(key => ({
+                        name: key,
+                        type: this.props.componentPropTypes[rootKey][key].type
+                          ? this.props.componentPropTypes[rootKey][key].type.name
+                          : '',
+                        required: this.props.componentPropTypes[rootKey][key].required.toString()
+                      }))}
+                      showPagination={false}
+                      minRows={0}
+                    />
+                  </CardBody>
+                </Collapse>
+              </Card>
+            ) : null
+        )
+      : null
+  }
 }
 
 PropTypesTable.propTypes = {
