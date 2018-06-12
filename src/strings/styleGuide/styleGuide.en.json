@@ -8024,7 +8024,22 @@
     "children": {
       "DatePickerDefault": {
         "componentPropTypes": {
-          "DatePicker": {}
+          "DatePicker": {
+            "onChange": {
+              "type": {
+                "name": "func"
+              },
+              "required": true,
+              "description": ""
+            },
+            "value": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": ""
+            }
+          }
         }
       }
     }

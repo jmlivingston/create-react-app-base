@@ -34,18 +34,14 @@
     "reactstrap": "6.0.1"
   },
   "devDependencies": {
-    "acorn": "^5.6.2",
-    "acorn-jsx": "^4.1.1",
-    "acorn-stage3": "^0.6.0",
-    "acorn-static-class-property-initializer": "^1.0.0",
     "cross-env": "^5.1.6",
     "husky": "^0.14.3",
     "lint-staged": "^7.1.2",
     "node-sass": "4.9.0",
     "prettier": "^1.13.4",
     "puppeteer": "^1.4.0",
-    "react-docgen": "^2.20.1",
-    "serve": "^8.1.2"
+    "react-docgen": "3.0.0-beta12",
+    "serve": "^8.1.4"
   },
   "browserslist": {
     "development": [
