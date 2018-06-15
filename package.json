@@ -57,6 +57,9 @@
       "not ie < 11"
     ]
   },
+  "engines": {
+    "node": ">=7.6.0 <10.0.0 "
+  },
   "eslintConfig": {
     "extends": "./node_modules/eslint-config-react-app/index.js",
     "rules": {
