@@ -15790,6 +15790,13 @@
       }
     }
   },
+  "KitchenSink": {
+    "children": {
+      "KitchenSink": {
+        "componentPropTypes": {}
+      }
+    }
+  },
   "Layout": {
     "children": {
       "LayoutDefault": {

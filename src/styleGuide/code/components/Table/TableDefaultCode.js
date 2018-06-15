@@ -33,10 +33,10 @@ export default class TableDefault extends React.Component {
     return (
       <Fragment>
         <h3>
-          See{' '}
+          This component is entirely based on{' '}
           <a href="https://react-table.js.org" target="_blank" rel="noopener noreferrer">
             react-table
-          </a> for detailed documentation.
+          </a>. Follow link for detailed documentation.
         </h3>
         <Table data={this.basicData} columns={this.columns} defaultPageSize={10} />
       </Fragment>
