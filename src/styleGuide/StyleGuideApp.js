@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import React, { Fragment, PureComponent } from 'react'
 
 import { Button, Row } from 'components/Common'
@@ -10,6 +11,12 @@ import './StyleGuideApp.scss'
 class StyleGuideApp extends PureComponent {
   state = {
     rootKey: Object.keys(styleGuideConfig)[0]
+  }
+
+  static propTypes = {
+    history: PropTypes.object,
+    match: PropTypes.object,
+    params: PropTypes.object
   }
 
   componentDidMount() {

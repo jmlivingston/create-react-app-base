@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[208],{449:function(n,a,e){"use strict";e.r(a);var o=e(1),t=e.n(o),c=e(4);a.default=function(){return t.a.createElement(c.Ya,{color:"info"},"I am an alert and I can be dismissed!")}}}]);
+//# sourceMappingURL=208.9972637e.chunk.js.map

@@ -21,7 +21,8 @@ class DatePicker extends PureComponent {
   bindData = async () => {
     // HACK: moment.js tends to be a memory hog
     // Note: dateHelper uses dayjs
-    const moment = await import('moment')
+    let moment = await import('moment')
+    moment = moment.default
     this.setState({
       moment,
       isLoaded: true

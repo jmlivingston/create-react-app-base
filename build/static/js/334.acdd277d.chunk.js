@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[334],{845:function(e){e.exports={title:"Home",description:"These are my terms: Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo."}}}]);
+//# sourceMappingURL=334.acdd277d.chunk.js.map

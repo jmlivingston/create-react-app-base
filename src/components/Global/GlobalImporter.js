@@ -45,7 +45,7 @@ class GlobalImporterInnerComponent extends PureComponent {
     }))
   }
 
-  componentWillMount() {
+  componentDidMount() {
     this.getStrings()
   }
 

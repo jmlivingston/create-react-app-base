@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[102],{554:function(n,o,t){"use strict";t.r(o);o.default="import React from 'react'\nimport { Badge, Button } from 'components/Common'\n\nexport default class BadgeButton extends React.Component {\n  render() {\n    return (\n      <div>\n        <Button color=\"primary\" outline>\n          Notifications <Badge color=\"secondary\">4</Badge>\n        </Button>\n      </div>\n    )\n  }\n}\n"}}]);
+//# sourceMappingURL=102.8d4313b7.chunk.js.map

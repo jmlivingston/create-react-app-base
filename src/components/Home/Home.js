@@ -21,7 +21,6 @@ class Home extends Component {
         <LocalizationTester />
         <div className="pb-2" />
         <DatePicker value={this.state.date} onChange={this.dateChange} />
-        {/* <Input /> */}
       </Fragment>
     )
   }
