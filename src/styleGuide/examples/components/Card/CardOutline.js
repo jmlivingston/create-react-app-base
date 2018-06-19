@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { Fragment } from 'react'
+
 import { Card, Button, CardTitle, CardText } from 'components/Common'
 
-const CardOutline = props => {
+const CardOutline = () => {
   return (
-    <div>
+    <Fragment>
       <Card body outline color="secondary">
         <CardTitle>Special Title Treatment</CardTitle>
         <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
@@ -34,7 +35,7 @@ const CardOutline = props => {
         <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
         <Button color="secondary">Button</Button>
       </Card>
-    </div>
+    </Fragment>
   )
 }
 

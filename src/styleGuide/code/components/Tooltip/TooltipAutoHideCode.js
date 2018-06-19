@@ -1,26 +1,21 @@
-const TooltipAutoHideCode = `/* eslint react/no-multi-comp: 0, react/prop-types: 0 */
-import React from 'react'
+const TooltipAutoHideCode = `import React, { Fragment, PureComponent } from 'react'
+
 import { Tooltip } from 'components/Common'
 
-export default class TooltipAutoHide extends React.Component {
-  constructor(props) {
-    super(props)
-
-    this.toggle = this.toggle.bind(this)
-    this.state = {
-      tooltipOpen: false
-    }
+class TooltipAutoHide extends PureComponent {
+  state = {
+    tooltipOpen: false
   }
 
   toggle() {
-    this.setState({
-      tooltipOpen: !this.state.tooltipOpen
-    })
+    this.setState(prevState => ({
+      tooltipOpen: !prevState.tooltipOpen
+    }))
   }
 
   render() {
     return (
-      <div>
+      <Fragment>
         <p>
           Sometimes you need to allow users to select text within a{' '}
           <a href="/" id="DisabledAutoHideTooltipAutoHide">
@@ -32,13 +27,15 @@ export default class TooltipAutoHide extends React.Component {
           isOpen={this.state.tooltipOpen}
           autohide={false}
           target="DisabledAutoHideTooltipAutoHide"
-          toggle={this.toggle}>
+          toggle={() => this.toggle()}>
           Try to select this text!
         </Tooltip>
-      </div>
+      </Fragment>
     )
   }
 }
+
+export default TooltipAutoHide
 `
 
 export default TooltipAutoHideCode

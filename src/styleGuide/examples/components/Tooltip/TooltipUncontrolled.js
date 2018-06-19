@@ -1,10 +1,10 @@
-/* eslint react/no-multi-comp: 0, react/prop-types: 0 */
-import React from 'react'
+import React, { Fragment } from 'react'
+
 import { UncontrolledTooltip } from 'components/Common'
 
 export default function TooltipUncontrolled() {
   return (
-    <div>
+    <Fragment>
       <p>
         Somewhere in here is a{' '}
         <a href="/" id="UncontrolledTooltipTooltipUncontrolled">
@@ -14,6 +14,6 @@ export default function TooltipUncontrolled() {
       <UncontrolledTooltip placement="right" target="UncontrolledTooltipTooltipUncontrolled">
         Hello world!
       </UncontrolledTooltip>
-    </div>
+    </Fragment>
   )
 }

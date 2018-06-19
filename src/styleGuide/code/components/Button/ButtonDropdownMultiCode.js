@@ -1,25 +1,21 @@
-const ButtonDropdownMultiCode = `import React from 'react'
+const ButtonDropdownMultiCode = `import React, { PureComponent } from 'react'
+
 import { ButtonDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'components/Common'
 
-export default class ButtonDropdownMulti extends React.Component {
-  constructor(props) {
-    super(props)
-
-    this.toggle = this.toggle.bind(this)
-    this.state = {
-      dropdownOpen: false
-    }
+class ButtonDropdownMulti extends PureComponent {
+  state = {
+    dropdownOpen: false
   }
 
   toggle() {
-    this.setState({
-      dropdownOpen: !this.state.dropdownOpen
-    })
+    this.setState(prevState => ({
+      dropdownOpen: !prevState.dropdownOpen
+    }))
   }
 
   render() {
     return (
-      <ButtonDropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
+      <ButtonDropdown isOpen={this.state.dropdownOpen} toggle={() => this.toggle()}>
         <DropdownToggle color="primary" caret>
           Dropdown
         </DropdownToggle>
@@ -34,6 +30,8 @@ export default class ButtonDropdownMulti extends React.Component {
     )
   }
 }
+
+export default ButtonDropdownMulti
 `
 
 export default ButtonDropdownMultiCode

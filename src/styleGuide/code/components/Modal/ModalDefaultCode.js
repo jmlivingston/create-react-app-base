@@ -1,32 +1,26 @@
-const ModalDefaultCode = `/* eslint react/no-multi-comp: 0, react/prop-types: 0 */
+const ModalDefaultCode = `import React, { Fragment, PureComponent } from 'react'
 
-import React from 'react'
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'components/Common'
 
-class ModalDefault extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      modal: false
-    }
-
-    this.toggle = this.toggle.bind(this)
+class ModalDefault extends PureComponent {
+  state = {
+    modal: false
   }
 
   toggle() {
-    this.setState({
-      modal: !this.state.modal
-    })
+    this.setState(prevState => ({
+      modal: !prevState.modal
+    }))
   }
 
   render() {
     return (
-      <div>
-        <Button color="danger" onClick={this.toggle}>
+      <Fragment>
+        <Button color="danger" onClick={() => this.toggle()}>
           Modal
         </Button>
-        <Modal isOpen={this.state.modal} toggle={this.toggle}>
-          <ModalHeader toggle={this.toggle}>Modal title</ModalHeader>
+        <Modal isOpen={this.state.modal} toggle={() => this.toggle()}>
+          <ModalHeader toggle={() => this.toggle()}>Modal title</ModalHeader>
           <ModalBody>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
             dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
@@ -35,15 +29,15 @@ class ModalDefault extends React.Component {
             anim id est laborum.
           </ModalBody>
           <ModalFooter>
-            <Button color="primary" onClick={this.toggle}>
+            <Button color="primary" onClick={() => this.toggle()}>
               Do Something
             </Button>{' '}
-            <Button color="secondary" onClick={this.toggle}>
+            <Button color="secondary" onClick={() => this.toggle()}>
               Cancel
             </Button>
           </ModalFooter>
         </Modal>
-      </div>
+      </Fragment>
     )
   }
 }

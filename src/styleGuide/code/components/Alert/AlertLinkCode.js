@@ -1,9 +1,10 @@
-const AlertLinkCode = `import React from 'react'
+const AlertLinkCode = `import React, { Fragment } from 'react'
+
 import { Alert } from 'components/Common'
 
-const AlertLink = props => {
+const AlertLink = () => {
   return (
-    <div>
+    <Fragment>
       <Alert color="primary">
         This is a primary alert with{' '}
         <a href="/" className="alert-link">
@@ -52,7 +53,7 @@ const AlertLink = props => {
           an example link
         </a>. Give it a click if you like.
       </Alert>
-    </div>
+    </Fragment>
   )
 }
 

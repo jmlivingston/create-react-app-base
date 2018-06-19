@@ -1,9 +1,10 @@
-const CardImageCapsCode = `import React from 'react'
+const CardImageCapsCode = `import React, { Fragment } from 'react'
+
 import { Card, CardBody, CardTitle, CardText, CardImg } from 'components/Common'
 
-const CardImageCaps = props => {
+const CardImageCaps = () => {
   return (
-    <div>
+    <Fragment>
       <Card>
         <CardImg
           top
@@ -40,7 +41,7 @@ const CardImageCaps = props => {
           alt="Card image cap"
         />
       </Card>
-    </div>
+    </Fragment>
   )
 }
 

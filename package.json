@@ -4,17 +4,17 @@
   "private": true,
   "scripts": {
     "start": "react-scripts start",
-    "start-build": "cd build && serve -s -l 3000",
     "build": "react-scripts build && npm run build-copy",
-    "build-copy": "node ./utility/deploy.js",
     "deploy": "git subtree push --prefix build origin build",
-    "build-screenshots": "node ./utility/build-screenshots.js",
-    "build-tests": "node ./utility/build-test.js",
+    "lint": "node node_modules/eslint/bin/eslint.js --max-warnings=0 src",
     "test": "react-scripts test --env=jsdom",
+    "build-copy": "node ./utility/deploy.js",
+    "build-start": "cd build && serve -s -l 3000",
+    "precommit": "lint-staged",
+    "screenshots-build": "node ./utility/build-screenshots.js",
     "style-guide-build": "node ./utility/build-style-guide.js",
     "style-guide-start": "cross-env REACT_APP_TYPE=STYLE_GUIDE react-scripts start",
-    "lint": "node node_modules/eslint/bin/eslint.js --max-warnings=0 src",
-    "precommit": "lint-staged"
+    "tests-build": "node ./utility/build-test.js"
   },
   "dependencies": {
     "bootstrap": "4.1.1",

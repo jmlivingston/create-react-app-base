@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { Fragment } from 'react'
+
 import { Card, Button, CardHeader, CardFooter, CardBody, CardTitle, CardText } from 'components/Common'
 
-const CardHeaderFooter = props => {
+const CardHeaderFooter = () => {
   return (
-    <div>
+    <Fragment>
       <Card>
         <CardHeader>Header</CardHeader>
         <CardBody>
@@ -23,7 +24,7 @@ const CardHeaderFooter = props => {
         </CardBody>
         <CardFooter className="text-muted">Footer</CardFooter>
       </Card>
-    </div>
+    </Fragment>
   )
 }
 

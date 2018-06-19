@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { Fragment } from 'react'
+
 import { Alert } from 'components/Common'
 
-let AlertDefault = props => {
+const AlertDefault = () => {
   return (
-    <div>
+    <Fragment>
       <Alert color="primary">This is a primary alert — check it out!</Alert>
       <Alert color="secondary">This is a secondary alert — check it out!</Alert>
       <Alert color="success">This is a success alert — check it out!</Alert>
@@ -12,10 +13,8 @@ let AlertDefault = props => {
       <Alert color="info">This is a info alert — check it out!</Alert>
       <Alert color="light">This is a light alert — check it out!</Alert>
       <Alert color="dark">This is a dark alert — check it out!</Alert>
-    </div>
+    </Fragment>
   )
 }
-
-// AlertDefault.displayName = 'Alert'
 
 export default AlertDefault

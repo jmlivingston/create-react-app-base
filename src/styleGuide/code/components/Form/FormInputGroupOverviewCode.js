@@ -1,9 +1,10 @@
-const FormInputGroupOverviewCode = `import React from 'react'
+const FormInputGroupOverviewCode = `import React, { Fragment } from 'react'
+
 import { InputGroup, InputGroupAddon, InputGroupText, Input } from 'components/Common'
 
-const FormInputGroupOverview = props => {
+const FormInputGroupOverview = () => {
   return (
-    <div>
+    <Fragment>
       <InputGroup>
         <InputGroupAddon addonType="prepend">@</InputGroupAddon>
         <Input placeholder="username" />
@@ -40,7 +41,7 @@ const FormInputGroupOverview = props => {
         <Input placeholder="Amount" type="number" step="1" />
         <InputGroupAddon addonType="append">.00</InputGroupAddon>
       </InputGroup>
-    </div>
+    </Fragment>
   )
 }
 

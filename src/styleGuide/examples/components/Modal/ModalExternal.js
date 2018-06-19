@@ -1,36 +1,33 @@
-/* eslint react/no-multi-comp: 0, react/prop-types: 0 */
+import React, { PureComponent } from 'react'
 
-import React from 'react'
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'components/Common'
 
-class ModalExternal extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      modal: false
-    }
-
-    this.toggle = this.toggle.bind(this)
+class ModalExternal extends PureComponent {
+  state = {
+    modal: false
   }
 
   toggle() {
-    this.setState({
-      modal: !this.state.modal
-    })
+    this.setState(prevState => ({
+      modal: !prevState.modal
+    }))
   }
 
   render() {
     const externalCloseBtn = (
-      <button className="close" style={{ position: 'absolute', top: '15px', right: '15px' }} onClick={this.toggle}>
+      <button
+        className="close"
+        style={{ position: 'absolute', top: '15px', right: '15px' }}
+        onClick={() => this.toggle()}>
         &times;
       </button>
     )
     return (
       <div>
-        <Button color="danger" onClick={this.toggle}>
+        <Button color="danger" onClick={() => this.toggle()}>
           Modal
         </Button>
-        <Modal isOpen={this.state.modal} toggle={this.toggle} external={externalCloseBtn}>
+        <Modal isOpen={this.state.modal} toggle={() => this.toggle()} external={externalCloseBtn}>
           <ModalHeader>Modal title</ModalHeader>
           <ModalBody>
             <b>Look at the top right of the page/viewport!</b>
@@ -42,10 +39,10 @@ class ModalExternal extends React.Component {
             anim id est laborum.
           </ModalBody>
           <ModalFooter>
-            <Button color="primary" onClick={this.toggle}>
+            <Button color="primary" onClick={() => this.toggle()}>
               Do Something
             </Button>{' '}
-            <Button color="secondary" onClick={this.toggle}>
+            <Button color="secondary" onClick={() => this.toggle()}>
               Cancel
             </Button>
           </ModalFooter>

@@ -1,16 +1,9 @@
-import React, { Component } from 'react'
+import React, { Fragment, PureComponent } from 'react'
+
 import { Collapse, Button, CardBody, Card } from 'components/Common'
 
-class CollapseEvents extends Component {
-  constructor(props) {
-    super(props)
-    this.onEntering = this.onEntering.bind(this)
-    this.onEntered = this.onEntered.bind(this)
-    this.onExiting = this.onExiting.bind(this)
-    this.onExited = this.onExited.bind(this)
-    this.toggle = this.toggle.bind(this)
-    this.state = { collapse: false, status: 'Closed' }
-  }
+class CollapseEvents extends PureComponent {
+  state = { collapse: false, status: 'Closed' }
 
   onEntering() {
     this.setState({ status: 'Opening...' })
@@ -29,22 +22,22 @@ class CollapseEvents extends Component {
   }
 
   toggle() {
-    this.setState({ collapse: !this.state.collapse })
+    this.setState(prevState => ({ collapse: !prevState.collapse }))
   }
 
   render() {
     return (
-      <div>
-        <Button color="primary" onClick={this.toggle} style={{ marginBottom: '1rem' }}>
+      <Fragment>
+        <Button color="primary" onClick={() => this.toggle()} style={{ marginBottom: '1rem' }}>
           Toggle
         </Button>
         <h5>Current state: {this.state.status}</h5>
         <Collapse
           isOpen={this.state.collapse}
-          onEntering={this.onEntering}
-          onEntered={this.onEntered}
-          onExiting={this.onExiting}
-          onExited={this.onExited}
+          onEntering={() => this.onEntering()}
+          onEntered={() => this.onEntered()}
+          onExiting={() => this.onExiting()}
+          onExited={() => this.onExited()}
           timeout={0}>
           <Card>
             <CardBody>
@@ -53,7 +46,7 @@ class CollapseEvents extends Component {
             </CardBody>
           </Card>
         </Collapse>
-      </div>
+      </Fragment>
     )
   }
 }

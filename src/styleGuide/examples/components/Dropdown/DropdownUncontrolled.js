@@ -1,7 +1,8 @@
 import React from 'react'
+
 import { UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'components/Common'
 
-export default function DropdownUncontrolled() {
+const DropdownUncontrolled = () => {
   return (
     <UncontrolledDropdown>
       <DropdownToggle caret>Dropdown</DropdownToggle>
@@ -15,3 +16,5 @@ export default function DropdownUncontrolled() {
     </UncontrolledDropdown>
   )
 }
+
+export default DropdownUncontrolled

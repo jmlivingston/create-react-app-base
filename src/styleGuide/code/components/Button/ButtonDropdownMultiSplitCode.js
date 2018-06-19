@@ -1,25 +1,21 @@
-const ButtonDropdownMultiSplitCode = `import React from 'react'
+const ButtonDropdownMultiSplitCode = `import React, { PureComponent } from 'react'
+
 import { Button, ButtonDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'components/Common'
 
-export default class ButtonDropdownMultiSplit extends React.Component {
-  constructor(props) {
-    super(props)
-
-    this.toggle = this.toggle.bind(this)
-    this.state = {
-      dropdownOpen: false
-    }
+class ButtonDropdownMultiSplit extends PureComponent {
+  state = {
+    dropdownOpen: false
   }
 
   toggle() {
-    this.setState({
-      dropdownOpen: !this.state.dropdownOpen
-    })
+    this.setState(prevState => ({
+      dropdownOpen: !prevState.dropdownOpen
+    }))
   }
 
   render() {
     return (
-      <ButtonDropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
+      <ButtonDropdown isOpen={this.state.dropdownOpen} toggle={() => this.toggle()}>
         <Button id="caret" color="primary">
           Dropdown
         </Button>
@@ -35,6 +31,8 @@ export default class ButtonDropdownMultiSplit extends React.Component {
     )
   }
 }
+
+export default ButtonDropdownMultiSplit
 `
 
 export default ButtonDropdownMultiSplitCode

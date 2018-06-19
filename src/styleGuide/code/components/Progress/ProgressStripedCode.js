@@ -1,9 +1,10 @@
-const ProgressStripedCode = `import React from 'react'
+const ProgressStripedCode = `import React, { Fragment } from 'react'
+
 import { Progress } from 'components/Common'
 
-const ProgressStriped = props => {
+const ProgressStriped = () => {
   return (
-    <div>
+    <Fragment>
       <Progress striped value={2 * 5} />
       <Progress striped color="success" value="25" />
       <Progress striped color="info" value={50} />
@@ -15,7 +16,7 @@ const ProgressStriped = props => {
         <Progress striped bar color="warning" value="20" />
         <Progress striped bar color="danger" value="20" />
       </Progress>
-    </div>
+    </Fragment>
   )
 }
 

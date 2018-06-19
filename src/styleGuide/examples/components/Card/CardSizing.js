@@ -1,7 +1,8 @@
 import React from 'react'
+
 import { Card, Button, CardTitle, CardText, Row, Col } from 'components/Common'
 
-const CardSizing = props => {
+const CardSizing = () => {
   return (
     <Row>
       <Col sm="6">

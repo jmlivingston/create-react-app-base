@@ -1,14 +1,13 @@
 import React from 'react'
+
 import { Badge, Button } from 'components/Common'
 
-export default class BadgeButton extends React.Component {
-  render() {
-    return (
-      <div>
-        <Button color="primary" outline>
-          Notifications <Badge color="secondary">4</Badge>
-        </Button>
-      </div>
-    )
-  }
+const BadgeButton = () => {
+  return (
+    <Button color="primary" outline>
+      Notifications <Badge color="secondary">4</Badge>
+    </Button>
+  )
 }
+
+export default BadgeButton

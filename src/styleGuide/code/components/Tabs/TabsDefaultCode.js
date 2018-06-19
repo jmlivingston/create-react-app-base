@@ -1,4 +1,5 @@
-const TabsDefaultCode = `import React from 'react'
+const TabsDefaultCode = `import React, { PureComponent } from 'react'
+
 import {
   TabContent,
   TabPane,
@@ -14,14 +15,9 @@ import {
 } from 'components/Common'
 import classnames from 'classnames'
 
-export default class TabsDefault extends React.Component {
-  constructor(props) {
-    super(props)
-
-    this.toggle = this.toggle.bind(this)
-    this.state = {
-      activeTab: '1'
-    }
+class TabsDefault extends PureComponent {
+  state = {
+    activeTab: '1'
   }
 
   toggle(tab) {
@@ -85,6 +81,8 @@ export default class TabsDefault extends React.Component {
     )
   }
 }
+
+export default TabsDefault
 `
 
 export default TabsDefaultCode

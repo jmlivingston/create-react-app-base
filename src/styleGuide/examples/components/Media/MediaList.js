@@ -1,4 +1,5 @@
 import React from 'react'
+
 import { Media } from 'components/Common'
 
 const MediaList = () => {
@@ -6,7 +7,7 @@ const MediaList = () => {
     <Media list>
       <Media tag="li">
         <Media left href="/">
-          <Media object data-src="holder.js/64x64" alt="Generic placeholder image" />
+          <Media object src="//via.placeholder.com/150x150" alt="Generic placeholder image" />
         </Media>
         <Media body>
           <Media heading>Media heading</Media>
@@ -15,7 +16,7 @@ const MediaList = () => {
           Donec lacinia congue felis in faucibus.
           <Media>
             <Media left href="/">
-              <Media object data-src="holder.js/64x64" alt="Generic placeholder image" />
+              <Media object src="//via.placeholder.com/150x150" alt="Generic placeholder image" />
             </Media>
             <Media body>
               <Media heading>Nested media heading</Media>
@@ -24,7 +25,7 @@ const MediaList = () => {
               fringilla. Donec lacinia congue felis in faucibus.
               <Media>
                 <Media left href="/">
-                  <Media object data-src="holder.js/64x64" alt="Generic placeholder image" />
+                  <Media object src="//via.placeholder.com/150x150" alt="Generic placeholder image" />
                 </Media>
                 <Media body>
                   <Media heading>Nested media heading</Media>
@@ -37,7 +38,7 @@ const MediaList = () => {
           </Media>
           <Media>
             <Media left href="/">
-              <Media object data-src="holder.js/64x64" alt="Generic placeholder image" />
+              <Media object src="//via.placeholder.com/150x150" alt="Generic placeholder image" />
             </Media>
             <Media body>
               <Media heading>Nested media heading</Media>
@@ -56,7 +57,7 @@ const MediaList = () => {
           Donec lacinia congue felis in faucibus.
         </Media>
         <Media right href="/">
-          <Media object data-src="holder.js/64x64" alt="Generic placeholder image" />
+          <Media object src="//via.placeholder.com/150x150" alt="Generic placeholder image" />
         </Media>
       </Media>
     </Media>

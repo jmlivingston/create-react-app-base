@@ -1,7 +1,8 @@
-const TableDefaultCode = `import React, { Fragment } from 'react'
+const TableDefaultCode = `import React, { PureComponent, Fragment } from 'react'
+
 import { Table } from 'components/Common'
 
-export default class TableDefault extends React.Component {
+class TableDefault extends PureComponent {
   basicData = [
     { id: 1, firstName: 'Jackquelin', lastName: 'Headley', email: 'jheadley0@typepad.com', gender: 'Female' },
     { id: 2, firstName: 'Ray', lastName: 'Hundell', email: 'rhundell1@dion.ne.jp', gender: 'Female' },
@@ -43,6 +44,8 @@ export default class TableDefault extends React.Component {
     )
   }
 }
+
+export default TableDefault
 `
 
 export default TableDefaultCode

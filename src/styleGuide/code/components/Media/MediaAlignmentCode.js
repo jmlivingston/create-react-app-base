@@ -1,12 +1,13 @@
-const MediaAlignmentCode = `import React from 'react'
+const MediaAlignmentCode = `import React, { Fragment } from 'react'
+
 import { Media } from 'components/Common'
 
 const MediaAlignment = () => {
   return (
-    <div>
+    <Fragment>
       <Media>
         <Media left top href="/">
-          <Media object data-src="holder.js/64x64" alt="Generic placeholder image" />
+          <Media object src="//via.placeholder.com/150x150" alt="Generic placeholder image" />
         </Media>
         <Media body>
           <Media heading>Top aligned media</Media>
@@ -17,7 +18,7 @@ const MediaAlignment = () => {
       </Media>
       <Media className="mt-1">
         <Media left middle href="/">
-          <Media object data-src="holder.js/64x64" alt="Generic placeholder image" />
+          <Media object src="//via.placeholder.com/150x150" alt="Generic placeholder image" />
         </Media>
         <Media body>
           <Media heading>Middle aligned media</Media>
@@ -28,7 +29,7 @@ const MediaAlignment = () => {
       </Media>
       <Media className="mt-1">
         <Media left bottom href="/">
-          <Media object data-src="holder.js/64x64" alt="Generic placeholder image" />
+          <Media object src="//via.placeholder.com/150x150" alt="Generic placeholder image" />
         </Media>
         <Media body>
           <Media heading>Bottom aligned media</Media>
@@ -37,7 +38,7 @@ const MediaAlignment = () => {
           Donec lacinia congue felis in faucibus.
         </Media>
       </Media>
-    </div>
+    </Fragment>
   )
 }
 

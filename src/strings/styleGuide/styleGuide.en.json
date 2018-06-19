@@ -894,7 +894,34 @@
           "Breadcrumb": {
             "tag": {
               "type": {
-                "name": "string"
+                "name": "union",
+                "value": [
+                  {
+                    "name": "func"
+                  },
+                  {
+                    "name": "string"
+                  }
+                ]
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "'nav'",
+                "computed": false
+              }
+            },
+            "listTag": {
+              "type": {
+                "name": "union",
+                "value": [
+                  {
+                    "name": "func"
+                  },
+                  {
+                    "name": "string"
+                  }
+                ]
               },
               "required": false,
               "description": "",
@@ -910,12 +937,37 @@
               "required": false,
               "description": ""
             },
+            "listClassName": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": ""
+            },
             "cssModule": {
               "type": {
                 "name": "object"
               },
               "required": false,
               "description": ""
+            },
+            "children": {
+              "type": {
+                "name": "node"
+              },
+              "required": false,
+              "description": ""
+            },
+            "aria-label": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "'breadcrumb'",
+                "computed": false
+              }
             }
           },
           "BreadcrumbItem": {
@@ -967,7 +1019,34 @@
           "Breadcrumb": {
             "tag": {
               "type": {
-                "name": "string"
+                "name": "union",
+                "value": [
+                  {
+                    "name": "func"
+                  },
+                  {
+                    "name": "string"
+                  }
+                ]
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "'nav'",
+                "computed": false
+              }
+            },
+            "listTag": {
+              "type": {
+                "name": "union",
+                "value": [
+                  {
+                    "name": "func"
+                  },
+                  {
+                    "name": "string"
+                  }
+                ]
               },
               "required": false,
               "description": "",
@@ -983,12 +1062,37 @@
               "required": false,
               "description": ""
             },
+            "listClassName": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": ""
+            },
             "cssModule": {
               "type": {
                 "name": "object"
               },
               "required": false,
               "description": ""
+            },
+            "children": {
+              "type": {
+                "name": "node"
+              },
+              "required": false,
+              "description": ""
+            },
+            "aria-label": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "'breadcrumb'",
+                "computed": false
+              }
             }
           },
           "BreadcrumbItem": {
@@ -22990,6 +23094,13 @@
               "required": false,
               "description": ""
             },
+            "listClassName": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": ""
+            },
             "cssModule": {
               "type": {
                 "name": "object"
@@ -23019,7 +23130,37 @@
               "required": false,
               "description": "",
               "defaultValue": {
+                "value": "'nav'",
+                "computed": false
+              }
+            },
+            "listTag": {
+              "type": {
+                "name": "union",
+                "value": [
+                  {
+                    "name": "func"
+                  },
+                  {
+                    "name": "string"
+                  }
+                ]
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
                 "value": "'ul'",
+                "computed": false
+              }
+            },
+            "aria-label": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "'pagination'",
                 "computed": false
               }
             }
@@ -23162,6 +23303,13 @@
               "required": false,
               "description": ""
             },
+            "listClassName": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": ""
+            },
             "cssModule": {
               "type": {
                 "name": "object"
@@ -23191,7 +23339,37 @@
               "required": false,
               "description": "",
               "defaultValue": {
+                "value": "'nav'",
+                "computed": false
+              }
+            },
+            "listTag": {
+              "type": {
+                "name": "union",
+                "value": [
+                  {
+                    "name": "func"
+                  },
+                  {
+                    "name": "string"
+                  }
+                ]
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
                 "value": "'ul'",
+                "computed": false
+              }
+            },
+            "aria-label": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "'pagination'",
                 "computed": false
               }
             }
@@ -23334,6 +23512,13 @@
               "required": false,
               "description": ""
             },
+            "listClassName": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": ""
+            },
             "cssModule": {
               "type": {
                 "name": "object"
@@ -23363,7 +23548,37 @@
               "required": false,
               "description": "",
               "defaultValue": {
+                "value": "'nav'",
+                "computed": false
+              }
+            },
+            "listTag": {
+              "type": {
+                "name": "union",
+                "value": [
+                  {
+                    "name": "func"
+                  },
+                  {
+                    "name": "string"
+                  }
+                ]
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
                 "value": "'ul'",
+                "computed": false
+              }
+            },
+            "aria-label": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "'pagination'",
                 "computed": false
               }
             }
@@ -23506,6 +23721,13 @@
               "required": false,
               "description": ""
             },
+            "listClassName": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": ""
+            },
             "cssModule": {
               "type": {
                 "name": "object"
@@ -23535,7 +23757,37 @@
               "required": false,
               "description": "",
               "defaultValue": {
+                "value": "'nav'",
+                "computed": false
+              }
+            },
+            "listTag": {
+              "type": {
+                "name": "union",
+                "value": [
+                  {
+                    "name": "func"
+                  },
+                  {
+                    "name": "string"
+                  }
+                ]
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
                 "value": "'ul'",
+                "computed": false
+              }
+            },
+            "aria-label": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "'pagination'",
                 "computed": false
               }
             }
@@ -23939,6 +24191,21 @@
               },
               "required": false,
               "description": ""
+            },
+            "offset": {
+              "type": {
+                "name": "union",
+                "value": [
+                  {
+                    "name": "string"
+                  },
+                  {
+                    "name": "number"
+                  }
+                ]
+              },
+              "required": false,
+              "description": ""
             }
           },
           "PopoverHeader": {
@@ -24284,6 +24551,21 @@
             "modifiers": {
               "type": {
                 "name": "object"
+              },
+              "required": false,
+              "description": ""
+            },
+            "offset": {
+              "type": {
+                "name": "union",
+                "value": [
+                  {
+                    "name": "string"
+                  },
+                  {
+                    "name": "number"
+                  }
+                ]
               },
               "required": false,
               "description": ""
@@ -25440,7 +25722,7 @@
               "required": false,
               "description": "",
               "defaultValue": {
-                "value": "function () {}",
+                "value": "function () { }",
                 "computed": false
               }
             },
@@ -25498,6 +25780,21 @@
             "modifiers": {
               "type": {
                 "name": "object"
+              },
+              "required": false,
+              "description": ""
+            },
+            "offset": {
+              "type": {
+                "name": "union",
+                "value": [
+                  {
+                    "name": "string"
+                  },
+                  {
+                    "name": "number"
+                  }
+                ]
               },
               "required": false,
               "description": ""
@@ -25616,7 +25913,7 @@
               "required": false,
               "description": "",
               "defaultValue": {
-                "value": "function () {}",
+                "value": "function () { }",
                 "computed": false
               }
             },
@@ -25674,6 +25971,21 @@
             "modifiers": {
               "type": {
                 "name": "object"
+              },
+              "required": false,
+              "description": ""
+            },
+            "offset": {
+              "type": {
+                "name": "union",
+                "value": [
+                  {
+                    "name": "string"
+                  },
+                  {
+                    "name": "number"
+                  }
+                ]
               },
               "required": false,
               "description": ""
@@ -25905,7 +26217,7 @@
               "required": false,
               "description": "",
               "defaultValue": {
-                "value": "function () {}",
+                "value": "function () { }",
                 "computed": false
               }
             },
@@ -25963,6 +26275,21 @@
             "modifiers": {
               "type": {
                 "name": "object"
+              },
+              "required": false,
+              "description": ""
+            },
+            "offset": {
+              "type": {
+                "name": "union",
+                "value": [
+                  {
+                    "name": "string"
+                  },
+                  {
+                    "name": "number"
+                  }
+                ]
               },
               "required": false,
               "description": ""

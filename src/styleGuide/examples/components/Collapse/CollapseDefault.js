@@ -1,21 +1,18 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
+
 import { Collapse, Button, CardBody, Card } from 'components/Common'
 
-class CollapseDefault extends Component {
-  constructor(props) {
-    super(props)
-    this.toggle = this.toggle.bind(this)
-    this.state = { collapse: false }
-  }
+class CollapseDefault extends PureComponent {
+  state = { collapse: false }
 
   toggle() {
-    this.setState({ collapse: !this.state.collapse })
+    this.setState(prevState => ({ collapse: !prevState.collapse }))
   }
 
   render() {
     return (
       <div>
-        <Button color="primary" onClick={this.toggle} style={{ marginBottom: '1rem' }}>
+        <Button color="primary" onClick={() => this.toggle()} style={{ marginBottom: '1rem' }}>
           Toggle
         </Button>
         <Collapse isOpen={this.state.collapse} timeout={0}>

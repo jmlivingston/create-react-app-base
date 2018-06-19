@@ -1,9 +1,10 @@
-const ProgressMultiCode = `import React from 'react'
+const ProgressMultiCode = `import React, { Fragment } from 'react'
+
 import { Progress } from 'components/Common'
 
-const ProgressMulti = props => {
+const ProgressMulti = () => {
   return (
-    <div>
+    <Fragment>
       <div className="text-center">Plain</div>
       <Progress multi>
         <Progress bar value="15" />
@@ -39,7 +40,7 @@ const ProgressMulti = props => {
           Plain
         </Progress>
       </Progress>
-    </div>
+    </Fragment>
   )
 }
 

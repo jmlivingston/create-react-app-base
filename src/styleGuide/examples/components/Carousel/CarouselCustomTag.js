@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
+
 import { Carousel, CarouselItem, CarouselControl, CarouselIndicators, CarouselCaption } from 'components/Common'
 
 const items = [
@@ -19,16 +20,8 @@ const items = [
   }
 ]
 
-class CarouselCustomTag extends Component {
-  constructor(props) {
-    super(props)
-    this.state = { activeIndex: 0 }
-    this.next = this.next.bind(this)
-    this.previous = this.previous.bind(this)
-    this.goToIndex = this.goToIndex.bind(this)
-    this.onExiting = this.onExiting.bind(this)
-    this.onExited = this.onExited.bind(this)
-  }
+class CarouselCustomTag extends PureComponent {
+  state = { activeIndex: 0 }
 
   onExiting() {
     this.animating = true
@@ -56,16 +49,14 @@ class CarouselCustomTag extends Component {
   }
 
   render() {
-    const { activeIndex } = this.state
-
     const slides = items.map(item => {
       return (
         <CarouselItem
           className="custom-tag"
           tag="div"
           key={item.id}
-          onExiting={this.onExiting}
-          onExited={this.onExited}
+          onExiting={() => this.onExiting()}
+          onExited={() => this.onExited()}
           timeout={0}>
           <CarouselCaption className="text-danger" captionText={item.caption} captionHeader={item.caption} />
         </CarouselItem>
@@ -81,11 +72,19 @@ class CarouselCustomTag extends Component {
                 background: black;
               }`}
         </style>
-        <Carousel activeIndex={activeIndex} next={this.next} previous={this.previous} timeout={0}>
-          <CarouselIndicators items={items} activeIndex={activeIndex} onClickHandler={this.goToIndex} />
+        <Carousel
+          activeIndex={this.state.activeIndex}
+          next={() => this.next()}
+          previous={() => this.previous()}
+          timeout={0}>
+          <CarouselIndicators
+            items={items}
+            activeIndex={this.state.activeIndex}
+            onClickHandler={index => this.goToIndex(index)}
+          />
           {slides}
-          <CarouselControl direction="prev" directionText="Previous" onClickHandler={this.previous} />
-          <CarouselControl direction="next" directionText="Next" onClickHandler={this.next} />
+          <CarouselControl direction="prev" directionText="Previous" onClickHandler={() => this.previous()} />
+          <CarouselControl direction="next" directionText="Next" onClickHandler={() => this.next()} />
         </Carousel>
       </div>
     )

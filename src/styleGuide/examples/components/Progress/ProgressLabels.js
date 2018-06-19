@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { Fragment } from 'react'
+
 import { Progress } from 'components/Common'
 
-const ProgressLabels = props => {
+const ProgressLabels = () => {
   return (
-    <div>
+    <Fragment>
       <Progress value="25">25%</Progress>
       <Progress value={50}>1/2</Progress>
       <Progress value={75}>You're almost there!</Progress>
@@ -27,7 +28,7 @@ const ProgressLabels = props => {
           !!
         </Progress>
       </Progress>
-    </div>
+    </Fragment>
   )
 }
 

@@ -1,14 +1,10 @@
-const DropdownDefaultCode = `import React from 'react'
+const DropdownDefaultCode = `import React, { PureComponent } from 'react'
+
 import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'components/Common'
 
-export default class DropdownDefault extends React.Component {
-  constructor(props) {
-    super(props)
-
-    this.toggle = this.toggle.bind(this)
-    this.state = {
-      dropdownOpen: false
-    }
+class DropdownDefault extends PureComponent {
+  state = {
+    dropdownOpen: false
   }
 
   toggle() {
@@ -19,7 +15,7 @@ export default class DropdownDefault extends React.Component {
 
   render() {
     return (
-      <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
+      <Dropdown isOpen={this.state.dropdownOpen} toggle={() => this.toggle()}>
         <DropdownToggle caret>Dropdown</DropdownToggle>
         <DropdownMenu>
           <DropdownItem header>Header</DropdownItem>
@@ -32,6 +28,8 @@ export default class DropdownDefault extends React.Component {
     )
   }
 }
+
+export default DropdownDefault
 `
 
 export default DropdownDefaultCode

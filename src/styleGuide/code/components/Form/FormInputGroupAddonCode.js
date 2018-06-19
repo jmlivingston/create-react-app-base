@@ -1,9 +1,10 @@
-const FormInputGroupAddonCode = `import React from 'react'
+const FormInputGroupAddonCode = `import React, { Fragment } from 'react'
+
 import { InputGroup, InputGroupText, InputGroupAddon, Input } from 'components/Common'
 
-const FormInputGroupAddon = props => {
+const FormInputGroupAddon = () => {
   return (
-    <div>
+    <Fragment>
       <InputGroup>
         <InputGroupAddon addonType="prepend">
           <InputGroupText>To the Left!</InputGroupText>
@@ -27,7 +28,7 @@ const FormInputGroupAddon = props => {
           <InputGroupText>To the Right!</InputGroupText>
         </InputGroupAddon>
       </InputGroup>
-    </div>
+    </Fragment>
   )
 }
 

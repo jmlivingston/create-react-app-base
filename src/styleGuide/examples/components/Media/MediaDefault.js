@@ -1,11 +1,12 @@
 import React from 'react'
+
 import { Media } from 'components/Common'
 
 const MediaDefault = () => {
   return (
     <Media>
       <Media left href="/">
-        <Media object data-src="holder.js/64x64" alt="Generic placeholder image" />
+        <Media object src="//via.placeholder.com/150x150" alt="Generic placeholder image" />
       </Media>
       <Media body>
         <Media heading>Media heading</Media>

@@ -1,25 +1,21 @@
-import React from 'react'
+import React, { PureComponent } from 'react'
+
 import { ButtonDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'components/Common'
 
-export default class ButtonDropdownDefault extends React.Component {
-  constructor(props) {
-    super(props)
-
-    this.toggle = this.toggle.bind(this)
-    this.state = {
-      dropdownOpen: false
-    }
+class ButtonDropdownDefault extends PureComponent {
+  state = {
+    dropdownOpen: false
   }
 
   toggle() {
-    this.setState({
-      dropdownOpen: !this.state.dropdownOpen
-    })
+    this.setState(prevState => ({
+      dropdownOpen: !prevState.dropdownOpen
+    }))
   }
 
   render() {
     return (
-      <ButtonDropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
+      <ButtonDropdown isOpen={this.state.dropdownOpen} toggle={() => this.toggle()}>
         <DropdownToggle caret>Button Dropdown</DropdownToggle>
         <DropdownMenu>
           <DropdownItem header>Header</DropdownItem>
@@ -32,3 +28,5 @@ export default class ButtonDropdownDefault extends React.Component {
     )
   }
 }
+
+export default ButtonDropdownDefault

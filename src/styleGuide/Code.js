@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import React, { PureComponent } from 'react'
 import SyntaxHighlighter from 'react-syntax-highlighter/prism'
 
-export default class PropTypesTable extends PureComponent {
+class Code extends PureComponent {
   state = {
     code: ''
   }
@@ -26,3 +26,5 @@ export default class PropTypesTable extends PureComponent {
     )
   }
 }
+
+export default Code

@@ -1,9 +1,10 @@
-const ProgressMaxCode = `import React from 'react'
+const ProgressMaxCode = `import React, { Fragment } from 'react'
+
 import { Progress } from 'components/Common'
 
-const ProgressMax = props => {
+const ProgressMax = () => {
   return (
-    <div>
+    <Fragment>
       <div className="text-center">1 of 5</div>
       <Progress value="1" max="5" />
       <div className="text-center">50 of 135</div>
@@ -28,7 +29,7 @@ const ProgressMax = props => {
           10
         </Progress>
       </Progress>
-    </div>
+    </Fragment>
   )
 }
 

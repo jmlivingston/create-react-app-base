@@ -1,9 +1,10 @@
-const ProgressDefaultCode = `import React from 'react'
+const ProgressDefaultCode = `import React, { Fragment } from 'react'
+
 import { Progress } from 'components/Common'
 
-const ProgressDefault = props => {
+const ProgressDefault = () => {
   return (
-    <div>
+    <Fragment>
       <div className="text-center">0%</div>
       <Progress />
       <div className="text-center">25%</div>
@@ -22,7 +23,7 @@ const ProgressDefault = props => {
         <Progress bar color="warning" value="20" />
         <Progress bar color="danger" value="5" />
       </Progress>
-    </div>
+    </Fragment>
   )
 }
 

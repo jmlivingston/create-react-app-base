@@ -3,7 +3,7 @@ import { Button } from 'components/Common'
 
 import GlobalImporter from 'components/Global/GlobalImporter'
 
-export default class LocalizationTester extends PureComponent {
+class LocalizationTester extends PureComponent {
   render() {
     return (
       <GlobalImporter
@@ -20,3 +20,5 @@ export default class LocalizationTester extends PureComponent {
     )
   }
 }
+
+export default LocalizationTester

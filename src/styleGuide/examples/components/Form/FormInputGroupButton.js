@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { PureComponent } from 'react'
+
 import {
   InputGroup,
   InputGroupAddon,
@@ -10,16 +11,10 @@ import {
   DropdownItem
 } from 'components/Common'
 
-export default class FormInputGroupButton extends React.Component {
-  constructor(props) {
-    super(props)
-
-    this.toggleDropDown = this.toggleDropDown.bind(this)
-    this.toggleSplit = this.toggleSplit.bind(this)
-    this.state = {
-      dropdownOpen: false,
-      splitButtonOpen: false
-    }
+class FormInputGroupButton extends PureComponent {
+  state = {
+    dropdownOpen: false,
+    splitButtonOpen: false
   }
 
   toggleDropDown() {
@@ -46,7 +41,10 @@ export default class FormInputGroupButton extends React.Component {
         <br />
         <InputGroup>
           <Input />
-          <InputGroupButtonDropdown addonType="append" isOpen={this.state.dropdownOpen} toggle={this.toggleDropDown}>
+          <InputGroupButtonDropdown
+            addonType="append"
+            isOpen={this.state.dropdownOpen}
+            toggle={() => this.toggleDropDown()}>
             <DropdownToggle caret>Button Dropdown</DropdownToggle>
             <DropdownMenu>
               <DropdownItem header>Header</DropdownItem>
@@ -59,7 +57,10 @@ export default class FormInputGroupButton extends React.Component {
         </InputGroup>
         <br />
         <InputGroup>
-          <InputGroupButtonDropdown addonType="prepend" isOpen={this.state.splitButtonOpen} toggle={this.toggleSplit}>
+          <InputGroupButtonDropdown
+            addonType="prepend"
+            isOpen={this.state.splitButtonOpen}
+            toggle={() => this.toggleSplit()}>
             <Button outline>Split Button</Button>
             <DropdownToggle split outline />
             <DropdownMenu>
@@ -79,3 +80,5 @@ export default class FormInputGroupButton extends React.Component {
     )
   }
 }
+
+export default FormInputGroupButton

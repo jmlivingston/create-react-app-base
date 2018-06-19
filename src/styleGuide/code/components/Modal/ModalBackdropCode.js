@@ -1,24 +1,17 @@
-const ModalBackdropCode = `/* eslint react/no-multi-comp: 0, react/prop-types: 0 */
+const ModalBackdropCode = `import React, { Fragment, PureComponent } from 'react'
 
-import React from 'react'
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Input, Label, Form, FormGroup } from 'components/Common'
 
-class ModalBackdrop extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      modal: false,
-      backdrop: true
-    }
-
-    this.toggle = this.toggle.bind(this)
-    this.changeBackdrop = this.changeBackdrop.bind(this)
+class ModalBackdrop extends PureComponent {
+  state = {
+    modal: false,
+    backdrop: true
   }
 
   toggle() {
-    this.setState({
-      modal: !this.state.modal
-    })
+    this.setState(prevState => ({
+      modal: !prevState.modal
+    }))
   }
 
   changeBackdrop(e) {
@@ -31,22 +24,22 @@ class ModalBackdrop extends React.Component {
 
   render() {
     return (
-      <div>
+      <Fragment>
         <Form inline onSubmit={e => e.preventDefault()}>
           <FormGroup>
             <Label for="backdrop">Backdrop value</Label>{' '}
-            <Input type="select" name="backdrop" id="backdrop" onChange={this.changeBackdrop}>
+            <Input type="select" name="backdrop" id="backdrop" onChange={() => this.changeBackdrop()}>
               <option value="true">true</option>
               <option value="false">false</option>
               <option value="static">"static"</option>
             </Input>
           </FormGroup>{' '}
-          <Button color="danger" onClick={this.toggle}>
+          <Button color="danger" onClick={() => this.toggle()}>
             Modal
           </Button>
         </Form>
-        <Modal isOpen={this.state.modal} toggle={this.toggle} backdrop={this.state.backdrop}>
-          <ModalHeader toggle={this.toggle}>Modal title</ModalHeader>
+        <Modal isOpen={this.state.modal} toggle={() => this.toggle()} backdrop={this.state.backdrop}>
+          <ModalHeader toggle={() => this.toggle()}>Modal title</ModalHeader>
           <ModalBody>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
             dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
@@ -55,15 +48,15 @@ class ModalBackdrop extends React.Component {
             anim id est laborum.
           </ModalBody>
           <ModalFooter>
-            <Button color="primary" onClick={this.toggle}>
+            <Button color="primary" onClick={() => this.toggle()}>
               Do Something
             </Button>{' '}
-            <Button color="secondary" onClick={this.toggle}>
+            <Button color="secondary" onClick={() => this.toggle()}>
               Cancel
             </Button>
           </ModalFooter>
         </Modal>
-      </div>
+      </Fragment>
     )
   }
 }

@@ -24,7 +24,9 @@ class PropTypesTable extends Component {
   ]
 
   toggle() {
-    this.setState({ collapse: !this.state.collapse })
+    this.setState(prevState => ({
+      collapse: !prevState.collapse
+    }))
   }
 
   render() {

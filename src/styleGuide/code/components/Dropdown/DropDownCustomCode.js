@@ -1,38 +1,40 @@
-const DropDownCustomCode = `import React from 'react'
+const DropDownCustomCode = `import React, { PureComponent } from 'react'
+
 import { Dropdown, DropdownMenu, DropdownToggle } from 'components/Common'
 
-export default class DropDownCustom extends React.Component {
-  constructor(props) {
-    super(props)
-
-    this.toggle = this.toggle.bind(this)
-    this.state = {
-      dropdownOpen: false
-    }
+class DropDownCustom extends PureComponent {
+  state = {
+    dropdownOpen: false
   }
 
   toggle() {
-    this.setState({
-      dropdownOpen: !this.state.dropdownOpen
-    })
+    this.setState(prevState => ({
+      dropdownOpen: !prevState.dropdownOpen
+    }))
   }
 
   render() {
     return (
-      <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
-        <DropdownToggle tag="span" onClick={this.toggle} data-toggle="dropdown" aria-expanded={this.state.dropdownOpen}>
+      <Dropdown isOpen={this.state.dropdownOpen} toggle={() => this.toggle()}>
+        <DropdownToggle
+          tag="span"
+          onClick={() => this.toggle()}
+          data-toggle="dropdown"
+          aria-expanded={this.state.dropdownOpen}>
           Custom Dropdown Content
         </DropdownToggle>
         <DropdownMenu>
-          <div onClick={this.toggle}>Custom dropdown item</div>
-          <div onClick={this.toggle}>Custom dropdown item</div>
-          <div onClick={this.toggle}>Custom dropdown item</div>
-          <div onClick={this.toggle}>Custom dropdown item</div>
+          <div onClick={() => this.toggle()}>Custom dropdown item</div>
+          <div onClick={() => this.toggle()}>Custom dropdown item</div>
+          <div onClick={() => this.toggle()}>Custom dropdown item</div>
+          <div onClick={() => this.toggle()}>Custom dropdown item</div>
         </DropdownMenu>
       </Dropdown>
     )
   }
 }
+
+export default DropDownCustom
 `
 
 export default DropDownCustomCode

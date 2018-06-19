@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { Fragment } from 'react'
+
 import { Progress } from 'components/Common'
 
-const ProgressAnimated = props => {
+const ProgressAnimated = () => {
   return (
-    <div>
+    <Fragment>
       <Progress animated value={2 * 5} />
       <Progress animated color="success" value="25" />
       <Progress animated color="info" value={50} />
@@ -15,7 +16,7 @@ const ProgressAnimated = props => {
         <Progress animated bar color="warning" value="20" />
         <Progress animated bar color="danger" value="20" />
       </Progress>
-    </div>
+    </Fragment>
   )
 }
 

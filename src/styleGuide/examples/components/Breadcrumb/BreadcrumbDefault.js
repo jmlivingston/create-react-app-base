@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { Fragment } from 'react'
+
 import { Breadcrumb, BreadcrumbItem } from 'components/Common'
 
-const BreadcrumbDefault = props => {
+const BreadcrumbDefault = () => {
   return (
-    <div>
+    <Fragment>
       <Breadcrumb>
         <BreadcrumbItem active>Home</BreadcrumbItem>
       </Breadcrumb>
@@ -22,7 +23,7 @@ const BreadcrumbDefault = props => {
         </BreadcrumbItem>
         <BreadcrumbItem active>Data</BreadcrumbItem>
       </Breadcrumb>
-    </div>
+    </Fragment>
   )
 }
 

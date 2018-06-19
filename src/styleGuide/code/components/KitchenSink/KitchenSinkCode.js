@@ -604,7 +604,7 @@ class KitchenSink extends PureComponent {
         </Modal>
         <Navbar color="light" light expand="md">
           <NavbarBrand href="/">reactstrap</NavbarBrand>
-          <NavbarToggler onClick={this.toggle} />
+          <NavbarToggler />
         </Navbar>
         <Nav>
           <NavItem>

@@ -1,25 +1,21 @@
-const DropdownSizingCode = `import React from 'react'
+const DropdownSizingCode = `import React, { PureComponent } from 'react'
+
 import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'components/Common'
 
-export default class DropdownSizing extends React.Component {
-  constructor(props) {
-    super(props)
-
-    this.toggle = this.toggle.bind(this)
-    this.state = {
-      dropdownOpen: false
-    }
+class DropdownSizing extends PureComponent {
+  state = {
+    dropdownOpen: false
   }
 
   toggle() {
-    this.setState({
-      dropdownOpen: !this.state.dropdownOpen
-    })
+    this.setState(prevState => ({
+      dropdownOpen: !prevState.dropdownOpen
+    }))
   }
 
   render() {
     return (
-      <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle} {...this.props}>
+      <Dropdown isOpen={this.state.dropdownOpen} toggle={() => this.toggle()} {...this.props}>
         <DropdownToggle caret>Dropdown</DropdownToggle>
         <DropdownMenu>
           <DropdownItem header>Header</DropdownItem>
@@ -29,6 +25,8 @@ export default class DropdownSizing extends React.Component {
     )
   }
 }
+
+export default DropdownSizing
 `
 
 export default DropdownSizingCode

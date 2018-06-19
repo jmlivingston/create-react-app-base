@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { Fragment } from 'react'
+
 import { Breadcrumb, BreadcrumbItem } from 'components/Common'
 
-const BreadcrumbNoList = props => {
+const BreadcrumbNoList = () => {
   return (
-    <div>
+    <Fragment>
       <Breadcrumb tag="nav">
         <BreadcrumbItem tag="a" href="/">
           Home
@@ -18,7 +19,7 @@ const BreadcrumbNoList = props => {
           Bootstrap
         </BreadcrumbItem>
       </Breadcrumb>
-    </div>
+    </Fragment>
   )
 }
 

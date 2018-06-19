@@ -1,25 +1,21 @@
-const FormInputGroupButtonDropdownCode = `import React from 'react'
+const FormInputGroupButtonDropdownCode = `import React, { PureComponent } from 'react'
+
 import { InputGroupButtonDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'components/Common'
 
-class FormInputGroupButtonDropdown extends React.Component {
-  constructor(props) {
-    super(props)
-
-    this.toggle = this.toggle.bind(this)
-    this.state = {
-      dropdownOpen: false
-    }
+class FormInputGroupButtonDropdown extends PureComponent {
+  state = {
+    dropdownOpen: false
   }
 
   toggle() {
-    this.setState({
-      dropdownOpen: !this.state.dropdownOpen
-    })
+    this.setState(prevState => ({
+      dropdownOpen: !prevState.dropdownOpen
+    }))
   }
 
   render() {
     return (
-      <InputGroupButtonDropdown addonType="append" isOpen={this.state.dropdownOpen} toggle={this.toggle}>
+      <InputGroupButtonDropdown addonType="append" isOpen={this.state.dropdownOpen} toggle={() => this.toggle()}>
         <DropdownToggle caret>Button Dropdown</DropdownToggle>
         <DropdownMenu>
           <DropdownItem header>Header</DropdownItem>

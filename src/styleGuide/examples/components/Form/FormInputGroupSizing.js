@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { Fragment } from 'react'
+
 import { InputGroup, InputGroupAddon, Input } from 'components/Common'
 
-const FormInputGroupSizing = props => {
+const FormInputGroupSizing = () => {
   return (
-    <div>
+    <Fragment>
       <InputGroup size="lg">
         <InputGroupAddon addonType="prepend">@lg</InputGroupAddon>
         <Input />
@@ -18,7 +19,7 @@ const FormInputGroupSizing = props => {
         <InputGroupAddon addonType="prepend">@sm</InputGroupAddon>
         <Input />
       </InputGroup>
-    </div>
+    </Fragment>
   )
 }
 

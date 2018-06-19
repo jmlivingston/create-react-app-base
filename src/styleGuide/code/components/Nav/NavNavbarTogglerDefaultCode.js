@@ -1,21 +1,18 @@
-const NavNavbarTogglerDefaultCode = `import React from 'react'
+const NavNavbarTogglerDefaultCode = `import React, { PureComponent } from 'react'
+
 import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'components/Common'
 
-export default class NavNavbarTogglerDefault extends React.Component {
-  constructor(props) {
-    super(props)
-
-    this.toggleNavbar = this.toggleNavbar.bind(this)
-    this.state = {
-      collapsed: true
-    }
+class NavNavbarTogglerDefault extends PureComponent {
+  state = {
+    collapsed: true
   }
 
   toggleNavbar() {
-    this.setState({
-      collapsed: !this.state.collapsed
-    })
+    this.setState(prevState => ({
+      collapsed: !prevState.collapsed
+    }))
   }
+
   render() {
     return (
       <div>
@@ -23,7 +20,7 @@ export default class NavNavbarTogglerDefault extends React.Component {
           <NavbarBrand href="/" className="mr-auto">
             reactstrap
           </NavbarBrand>
-          <NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
+          <NavbarToggler onClick={() => this.toggleNavbar()} className="mr-2" />
           <Collapse isOpen={!this.state.collapsed} navbar timeout={0}>
             <Nav navbar>
               <NavItem>
@@ -39,6 +36,8 @@ export default class NavNavbarTogglerDefault extends React.Component {
     )
   }
 }
+
+export default NavNavbarTogglerDefault
 `
 
 export default NavNavbarTogglerDefaultCode

@@ -1,9 +1,9 @@
-const FormInputGroupButtonShorthandCode = `import React from 'react'
+const FormInputGroupButtonShorthandCode = `import React, { Fragment } from 'react'
 import { InputGroup, InputGroupAddon, Button, Input } from 'components/Common'
 
-const FormInputGroupButtonShorthand = props => {
+const FormInputGroupButtonShorthand = () => {
   return (
-    <div>
+    <Fragment>
       <InputGroup>
         <InputGroupAddon addonType="prepend">
           <Button>To the Left!</Button>
@@ -27,7 +27,7 @@ const FormInputGroupButtonShorthand = props => {
           <Button color="success">To the Right!</Button>
         </InputGroupAddon>
       </InputGroup>
-    </div>
+    </Fragment>
   )
 }
 

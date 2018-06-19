@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import { Card, Button, CardTitle, CardText } from 'components/Common'
 
-const CardAlignment = props => {
+const CardAlignment = () => {
   return (
-    <div>
+    <Fragment>
       <Card body>
         <CardTitle>Special Title Treatment</CardTitle>
         <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
@@ -19,7 +19,7 @@ const CardAlignment = props => {
         <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
         <Button>Go somewhere</Button>
       </Card>
-    </div>
+    </Fragment>
   )
 }
 

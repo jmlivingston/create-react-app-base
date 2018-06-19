@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
+
 import { Carousel, CarouselItem, CarouselControl, CarouselIndicators, CarouselCaption } from 'components/Common'
 
 const items = [
@@ -22,16 +23,8 @@ const items = [
   }
 ]
 
-class CarouselDefault extends Component {
-  constructor(props) {
-    super(props)
-    this.state = { activeIndex: 0 }
-    this.next = this.next.bind(this)
-    this.previous = this.previous.bind(this)
-    this.goToIndex = this.goToIndex.bind(this)
-    this.onExiting = this.onExiting.bind(this)
-    this.onExited = this.onExited.bind(this)
-  }
+class CarouselDefault extends PureComponent {
+  state = { activeIndex: 0 }
 
   onExiting() {
     this.animating = true
@@ -63,7 +56,7 @@ class CarouselDefault extends Component {
 
     const slides = items.map(item => {
       return (
-        <CarouselItem onExiting={this.onExiting} onExited={this.onExited} key={item.src} timeout={0}>
+        <CarouselItem onExiting={() => this.onExiting()} onExited={() => this.onExited()} key={item.src} timeout={0}>
           <img src={item.src} alt={item.altText} />
           <CarouselCaption captionText={item.caption} captionHeader={item.caption} />
         </CarouselItem>
@@ -71,11 +64,11 @@ class CarouselDefault extends Component {
     })
 
     return (
-      <Carousel activeIndex={activeIndex} next={this.next} previous={this.previous}>
-        <CarouselIndicators items={items} activeIndex={activeIndex} onClickHandler={this.goToIndex} />
+      <Carousel activeIndex={activeIndex} next={() => this.next()} previous={() => this.previous()}>
+        <CarouselIndicators items={items} activeIndex={activeIndex} onClickHandler={index => this.goToIndex(index)} />
         {slides}
-        <CarouselControl direction="prev" directionText="Previous" onClickHandler={this.previous} />
-        <CarouselControl direction="next" directionText="Next" onClickHandler={this.next} />
+        <CarouselControl direction="prev" directionText="Previous" onClickHandler={() => this.previous()} />
+        <CarouselControl direction="next" directionText="Next" onClickHandler={() => this.next()} />
       </Carousel>
     )
   }

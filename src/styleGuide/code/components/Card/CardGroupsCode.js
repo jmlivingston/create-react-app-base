@@ -1,7 +1,8 @@
 const CardGroupsCode = `import React from 'react'
+
 import { Card, Button, CardImg, CardTitle, CardText, CardGroup, CardSubtitle, CardBody } from 'components/Common'
 
-const CardGroups = props => {
+const CardGroups = () => {
   return (
     <CardGroup>
       <Card>

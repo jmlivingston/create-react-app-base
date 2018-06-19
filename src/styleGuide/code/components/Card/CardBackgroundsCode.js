@@ -1,9 +1,9 @@
-const CardBackgroundsCode = `import React from 'react'
+const CardBackgroundsCode = `import React, { Fragment } from 'react'
 import { Card, Button, CardTitle, CardText } from 'components/Common'
 
-const CardBackgrounds = props => {
+const CardBackgrounds = () => {
   return (
-    <div>
+    <Fragment>
       <Card body inverse style={{ backgroundColor: '#333', borderColor: '#333' }}>
         <CardTitle>Special Title Treatment</CardTitle>
         <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
@@ -34,7 +34,7 @@ const CardBackgrounds = props => {
         <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
         <Button color="secondary">Button</Button>
       </Card>
-    </div>
+    </Fragment>
   )
 }
 

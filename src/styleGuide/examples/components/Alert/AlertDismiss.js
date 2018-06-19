@@ -1,15 +1,10 @@
-import React from 'react'
+import React, { PureComponent } from 'react'
+
 import { Alert } from 'components/Common'
 
-class AlertDismiss extends React.Component {
-  constructor(props) {
-    super(props)
-
-    this.state = {
-      visible: true
-    }
-
-    this.onDismiss = this.onDismiss.bind(this)
+class AlertDismiss extends PureComponent {
+  state = {
+    visible: true
   }
 
   onDismiss() {
@@ -18,13 +13,11 @@ class AlertDismiss extends React.Component {
 
   render() {
     return (
-      <Alert color="info" isOpen={this.state.visible} toggle={this.onDismiss}>
+      <Alert color="info" isOpen={this.state.visible} toggle={() => this.onDismiss()}>
         I am an alert and I can be dismissed!
       </Alert>
     )
   }
 }
-
-// AlertDismiss.displayName = 'Alert - Dismiss'
 
 export default AlertDismiss
