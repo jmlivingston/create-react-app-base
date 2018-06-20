@@ -12,16 +12,19 @@ class ThemeImporterInnerComponent extends PureComponent {
 
   static propTypes = {
     children: PropTypes.node.isRequired,
+    sassBase: PropTypes.bool,
     sassNames: PropTypes.arrayOf(PropTypes.string),
+    styleList: PropTypes.object.isRequired,
     user: PropTypes.object.isRequired
   }
 
   static defaultProps = {
+    sassBase: false,
     sassNames: []
   }
 
   importStyle = () => {
-    const theme = this.props.user ? this.props.user.get().theme : APP.DEFAULT_PROFILE.theme
+    const theme = this.props.user ? this.props.user.theme : APP.DEFAULT_PROFILE.theme
     let promises = []
     let fileExtension = 'scss'
     if (!process.env.REACT_APP_DESIGN_MODE) {
@@ -33,11 +36,7 @@ class ThemeImporterInnerComponent extends PureComponent {
 
     if (this.props.sassBase) {
       promises.push(import(`../../styles/themes/${theme}/bootstrap.${fileExtension}`))
-    } else if (this.props.sassFooter) {
-      // HACK: Need to figure out a way to load this last. Only a problem with Bootswatch themes
-      setTimeout(() => {
-        promises.push(import(`../../styles/themes/${theme}/bootstrap-footer.${fileExtension}`))
-      }, 500)
+      promises.push(import(`../../styles/themes/${theme}/bootstrap-footer.${fileExtension}`))
     } else {
       promises = this.props.sassNames
         .filter(sassName => {
@@ -54,6 +53,20 @@ class ThemeImporterInnerComponent extends PureComponent {
 
     if (promises.length > 0) {
       Promise.all(promises).then(() => {
+        // HACK: This moves the bootstrap-footer script to the body so it comes last. This is required for Bootswatch themes.
+        if (this.props.sassBase) {
+          if (process.env.NODE_ENV === 'development') {
+            const e = Array.from(document.querySelectorAll('head > style')).find(
+              e => e.innerText.indexOf('.position-static') !== -1
+            )
+            if (e) {
+              document.body.appendChild(e)
+            }
+          } else {
+            // Note assumes App.scss gets loaded first, then bootstrap.scss, then bootstrap-footer.scss
+            document.body.appendChild(Array.from(document.querySelectorAll('head > link[rel="stylesheet"]'))[3])
+          }
+        }
         this.setState({
           isLoaded: true
         })

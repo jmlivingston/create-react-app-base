@@ -23,7 +23,7 @@ class GlobalImporterInnerComponent extends PureComponent {
       import(`../../strings/${stringName}/${stringName}.${defaultLanguage}.json`)
     )
     const languagePromises = this.props.stringNames.map(stringName =>
-      import(`../../strings/${stringName}/${stringName}.${this.props.user.get().language}.json`)
+      import(`../../strings/${stringName}/${stringName}.${this.props.user.language}.json`)
     )
     await Promise.all(defaultLanguagePromises)
       .then(values => {

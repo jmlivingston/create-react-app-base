@@ -29,11 +29,11 @@ class LanguageSelector extends PureComponent {
         {context => (
           <Dropdown isOpen={this.state.dropdownOpen} toggle={() => this.toggle()} nav={this.props.nav} inNavbar>
             <DropdownToggle nav={this.props.nav} caret>
-              {context.user.get().language.toUpperCase()}
+              {context.user.language.toUpperCase()}
             </DropdownToggle>
             <DropdownMenu right={this.props.right}>
-              <DropdownItem onClick={() => context.user.updateProperties({ language: 'en' })}>English</DropdownItem>
-              <DropdownItem onClick={() => context.user.updateProperties({ language: 'ja' })}>Japanese</DropdownItem>
+              <DropdownItem onClick={() => context.auth.updateUser({ language: 'en' })}>English</DropdownItem>
+              <DropdownItem onClick={() => context.auth.updateUser({ language: 'ja' })}>Japanese</DropdownItem>
             </DropdownMenu>
           </Dropdown>
         )}

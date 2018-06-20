@@ -77,17 +77,17 @@ class Header extends PureComponent {
                       {this.props.strings.routes.todo.displayName}
                     </NavLink>
                   </NavItem>
-                  {this.props.user.get().firstName ? (
+                  {this.props.user.firstName ? (
                     <UncontrolledDropdown nav inNavbar>
                       <DropdownToggle nav caret>
-                        {this.props.user.get().firstName} {this.props.user.get().lastName}
+                        {this.props.user.firstName} {this.props.user.lastName}
                       </DropdownToggle>
                       <DropdownMenu right>
                         <DropdownItem href={this.props.strings.routes.userSettings.path}>
                           {this.props.strings.routes.userSettings.displayName}
                         </DropdownItem>
                         <DropdownItem divider />
-                        <DropdownItem onClick={() => context.user.logOut()}>{this.props.strings.logOut}</DropdownItem>
+                        <DropdownItem onClick={() => context.auth.logOut()}>{this.props.strings.logOut}</DropdownItem>
                       </DropdownMenu>
                     </UncontrolledDropdown>
                   ) : (

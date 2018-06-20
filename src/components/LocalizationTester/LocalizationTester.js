@@ -11,7 +11,7 @@ class LocalizationTester extends PureComponent {
         render={({ strings, user }) => (
           <Fragment>
             <Button>
-              {strings.hello} {user.get().firstName} {user.get().lastName}
+              {strings.hello} {user.firstName} {user.lastName}
             </Button>
             <Button>{strings.hello2}</Button>
           </Fragment>

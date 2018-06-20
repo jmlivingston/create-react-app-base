@@ -1,5 +1,5 @@
 import Loadable from 'react-loadable'
-import React, { PureComponent, Fragment } from 'react'
+import React, { PureComponent } from 'react'
 
 import { GlobalContainer, GlobalContainerContext } from 'components/Global/GlobalContainer'
 import GlobalImporter from 'components/Global/GlobalImporter'
@@ -23,27 +23,20 @@ class App extends PureComponent {
     return (
       <GlobalContainer>
         <GlobalContainerContext.Consumer>
-          {context => {
-            return (
-              <GlobalImporter
-                stringNames={['app', 'routes']}
-                render={({ strings }) => {
-                  return (
-                    <ThemeImporter sassBase={true}>
-                      <Header strings={strings} user={context.user} context={context} />
-                      <main role="main" className="main container-fluid">
-                        <Routes />
-                      </main>
-                      <Footer strings={strings} />
-                      <ThemeImporter sassFooter={true}>
-                        <Fragment />
-                      </ThemeImporter>
-                    </ThemeImporter>
-                  )
-                }}
-              />
-            )
-          }}
+          {context => (
+            <GlobalImporter
+              stringNames={['app', 'routes']}
+              render={({ strings }) => (
+                <ThemeImporter sassBase={true}>
+                  <Header strings={strings} user={context.user} context={context} />
+                  <main role="main" className="main container-fluid">
+                    <Routes strings={strings} />
+                  </main>
+                  <Footer strings={strings} />
+                </ThemeImporter>
+              )}
+            />
+          )}
         </GlobalContainerContext.Consumer>
       </GlobalContainer>
     )

@@ -27,7 +27,7 @@ class LogIn extends PureComponent {
   }
 
   logIn = async context => {
-    const userValid = await context.user.logIn({ email: this.state.email, password: this.state.password })
+    const userValid = await context.auth.logIn({ email: this.state.email, password: this.state.password })
     if (userValid) {
       this.setState({
         ...this.defaultState
@@ -53,7 +53,7 @@ class LogIn extends PureComponent {
         render={({ strings, user }) => (
           <GlobalContainerContext.Consumer>
             {context => {
-              return !context.user.get().email ? (
+              return !context.user.email ? (
                 <Form>
                   <FormGroup>
                     <Label for="inputEmail">{strings.email}</Label>
@@ -97,8 +97,8 @@ class LogIn extends PureComponent {
                 </Form>
               ) : (
                 <div className="text-center">
-                  <Button onClick={() => context.user.logOut()}>
-                    {strings.logOut} {context.user.get().firstName} {context.user.get().lastName}
+                  <Button onClick={() => context.auth.logOut()}>
+                    {strings.logOut} {context.user.firstName} {context.user.lastName}
                   </Button>
                 </div>
               )
