@@ -1,14 +1,8 @@
 import { CardGroup as ReactStrapCardGroup } from 'reactstrap'
 import React from 'react'
 
-import ThemeImporter from 'components/Global/ThemeImporter'
-
 const CardGroup = props => {
-  return (
-    <ThemeImporter>
-      <ReactStrapCardGroup {...props} />
-    </ThemeImporter>
-  )
+  return <ReactStrapCardGroup {...props} />
 }
 
 CardGroup.propTypes = ReactStrapCardGroup.propTypes

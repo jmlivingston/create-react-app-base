@@ -50,7 +50,7 @@ class Header extends PureComponent {
       <GlobalContainerContext.Consumer>
         {context => (
           <header>
-            <Navbar color="dark" dark fixed="top" expand="md">
+            <Navbar color="dark" dark={true} fixed="top" expand="md">
               <NavbarBrand href={this.props.strings.routes.home.path}>
                 {this.props.strings.routes.home.displayName}
               </NavbarBrand>
@@ -103,7 +103,7 @@ class Header extends PureComponent {
                   <LanguageSelector />
                 </Nav>
               </Collapse>
-            </Navbar>`
+            </Navbar>
             <Modal isOpen={this.state.islogInModalOpen} toggle={() => this.togglelogInModal()}>
               <ModalHeader toggle={() => this.togglelogInModal()}>{this.props.strings.logIn}</ModalHeader>
               <ModalBody>

@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types'
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 
 import DATE from 'config/dateConstants'
 import dateHelper from 'helpers/dateHelper'
 
-class DateTime extends Component {
+class DateTime extends PureComponent {
   state = { dateText: '' }
   static defaultProps = {
     dateFormat: DATE.DATE

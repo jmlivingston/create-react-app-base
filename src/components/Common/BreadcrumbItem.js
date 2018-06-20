@@ -5,7 +5,7 @@ import ThemeImporter from 'components/Global/ThemeImporter'
 
 const BreadcrumbItem = props => {
   return (
-    <ThemeImporter sassNames={['_breadcrumb']}>
+    <ThemeImporter sassNames={['breadcrumb']}>
       <ReactStrapBreadcrumbItem {...props} />
     </ThemeImporter>
   )

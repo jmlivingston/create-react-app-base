@@ -1,14 +1,8 @@
 import { ModalHeader as ReactStrapModalHeader } from 'reactstrap'
 import React from 'react'
 
-import ThemeImporter from 'components/Global/ThemeImporter'
-
 const ModalHeader = props => {
-  return (
-    <ThemeImporter>
-      <ReactStrapModalHeader {...props} />
-    </ThemeImporter>
-  )
+  return <ReactStrapModalHeader {...props} />
 }
 
 ModalHeader.propTypes = ReactStrapModalHeader.propTypes

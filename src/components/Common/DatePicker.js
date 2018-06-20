@@ -35,7 +35,7 @@ class DatePicker extends PureComponent {
 
   render() {
     return this.state.isLoaded ? (
-      <ThemeImporter sassNames={['_date-picker']}>
+      <ThemeImporter sassNames={['date-picker']}>
         <ReactDatePicker onChange={this.onChange} selected={this.state.moment(this.props.value)} />
       </ThemeImporter>
     ) : null

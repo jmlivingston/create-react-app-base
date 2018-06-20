@@ -1,2 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[14],{466:function(o,r,n){"use strict";n.r(r);r.default='import React from \'react\'\nimport { Progress } from \'components/Common\'\n\nconst ProgressColor = props => {\n  return (\n    <div>\n      <Progress value={2 * 5} />\n      <Progress color="success" value="25" />\n      <Progress color="info" value={50} />\n      <Progress color="warning" value={75} />\n      <Progress color="danger" value="100" />\n    </div>\n  )\n}\n\nexport default ProgressColor\n'}}]);
-//# sourceMappingURL=14.a978d2ee.chunk.js.map

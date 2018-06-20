@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react'
+import React, { Fragment, PureComponent } from 'react'
 
 import {
   Alert,
@@ -237,7 +237,7 @@ class KitchenSink extends PureComponent {
     })
 
     return (
-      <div className="container-fluid">
+      <Fragment>
         <Alert color="primary">This is a primary alert — check it out!</Alert>
         <Alert color="warning">This is a warning alert — check it out!</Alert>
         <Alert color="danger">This is a danger alert — check it out!</Alert>
@@ -421,7 +421,7 @@ class KitchenSink extends PureComponent {
         </Carousel>
         <button onClick={() => this.toggleCollapse()}>Toggle Collapse</button>
         <Collapse isOpen={this.state.isCollapsed} timeout={1}>
-          <div>I am collapse content</div>
+          <Fragment>I am collapse content</Fragment>
         </Collapse>
         <Container>
           <Row>
@@ -432,26 +432,26 @@ class KitchenSink extends PureComponent {
         <Form>
           <FormGroup>
             <Label for="exampleCheckbox">Checkboxes</Label>
-            <div>
+            <Fragment>
               <CustomInput type="checkbox" id="exampleCustomCheckbox" label="Check this custom checkbox" />
               <CustomInput type="checkbox" id="exampleCustomCheckbox2" label="Or this one" />
               <CustomInput type="checkbox" id="exampleCustomCheckbox3" label="But not this disabled one" disabled />
-            </div>
+            </Fragment>
           </FormGroup>
           <FormGroup>
             <Label for="exampleCheckbox">Radios</Label>
-            <div>
+            <Fragment>
               <CustomInput type="radio" id="exampleCustomRadio" name="customRadio" label="Select this custom radio" />
               <CustomInput type="radio" id="exampleCustomRadio2" name="customRadio" label="Or this one" />
               <CustomInput type="radio" id="exampleCustomRadio3" label="But not this disabled one" disabled />
-            </div>
+            </Fragment>
           </FormGroup>
           <FormGroup>
             <Label for="exampleCheckbox">Inline</Label>
-            <div>
+            <Fragment>
               <CustomInput type="checkbox" id="exampleCustomInline" label="An inline custom input" inline />
               <CustomInput type="checkbox" id="exampleCustomInline2" label="and another one" inline />
-            </div>
+            </Fragment>
           </FormGroup>
           <FormGroup>
             <Label for="exampleCustomSelect">Custom Select</Label>
@@ -655,7 +655,7 @@ class KitchenSink extends PureComponent {
             vestibulum.
           </PopoverBody>
         </Popover>
-        <div>
+        <Fragment>
           <div className="text-center">0%</div>
           <Progress />
           <div className="text-center">25%</div>
@@ -674,7 +674,7 @@ class KitchenSink extends PureComponent {
             <Progress bar color="warning" value="20" />
             <Progress bar color="danger" value="5" />
           </Progress>
-        </div>
+        </Fragment>
         <div className="pt-2">
           <Nav tabs>
             <NavItem>
@@ -810,7 +810,7 @@ class KitchenSink extends PureComponent {
           Hello world!
         </UncontrolledTooltip>
         <UncontrolledCarousel items={uncontrolledCarouselItems} />
-      </div>
+      </Fragment>
     )
   }
 }

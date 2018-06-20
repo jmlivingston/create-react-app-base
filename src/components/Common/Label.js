@@ -1,14 +1,8 @@
 import { Label as ReactStrapLabel } from 'reactstrap'
 import React from 'react'
 
-import ThemeImporter from 'components/Global/ThemeImporter'
-
 const Label = props => {
-  return (
-    <ThemeImporter>
-      <ReactStrapLabel {...props} />
-    </ThemeImporter>
-  )
+  return <ReactStrapLabel {...props} />
 }
 
 Label.propTypes = ReactStrapLabel.propTypes

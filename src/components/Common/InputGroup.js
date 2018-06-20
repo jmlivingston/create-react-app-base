@@ -5,7 +5,7 @@ import ThemeImporter from 'components/Global/ThemeImporter'
 
 const InputGroup = props => {
   return (
-    <ThemeImporter sassNames={['_input-group']}>
+    <ThemeImporter sassNames={['input-group']}>
       <ReactStrapInputGroup {...props} />
     </ThemeImporter>
   )

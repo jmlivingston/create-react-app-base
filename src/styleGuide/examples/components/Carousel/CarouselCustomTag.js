@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react'
+import React, { Fragment, PureComponent } from 'react'
 
 import { Carousel, CarouselItem, CarouselControl, CarouselIndicators, CarouselCaption } from 'components/Common'
 
@@ -64,7 +64,7 @@ class CarouselCustomTag extends PureComponent {
     })
 
     return (
-      <div>
+      <Fragment>
         <style>
           {`.custom-tag {
                 max-width: 100%;
@@ -86,7 +86,7 @@ class CarouselCustomTag extends PureComponent {
           <CarouselControl direction="prev" directionText="Previous" onClickHandler={() => this.previous()} />
           <CarouselControl direction="next" directionText="Next" onClickHandler={() => this.next()} />
         </Carousel>
-      </div>
+      </Fragment>
     )
   }
 }

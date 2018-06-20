@@ -5,7 +5,7 @@ import ThemeImporter from 'components/Global/ThemeImporter'
 
 const Form = props => {
   return (
-    <ThemeImporter sassNames={['_forms']}>
+    <ThemeImporter sassNames={['forms']}>
       <ReactStrapForm {...props} />
     </ThemeImporter>
   )

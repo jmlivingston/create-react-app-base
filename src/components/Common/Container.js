@@ -1,14 +1,8 @@
 import { Container as ReactStrapContainer } from 'reactstrap'
 import React from 'react'
 
-import ThemeImporter from 'components/Global/ThemeImporter'
-
 const Container = props => {
-  return (
-    <ThemeImporter>
-      <ReactStrapContainer {...props} />
-    </ThemeImporter>
-  )
+  return <ReactStrapContainer {...props} />
 }
 
 Container.propTypes = ReactStrapContainer.propTypes

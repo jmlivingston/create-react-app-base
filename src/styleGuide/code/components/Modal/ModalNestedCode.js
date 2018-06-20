@@ -1,4 +1,4 @@
-const ModalNestedCode = `import React, { PureComponent } from 'react'
+const ModalNestedCode = `import React, { Fragment, PureComponent } from 'react'
 
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'components/Common'
 
@@ -31,7 +31,7 @@ class ModalNested extends PureComponent {
 
   render() {
     return (
-      <div>
+      <Fragment>
         <Button color="danger" onClick={() => this.toggle()}>
           Modal
         </Button>
@@ -72,7 +72,7 @@ class ModalNested extends PureComponent {
             </Button>
           </ModalFooter>
         </Modal>
-      </div>
+      </Fragment>
     )
   }
 }

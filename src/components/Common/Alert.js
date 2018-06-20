@@ -5,7 +5,7 @@ import ThemeImporter from 'components/Global/ThemeImporter'
 
 const Alert = props => {
   return (
-    <ThemeImporter sassNames={['_alert']}>
+    <ThemeImporter sassNames={['alert']}>
       <ReactStrapAlert {...props} />
     </ThemeImporter>
   )

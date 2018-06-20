@@ -1,14 +1,8 @@
 import { DropdownItem as ReactStrapDropdownItem } from 'reactstrap'
 import React from 'react'
 
-import ThemeImporter from 'components/Global/ThemeImporter'
-
 const DropdownItem = props => {
-  return (
-    <ThemeImporter>
-      <ReactStrapDropdownItem {...props}>{props.children}</ReactStrapDropdownItem>
-    </ThemeImporter>
-  )
+  return <ReactStrapDropdownItem {...props}>{props.children}</ReactStrapDropdownItem>
 }
 
 DropdownItem.propTypes = ReactStrapDropdownItem.propTypes

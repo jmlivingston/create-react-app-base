@@ -5,7 +5,7 @@ import ThemeImporter from 'components/Global/ThemeImporter'
 
 const TabContent = props => {
   return (
-    <ThemeImporter sassNames={['_nav']}>
+    <ThemeImporter sassNames={['nav']}>
       <ReactStrapTabContent {...props} />
     </ThemeImporter>
   )

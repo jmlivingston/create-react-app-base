@@ -6,7 +6,7 @@ import { GlobalContainerContext } from './GlobalContainer'
 
 class GlobalImporterInnerComponent extends PureComponent {
   state = {
-    strings: {}
+    strings: null
   }
 
   static propTypes = {
@@ -50,7 +50,9 @@ class GlobalImporterInnerComponent extends PureComponent {
   }
 
   render() {
-    return <Fragment>{this.props.render({ ...this.state, user: this.props.user })}</Fragment>
+    return this.state.strings === null ? null : (
+      <Fragment>{this.props.render({ ...this.state, user: this.props.user })}</Fragment>
+    )
   }
 }
 

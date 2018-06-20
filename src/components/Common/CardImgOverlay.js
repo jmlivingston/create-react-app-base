@@ -1,14 +1,8 @@
 import { CardImgOverlay as ReactStrapCardImgOverlay } from 'reactstrap'
 import React from 'react'
 
-import ThemeImporter from 'components/Global/ThemeImporter'
-
 const CardImgOverlay = props => {
-  return (
-    <ThemeImporter>
-      <ReactStrapCardImgOverlay {...props} />
-    </ThemeImporter>
-  )
+  return <ReactStrapCardImgOverlay {...props} />
 }
 
 CardImgOverlay.propTypes = ReactStrapCardImgOverlay.propTypes

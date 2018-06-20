@@ -5,7 +5,7 @@ import ThemeImporter from 'components/Global/ThemeImporter'
 
 const Tooltip = props => {
   return (
-    <ThemeImporter sassNames={['_tooltip']}>
+    <ThemeImporter sassNames={['tooltip']}>
       <ReactStrapTooltip {...props} />
     </ThemeImporter>
   )

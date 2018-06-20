@@ -5,7 +5,7 @@ import ThemeImporter from 'components/Global/ThemeImporter'
 
 const Jumbotron = props => {
   return (
-    <ThemeImporter sassNames={['_jumbotron']}>
+    <ThemeImporter sassNames={['jumbotron']}>
       <ReactStrapJumbotron {...props} />
     </ThemeImporter>
   )

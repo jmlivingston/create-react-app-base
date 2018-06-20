@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types'
-import React, { Component, Fragment } from 'react'
+import React, { PureComponent, Fragment } from 'react'
 
 import { DatePicker } from 'components/Common'
 import LocalizationTester from 'components/LocalizationTester/LocalizationTester'
 
-class Home extends Component {
+class Home extends PureComponent {
   state = {
     date: new Date().toISOString()
   }

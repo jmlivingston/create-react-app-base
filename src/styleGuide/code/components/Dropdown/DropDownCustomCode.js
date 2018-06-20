@@ -18,7 +18,6 @@ class DropDownCustom extends PureComponent {
       <Dropdown isOpen={this.state.dropdownOpen} toggle={() => this.toggle()}>
         <DropdownToggle
           tag="span"
-          onClick={() => this.toggle()}
           data-toggle="dropdown"
           aria-expanded={this.state.dropdownOpen}>
           Custom Dropdown Content

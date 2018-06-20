@@ -16,23 +16,53 @@ class ThemeImporterInnerComponent extends PureComponent {
     user: PropTypes.object.isRequired
   }
 
+  static defaultProps = {
+    sassNames: []
+  }
+
   importStyle = () => {
     const theme = this.props.user ? this.props.user.get().theme : APP.DEFAULT_PROFILE.theme
-    import(`../../styles/themes/${theme}/_bootstrap.scss`).then(() => {
-      if (this.props.sassNames) {
-        Promise.all(
-          this.props.sassNames.map(sassName => import(`../../styles/themes/${theme}/components/${sassName}.scss`))
-        ).then(() => {
-          this.setState({
-            isLoaded: true
-          })
+    let promises = []
+    let fileExtension = 'scss'
+    if (!process.env.REACT_APP_DESIGN_MODE) {
+      fileExtension = 'css'
+      this.setState({
+        isLoaded: true
+      })
+    }
+
+    if (this.props.sassBase) {
+      promises.push(import(`../../styles/themes/${theme}/bootstrap.${fileExtension}`))
+    } else if (this.props.sassFooter) {
+      // HACK: Need to figure out a way to load this last. Only a problem with Bootswatch themes
+      setTimeout(() => {
+        promises.push(import(`../../styles/themes/${theme}/bootstrap-footer.${fileExtension}`))
+      }, 500)
+    } else {
+      promises = this.props.sassNames
+        .filter(sassName => {
+          const hasStyle = this.props.styleList.get()[sassName] === true
+          if (!hasStyle) {
+            this.props.styleList.set(sassName)
+          }
+          return !hasStyle
         })
-      } else {
+        .map(sassName => {
+          return import(`../../styles/themes/${theme}/components/${sassName}.${fileExtension}`)
+        })
+    }
+
+    if (promises.length > 0) {
+      Promise.all(promises).then(() => {
         this.setState({
           isLoaded: true
         })
-      }
-    })
+      })
+    } else {
+      this.setState({
+        isLoaded: true
+      })
+    }
   }
 
   componentDidMount() {
@@ -49,12 +79,7 @@ class ThemeImporter extends PureComponent {
     return (
       <GlobalContainerContext.Consumer>
         {context => {
-          let props = {}
-          if (context) {
-            props = { ...context, ...this.props }
-          } else {
-            props = { ...this.props }
-          }
+          let props = { ...context, ...this.props }
           return <ThemeImporterInnerComponent {...props} />
         }}
       </GlobalContainerContext.Consumer>

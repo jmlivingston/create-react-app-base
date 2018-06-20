@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "start": "react-scripts start",
+    "start-design": "npm run sass-build & cross-env REACT_APP_DESIGN_MODE=true react-scripts start",
     "build": "react-scripts build && npm run build-copy",
     "deploy": "git subtree push --prefix build origin build",
     "lint": "node node_modules/eslint/bin/eslint.js --max-warnings=0 src",
@@ -11,6 +12,7 @@
     "build-copy": "node ./utility/deploy.js",
     "build-start": "cd build && serve -s -l 3000",
     "precommit": "lint-staged",
+    "sass-build": "./node_modules/.bin/node-sass-chokidar src/styles/ -o src/styles/ --output-style compressed",
     "screenshots-build": "node ./utility/build-screenshots.js",
     "style-guide-build": "node ./utility/build-style-guide.js",
     "style-guide-start": "cross-env REACT_APP_TYPE=STYLE_GUIDE react-scripts start",
@@ -39,10 +41,11 @@
     "husky": "0.14.3",
     "lint-staged": "7.2.0",
     "node-sass": "4.9.0",
+    "node-sass-chokidar": "^1.3.0",
     "prettier": "1.13.5",
     "puppeteer": "1.5.0",
     "react-docgen": "3.0.0-beta12",
-    "serve": "9.0.0"
+    "serve": "9.1.0"
   },
   "engines": {
     "node": ">=7.6.0 <10.0.0 "

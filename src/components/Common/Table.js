@@ -7,7 +7,7 @@ import ThemeImporter from 'components/Global/ThemeImporter'
 // Also we can create some defaults for things like pageSize, pageSizeOptions, etc
 const Table = ({ ...props }) => {
   return (
-    <ThemeImporter sassNames={['_tables']}>
+    <ThemeImporter sassNames={['tables']}>
       <ReactTable {...props} />
     </ThemeImporter>
   )

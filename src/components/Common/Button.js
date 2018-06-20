@@ -5,7 +5,7 @@ import ThemeImporter from 'components/Global/ThemeImporter'
 
 const Button = props => {
   return (
-    <ThemeImporter sassNames={['_buttons']}>
+    <ThemeImporter sassNames={['buttons']}>
       <ReactStrapButton {...props} />
     </ThemeImporter>
   )

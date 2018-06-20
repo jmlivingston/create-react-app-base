@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types'
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 
 import { Card, CardBody, CardHeader, Collapse, Table } from 'components/Common'
 
-class PropTypesTable extends Component {
+class PropTypesTable extends PureComponent {
   state = {
     collapse: false
   }
@@ -35,7 +35,9 @@ class PropTypesTable extends Component {
           rootKey =>
             Object.keys(this.props.componentPropTypes[rootKey]).length > 0 ? (
               <Card key={rootKey}>
-                <CardHeader onClick={() => this.toggle()}>{rootKey}</CardHeader>
+                <CardHeader onClick={() => this.toggle()} className="cursor-pointer">
+                  {rootKey}
+                </CardHeader>
                 <Collapse isOpen={this.state.collapse} timeout={0}>
                   <CardBody>
                     <Table

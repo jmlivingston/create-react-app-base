@@ -10,7 +10,7 @@ import './StyleGuideApp.scss'
 
 class StyleGuideApp extends PureComponent {
   state = {
-    rootKey: Object.keys(styleGuideConfig)[0]
+    rootKey: this.props.match.params.id || Object.keys(styleGuideConfig)[0]
   }
 
   static propTypes = {
@@ -19,15 +19,8 @@ class StyleGuideApp extends PureComponent {
     params: PropTypes.object
   }
 
-  componentDidMount() {
-    this.setState({
-      rootKey: this.props.match.params.id || Object.keys(styleGuideConfig)[0]
-    })
-  }
-
   navigateToUrl(rootKey) {
     window.scrollTo(0, 0)
-
     this.setState({
       rootKey
     })
@@ -41,7 +34,6 @@ class StyleGuideApp extends PureComponent {
           <div className="sidebar-sticky py-2">
             <ThemeSelector />
             <h1>{this.props.params}</h1>
-            <br />
             {Object.keys(styleGuideConfig).map(rootKey => (
               <p key={rootKey}>
                 <Button active={this.state.rootKey === rootKey} onClick={() => this.navigateToUrl(rootKey)} size="sm">

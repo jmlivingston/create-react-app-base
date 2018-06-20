@@ -1,4 +1,4 @@
-const CollapseDefaultCode = `import React, { PureComponent } from 'react'
+const CollapseDefaultCode = `import React, { Fragment, PureComponent } from 'react'
 
 import { Collapse, Button, CardBody, Card } from 'components/Common'
 
@@ -11,7 +11,7 @@ class CollapseDefault extends PureComponent {
 
   render() {
     return (
-      <div>
+      <Fragment>
         <Button color="primary" onClick={() => this.toggle()} style={{ marginBottom: '1rem' }}>
           Toggle
         </Button>
@@ -23,7 +23,7 @@ class CollapseDefault extends PureComponent {
             </CardBody>
           </Card>
         </Collapse>
-      </div>
+      </Fragment>
     )
   }
 }

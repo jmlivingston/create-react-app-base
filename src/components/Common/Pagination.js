@@ -5,7 +5,7 @@ import ThemeImporter from 'components/Global/ThemeImporter'
 
 const Pagination = props => {
   return (
-    <ThemeImporter sassNames={['_pagination']}>
+    <ThemeImporter sassNames={['pagination']}>
       <ReactStrapPagination {...props} />
     </ThemeImporter>
   )

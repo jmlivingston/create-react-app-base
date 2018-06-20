@@ -5,7 +5,7 @@ import ThemeImporter from 'components/Global/ThemeImporter'
 
 const CustomInput = props => {
   return (
-    <ThemeImporter sassNames={['_custom-forms', '_buttons']}>
+    <ThemeImporter sassNames={['custom-forms', 'buttons']}>
       <ReactStrapCustomInput {...props} />
     </ThemeImporter>
   )

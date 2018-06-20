@@ -5,7 +5,7 @@ import ThemeImporter from 'components/Global/ThemeImporter'
 
 const ListGroup = props => {
   return (
-    <ThemeImporter sassNames={['_list-group']}>
+    <ThemeImporter sassNames={['list-group']}>
       <ReactStrapListGroup {...props} />
     </ThemeImporter>
   )

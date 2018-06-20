@@ -5,7 +5,7 @@ import ThemeImporter from 'components/Global/ThemeImporter'
 
 const Card = props => {
   return (
-    <ThemeImporter sassNames={['_card']}>
+    <ThemeImporter sassNames={['card']}>
       <ReactStrapCard {...props} />
     </ThemeImporter>
   )

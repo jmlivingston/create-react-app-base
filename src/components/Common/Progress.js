@@ -5,7 +5,7 @@ import ThemeImporter from 'components/Global/ThemeImporter'
 
 const Progress = props => {
   return (
-    <ThemeImporter sassNames={['_progress']}>
+    <ThemeImporter sassNames={['progress']}>
       <ReactStrapProgress {...props} />
     </ThemeImporter>
   )

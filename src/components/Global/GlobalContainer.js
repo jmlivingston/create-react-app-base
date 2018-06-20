@@ -14,6 +14,7 @@ class GlobalContainer extends PureComponent {
   }
 
   user = null
+  styleList = {}
 
   state = {
     user: {
@@ -49,12 +50,20 @@ class GlobalContainer extends PureComponent {
       logOut: async () => {
         this.state.user.set(APP.DEFAULT_PROFILE)
       }
+    },
+    styleList: {
+      get: () => {
+        return this.styleList
+      },
+      set: style => {
+        this.styleList[style] = true
+      }
     }
   }
 
   render() {
     return (
-      <GlobalContainerContext.Provider value={{ user: this.state.user }}>
+      <GlobalContainerContext.Provider value={{ ...this.state }}>
         {this.props.children}
       </GlobalContainerContext.Provider>
     )

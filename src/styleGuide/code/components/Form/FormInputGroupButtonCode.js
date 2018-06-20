@@ -1,4 +1,4 @@
-const FormInputGroupButtonCode = `import React, { PureComponent } from 'react'
+const FormInputGroupButtonCode = `import React, { Fragment, PureComponent } from 'react'
 
 import {
   InputGroup,
@@ -31,7 +31,7 @@ class FormInputGroupButton extends PureComponent {
 
   render() {
     return (
-      <div>
+      <Fragment>
         <InputGroup>
           <InputGroupAddon addonType="prepend">
             <Button>I'm a button</Button>
@@ -76,7 +76,7 @@ class FormInputGroupButton extends PureComponent {
             <Button color="secondary">I'm a button</Button>
           </InputGroupAddon>
         </InputGroup>
-      </div>
+      </Fragment>
     )
   }
 }

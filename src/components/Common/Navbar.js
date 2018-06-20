@@ -5,7 +5,7 @@ import ThemeImporter from 'components/Global/ThemeImporter'
 
 const Navbar = props => {
   return (
-    <ThemeImporter sassNames={['_navbar']}>
+    <ThemeImporter sassNames={['navbar']}>
       <ReactStrapNavbar {...props} />
     </ThemeImporter>
   )

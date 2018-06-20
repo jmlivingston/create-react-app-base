@@ -5,7 +5,7 @@ import ThemeImporter from 'components/Global/ThemeImporter'
 
 const ButtonDropdown = props => {
   return (
-    <ThemeImporter sassNames={['_buttons', '_dropdown']}>
+    <ThemeImporter sassNames={['buttons', 'dropdown']}>
       <ReactStrapButtonDropdown {...props} />
     </ThemeImporter>
   )

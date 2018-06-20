@@ -1,14 +1,8 @@
 import { ListGroupItemHeading as ReactStrapListGroupItemHeading } from 'reactstrap'
 import React from 'react'
 
-import ThemeImporter from 'components/Global/ThemeImporter'
-
 const ListGroupItemHeading = props => {
-  return (
-    <ThemeImporter>
-      <ReactStrapListGroupItemHeading {...props} />
-    </ThemeImporter>
-  )
+  return <ReactStrapListGroupItemHeading {...props} />
 }
 
 ListGroupItemHeading.propTypes = ReactStrapListGroupItemHeading.propTypes

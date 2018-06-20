@@ -1,4 +1,4 @@
-const TabsDefaultCode = `import React, { PureComponent } from 'react'
+const TabsDefaultCode = `import React, { Fragment, PureComponent } from 'react'
 
 import {
   TabContent,
@@ -29,7 +29,7 @@ class TabsDefault extends PureComponent {
   }
   render() {
     return (
-      <div>
+      <Fragment>
         <Nav tabs>
           <NavItem>
             <NavLink
@@ -77,7 +77,7 @@ class TabsDefault extends PureComponent {
             </Row>
           </TabPane>
         </TabContent>
-      </div>
+      </Fragment>
     )
   }
 }

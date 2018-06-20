@@ -5,7 +5,7 @@ import ThemeImporter from 'components/Global/ThemeImporter'
 
 const UncontrolledCarousel = props => {
   return (
-    <ThemeImporter sassNames={['_carousel']}>
+    <ThemeImporter sassNames={['carousel']}>
       <ReactStrapUncontrolledCarousel {...props} />
     </ThemeImporter>
   )

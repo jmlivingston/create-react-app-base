@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react'
+import React, { Fragment, PureComponent } from 'react'
 
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'components/Common'
 
@@ -23,7 +23,7 @@ class ModalExternal extends PureComponent {
       </button>
     )
     return (
-      <div>
+      <Fragment>
         <Button color="danger" onClick={() => this.toggle()}>
           Modal
         </Button>
@@ -47,7 +47,7 @@ class ModalExternal extends PureComponent {
             </Button>
           </ModalFooter>
         </Modal>
-      </div>
+      </Fragment>
     )
   }
 }

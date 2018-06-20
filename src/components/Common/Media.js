@@ -5,7 +5,7 @@ import ThemeImporter from 'components/Global/ThemeImporter'
 
 const Media = props => {
   return (
-    <ThemeImporter sassNames={['_media']}>
+    <ThemeImporter sassNames={['media']}>
       <ReactStrapMedia {...props} />
     </ThemeImporter>
   )

@@ -1,14 +1,8 @@
 import { ModalFooter as ReactStrapModalFooter } from 'reactstrap'
 import React from 'react'
 
-import ThemeImporter from 'components/Global/ThemeImporter'
-
 const ModalFooter = props => {
-  return (
-    <ThemeImporter>
-      <ReactStrapModalFooter {...props} />
-    </ThemeImporter>
-  )
+  return <ReactStrapModalFooter {...props} />
 }
 
 ModalFooter.propTypes = ReactStrapModalFooter.propTypes

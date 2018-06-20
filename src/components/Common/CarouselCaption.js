@@ -1,14 +1,8 @@
 import { CarouselCaption as ReactStrapCarouselCaption } from 'reactstrap'
 import React from 'react'
 
-import ThemeImporter from 'components/Global/ThemeImporter'
-
 const CarouselCaption = props => {
-  return (
-    <ThemeImporter>
-      <ReactStrapCarouselCaption {...props} />
-    </ThemeImporter>
-  )
+  return <ReactStrapCarouselCaption {...props} />
 }
 
 CarouselCaption.propTypes = ReactStrapCarouselCaption.propTypes

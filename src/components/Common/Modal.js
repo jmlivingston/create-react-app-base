@@ -5,7 +5,7 @@ import ThemeImporter from 'components/Global/ThemeImporter'
 
 const Modal = props => {
   return (
-    <ThemeImporter sassNames={['_modal']}>
+    <ThemeImporter sassNames={['modal']}>
       <ReactStrapModal {...props} />
     </ThemeImporter>
   )

@@ -5,7 +5,7 @@ import ThemeImporter from 'components/Global/ThemeImporter'
 
 const Carousel = props => {
   return (
-    <ThemeImporter sassNames={['_carousel']}>
+    <ThemeImporter sassNames={['carousel']}>
       <ReactStrapCarousel {...props} />
     </ThemeImporter>
   )

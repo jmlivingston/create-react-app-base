@@ -1,4 +1,4 @@
-const ModalFadelessCode = `import React, { PureComponent } from 'react'
+const ModalFadelessCode = `import React, { Fragment, PureComponent } from 'react'
 
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'components/Common'
 
@@ -15,7 +15,7 @@ class ModalFadeless extends PureComponent {
 
   render() {
     return (
-      <div>
+      <Fragment>
         <Button color="danger" onClick={() => this.toggle()}>
           Modal
         </Button>
@@ -37,7 +37,7 @@ class ModalFadeless extends PureComponent {
             </Button>
           </ModalFooter>
         </Modal>
-      </div>
+      </Fragment>
     )
   }
 }
