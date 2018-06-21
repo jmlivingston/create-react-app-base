@@ -1,5 +1,6 @@
 const express = require('express')
 const path = require('path')
+const favicon = require('serve-favicon')
 
 const clientDir = path.join(__dirname, '..', 'client')
 const port = process.env.PORT || '3000'
@@ -7,6 +8,7 @@ const port = process.env.PORT || '3000'
 const app = express()
 
 app.use(express.static(path.join(__dirname)))
+app.use(favicon(path.join(clientDir, 'favicon.ico')))
 
 const isStatic = req => {
   return req.url.includes('.') && !req.url.includes('index.html')
@@ -33,7 +35,7 @@ app.get('/*', (req, res) => {
     }
     res.sendFile(req.url, { root: clientDir })
   } else {
-    res.sendfile(path.join(clientDir, 'index.html'))
+    res.sendFile(path.join(clientDir, 'index.html'))
   }
 })
 
