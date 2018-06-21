@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import React, { Fragment } from 'react'
 
@@ -8,7 +9,7 @@ const SiteMap = ({ strings }) => {
       <ul>
         {Object.keys(strings).map(key => (
           <li key={key}>
-            <a href={strings[key].path}>{strings[key].displayName}</a>
+            <Link to={strings[key].path}>{strings[key].displayName}</Link>
           </li>
         ))}
       </ul>

@@ -5,7 +5,15 @@ import React, { Fragment } from 'react'
 import APP from 'config/appConstants'
 import { Error } from 'components/Common'
 
-const Loader = ({ name = APP.LOADER_NAME, message = 'Loading...', children, isLoaded, error }) => {
+const Loader = ({
+  children,
+  error,
+  isLoaded,
+  message = 'Loading...',
+  name = APP.LOADER_NAME,
+  pastDelay = false,
+  timedOut = false
+}) => {
   import(`loaders.css/src/animations/${name}.scss`)
   const Loading = ({ message }) => (
     <div className="text-center">
@@ -13,8 +21,8 @@ const Loader = ({ name = APP.LOADER_NAME, message = 'Loading...', children, isLo
       <h3 className="pt-3">{message}</h3>
     </div>
   )
-  return children ? (
-    isLoaded ? (
+  if (children) {
+    return isLoaded ? (
       error ? (
         <Error friendlyError={error} />
       ) : (
@@ -23,9 +31,17 @@ const Loader = ({ name = APP.LOADER_NAME, message = 'Loading...', children, isLo
     ) : (
       <Loading message={message} />
     )
-  ) : (
-    <Loading message={message} />
-  )
+  } else {
+    if (error) {
+      return <Error friendlyError={error} />
+    } else if (timedOut) {
+      return <Error friendlyError="Taking a long time. Refresh page to retry." />
+    } else if (pastDelay) {
+      return <Loading message={message} />
+    } else {
+      return null
+    }
+  }
 }
 
 Loader.propTypes = {
@@ -64,7 +80,9 @@ Loader.propTypes = {
     'pacman',
     'cube-transition',
     'semi-circle-spin'
-  ])
+  ]),
+  pastDelay: PropTypes.bool,
+  timedOut: PropTypes.bool
 }
 
 export default Loader

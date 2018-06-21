@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import React, { PureComponent } from 'react'
 
@@ -51,39 +52,44 @@ class Header extends PureComponent {
         {context => (
           <header>
             <Navbar color="dark" dark={true} fixed="top" expand="md">
-              <NavbarBrand href={this.props.strings.routes.home.path}>
+              <NavbarBrand tag={Link} to={this.props.strings.routes.home.path}>
                 {this.props.strings.routes.home.displayName}
               </NavbarBrand>
               <NavbarToggler onClick={() => this.toggle()} />
               <Collapse isOpen={this.state.isOpen} navbar timeout={0}>
                 <Nav className="ml-auto" navbar>
                   <NavItem>
-                    <NavLink href={this.props.strings.routes.about.path}>
+                    <NavLink tag={Link} to={this.props.strings.routes.about.path}>
                       {this.props.strings.routes.about.displayName}
                     </NavLink>
                   </NavItem>
                   <NavItem>
-                    <NavLink href={this.props.strings.routes.styleGuide.path}>
+                    <NavLink tag={Link} to={this.props.strings.routes.styleGuide.path}>
                       {this.props.strings.routes.styleGuide.displayName}
                     </NavLink>
                   </NavItem>
                   <NavItem>
-                    <NavLink href={this.props.strings.routes.languageTester.path}>
+                    <NavLink tag={Link} to={this.props.strings.routes.languageTester.path}>
                       {this.props.strings.routes.languageTester.displayName}
                     </NavLink>
                   </NavItem>
                   <NavItem>
-                    <NavLink href={this.props.strings.routes.todo.path}>
+                    <NavLink tag={Link} to={this.props.strings.routes.todo.path}>
                       {this.props.strings.routes.todo.displayName}
                     </NavLink>
                   </NavItem>
+                  <NavItem>
+                    <NavLink tag={Link} to={this.props.strings.routes.siteMap.path}>
+                      {this.props.strings.routes.siteMap.displayName}
+                    </NavLink>
+                  </NavItem>                  
                   {this.props.user.firstName ? (
                     <UncontrolledDropdown nav inNavbar>
                       <DropdownToggle nav caret>
                         {this.props.user.firstName} {this.props.user.lastName}
                       </DropdownToggle>
                       <DropdownMenu right>
-                        <DropdownItem href={this.props.strings.routes.userSettings.path}>
+                        <DropdownItem tag={Link} to={this.props.strings.routes.userSettings.path}>
                           {this.props.strings.routes.userSettings.displayName}
                         </DropdownItem>
                         <DropdownItem divider />

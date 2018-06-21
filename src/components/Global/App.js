@@ -1,3 +1,5 @@
+import { BrowserRouter } from 'react-router-dom'
+
 import Loadable from 'react-loadable'
 import React, { PureComponent } from 'react'
 
@@ -28,11 +30,15 @@ class App extends PureComponent {
               stringNames={['app', 'routes']}
               render={({ strings }) => (
                 <ThemeImporter sassBase={true}>
-                  <Header strings={strings} user={context.user} context={context} />
-                  <main role="main" className="main container-fluid">
-                    <Routes strings={strings} />
-                  </main>
-                  <Footer strings={strings} />
+                  <BrowserRouter>
+                    <div>
+                      <Header strings={strings} user={context.user} context={context} />
+                      <main role="main" className="main container-fluid">
+                        <Routes strings={strings} />
+                      </main>
+                      <Footer strings={strings} />
+                    </div>
+                  </BrowserRouter>
                 </ThemeImporter>
               )}
             />
