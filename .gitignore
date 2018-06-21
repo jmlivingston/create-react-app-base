@@ -7,7 +7,7 @@
 /coverage
 
 # production
-/build - we allow this for deployments
+/build
 
 # misc
 .DS_Store

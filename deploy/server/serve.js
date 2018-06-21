@@ -1,7 +1,7 @@
 const express = require('express')
 const path = require('path')
 
-const clientDir = path.join(__dirname)
+const clientDir = path.join(__dirname, '..', 'client')
 const port = process.env.PORT || '3000'
 
 const app = express()
@@ -33,7 +33,7 @@ app.get('/*', (req, res) => {
     }
     res.sendFile(req.url, { root: clientDir })
   } else {
-    res.sendfile('index.html')
+    res.sendfile(path.join(clientDir, 'index.html'))
   }
 })
 

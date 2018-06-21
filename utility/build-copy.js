@@ -6,6 +6,17 @@ const getFilesFolders = require('./utility').getFilesFolders
 const buildDir = path.join(__dirname, '../build')
 const deployDir = path.join(__dirname, '../deploy/client')
 
-getFilesFolders(buildDir, false).forEach(file => {
-  fs.copyFileSync(file, file.replace(buildDir, deployDir))
+getFilesFolders(deployDir, true, 'file').forEach(file => {
+  fs.unlinkSync(file)
+})
+
+getFilesFolders(buildDir, true, 'both').forEach(fileFolder => {
+  const newLocation = fileFolder.replace(buildDir, deployDir)
+  if (fs.lstatSync(fileFolder).isDirectory()) {
+    if (!fs.existsSync(newLocation)) {
+      fs.mkdirSync(newLocation)
+    }
+  } else {
+    fs.copyFileSync(fileFolder, newLocation)
+  }
 })
