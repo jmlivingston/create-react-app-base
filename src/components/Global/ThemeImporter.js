@@ -1,8 +1,7 @@
 import PropTypes from 'prop-types'
 import React, { PureComponent } from 'react'
 
-import { GlobalContainerContext } from './GlobalContainer'
-
+import GlobalContainerContext from './GlobalContainerContext'
 import APP from 'config/appConstants'
 
 class ThemeImporterInnerComponent extends PureComponent {

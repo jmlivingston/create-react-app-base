@@ -1,9 +1,9 @@
 import { BrowserRouter } from 'react-router-dom'
-
 import Loadable from 'react-loadable'
-import React, { PureComponent } from 'react'
+import React, { Fragment, PureComponent } from 'react'
 
-import { GlobalContainer, GlobalContainerContext } from 'components/Global/GlobalContainer'
+import GlobalContainer from 'components/Global/GlobalContainer'
+import GlobalContainerContext from 'components/Global/GlobalContainerContext'
 import GlobalImporter from 'components/Global/GlobalImporter'
 import Routes from './Routes'
 import ThemeImporter from 'components/Global/ThemeImporter'
@@ -31,13 +31,13 @@ class App extends PureComponent {
               render={({ strings }) => (
                 <ThemeImporter sassBase={true}>
                   <BrowserRouter>
-                    <div>
+                    <Fragment>
                       <Header strings={strings} user={context.user} context={context} />
                       <main role="main" className="main container-fluid">
                         <Routes strings={strings} />
                       </main>
                       <Footer strings={strings} />
-                    </div>
+                    </Fragment>
                   </BrowserRouter>
                 </ThemeImporter>
               )}

@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 import React, { PureComponent, Fragment } from 'react'
 
 import APP from 'config/appConstants'
-import { GlobalContainerContext } from './GlobalContainer'
+import GlobalContainerContext from './GlobalContainerContext'
 
 class GlobalImporterInnerComponent extends PureComponent {
   state = {

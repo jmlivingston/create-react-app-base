@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import React, { PureComponent } from 'react'
 
-import { GlobalContainerContext } from 'components/Global/GlobalContainer'
+import GlobalContainerContext from './GlobalContainerContext'
 import LanguageSelector from 'components/Global/LanguageSelector'
 import ThemeSelector from 'components/Global/ThemeSelector'
 
@@ -82,7 +82,7 @@ class Header extends PureComponent {
                     <NavLink tag={Link} to={this.props.strings.routes.siteMap.path}>
                       {this.props.strings.routes.siteMap.displayName}
                     </NavLink>
-                  </NavItem>                  
+                  </NavItem>
                   {this.props.user.firstName ? (
                     <UncontrolledDropdown nav inNavbar>
                       <DropdownToggle nav caret>

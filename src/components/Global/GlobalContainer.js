@@ -3,8 +3,7 @@ import React, { PureComponent } from 'react'
 
 import APP from 'config/appConstants'
 import authHelper from 'helpers/authHelper'
-
-const GlobalContainerContext = React.createContext()
+import GlobalContainerContext from './GlobalContainerContext'
 
 class GlobalContainer extends PureComponent {
   static displayName = 'GlobalContainer'
@@ -60,4 +59,4 @@ class GlobalContainer extends PureComponent {
   }
 }
 
-export { GlobalContainer, GlobalContainerContext }
+export default GlobalContainer

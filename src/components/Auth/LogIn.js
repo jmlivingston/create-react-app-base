@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 import React, { PureComponent } from 'react'
 
 import { Alert, Button, Form, FormGroup, Input, Label } from 'components/Common'
-import { GlobalContainerContext } from 'components/Global/GlobalContainer'
+import GlobalContainerContext from 'components/Global/GlobalContainerContext'
 import GlobalImporter from 'components/Global/GlobalImporter'
 
 class LogIn extends PureComponent {

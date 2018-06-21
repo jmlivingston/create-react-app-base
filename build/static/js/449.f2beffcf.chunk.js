@@ -1,2 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[449],{1024:function(e){e.exports={email:"E-mail",logIn:"Log In",logOut:"Log Out",password:"Password",remember:"Remember Me",userNamePasswordInvalid:"User Name / Password is invalid"}}}]);
-//# sourceMappingURL=449.f2beffcf.chunk.js.map

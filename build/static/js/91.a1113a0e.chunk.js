@@ -1,2 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[91],{544:function(t,n,o){"use strict";o.r(n);n.default="import React from 'react'\n\nimport { Button, ButtonGroup } from 'components/Common'\n\nconst ButtonGroupDefault = () => {\n  return (\n    <ButtonGroup>\n      <Button>Left</Button>\n      <Button>Middle</Button>\n      <Button>Right</Button>\n    </ButtonGroup>\n  )\n}\n\nexport default ButtonGroupDefault\n"}}]);
-//# sourceMappingURL=91.a1113a0e.chunk.js.map
