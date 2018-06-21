@@ -10,7 +10,7 @@
     "lint": "node node_modules/eslint/bin/eslint.js --max-warnings=0 src",
     "test": "react-scripts test --env=jsdom",
     "build-deploy": "node ./utility/build-copy.js && gzip -9 -r deploy/client/static && gzip -9 -r deploy/client/service-worker.js",
-    "build-start": "cd deploy && npm start",
+    "build-start": "cd deploy && npm install && npm start",
     "precommit": "lint-staged",
     "sass-build": "./node_modules/.bin/node-sass-chokidar src/styles/ -o src/styles/ --output-style compressed",
     "screenshots-build": "node ./utility/build-screenshots.js",
