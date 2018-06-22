@@ -50,6 +50,9 @@ const buildStyleGuide = () => {
     }
   }
 
+  // Note: Once this feature is added, we can remove this code and simplify
+  // Proposal: explicit named imports for non-JS/CSS assets
+  // https://github.com/facebook/create-react-app/issues/3722
   let styleGuide = rootFolders.reduce((rootObj, rootFolder) => {
     const newFolder = rootFolder.replace(componentsDir, codeDir)
     if (!fs.existsSync(newFolder)) {

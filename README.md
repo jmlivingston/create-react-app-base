@@ -1,12 +1,16 @@
 # create-react-app-base
 
-> IMPORTANT: This project is still under development. It currently relies on the following API - https://github.com/jmlivingston/dev-auth-rest-api
+## Overview
 
-## Summary
+This project is an opinionated template based on create-react-app that includes a few common features used in many apps.
 
-This project is an opinionated template based on create-react-app
+> IMPORTANT: This project is still under development. It currently relies on the following API [dev-auth-rest-api](https://github.com/jmlivingston/dev-auth-rest-api)
 
-## Features
+### Issue Tracker
+
+We maintain an informal list in Trello [here](https://trello.com/b/WebZBmvr/create-react-app-base).
+
+### Features
 
 - Theme and themability support
 - Component Style Guide and Documentation
@@ -22,18 +26,102 @@ This project is an opinionated template based on create-react-app
 - Unit tests
 - Screenshots with Puppeteer
 
-## Technologies
+### Technologies
 
 - React
 - create-react-app 2.0 (Currently Alpha)
 - Bootstrap 4.1 using SASS
 - reactstrap - We wrap these to optimize Bootstrap and provide theming capabilities
 
-## Deployment
+---
 
-Currently using GZIP compression.
+## Structure
+
+TBD
+
+---
+
+## Build
+
+### Summary
+
+TBD
+
+### Compression
+
+Currently using GZIP compression. This makes a huge impact on production performance. See deploy/server/serve.js code to see how this is wired up in a node Express app. If using alternatives like IIS, Apache, etc., you will need to configure accordingly.
 
 > Note: Would highly consider Brotli, but no IE11 [support](https://caniuse.com/#search=Brotli).
+
+---
+
+## Theming
+
+TBD - See src/components/Global/ThemeImporter.js
+
+---
+
+## Localization
+
+TBD - See src/components/Global/GlobalImporter.js and src/strings
+
+> Note: This is not limited to languages, but can also be regional
+
+---
+
+## Icons
+
+We do not include icons as branding is typically very specific and they are fairly easy to add. We have been very selective and try to add as few as possible. Since the components in this project are based on Bootstrap, it is recommended you follow [Bootstrap's guidance](https://getbootstrap.com/docs/4.1/extend/icons/).
+
+---
+
+## Packages
+
+Here is a summary of all non create-react-app packages.
+
+### Note: Alpha and Beta Packages
+
+We highly recommended that alpha or beta packages are never used, but we make two exceptions:
+
+- create-react-app - 2.0 Alpha has been very stable and adds much anticipated features such as performance optimization, SASS support, and newer ES feature support. It is likely to be released sometime in 2018. [See more here](https://github.com/facebook/create-react-app/issues/3815)
+- react-docgen - We only use this to generate code for the style guide and we need it as the older version doesn't support much of the new ES features like REST parameters, object spread syntax, dynamic imports, etc.
+
+### dependencies
+
+- [bootstrap](https://getbootstrap.com) - Used for core styles and components. We optimize the SASS integration by only pulling in the core SASS, then use a light wrapper with reactstrap components to import only SASS relevant to the component.
+- [bootswatch](https://bootswatch.com) - Optional - Used to show how to incorporate Bootswatch themes. You can pull in additional ones by following the pattern under style/themes. We currently have examples for Yeti and Darkly.
+- [dayjs](https://github.com/iamkun/dayjs) - Very lightweight date library used by our dateHelper code. Note: This is redundant with moment, but moment is required by the react-datepicker component. The code in dateHelper can be replaced with moment, though you'll want to be careful as moment is notoriously huge. See the common DatePicker component to see how we dynamically import moment
+- [loaders.css](https://connoratherton.com/loaders) - Lightweight CSS loader library used in our Loader component. You can update the default by changing LOADER_NAME in appConstants.js
+- [moment](https://momentjs.com) - See dayjs above.
+- [prop-types](https://github.com/facebook/prop-types) - Common library for runtime type checking. We have linting rules to ensure all components use prop-types when props are referenced. Flow and TypeScript are two alternatives, though they require more heavy lifting for integration and maintenance.
+- [react-clipboard.js](https://github.com/nihey/react-clipboard.js) - Component for clipboard.js and used in our Code component.
+- [react-datepicker](https://github.com/Hacker0x01/react-datepicker) - Component for datepicker. There are several other good and popular ones out there, but this one was the easiest to theme.
+- [react-loadable](https://github.com/jamiebuilds/react-loadable) - Component wrapper for increasing performance by asynchronously loading components. This optimizes performance on our Routes and on our initial App component. It can also be used to improve performance on pages that have several components. Recommended by React and react-router teams.
+- [react-loaders](http://jonjaques.github.io/react-loaders/) - Component used by our Loader component and in conjunction with the loaders.css package.
+- [react-syntax-highlighter](http://conor.rodeo/react-syntax-highlighter/demo) - Component that incorporates Prism syntax highlighting and is used by our Code component.
+- [react-table](https://react-table.js.org/#/story/readme) - Component used for Tables. Bootstrap tables are very basic and we wanted something with more advanced features. We abstract this through our Table component to incorporate themes.
+- [reactstrap](https://reactstrap.github.io) - Components for Bootstrap. There are several others out there, but these were very light-weight, and for the most simple SFCs (Stateless Functional Components). We wrap all of these for theming and to optimize SASS loading.
+
+### devDependencies
+
+> Note: All of these are only used during development and the build process.
+
+- [cross-env](https://github.com/kentcdodds/cross-env) - Library for injecting environmental variables within npm scripts. See package.json.
+- [husky](https://github.com/typicode/husky) - Git hooks to incorporate linting and formatting during git commits and pushes.
+- [lint-staged](https://github.com/okonet/lint-staged) - Used with husky above for linting.
+- [node-sass](https://github.com/sass/node-sass) - Required by create-react-app 2.0 for SASS compilation.
+- [node-sass-chokidar](https://github.com/michaelwayman/node-sass-chokidar) - Required by create-react-app 1.0 for SASS compilation. Currently only using experimentally to verify SASS builds and to compare SASS to CSS references.
+- [prettier](https://prettier.io) - Facebook's popular code formatting tool.
+- [puppeteer](https://pptr.dev) - Google's library for creating screenshots using Headless Chrome. Much lighter weight than PhantomJS or Selenium. Used to QA site responsiveness.
+- [react-docgen](https://github.com/reactjs/react-docgen) - React team supported library for building documentation. We use this to parse prop-types from our components.
+
+---
+
+## Other Tools
+
+- [Google Chrome - Audit](https://developers.google.com/web/tools/lighthouse) - Within development tools, you can use the Audit tab which relies on Googles excellent Lighthouse tool to measure things like performance, SEO, and accessibility.
+- [Microsoft VSCode](https://code.visualstudio.com/) - We encourage developers to use the IDE that makes them most productive as long as it can handle linting and formatting properly. That said, we are big fans of VSCode.
+- [npm trends](http://www.npmtrends.com) - Extremely helpful for conducting initial research on npm packages. It gives you a high-level view of package stars, forks, and updates. We typically start here to find the most popular, then do more analysis from there.
 
 ---
 
