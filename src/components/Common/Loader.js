@@ -13,6 +13,11 @@ const Loading = ({ message, name }) => (
   </div>
 )
 
+Loading.propTypes = {
+  message: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired
+}
+
 class Loader extends PureComponent {
   static propTypes = {
     children: PropTypes.node,
@@ -68,9 +73,7 @@ class Loader extends PureComponent {
       <GlobalContainerContext.Consumer>
         {context => {
           if (this.props.name !== APP.LOADER_NAME || context.user.theme !== APP.DEFAULT_PROFILE.theme) {
-            import(`../../styles/themes/${context.user.theme}/loaders/animations/${this.props.name}.scss`).catch(
-              console.log
-            )
+            import(`../../styles/themes/${context.user.theme}/loaders/animations/${this.props.name}.scss`)
           }
           if (this.props.children) {
             return this.props.isLoaded ? (

@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import { Redirect, Route, Switch } from 'react-router-dom'
 import Loadable from 'react-loadable'
 import React from 'react'
@@ -126,5 +127,9 @@ const Routes = ({ strings }) => (
     <Redirect to="/" />
   </Switch>
 )
+
+Routes.propTypes = {
+  strings: PropTypes.object.isRequired
+}
 
 export default Routes

@@ -39,8 +39,7 @@ const StyleGuideSection = ({ rootKey }) => {
               .replace(/([A-Z][a-z])/g, ' $1')}
           </h2>
           <DynamicComponent parent={rootKey} child={childKey} />
-          <h3>Code</h3>
-          <Code parent={rootKey} child={childKey + 'Code'} />
+          <Code parent={rootKey} child={childKey + 'Code'} label="Code" />
           {Object.keys(styleGuideConfig[rootKey].children[childKey].componentPropTypes).length > 0 && (
             <Fragment>
               <h3>Prop Types</h3>

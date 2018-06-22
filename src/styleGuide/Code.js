@@ -1,6 +1,7 @@
 import { okaidia } from 'react-syntax-highlighter/styles/prism'
+import Clipboard from 'react-clipboard.js'
 import PropTypes from 'prop-types'
-import React, { PureComponent } from 'react'
+import React, { Fragment, PureComponent } from 'react'
 import SyntaxHighlighter from 'react-syntax-highlighter/prism'
 
 class Code extends PureComponent {
@@ -9,8 +10,14 @@ class Code extends PureComponent {
   }
   static propTypes = {
     child: PropTypes.string.isRequired,
+    label: PropTypes.string,
     parent: PropTypes.string.isRequired
   }
+
+  static defaultProps = {
+    label: 'Code'
+  }
+
   componentDidMount() {
     import(`./code/components/${this.props.parent}/${this.props.child}`).then(component => {
       this.setState({
@@ -20,9 +27,16 @@ class Code extends PureComponent {
   }
   render() {
     return (
-      <SyntaxHighlighter language="javascript" style={okaidia}>
-        {this.state.code}
-      </SyntaxHighlighter>
+      <Fragment>
+        <h3 className="float-left">{this.props.label}</h3>
+        <Clipboard data-clipboard-text={this.state.code} className="btn btn-primary float-right">
+          Copy
+        </Clipboard>
+        <div className="clearfix" />
+        <SyntaxHighlighter language="javascript" style={okaidia}>
+          {this.state.code}
+        </SyntaxHighlighter>
+      </Fragment>
     )
   }
 }
