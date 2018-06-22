@@ -124,6 +124,9 @@ We highly recommended that alpha or beta packages are never used, but we make tw
 - [npm trends](http://www.npmtrends.com) - Extremely helpful for conducting initial research on npm packages. It gives you a high-level view of package stars, forks, and updates. We typically start here to find the most popular, then do more analysis from there.
 
 ---
+---
+
+# create-react-app Core Documentation
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
