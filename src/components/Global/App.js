@@ -8,8 +8,6 @@ import GlobalImporter from 'components/Global/GlobalImporter'
 import Routes from './Routes'
 import ThemeImporter from 'components/Global/ThemeImporter'
 
-import './App.scss'
-
 const Footer = Loadable({
   loader: () => import('./Footer'),
   loading: () => null
@@ -36,7 +34,7 @@ class App extends PureComponent {
                       <main role="main" className="main container-fluid">
                         <Routes strings={strings} />
                       </main>
-                      <Footer strings={strings} />
+                      <Footer strings={strings} user={context.user} />
                     </Fragment>
                   </BrowserRouter>
                 </ThemeImporter>

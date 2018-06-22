@@ -1,0 +1,7 @@
+.btn + .btn,
+.btn + .btn-group,
+.btn-group + .btn,
+.badge + .badge,
+.btn-group + .btn-group {
+  margin-left: 10px;
+}

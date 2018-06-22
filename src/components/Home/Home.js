@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import React, { PureComponent, Fragment } from 'react'
 
-import { DatePicker } from 'components/Common'
+import { DatePicker, Loader } from 'components/Common'
 import LocalizationTester from 'components/LocalizationTester/LocalizationTester'
 
 class Home extends PureComponent {
@@ -21,6 +21,7 @@ class Home extends PureComponent {
         <LocalizationTester />
         <div className="pb-2" />
         <DatePicker value={this.state.date} onChange={this.dateChange} />
+        <Loader pastDelay={true} message="Testing Loader..." />
       </Fragment>
     )
   }

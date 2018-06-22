@@ -26,7 +26,7 @@ class ThemeImporterInnerComponent extends PureComponent {
     const theme = this.props.user ? this.props.user.theme : APP.DEFAULT_PROFILE.theme
     let promises = []
     let fileExtension = 'scss'
-    if (!process.env.REACT_APP_DESIGN_MODE) {
+    if (process.env.REACT_APP_DESIGN_MODE === 'PRECOMPILE_SASS') {
       fileExtension = 'css'
       this.setState({
         isLoaded: true
@@ -62,8 +62,11 @@ class ThemeImporterInnerComponent extends PureComponent {
               document.body.appendChild(e)
             }
           } else {
-            // Note assumes App.scss gets loaded first, then bootstrap.scss, then bootstrap-footer.scss
-            document.body.appendChild(Array.from(document.querySelectorAll('head > link[rel="stylesheet"]'))[3])
+            // Note assumes bootstrap.scss gets loaded first. We are moving bootstrap-footer.scss to the bottom
+            const links = Array.from(document.querySelectorAll('head > link[rel="stylesheet"]'))
+            if (links.length >= 2) {
+              document.body.appendChild(links[1])
+            }
           }
         }
         this.setState({

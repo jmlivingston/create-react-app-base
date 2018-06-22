@@ -11,17 +11,22 @@
     -->
   <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
   <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
-  <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
-
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
   <title>%REACT_APP_NAME%</title>
-  <!-- <link rel="stylesheet" href="bootstrap-all.css" /> -->
+  <style type="text/css">
+    /* Required by main layout. Added to prevent block of UI */
+    .main {
+      padding: 60px 15px 0;
+      min-height: calc(100vh - 96px);
+    }
+    .cursor-pointer {
+      cursor: pointer;
+    }
+  </style>
+  <style type="text/css">
+    /* Default loader */
+    /* TODO: Update when appConstants / APP.DEFAULT_PROFILE.theme changes */
+    @keyframes line-scale-pulse-out-rapid{0%{transform:scaley(1)}80%{transform:scaley(0.3)}90%{transform:scaley(1)}}.line-scale-pulse-out-rapid>div{background-color:#007bff;width:4px;height:35px;border-radius:2px;margin:2px;animation-fill-mode:both;display:inline-block;vertical-align:middle;animation:line-scale-pulse-out-rapid 0.9s -0.5s infinite cubic-bezier(0.11, 0.49, 0.38, 0.78)}.line-scale-pulse-out-rapid>div:nth-child(2),.line-scale-pulse-out-rapid>div:nth-child(4){animation-delay:-0.25s !important}.line-scale-pulse-out-rapid>div:nth-child(1),.line-scale-pulse-out-rapid>div:nth-child(5){animation-delay:0s !important}
+  </style>
 </head>
 
 <body>
@@ -29,16 +34,6 @@
     You need to enable JavaScript to run this app.
   </noscript>
   <div id="root"></div>
-  <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
 </body>
 
 </html>
