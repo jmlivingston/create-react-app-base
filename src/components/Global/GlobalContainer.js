@@ -6,40 +6,41 @@ import authHelper from 'helpers/authHelper'
 import GlobalContainerContext from './GlobalContainerContext'
 
 class GlobalContainer extends PureComponent {
-  static displayName = 'GlobalContainer'
-
   static propTypes = {
     children: PropTypes.node.isRequired
   }
 
   styleList = {}
 
-  setUser = async user => {
+  // TODO: This logic should move to authHelper
+  setUser = async (user, isLogOut = false) => {
     const themeLanguageChanged = this.state.user.theme !== user.theme || this.state.user.language !== user.language
-    await authHelper.user.set(user)
+    const response = await authHelper.user.set(user, isLogOut)
     this.setState({
       user
     })
     if (themeLanguageChanged) {
       window.location.reload() // NOTE: Required for theme reloading due to SASS limitations
     }
+    return response
   }
 
   state = {
     user: authHelper.user.get(),
     auth: {
       updateUser: async properties => {
-        this.setUser({ ...this.state.user, ...properties })
+        const response = await this.setUser({ ...this.state.user, ...properties })
+        return response
       },
       logIn: async emailPassword => {
         const user = await authHelper.user.logIn(emailPassword)
         if (user) {
-          this.setUser(user)
+          await this.setUser(user)
         }
         return !!user
       },
       logOut: async () => {
-        this.setUser(APP.DEFAULT_PROFILE)
+        await this.setUser(APP.DEFAULT_PROFILE, true)
       }
     },
     styleList: {

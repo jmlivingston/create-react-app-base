@@ -7,10 +7,27 @@ import GlobalContainerContext from './GlobalContainerContext'
 class ThemeSelector extends PureComponent {
   state = {}
 
+  static defaultProps = {
+    nav: true
+  }
+
+  static propTypes = {
+    nav: PropTypes.bool,
+    onChange: PropTypes.func
+  }
+
   toggle() {
     this.setState(prevState => ({
       dropdownOpen: !prevState.dropdownOpen
     }))
+  }
+
+  updateTheme(context, theme) {
+    if (this.props.onChange) {
+      this.props.onChange(theme)
+    } else {
+      context.auth.updateUser({ theme })
+    }
   }
 
   render() {
@@ -18,28 +35,20 @@ class ThemeSelector extends PureComponent {
       <GlobalContainerContext.Consumer>
         {context => (
           <Dropdown isOpen={this.state.dropdownOpen} toggle={() => this.toggle()}>
-            <DropdownToggle nav={this.props.nav} caret>
-              {context.user.theme.toUpperCase()}
+            <DropdownToggle nav={this.props.nav} caret className="text-uppercase">
+              {this.props.value || context.user.theme}
             </DropdownToggle>
             <DropdownMenu>
-              <DropdownItem onClick={() => context.auth.updateUser({ theme: 'custom' })}>Custom</DropdownItem>
-              <DropdownItem onClick={() => context.auth.updateUser({ theme: 'darkly' })}>Darkly</DropdownItem>
-              <DropdownItem onClick={() => context.auth.updateUser({ theme: 'original' })}>Original</DropdownItem>
-              <DropdownItem onClick={() => context.auth.updateUser({ theme: 'yeti' })}>Yeti</DropdownItem>
+              <DropdownItem onClick={() => this.updateTheme(context, 'custom')}>Custom</DropdownItem>
+              <DropdownItem onClick={() => this.updateTheme(context, 'darkly')}>Darkly</DropdownItem>
+              <DropdownItem onClick={() => this.updateTheme(context, 'original')}>Original</DropdownItem>
+              <DropdownItem onClick={() => this.updateTheme(context, 'yeti')}>Yeti</DropdownItem>
             </DropdownMenu>
           </Dropdown>
         )}
       </GlobalContainerContext.Consumer>
     )
   }
-}
-
-ThemeSelector.defaultProps = {
-  nav: true
-}
-
-ThemeSelector.propTypes = {
-  nav: PropTypes.bool
 }
 
 export default ThemeSelector

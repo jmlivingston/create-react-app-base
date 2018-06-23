@@ -1,5 +1,12 @@
 {
+  "email": "メール",
+  "error": "上記のエラーを修正してください。",
+  "firstName": "姓",
   "language": "言語",
+  "lastName": "名",
+  "newPassword": "新しいパスワード",
+  "save": "セーブ",
+  "success": "ユーザーが更新しました",
   "theme": "テーマ",
   "userSettings": "ユーザー設定"
 }
