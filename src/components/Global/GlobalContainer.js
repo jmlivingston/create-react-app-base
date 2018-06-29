@@ -12,10 +12,9 @@ class GlobalContainer extends PureComponent {
 
   styleList = {}
 
-  // TODO: This logic should move to authHelper
-  setUser = async (user, isLogOut = false) => {
+  setUser = async (user, isLogInOut = false) => {
     const themeLanguageChanged = this.state.user.theme !== user.theme || this.state.user.language !== user.language
-    const response = await authHelper.user.set(user, isLogOut)
+    const response = await authHelper.user.set(user, isLogInOut)
     this.setState({
       user
     })
@@ -35,7 +34,7 @@ class GlobalContainer extends PureComponent {
       logIn: async emailPassword => {
         const user = await authHelper.user.logIn(emailPassword)
         if (user) {
-          await this.setUser(user)
+          await this.setUser(user, true)
         }
         return !!user
       },

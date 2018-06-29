@@ -1,20 +1,15 @@
-import PropTypes from 'prop-types'
 import React from 'react'
+
+import todo from 'models/todo'
 
 const Todo = ({ todo }) => {
   return (
-    <span style={{ textDecoration: todo.completed ? 'line-through' : 'none', cursor: 'pointer' }}>{todo.name}</span>
+    <span style={{ textDecoration: todo.isComplete ? 'line-through' : 'none', cursor: 'pointer' }}>{todo.name}</span>
   )
 }
 
 Todo.propTypes = {
-  todo: PropTypes.shape({
-    id: PropTypes.number,
-    name: PropTypes.string,
-    completed: PropTypes.bool,
-    createdDate: PropTypes.string,
-    modifiedDate: PropTypes.string
-  })
+  todo
 }
 
 export default Todo

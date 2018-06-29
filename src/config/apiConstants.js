@@ -4,10 +4,10 @@ const baseUrl = localUrl
 
 const API = {
   LOG_IN: {
-    BASE: `${baseUrl}/Auth/LogIn`
+    BASE: `${baseUrl}/auth/log-in`
   },
   TODO: {
-    BASE: `${baseUrl}/post` //to-do or post to test
+    BASE: `${baseUrl}/to-do` //to-do or post to test
   },
   USER: {
     BASE: `${baseUrl}/user`

@@ -15,7 +15,6 @@
     "sass-build": "./node_modules/.bin/node-sass-chokidar src/styles/ -o src/styles/ --output-style compressed",
     "screenshots-build": "node ./utility/build-screenshots.js",
     "style-guide-build": "node ./utility/build-style-guide.js",
-    "style-guide-start": "cross-env REACT_APP_TYPE=STYLE_GUIDE react-scripts start",
     "tests-build": "node ./utility/build-test.js"
   },
   "dependencies": {

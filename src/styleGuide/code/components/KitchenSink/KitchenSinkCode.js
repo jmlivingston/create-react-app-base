@@ -237,7 +237,7 @@ class KitchenSink extends PureComponent {
     })
 
     return (
-      <div className="container-fluid">
+      <Fragment>
         <Alert color="primary">This is a primary alert — check it out!</Alert>
         <Alert color="warning">This is a warning alert — check it out!</Alert>
         <Alert color="danger">This is a danger alert — check it out!</Alert>
@@ -810,7 +810,7 @@ class KitchenSink extends PureComponent {
           Hello world!
         </UncontrolledTooltip>
         <UncontrolledCarousel items={uncontrolledCarouselItems} />
-      </div>
+      </Fragment>
     )
   }
 }

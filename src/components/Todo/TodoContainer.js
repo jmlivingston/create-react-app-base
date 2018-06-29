@@ -1,9 +1,10 @@
 import React, { PureComponent } from 'react'
-import { Loader } from 'components/Common'
 
-import dataHelper from 'helpers/dataHelper'
+import { ErrorContainer } from 'components/Common'
+import GlobalImporter from 'components/Global/GlobalImporter'
 import API from 'config/apiConstants'
-
+import dataHelper from 'helpers/dataHelper'
+import TodoForm from 'components/Todo/TodoForm'
 import TodoList from 'components/Todo/TodoList'
 
 class TodoContainer extends PureComponent {
@@ -12,9 +13,27 @@ class TodoContainer extends PureComponent {
     todos: []
   }
 
+  add = async todo => {
+    const todoResponse = await dataHelper.post(API.TODO.BASE, todo)
+    if (todoResponse.response.ok) {
+      this.setState(prevState => ({
+        todos: [...prevState.todos, { ...todo, ...todoResponse.data }]
+      }))
+    }
+  }
+
+  update = async todo => {
+    const todoResponse = await dataHelper.put(`${API.TODO.BASE}/${todo.id}`, todo)
+    if (todoResponse.response.ok) {
+      this.setState(prevState => ({
+        todos: prevState.todos.map(t => (t.id === todo.id ? todo : t))
+      }))
+    }
+  }
+
   bindData = async () => {
     const todosResponse = await dataHelper.get(API.TODO.BASE)
-    if (todosResponse.ok) {
+    if (todosResponse.response.ok) {
       this.setState({
         isLoaded: true,
         todos: todosResponse.data
@@ -22,7 +41,7 @@ class TodoContainer extends PureComponent {
     } else {
       this.setState({
         isLoaded: true,
-        error: todosResponse.statusText
+        error: todosResponse
       })
     }
   }
@@ -33,9 +52,16 @@ class TodoContainer extends PureComponent {
 
   render() {
     return (
-      <Loader data={this.state.todos} error={this.state.error} isLoaded={this.state.isLoaded}>
-        <TodoList todos={this.state.todos || []} onClick={() => {}} />
-      </Loader>
+      <GlobalImporter
+        stringNames={['todo']}
+        render={({ strings }) => (
+          <ErrorContainer isLoaded={this.state.isLoaded} error={this.state.error}>
+            <h1>Todo List</h1>
+            <TodoList todos={this.state.todos || []} onClick={this.update} />
+            <TodoForm submit={this.add} />
+          </ErrorContainer>
+        )}
+      />
     )
   }
 }

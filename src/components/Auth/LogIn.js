@@ -58,14 +58,14 @@ class LogIn extends PureComponent {
                   <FormGroup>
                     <Label for="inputEmail">{strings.email}</Label>
                     <Input
+                      autoFocus
                       type="email"
                       name="email"
                       id="inputEmail"
                       placeholder={strings.email}
-                      required=""
-                      autoFocus=""
+                      required
                       value={this.state.email}
-                      onChange={e => this.onChange(e)}
+                      onChange={input => this.onChange(input)}
                     />
                   </FormGroup>
                   <FormGroup>
@@ -75,17 +75,17 @@ class LogIn extends PureComponent {
                       name="password"
                       id="inputPassword"
                       placeholder={strings.password}
-                      required=""
+                      required
                       value={this.state.password}
-                      onChange={e => this.onChange(e)}
-                      onKeyDown={e => this.passworkKeyDown(e, context)}
+                      onChange={input => this.onChange(input)}
+                      onKeyDown={input => this.passworkKeyDown(input, context)}
                     />
                   </FormGroup>
-                  <FormGroup check>
+                  {/* <FormGroup check>
                     <Label check>
                       <Input type="checkbox" /> {strings.remember}
                     </Label>
-                  </FormGroup>
+                  </FormGroup> */}
                   <Button block={true} className="mt-3" color="primary" onClick={() => this.logIn(context)}>
                     {strings.logIn}
                   </Button>

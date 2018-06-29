@@ -8,14 +8,16 @@ const APP = {
     language: 'en'
   },
   ERROR: {
-    GENERIC: `An unknown error has occurred!`
+    // TODO: Move to strings for localization
+    ACCESS_DENIED: 'You do not have permission.',
+    GENERIC: 'An unknown error has occurred.'
   },
   LOADER_NAME: 'line-scale-pulse-out-rapid',
   LOG: {
     TYPES: {
-      ERROR: `ERROR`,
-      INFO: `INFO`,
-      WARNING: `WARNING`
+      ERROR: 'ERROR',
+      INFO: 'INFO',
+      WARNING: 'WARNING'
     }
   }
 }

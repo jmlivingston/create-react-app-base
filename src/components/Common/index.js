@@ -24,6 +24,7 @@ import CarouselCaption from './CarouselCaption'
 import CarouselControl from './CarouselControl'
 import CarouselIndicators from './CarouselIndicators'
 import CarouselItem from './CarouselItem'
+import Code from './Code'
 import Col from './Col'
 import Collapse from './Collapse'
 import Container from './Container'
@@ -36,6 +37,7 @@ import DropdownItem from './DropdownItem'
 import DropdownMenu from './DropdownMenu'
 import DropdownToggle from './DropdownToggle'
 import Error from './Error'
+import ErrorContainer from './ErrorContainer'
 import Fade from './Fade'
 import Form from './Form'
 import FormFeedback from './FormFeedback'
@@ -110,6 +112,7 @@ export {
   CarouselControl,
   CarouselIndicators,
   CarouselItem,
+  Code,
   Col,
   Collapse,
   Container,
@@ -122,6 +125,7 @@ export {
   DropdownMenu,
   DropdownToggle,
   Error,
+  ErrorContainer,
   Fade,
   Form,
   FormFeedback,

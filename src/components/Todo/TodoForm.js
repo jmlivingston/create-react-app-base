@@ -1,35 +1,70 @@
 import PropTypes from 'prop-types'
-import React, { Fragment } from 'react'
+import React, { Component } from 'react'
 
-import Error from './Error'
+import { Button, Form, FormGroup, Input, Label } from 'components/Common'
 
-const TodoForm = ({ error, change, submit, todo }) => {
-  const inputChange = e => {
-    change({ text: e.target.value })
+class TodoForm extends Component {
+  defaultTodo = { name: '', isComplete: false }
+
+  state = { todo: { ...this.defaultTodo } }
+
+  static propTypes = {
+    submit: PropTypes.func
   }
-  const submitTodo = e => {
+
+  inputChange(target) {
+    this.setState(prevState => ({
+      ...prevState,
+      todo: {
+        ...prevState.todo,
+        [target.name]: target.type === 'checkbox' ? target.checked : target.value
+      }
+    }))
+  }
+
+  submitTodo = e => {
     e.preventDefault()
-    submit()
+    this.props.submit(this.state.todo)
+    this.setState({
+      todo: { ...this.defaultTodo }
+    })
   }
-  return (
-    <Fragment>
-      <form className="form-inline" onSubmit={submitTodo}>
-        <input className="form-control" value={todo.text} onChange={inputChange} />
-        <input className="form-control" value={todo.completed} onChange={inputChange} />
-        <button className="btn btn-primary ml-1" type="submit" disabled={!todo.text}>
-          Add
-        </button>
-      </form>
-      <Error error={error} />
-    </Fragment>
-  )
-}
 
-TodoForm.propTypes = {
-  change: PropTypes.func, 
-  error: PropTypes.string, 
-  submit: PropTypes.func, 
-  todo: PropTypes.object
+  render() {
+    return (
+      <Form onSubmit={this.submitTodo}>
+        <FormGroup>
+          <Label for="name">Name</Label>
+          <Input
+            id="name"
+            name="name"
+            type="text"
+            placeholder="Enter Name..."
+            value={this.state.todo.name}
+            onChange={({ target }) => this.inputChange(target)}
+          />
+        </FormGroup>
+        <FormGroup check>
+          <Label for="isComplete" check>
+            <Input
+              name="isComplete"
+              type="checkbox"
+              value={this.state.todo.isComplete}
+              onChange={({ target }) => this.inputChange(target)}
+            />Is Complete?
+          </Label>
+        </FormGroup>
+        <Button
+          type="submit"
+          color="primary"
+          disabled={!this.state.todo.name}
+          onClick={this.submitTodo}
+          className="float-right">
+          Add
+        </Button>
+      </Form>
+    )
+  }
 }
 
 export default TodoForm

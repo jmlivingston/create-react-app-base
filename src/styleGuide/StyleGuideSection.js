@@ -1,23 +1,17 @@
+import Loadable from 'react-loadable'
 import PropTypes from 'prop-types'
 import React, { Fragment } from 'react'
 
-import styleGuideConfig from 'strings/styleGuide/styleGuide.en.json'
-import { Loader } from 'components/Common'
-
-import Loadable from 'react-loadable'
-import Code from './Code'
-import PropTypesTable from './PropTypesTable'
-
 const DynamicComponent = ({ parent, child }) => {
-  const Comp = Loadable({
-    loading: () => <Loader message={`Loading ${parent} - ${child}...`} />,
-    loader: () => import(`./examples/components/${parent}/${child}`),
-    render(loaded, props) {
-      const Comp = loaded.default
-      return <Comp />
+  const DynamicComponent = Loadable({
+    loading: () => null,
+    loader: () => import(`styleGuide/examples/components/${parent}/${child}`),
+    render(loader) {
+      const DynamicComponent = loader.default
+      return <DynamicComponent />
     }
   })
-  return <Comp />
+  return <DynamicComponent />
 }
 
 DynamicComponent.propTypes = {
@@ -25,35 +19,69 @@ DynamicComponent.propTypes = {
   parent: PropTypes.string.isRequired
 }
 
-const StyleGuideSection = ({ rootKey }) => {
+const PropTypesTable = ({ componentPropTypes }) => {
+  const PropTypesTable = Loadable({
+    loading: () => null,
+    loader: () => import('styleGuide/PropTypesTable'),
+    render(loaded) {
+      const PropTypesTable = loaded.default
+      return <PropTypesTable componentPropTypes={componentPropTypes} />
+    }
+  })
+  return <PropTypesTable />
+}
+
+PropTypesTable.propTypes = {
+  componentPropTypes: PropTypes.object
+}
+
+const CodeWrapper = ({ parent, child, label }) => {
+  const Code = Loadable.Map({
+    loading: () => null,
+    loader: {
+      Code: () => import('components/Common/Code'),
+      code: () => import(`styleGuide/code/components/${parent}/${child}Code`)
+    },
+    render(loaded) {
+      const Code = loaded.Code.default
+      return <Code code={loaded.code.default} parent={parent} child={child} label={label} />
+    }
+  })
+  return <Code />
+}
+
+CodeWrapper.propTypes = {
+  child: PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired,
+  parent: PropTypes.string.isRequired
+}
+
+const StyleGuideSection = ({ rootKey, styleGuideConfig }) => {
   return (
     <Fragment>
       <h1>{rootKey}</h1>
       <hr />
-      {Object.keys(styleGuideConfig[rootKey].children).map(childKey => (
-        <Fragment key={childKey}>
-          <h2>
-            {childKey
-              .replace(rootKey, rootKey + ' - ')
-              .replace(/([A-Z]+)/g, ' $1')
-              .replace(/([A-Z][a-z])/g, ' $1')}
-          </h2>
-          <DynamicComponent parent={rootKey} child={childKey} />
-          <Code parent={rootKey} child={childKey + 'Code'} label="Code" />
-          {Object.keys(styleGuideConfig[rootKey].children[childKey].componentPropTypes).length > 0 && (
-            <Fragment>
-              <h3>Prop Types</h3>
-              <PropTypesTable componentPropTypes={styleGuideConfig[rootKey].children[childKey].componentPropTypes} />
-            </Fragment>
-          )}
-        </Fragment>
-      ))}
+      {styleGuideConfig &&
+        Object.keys(styleGuideConfig[rootKey].children).map(childKey => (
+          <Fragment key={childKey}>
+            <h2>{styleGuideConfig[rootKey].children[childKey].title}</h2>
+            <DynamicComponent parent={rootKey} child={childKey} />
+            <CodeWrapper parent={rootKey} child={childKey} label="Code" />
+            {Object.keys(styleGuideConfig[rootKey].children[childKey].componentPropTypes).length > 0 && (
+              <Fragment>
+                <h3>Prop Types</h3>
+                <PropTypesTable componentPropTypes={styleGuideConfig[rootKey].children[childKey].componentPropTypes} />
+              </Fragment>
+            )}
+          </Fragment>
+        ))}
     </Fragment>
   )
 }
 
 StyleGuideSection.propTypes = {
-  rootKey: PropTypes.string.isRequired
+  rootKey: PropTypes.string.isRequired,
+  styleGuideConfig: PropTypes.object.isRequired
 }
 
 export default StyleGuideSection

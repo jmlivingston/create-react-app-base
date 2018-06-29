@@ -10,7 +10,8 @@ class LanguageSelector extends PureComponent {
   static propTypes = {
     nav: PropTypes.bool,
     onChange: PropTypes.func,
-    right: PropTypes.bool
+    right: PropTypes.bool,
+    value: PropTypes.string
   }
 
   static defaultProps = {

@@ -6,7 +6,7 @@ const TermsConditions = () => {
   return (
     <GlobalImporter
       stringNames={['termsConditions']}
-      render={({ strings, user }) => <Fragment>{strings.terms}</Fragment>}
+      render={({ strings }) => <Fragment>{strings.terms}</Fragment>}
     />
   )
 }

@@ -72,11 +72,7 @@ const Routes = ({ strings }) => (
       component={Loadable({
         ...loadableConfig,
         loading: props => <Loader {...props} message={`${strings.loading} ${strings.routes.todo.displayName}...`} />,
-        loader: () => import('components/Todo/TodoContainer'),
-        render(loaded, props) {
-          const TodoContainer = loaded.default
-          return <TodoContainer />
-        }
+        loader: () => import('components/Todo/TodoContainer')
       })}
     />
     <Route
@@ -87,14 +83,11 @@ const Routes = ({ strings }) => (
         loading: props => (
           <Loader {...props} message={`${strings.loading} ${strings.routes.userSettings.displayName}...`} />
         ),
-        loader: () => import('components/Auth/UserSettings'),
-        render(loaded, props) {
-          const UserSettings = loaded.default
-          return <UserSettings />
-        }
+        loader: () => import('components/Auth/UserSettings')
       })}
     />
-    <Route
+
+    {/* TODO: SEPARATE STYLE GUIDE ROUTES AS THIS IS WAY TOO SLOW  <Route
       exact
       path={`${strings.routes.styleGuide.path}`}
       component={Loadable({
@@ -123,7 +116,7 @@ const Routes = ({ strings }) => (
           return <StyleGuideApp {...props} />
         }
       })}
-    />
+    /> */}
     <Redirect to="/" />
   </Switch>
 )

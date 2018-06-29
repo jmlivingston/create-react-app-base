@@ -22,21 +22,23 @@ class GlobalImporterInnerComponent extends PureComponent {
     const defaultLanguagePromises = this.props.stringNames.map(stringName =>
       import(`../../strings/${stringName}/${stringName}.${defaultLanguage}.json`)
     )
-    const languagePromises = this.props.stringNames.map(stringName =>
-      import(`../../strings/${stringName}/${stringName}.${this.props.user.language}.json`)
-    )
-    await Promise.all(defaultLanguagePromises)
-      .then(values => {
-        strings = values.reduce((acc = {}, value) => ({ ...acc, ...value }), {})
-      })
-      .catch(() => {})
 
-    await Promise.all(languagePromises)
-      .then(values => {
-        const newStrings = values.reduce((acc = {}, value) => ({ ...acc, ...value }), {})
-        strings = { ...strings, ...newStrings }
-      })
-      .catch(() => {})
+    // Note: Default language always expected and fallback when user language not found.
+    // If user language not found, we catch, but ignore error.
+    // Stricter rules can be put in place if necessary
+    const languagePromises = this.props.stringNames.map(stringName =>
+      import(`../../strings/${stringName}/${stringName}.${this.props.user.language}.json`).catch(() => {})
+    )
+
+    await Promise.all(defaultLanguagePromises).then(values => {
+      strings = values.reduce((acc = {}, value) => ({ ...acc, ...value }), {})
+    })
+
+    await Promise.all(languagePromises).then(values => {
+      const newStrings = values.reduce((acc = {}, value) => ({ ...acc, ...value }), {})
+      strings = { ...strings, ...newStrings }
+    })
+
     this.setState(prevState => ({
       strings: {
         ...prevState.strings,

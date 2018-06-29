@@ -13,7 +13,8 @@ class ThemeSelector extends PureComponent {
 
   static propTypes = {
     nav: PropTypes.bool,
-    onChange: PropTypes.func
+    onChange: PropTypes.func,
+    value: PropTypes.string
   }
 
   toggle() {
