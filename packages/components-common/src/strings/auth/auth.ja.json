@@ -1,0 +1,8 @@
+{
+  "email": "電子メール",
+  "logIn": "ログイン",
+  "logOut": "ログアウト",
+  "password": "パスワード",
+  "remember": "覚えてますか",
+  "userNamePasswordInvalid": "ユーザー名またはパスワードが無効です"
+}

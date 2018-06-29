@@ -1,0 +1,8 @@
+{
+  "email": "E-mail",
+  "logIn": "Log In",
+  "logOut": "Log Out",
+  "password": "Password",
+  "remember": "Remember Me",
+  "userNamePasswordInvalid": "User Name / Password is invalid"
+}

@@ -25,3 +25,7 @@ yarn-error.log*
 /utility/screenshots
 
 /.vscode
+
+/packages/app/build
+/packages/app/components-common
+/packages/app/style-guide
