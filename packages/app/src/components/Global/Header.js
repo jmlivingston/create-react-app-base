@@ -21,7 +21,7 @@ import {
   NavItem,
   NavLink,
   UncontrolledDropdown
-} from 'components/Common'
+} from '@myorg/components-common'
 import LogIn from 'components/Auth/LogIn'
 
 class Header extends PureComponent {

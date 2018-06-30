@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'components/Common'
+import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from '../Common'
 import React, { PureComponent } from 'react'
 
 import GlobalContainerContext from './GlobalContainerContext'

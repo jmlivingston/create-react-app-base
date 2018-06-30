@@ -1,7 +1,7 @@
 import { Progress as ReactStrapProgress } from 'reactstrap'
 import React from 'react'
 
-import ThemeImporter from 'components/Global/ThemeImporter'
+import ThemeImporter from '../Global/ThemeImporter'
 
 const Progress = props => {
   return (

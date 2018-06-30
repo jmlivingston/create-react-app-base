@@ -1,45 +1,9 @@
 {
   "loading": "ローディング",
   "routes": {
-    "about": {
-      "displayName": "情報",
-      "path": "/情報",
-      "inSiteMap": true,
-      "inHeader": true
-    },
-    "home": {
-      "displayName": "ホーム",
-      "path": "/",
-      "inSiteMap": true,
-      "inHeader": true
-    },
-    "languageTester": {
-      "displayName": "言語テスター",
-      "path": "/言語テスター",
-      "inSiteMap": true,
-      "inHeader": true
-    },      
-    "siteMap": {
-      "displayName": "サイトーマップ",
-      "path": "/サイトーマップ",
-      "inSiteMap": true,
-      "inHeader": true
-    },
     "styleGuide": {
       "displayName": "スタイルガイド",
-      "path": "/スタイルガイド",
-      "inSiteMap": true,
-      "inHeader": true
-    },
-    "todo": {
-      "displayName": "タスク",
-      "path": "/タスク",
-      "inSiteMap": true,
-      "inHeader": true
-    },
-    "userSettings": {
-      "displayName": "ユーザー設定",
-      "path": "/ユーザー設定",
+      "path": "/",
       "inSiteMap": true,
       "inHeader": true
     }

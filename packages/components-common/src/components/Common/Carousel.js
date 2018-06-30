@@ -1,7 +1,7 @@
 import { Carousel as ReactStrapCarousel } from 'reactstrap'
 import React from 'react'
 
-import ThemeImporter from 'components/Global/ThemeImporter'
+import ThemeImporter from '../Global/ThemeImporter'
 
 const Carousel = props => {
   return (

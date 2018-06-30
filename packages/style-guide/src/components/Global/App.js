@@ -1,22 +1,9 @@
 import { BrowserRouter } from 'react-router-dom'
-import Loadable from 'react-loadable'
 import React, { Fragment, PureComponent } from 'react'
 
-import GlobalContainer from 'components/Global/GlobalContainer'
-import GlobalContainerContext from 'components/Global/GlobalContainerContext'
-import GlobalImporter from 'components/Global/GlobalImporter'
+import Header from './Header'
+import { GlobalContainer, GlobalContainerContext, GlobalImporter, ThemeImporter } from '@myorg/components-common'
 import Routes from './Routes'
-import ThemeImporter from 'components/Global/ThemeImporter'
-
-const Footer = Loadable({
-  loader: () => import('./Footer'),
-  loading: () => null
-})
-
-const Header = Loadable({
-  loader: () => import('./Header'),
-  loading: () => null
-})
 
 class App extends PureComponent {
   render() {
@@ -34,7 +21,6 @@ class App extends PureComponent {
                       <main role="main" className="main container-fluid">
                         <Routes strings={strings} />
                       </main>
-                      <Footer strings={strings} user={context.user} />
                     </Fragment>
                   </BrowserRouter>
                 </ThemeImporter>

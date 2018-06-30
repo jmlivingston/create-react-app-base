@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import React, { Fragment } from 'react'
 
-import { Error } from 'components/Common'
+import { Error } from './'
 
 const ErrorContainer = ({ children, error, isLoaded = false }) => {
   return isLoaded ? error ? <Error error={error} /> : <Fragment>{children}</Fragment> : null

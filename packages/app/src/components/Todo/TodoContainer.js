@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react'
 
-import { ErrorContainer } from 'components/Common'
+import { ErrorContainer } from '@myorg/components-common'
 import GlobalImporter from 'components/Global/GlobalImporter'
 import API from 'config/apiConstants'
 import dataHelper from 'helpers/dataHelper'

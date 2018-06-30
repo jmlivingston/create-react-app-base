@@ -6,7 +6,7 @@ import GlobalContainer from 'components/Global/GlobalContainer'
 import GlobalContainerContext from 'components/Global/GlobalContainerContext'
 import GlobalImporter from 'components/Global/GlobalImporter'
 import Routes from './Routes'
-import ThemeImporter from 'components/Global/ThemeImporter'
+import ThemeImporter from '../Global/ThemeImporter'
 
 const Footer = Loadable({
   loader: () => import('./Footer'),

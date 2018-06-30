@@ -2,9 +2,9 @@ import { default as LoaderControl } from 'react-loaders'
 import PropTypes from 'prop-types'
 import React, { Fragment, PureComponent } from 'react'
 
-import { Error } from 'components/Common'
+import { Error } from './'
 import APP from 'config/appConstants'
-import GlobalContainerContext from 'components/Global/GlobalContainerContext'
+import GlobalContainerContext from '../Global/GlobalContainerContext'
 
 const Loading = ({ message, name }) => (
   <div className="text-center">

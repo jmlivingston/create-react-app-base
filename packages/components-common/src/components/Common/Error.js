@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import React, { Fragment } from 'react'
 
-import Code from 'components/Common/Code'
+import Code from './Code'
 import APP from 'config/appConstants'
 
 const Error = ({ error = { friendlyError: APP.ERROR.GENERIC } }) => {

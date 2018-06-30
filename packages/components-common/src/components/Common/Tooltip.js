@@ -1,7 +1,7 @@
 import { Tooltip as ReactStrapTooltip } from 'reactstrap'
 import React from 'react'
 
-import ThemeImporter from 'components/Global/ThemeImporter'
+import ThemeImporter from '../Global/ThemeImporter'
 
 const Tooltip = props => {
   return (

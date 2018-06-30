@@ -1,6 +1,6 @@
 import React, { Fragment, Component } from 'react'
 
-import { Alert, Button, Form, FormGroup, Input, Label, UncontrolledAlert } from 'components/Common'
+import { Alert, Button, Form, FormGroup, Input, Label, UncontrolledAlert } from '@myorg/components-common'
 import { validate } from 'helpers/validation/validatorHelper'
 import GlobalContainerContext from 'components/Global/GlobalContainerContext'
 import GlobalImporter from 'components/Global/GlobalImporter'

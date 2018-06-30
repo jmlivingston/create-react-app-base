@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 
-import GlobalImporter from 'components/Global/GlobalImporter'
+import GlobalImporter from '../Global/GlobalImporter'
 
 const TermsConditions = () => {
   return (

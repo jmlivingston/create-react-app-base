@@ -1,7 +1,7 @@
 import { Jumbotron as ReactStrapJumbotron } from 'reactstrap'
 import React from 'react'
 
-import ThemeImporter from 'components/Global/ThemeImporter'
+import ThemeImporter from '../Global/ThemeImporter'
 
 const Jumbotron = props => {
   return (

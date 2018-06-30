@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 
-import { Button, Form, FormGroup, Input, Label } from 'components/Common'
+import { Button, Form, FormGroup, Input, Label } from '@myorg/components-common'
 
 class TodoForm extends Component {
   defaultTodo = { name: '', isComplete: false }

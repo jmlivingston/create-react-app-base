@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import React, { PureComponent } from 'react'
 
-import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'components/Common'
+import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from '../Common'
 import GlobalContainerContext from './GlobalContainerContext'
 
 class LanguageSelector extends PureComponent {

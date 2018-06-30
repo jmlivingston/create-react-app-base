@@ -1,7 +1,7 @@
 import { Badge as ReactStrapBadge } from 'reactstrap'
 import React from 'react'
 
-import ThemeImporter from 'components/Global/ThemeImporter'
+import ThemeImporter from '../Global/ThemeImporter'
 
 const Badge = props => {
   return (

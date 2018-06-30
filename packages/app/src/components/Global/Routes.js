@@ -4,7 +4,7 @@ import Loadable from 'react-loadable'
 import React from 'react'
 
 import GlobalImporter from './GlobalImporter'
-import { Loader } from 'components/Common'
+import { Loader } from '@myorg/components-common'
 
 const loadableConfig = {
   delay: 200,

@@ -1,5 +1,5 @@
 import React, { PureComponent, Fragment } from 'react'
-import { Button } from 'components/Common'
+import { Button } from '@myorg/components-common'
 
 import GlobalImporter from 'components/Global/GlobalImporter'
 

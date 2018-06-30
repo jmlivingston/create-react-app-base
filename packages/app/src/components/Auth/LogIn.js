@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import React, { PureComponent } from 'react'
 
-import { Alert, Button, Form, FormGroup, Input, Label } from 'components/Common'
+import { Alert, Button, Form, FormGroup, Input, Label } from '@myorg/components-common'
 import GlobalContainerContext from 'components/Global/GlobalContainerContext'
 import GlobalImporter from 'components/Global/GlobalImporter'
 

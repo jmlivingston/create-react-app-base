@@ -2,7 +2,7 @@ import { default as ReactDatePicker } from 'react-datepicker'
 import PropTypes from 'prop-types'
 import React, { PureComponent } from 'react'
 
-import ThemeImporter from 'components/Global/ThemeImporter'
+import ThemeImporter from '../Global/ThemeImporter'
 
 class DatePicker extends PureComponent {
   state = {

@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types'
 import React, { PureComponent } from 'react'
 
-import { Modal, ModalHeader, ModalBody } from 'components/Common'
-import APP from 'config/appConstants'
-import TermsConditions from 'components/TermsConditions/TermsConditions'
+import { Modal, ModalHeader, ModalBody } from '../Common'
+import APP from '../../config/appConstants'
+import TermsConditions from '../TermsConditions/TermsConditions'
 
 class Footer extends PureComponent {
   state = {

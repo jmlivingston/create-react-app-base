@@ -1,7 +1,7 @@
 import { Modal as ReactStrapModal } from 'reactstrap'
 import React from 'react'
 
-import ThemeImporter from 'components/Global/ThemeImporter'
+import ThemeImporter from '../Global/ThemeImporter'
 
 const Modal = props => {
   return (

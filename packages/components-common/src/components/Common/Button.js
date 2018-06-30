@@ -1,7 +1,7 @@
 import { Button as ReactStrapButton } from 'reactstrap'
 import React from 'react'
 
-import ThemeImporter from 'components/Global/ThemeImporter'
+import ThemeImporter from '../Global/ThemeImporter'
 
 const Button = props => {
   return (

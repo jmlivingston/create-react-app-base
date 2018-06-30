@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import React, { PureComponent } from 'react'
 
-import { Modal, ModalHeader, ModalBody } from 'components/Common'
+import { Modal, ModalHeader, ModalBody } from '@myorg/components-common'
 import APP from 'config/appConstants'
 import TermsConditions from 'components/TermsConditions/TermsConditions'
 

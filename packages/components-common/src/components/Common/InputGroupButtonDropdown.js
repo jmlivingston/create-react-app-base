@@ -1,7 +1,7 @@
 import { InputGroupButtonDropdown as ReactStrapInputGroupButtonDropdown } from 'reactstrap'
 import React from 'react'
 
-import ThemeImporter from 'components/Global/ThemeImporter'
+import ThemeImporter from '../Global/ThemeImporter'
 
 const InputGroupButtonDropdown = props => {
   return (

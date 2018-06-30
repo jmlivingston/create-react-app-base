@@ -3,8 +3,8 @@ import PropTypes from 'prop-types'
 import React, { PureComponent } from 'react'
 
 import GlobalContainerContext from './GlobalContainerContext'
-import LanguageSelector from 'components/Global/LanguageSelector'
-import ThemeSelector from 'components/Global/ThemeSelector'
+import LanguageSelector from './LanguageSelector'
+import ThemeSelector from './ThemeSelector'
 
 import {
   Collapse,
@@ -21,8 +21,8 @@ import {
   NavItem,
   NavLink,
   UncontrolledDropdown
-} from 'components/Common'
-import LogIn from 'components/Auth/LogIn'
+} from '../../components/Common'
+import LogIn from '../../components/Auth/LogIn'
 
 class Header extends PureComponent {
   state = {

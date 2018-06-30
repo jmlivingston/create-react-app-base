@@ -1,7 +1,7 @@
 import { Media as ReactStrapMedia } from 'reactstrap'
 import React from 'react'
 
-import ThemeImporter from 'components/Global/ThemeImporter'
+import ThemeImporter from '../Global/ThemeImporter'
 
 const Media = props => {
   return (
