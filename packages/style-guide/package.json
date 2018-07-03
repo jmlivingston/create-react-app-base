@@ -2,16 +2,6 @@
   "name": "@myorg/style-guide",
   "version": "0.0.1",
   "private": true,
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build && yarn run build-deploy",
-    "test": "react-scripts test --env=jsdom",
-    "build-deploy": "node ./utility/build-copy.js && gzip -9 -r deploy/client/static && gzip -9 -r deploy/client/service-worker.js",
-    "build-start": "cd deploy && yarn install && yarn start",
-    "screenshots-build": "node ./utility/build-screenshots.js",
-    "style-guide-build": "node ./utility/build-style-guide.js",
-    "tests-build": "node ./utility/build-test.js"
-  },
   "dependencies": {
     "prop-types": "15.6.1",
     "react-dom": "16.4.1",
@@ -21,10 +11,7 @@
     "react": "16.4.1"
   },
   "devDependencies": {
-    "cross-env": "5.2.0",
-    "node-sass": "4.9.0",
-    "puppeteer": "1.5.0",
-    "react-docgen": "3.0.0-beta12"
+    "node-sass": "4.9.0"
   },
   "engines": {
     "node": ">=7.6.0 <10.0.0 "

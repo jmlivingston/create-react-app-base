@@ -4,21 +4,28 @@
     "packages/*"
   ],
   "scripts": {
-    "app-start": "cd packages/app && yarn start",
-    "app-build": "cd packages/app && yarn build",
-    "app-deploy": "git subtree push --prefix packages/app/deploy origin deploy",
-    "style-guide-start": "cd packages/style-guide && yarn start",
-    "style-guide-build": "cd packages/style-guide && yarn build",
-    "style-guide-deploy": "git subtree push --prefix packages/style-guide/deploy origin style-guide-deploy",
-    "components-start": "cd packages/components && yarn start",
+    "app-start": "node ./utility/launch.js APP START",
+    "app-build": "node ./utility/launch.js APP BUILD",
+    "app-build-start": "node ./utility/launch.js APP BUILD_START",
+    "app-deploy": "node ./utility/launch.js APP DEPLOY",
+    "app-test": "node ./utility/launch.js APP TEST",
+    "style-guide-start": "node ./utility/launch.js STYLE_GUIDE START",
+    "style-guide-build": "node ./utility/launch.js STYLE_GUIDE BUILD",
+    "style-guide-build-start": "node ./utility/launch.js STYLE_GUIDE BUILD_START",
+    "style-guide-deploy": "node ./utility/launch.js STYLE_GUIDE DEPLOY",
+    "style-guide-test": "node ./utility/launch.js STYLE_GUIDE TEST",
+    "components-start": "node ./utility/launch.js COMPONENTS START",
+    "components-test": "node ./utility/launch.js COMPONENTS TEST",
     "lint": "node node_modules/eslint/bin/eslint.js --max-warnings=0 packages/**/src",
     "precommit": "lint-staged"
   },
   "devDependencies": {
-    "lerna": "^2.11.0",
     "husky": "0.14.3",
+    "lerna": "^2.11.0",
     "lint-staged": "7.2.0",
-    "prettier": "1.13.5"
+    "prettier": "1.13.5",
+    "puppeteer": "1.5.0",
+    "react-docgen": "3.0.0-beta12"
   },
   "eslintConfig": {
     "extends": "./node_modules/eslint-config-react-app/index.js",

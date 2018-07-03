@@ -17,7 +17,7 @@ After cloning run `yarn` in the terminal to install the required npm packages.
 
 ## Running
 
-[npm scripts](https://docs.npmjs.com/misc/scripts) are used throughout the project, so you can simply run ```yarn run``` or refer to the respective package.json files for specific commands. The root package.json has a few convenience scripts that are just shortcuts to the underlying packages package.json files. There are three primary apps, all of which are based on create-react-app:
+[npm scripts](https://docs.npmjs.com/misc/scripts) are used throughout the project, so you can simply run ```yarn run``` or refer to the respective package. file for specific commands. There are three primary apps, all of which are based on create-react-app:
 
 - app - The primary app.
 - components - Used to build common components.
