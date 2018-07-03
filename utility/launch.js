@@ -11,6 +11,7 @@ const APP_NAMES = {
 const LAUNCH_TYPES = {
   START: 'START',
   BUILD: 'BUILD',
+  BUILDX: 'BUILD',
   BUILD_START: 'BUILD_START',
   DEPLOY: 'DEPLOY',
   TEST: 'TEST'
@@ -35,7 +36,7 @@ try {
         })
         buildCopy(appName)
         child_process.execSync(
-          `gzip -9 -r ../packages/${appName}/deploy/client/static && gzip -9 -r ../packages/${appName}/deploy/client/service-worker.js`,
+          `gzip -9 -r packages/${appName}/deploy/client/static && gzip -9 -r packages/${appName}/deploy/client/service-worker.js`,
           {
             stdio: 'inherit'
           }
