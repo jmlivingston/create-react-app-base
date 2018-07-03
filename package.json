@@ -6,10 +6,10 @@
   "scripts": {
     "app-start": "cd packages/app && yarn start",
     "app-build": "cd packages/app && yarn build",
-    "app-deploy": "cd packages/app && yarn deploy",
+    "app-deploy": "git subtree push --prefix packages/app/deploy origin deploy",
     "style-guide-start": "cd packages/style-guide && yarn start",
     "style-guide-build": "cd packages/style-guide && yarn build",
-    "style-guide-deploy": "cd packages/style-guide && yarn deploy",
+    "style-guide-deploy": "git subtree push --prefix packages/style-guide/deploy origin style-guide",
     "components-start": "cd packages/components && yarn start",
     "lint": "node node_modules/eslint/bin/eslint.js --max-warnings=0 packages/**/src",
     "precommit": "lint-staged"

@@ -4,11 +4,10 @@
   "private": true,
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build && npm run build-deploy",
-    "deploy": "git subtree push --prefix deploy origin style-guide",
+    "build": "react-scripts build && yarn run build-deploy",
     "test": "react-scripts test --env=jsdom",
     "build-deploy": "node ./utility/build-copy.js && gzip -9 -r deploy/client/static && gzip -9 -r deploy/client/service-worker.js",
-    "build-start": "cd deploy && npm install && npm start",
+    "build-start": "cd deploy && yarn install && yarn start",
     "screenshots-build": "node ./utility/build-screenshots.js",
     "style-guide-build": "node ./utility/build-style-guide.js",
     "tests-build": "node ./utility/build-test.js"
