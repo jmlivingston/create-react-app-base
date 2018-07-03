@@ -1,6 +1,6 @@
 const ModalFadelessCode = `import React, { Fragment, PureComponent } from 'react'
 
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from '@myorg/components-common'
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from '@myorg/components'
 
 class ModalFadeless extends PureComponent {
   state = {

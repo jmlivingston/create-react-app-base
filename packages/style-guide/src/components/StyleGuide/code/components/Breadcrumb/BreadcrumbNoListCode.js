@@ -1,6 +1,6 @@
 const BreadcrumbNoListCode = `import React, { Fragment } from 'react'
 
-import { Breadcrumb, BreadcrumbItem } from '@myorg/components-common'
+import { Breadcrumb, BreadcrumbItem } from '@myorg/components'
 
 const BreadcrumbNoList = () => {
   return (

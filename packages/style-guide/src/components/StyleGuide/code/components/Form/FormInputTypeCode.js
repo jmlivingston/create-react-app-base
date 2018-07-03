@@ -1,6 +1,6 @@
 const FormInputTypeCode = `import React from 'react'
 
-import { Form, FormGroup, Label, Input, FormText } from '@myorg/components-common'
+import { Form, FormGroup, Label, Input, FormText } from '@myorg/components'
 
 const FormInputType = () => {
   return (

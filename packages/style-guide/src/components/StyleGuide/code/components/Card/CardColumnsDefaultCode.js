@@ -1,6 +1,6 @@
 const CardColumnsDefaultCode = `import React from 'react'
 
-import { Card, Button, CardImg, CardTitle, CardText, CardColumns, CardSubtitle, CardBody } from '@myorg/components-common'
+import { Card, Button, CardImg, CardTitle, CardText, CardColumns, CardSubtitle, CardBody } from '@myorg/components'
 
 const CardColumnsDefault = () => {
   return (

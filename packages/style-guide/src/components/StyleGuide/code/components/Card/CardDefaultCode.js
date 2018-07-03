@@ -1,5 +1,5 @@
 const CardDefaultCode = `import React from 'react'
-import { Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle, Button } from '@myorg/components-common'
+import { Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle, Button } from '@myorg/components'
 
 const CardDefault = () => {
   return (

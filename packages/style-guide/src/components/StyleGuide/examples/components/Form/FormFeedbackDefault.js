@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Form, FormGroup, Label, Input, FormFeedback, FormText } from '@myorg/components-common'
+import { Form, FormGroup, Label, Input, FormFeedback, FormText } from '@myorg/components'
 
 const FormFeedbackDefault = () => {
   return (

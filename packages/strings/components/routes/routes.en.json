@@ -1,0 +1,17 @@
+{
+  "loading": "Loading",
+  "routes": {
+    "home": {
+      "displayName": "Home",
+      "path": "/",
+      "inSiteMap": true,
+      "inHeader": true
+    },
+    "languageTester": {
+      "displayName": "Language Tester",
+      "path": "/language-tester",
+      "inSiteMap": true,
+      "inHeader": true
+    }
+  }
+}

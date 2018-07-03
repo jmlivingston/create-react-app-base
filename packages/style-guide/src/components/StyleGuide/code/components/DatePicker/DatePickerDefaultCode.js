@@ -1,6 +1,6 @@
 const DatePickerDefaultCode = `import React, { PureComponent } from 'react'
 
-import { DatePicker } from '@myorg/components-common'
+import { DatePicker } from '@myorg/components'
 
 class DatePickerDefault extends PureComponent {
   state = {

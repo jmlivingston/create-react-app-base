@@ -1,6 +1,6 @@
 const FormLabelHiddenCode = `import React from 'react'
 
-import { Button, Form, FormGroup, Label, Input } from '@myorg/components-common'
+import { Button, Form, FormGroup, Label, Input } from '@myorg/components'
 
 const FormLabelHidden = () => {
   return (

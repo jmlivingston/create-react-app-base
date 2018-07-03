@@ -1,6 +1,6 @@
 const CollapseDefaultCode = `import React, { Fragment, PureComponent } from 'react'
 
-import { Collapse, Button, CardBody, Card } from '@myorg/components-common'
+import { Collapse, Button, CardBody, Card } from '@myorg/components'
 
 class CollapseDefault extends PureComponent {
   state = { collapse: false }

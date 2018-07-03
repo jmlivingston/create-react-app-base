@@ -1,6 +1,6 @@
 import React, { Fragment, PureComponent } from 'react'
 
-import { Collapse, Button, CardBody, Card } from '@myorg/components-common'
+import { Collapse, Button, CardBody, Card } from '@myorg/components'
 
 class CollapseEvents extends PureComponent {
   state = { collapse: false, status: 'Closed' }

@@ -1,6 +1,6 @@
 const ListGroupAnchorsAndButtonsCode = `import React, { Fragment } from 'react'
 
-import { ListGroup, ListGroupItem } from '@myorg/components-common'
+import { ListGroup, ListGroupItem } from '@myorg/components'
 
 const ListGroupAnchorsAndButtons = () => {
   return (

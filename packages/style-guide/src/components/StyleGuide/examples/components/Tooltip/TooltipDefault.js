@@ -1,6 +1,6 @@
 import React, { Fragment, PureComponent } from 'react'
 
-import { Tooltip } from '@myorg/components-common'
+import { Tooltip } from '@myorg/components'
 
 class TooltipDefault extends PureComponent {
   state = {

@@ -1,6 +1,6 @@
 const ButtonDefaultCode = `import React, { Fragment } from 'react'
 
-import { Button } from '@myorg/components-common'
+import { Button } from '@myorg/components'
 
 const ButtonDefault = () => {
   return (

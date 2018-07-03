@@ -1,6 +1,6 @@
 import React, { Fragment, PureComponent } from 'react'
 
-import { Button, Popover, PopoverHeader, PopoverBody } from '@myorg/components-common'
+import { Button, Popover, PopoverHeader, PopoverBody } from '@myorg/components'
 
 class PopoverDefault extends PureComponent {
   state = {

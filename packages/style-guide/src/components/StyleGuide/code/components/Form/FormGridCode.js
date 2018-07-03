@@ -1,6 +1,6 @@
 const FormGridCode = `import React from 'react'
 
-import { Col, Button, Form, FormGroup, Label, Input, FormText } from '@myorg/components-common'
+import { Col, Button, Form, FormGroup, Label, Input, FormText } from '@myorg/components'
 
 const FormGrid = () => {
   return (

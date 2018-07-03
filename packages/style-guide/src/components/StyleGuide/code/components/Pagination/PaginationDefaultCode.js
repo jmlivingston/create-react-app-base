@@ -1,6 +1,6 @@
 const PaginationDefaultCode = `import React from 'react'
 
-import { Pagination, PaginationItem, PaginationLink } from '@myorg/components-common'
+import { Pagination, PaginationItem, PaginationLink } from '@myorg/components'
 
 const PaginationDefault = () => {
   return (

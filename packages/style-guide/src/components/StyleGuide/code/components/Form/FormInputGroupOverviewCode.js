@@ -1,6 +1,6 @@
 const FormInputGroupOverviewCode = `import React, { Fragment } from 'react'
 
-import { InputGroup, InputGroupAddon, InputGroupText, Input } from '@myorg/components-common'
+import { InputGroup, InputGroupAddon, InputGroupText, Input } from '@myorg/components'
 
 const FormInputGroupOverview = () => {
   return (

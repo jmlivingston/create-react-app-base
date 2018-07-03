@@ -1,6 +1,6 @@
 const FadeDefaultCode = `import React, { Fragment, PureComponent } from 'react'
 
-import { Button, Fade } from '@myorg/components-common'
+import { Button, Fade } from '@myorg/components'
 
 class FadeDefault extends PureComponent {
   state = { fadeIn: true }

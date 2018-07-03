@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Container, Row, Col } from '@myorg/components-common'
+import { Container, Row, Col } from '@myorg/components'
 
 const LayoutDefault = () => {
   return (

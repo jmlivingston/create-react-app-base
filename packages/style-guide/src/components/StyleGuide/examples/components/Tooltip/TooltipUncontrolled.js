@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 
-import { UncontrolledTooltip } from '@myorg/components-common'
+import { UncontrolledTooltip } from '@myorg/components'
 
 export default function TooltipUncontrolled() {
   return (

@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Card, Button, CardImg, CardTitle, CardText, CardDeck, CardSubtitle, CardBody } from '@myorg/components-common'
+import { Card, Button, CardImg, CardTitle, CardText, CardDeck, CardSubtitle, CardBody } from '@myorg/components'
 
 const CardDecks = () => {
   return (

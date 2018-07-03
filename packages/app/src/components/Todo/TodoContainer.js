@@ -1,11 +1,9 @@
 import React, { PureComponent } from 'react'
 
-import { ErrorContainer } from '@myorg/components-common'
-import GlobalImporter from 'components/Global/GlobalImporter'
-import API from 'config/apiConstants'
-import dataHelper from 'helpers/dataHelper'
-import TodoForm from 'components/Todo/TodoForm'
-import TodoList from 'components/Todo/TodoList'
+import { ErrorContainer, GlobalImporter } from '@myorg/components'
+import { API, data } from '@myorg/core'
+import TodoForm from './TodoForm'
+import TodoList from './TodoList'
 
 class TodoContainer extends PureComponent {
   state = {
@@ -14,7 +12,7 @@ class TodoContainer extends PureComponent {
   }
 
   add = async todo => {
-    const todoResponse = await dataHelper.post(API.TODO.BASE, todo)
+    const todoResponse = await data.post(API.TODO.BASE, todo)
     if (todoResponse.response.ok) {
       this.setState(prevState => ({
         todos: [...prevState.todos, { ...todo, ...todoResponse.data }]
@@ -23,7 +21,7 @@ class TodoContainer extends PureComponent {
   }
 
   update = async todo => {
-    const todoResponse = await dataHelper.put(`${API.TODO.BASE}/${todo.id}`, todo)
+    const todoResponse = await data.put(`${API.TODO.BASE}/${todo.id}`, todo)
     if (todoResponse.response.ok) {
       this.setState(prevState => ({
         todos: prevState.todos.map(t => (t.id === todo.id ? todo : t))
@@ -32,7 +30,7 @@ class TodoContainer extends PureComponent {
   }
 
   bindData = async () => {
-    const todosResponse = await dataHelper.get(API.TODO.BASE)
+    const todosResponse = await data.get(API.TODO.BASE)
     if (todosResponse.response.ok) {
       this.setState({
         isLoaded: true,
@@ -53,6 +51,7 @@ class TodoContainer extends PureComponent {
   render() {
     return (
       <GlobalImporter
+        appName="app"
         stringNames={['todo']}
         render={({ strings }) => (
           <ErrorContainer isLoaded={this.state.isLoaded} error={this.state.error}>

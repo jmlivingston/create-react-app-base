@@ -1,6 +1,6 @@
 const ButtonDropdownMultiSplitCode = `import React, { PureComponent } from 'react'
 
-import { Button, ButtonDropdown, DropdownToggle, DropdownMenu, DropdownItem } from '@myorg/components-common'
+import { Button, ButtonDropdown, DropdownToggle, DropdownMenu, DropdownItem } from '@myorg/components'
 
 class ButtonDropdownMultiSplit extends PureComponent {
   state = {

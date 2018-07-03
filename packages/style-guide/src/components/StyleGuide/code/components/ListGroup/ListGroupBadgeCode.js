@@ -1,6 +1,6 @@
 const ListGroupBadgeCode = `import React from 'react'
 
-import { ListGroup, ListGroupItem, Badge } from '@myorg/components-common'
+import { ListGroup, ListGroupItem, Badge } from '@myorg/components'
 
 const ListGroupBadge = () => {
   return (

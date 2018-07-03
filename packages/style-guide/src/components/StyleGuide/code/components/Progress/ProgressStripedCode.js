@@ -1,6 +1,6 @@
 const ProgressStripedCode = `import React, { Fragment } from 'react'
 
-import { Progress } from '@myorg/components-common'
+import { Progress } from '@myorg/components'
 
 const ProgressStriped = () => {
   return (

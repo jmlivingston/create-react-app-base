@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 
-import { Breadcrumb, BreadcrumbItem } from '@myorg/components-common'
+import { Breadcrumb, BreadcrumbItem } from '@myorg/components'
 
 const BreadcrumbDefault = () => {
   return (

@@ -12,7 +12,7 @@ import {
   DropdownToggle,
   DropdownMenu,
   DropdownItem
-} from '@myorg/components-common'
+} from '@myorg/components'
 
 class NavNavbarDefault extends PureComponent {
   state = {

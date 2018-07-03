@@ -1,0 +1,8 @@
+{
+  "name": "@myorg/models",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "prop-types": "15.6.1"
+  }
+}

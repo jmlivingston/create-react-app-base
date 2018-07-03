@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Card, CardTitle, CardText, CardImg, CardImgOverlay } from '@myorg/components-common'
+import { Card, CardTitle, CardText, CardImg, CardImgOverlay } from '@myorg/components'
 
 const CardImageOverlay = () => {
   return (

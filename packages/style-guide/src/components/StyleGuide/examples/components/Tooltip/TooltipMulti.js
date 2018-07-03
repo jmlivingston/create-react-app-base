@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import React, { Fragment, PureComponent } from 'react'
 
-import { Button, Tooltip } from '@myorg/components-common'
+import { Button, Tooltip } from '@myorg/components'
 
 class TooltipItem extends PureComponent {
   state = {

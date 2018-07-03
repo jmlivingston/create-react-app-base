@@ -1,6 +1,6 @@
 const DropdownUncontrolledCode = `import React from 'react'
 
-import { UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem } from '@myorg/components-common'
+import { UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem } from '@myorg/components'
 
 const DropdownUncontrolled = () => {
   return (

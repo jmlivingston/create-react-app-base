@@ -1,6 +1,6 @@
 const FormInputSizingCode = `import React from 'react'
 
-import { Form, Input } from '@myorg/components-common'
+import { Form, Input } from '@myorg/components'
 
 const FormInputSizing = () => {
   return (

@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Jumbotron, Container } from '@myorg/components-common'
+import { Jumbotron, Container } from '@myorg/components'
 
 const JumbotronFluid = () => {
   return (

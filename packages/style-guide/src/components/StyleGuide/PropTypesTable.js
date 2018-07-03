@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import React, { PureComponent } from 'react'
 
-import { Card, CardBody, CardHeader, Collapse, Table } from '@myorg/components-common'
+import { Card, CardBody, CardHeader, Collapse, Table } from '@myorg/components'
 
 class PropTypesTable extends PureComponent {
   state = {

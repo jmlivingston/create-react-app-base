@@ -1,6 +1,6 @@
 const ButtonGroupDefaultCode = `import React from 'react'
 
-import { Button, ButtonGroup } from '@myorg/components-common'
+import { Button, ButtonGroup } from '@myorg/components'
 
 const ButtonGroupDefault = () => {
   return (

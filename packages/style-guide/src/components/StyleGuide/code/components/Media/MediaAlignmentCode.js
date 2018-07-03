@@ -1,6 +1,6 @@
 const MediaAlignmentCode = `import React, { Fragment } from 'react'
 
-import { Media } from '@myorg/components-common'
+import { Media } from '@myorg/components'
 
 const MediaAlignment = () => {
   return (

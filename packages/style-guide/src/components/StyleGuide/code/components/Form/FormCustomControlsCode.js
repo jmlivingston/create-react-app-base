@@ -1,6 +1,6 @@
 const FormCustomControlsCode = `import React, { Fragment } from 'react'
 
-import { CustomInput, Form, FormGroup, Label } from '@myorg/components-common'
+import { CustomInput, Form, FormGroup, Label } from '@myorg/components'
 
 const FormCustomControls = () => {
   return (

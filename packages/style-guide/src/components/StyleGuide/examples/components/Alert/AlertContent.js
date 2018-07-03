@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Alert } from '@myorg/components-common'
+import { Alert } from '@myorg/components'
 
 const AlertContent = () => {
   return (

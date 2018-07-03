@@ -1,6 +1,6 @@
 const NavNavbarTogglerDefaultCode = `import React, { Fragment, PureComponent } from 'react'
 
-import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from '@myorg/components-common'
+import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from '@myorg/components'
 
 class NavNavbarTogglerDefault extends PureComponent {
   state = {

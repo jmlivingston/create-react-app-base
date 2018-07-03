@@ -1,6 +1,6 @@
 const FormInlineCheckboxesCode = `import React from 'react'
 
-import { Form, FormGroup, Label, Input } from '@myorg/components-common'
+import { Form, FormGroup, Label, Input } from '@myorg/components'
 
 const FormInlineCheckboxes = () => {
   return (

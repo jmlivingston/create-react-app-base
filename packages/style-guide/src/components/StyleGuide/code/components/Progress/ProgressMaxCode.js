@@ -1,6 +1,6 @@
 const ProgressMaxCode = `import React, { Fragment } from 'react'
 
-import { Progress } from '@myorg/components-common'
+import { Progress } from '@myorg/components'
 
 const ProgressMax = () => {
   return (

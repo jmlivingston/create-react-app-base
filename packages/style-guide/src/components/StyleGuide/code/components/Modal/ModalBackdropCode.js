@@ -1,6 +1,6 @@
 const ModalBackdropCode = `import React, { Fragment, PureComponent } from 'react'
 
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Input, Label, Form, FormGroup } from '@myorg/components-common'
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Input, Label, Form, FormGroup } from '@myorg/components'
 
 class ModalBackdrop extends PureComponent {
   state = {

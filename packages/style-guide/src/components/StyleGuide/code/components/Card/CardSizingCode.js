@@ -1,6 +1,6 @@
 const CardSizingCode = `import React from 'react'
 
-import { Card, Button, CardTitle, CardText, Row, Col } from '@myorg/components-common'
+import { Card, Button, CardTitle, CardText, Row, Col } from '@myorg/components'
 
 const CardSizing = () => {
   return (

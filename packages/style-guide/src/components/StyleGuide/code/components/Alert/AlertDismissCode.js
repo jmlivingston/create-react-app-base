@@ -1,6 +1,6 @@
 const AlertDismissCode = `import React, { PureComponent } from 'react'
 
-import { Alert } from '@myorg/components-common'
+import { Alert } from '@myorg/components'
 
 class AlertDismiss extends PureComponent {
   state = {

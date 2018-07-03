@@ -1,6 +1,6 @@
 const ButtonToolbarDefaultCode = `import React from 'react'
 
-import { Button, ButtonGroup, ButtonToolbar } from '@myorg/components-common'
+import { Button, ButtonGroup, ButtonToolbar } from '@myorg/components'
 
 const ButtonToolbarDefault = () => {
   return (

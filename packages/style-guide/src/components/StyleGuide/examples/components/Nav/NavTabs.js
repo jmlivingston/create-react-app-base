@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react'
 
-import { Nav, NavItem, Dropdown, DropdownItem, DropdownToggle, DropdownMenu, NavLink } from '@myorg/components-common'
+import { Nav, NavItem, Dropdown, DropdownItem, DropdownToggle, DropdownMenu, NavLink } from '@myorg/components'
 
 class NavTabs extends PureComponent {
   state = {

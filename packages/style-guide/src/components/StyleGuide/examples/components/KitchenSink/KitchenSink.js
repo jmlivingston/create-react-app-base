@@ -79,7 +79,7 @@ import {
   UncontrolledCarousel,
   UncontrolledDropdown,
   UncontrolledTooltip
-} from '@myorg/components-common'
+} from '@myorg/components'
 
 class KitchenSink extends PureComponent {
   state = {

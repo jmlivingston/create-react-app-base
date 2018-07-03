@@ -1,6 +1,6 @@
 const PaginationSizingLargeCode = `import React from 'react'
 
-import { Pagination, PaginationItem, PaginationLink } from '@myorg/components-common'
+import { Pagination, PaginationItem, PaginationLink } from '@myorg/components'
 
 const PaginationSizingLarge = () => {
   return (

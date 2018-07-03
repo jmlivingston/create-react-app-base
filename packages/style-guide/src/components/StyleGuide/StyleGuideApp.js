@@ -2,7 +2,7 @@ import Loadable from 'react-loadable'
 import PropTypes from 'prop-types'
 import React, { Fragment, PureComponent } from 'react'
 
-import { Button, Loader, Row, ThemeSelector } from '@myorg/components-common'
+import { Button, Loader, Row, ThemeSelector } from '@myorg/components'
 import './StyleGuideApp.scss'
 
 const StyleGuideSection = ({ rootKey, styleGuideConfig }) => {
@@ -38,11 +38,11 @@ class StyleGuideApp extends PureComponent {
     this.setState({
       rootKey
     })
-    this.props.history.push('/style-guide/' + rootKey)
+    this.props.history.push('/' + rootKey)
   }
 
   componentDidMount = async () => {
-    const styleGuideConfig = await import('strings/styleGuide/styleGuide.en.json')
+    const styleGuideConfig = await import('../../strings/styleGuide/styleGuide.en.json')
     this.setState({
       styleGuideConfig,
       isLoaded: true,
@@ -57,13 +57,15 @@ class StyleGuideApp extends PureComponent {
           <div className="sidebar-sticky py-2">
             <ThemeSelector />
             <h1>{this.props.params}</h1>
-            {Object.keys(this.state.styleGuideConfig).map(rootKey => (
-              <p key={rootKey}>
-                <Button active={this.state.rootKey === rootKey} onClick={() => this.navigateToUrl(rootKey)} size="sm">
-                  {this.state.rootKey === rootKey ? <strong>{rootKey}</strong> : <Fragment>{rootKey}</Fragment>}
-                </Button>
-              </p>
-            ))}
+            {Object.keys(this.state.styleGuideConfig)
+              .filter(key => key !== 'default')
+              .map(rootKey => (
+                <p key={rootKey}>
+                  <Button active={this.state.rootKey === rootKey} onClick={() => this.navigateToUrl(rootKey)} size="sm">
+                    {this.state.rootKey === rootKey ? <strong>{rootKey}</strong> : <Fragment>{rootKey}</Fragment>}
+                  </Button>
+                </p>
+              ))}
           </div>
         </div>
         <div className="col-md-9 ml-sm-auto col-lg-10 px-4">

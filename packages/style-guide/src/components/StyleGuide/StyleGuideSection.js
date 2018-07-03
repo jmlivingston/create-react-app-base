@@ -39,11 +39,11 @@ const CodeWrapper = ({ parent, child, label }) => {
   const Code = Loadable.Map({
     loading: () => null,
     loader: {
-      Code: () => import('@myorg/components-common'),
+      components: () => import('@myorg/components'),
       code: () => import(`./code/components/${parent}/${child}Code`)
     },
     render(loaded) {
-      const Code = loaded.Code.Code
+      const Code = loaded.components.Code
       return <Code code={loaded.code.default} parent={parent} child={child} label={label} />
     }
   })

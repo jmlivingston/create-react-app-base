@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Col, Form, FormGroup, Label, Input } from '@myorg/components-common'
+import { Col, Form, FormGroup, Label, Input } from '@myorg/components'
 
 const FormInputGridSizing = () => {
   return (

@@ -1,6 +1,6 @@
 const BadgeButtonCode = `import React from 'react'
 
-import { Badge, Button } from '@myorg/components-common'
+import { Badge, Button } from '@myorg/components'
 
 const BadgeButton = () => {
   return (

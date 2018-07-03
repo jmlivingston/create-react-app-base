@@ -1,5 +1,5 @@
 const CardAlignmentCode = `import React, { Fragment } from 'react'
-import { Card, Button, CardTitle, CardText } from '@myorg/components-common'
+import { Card, Button, CardTitle, CardText } from '@myorg/components'
 
 const CardAlignment = () => {
   return (

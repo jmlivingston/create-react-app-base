@@ -1,6 +1,6 @@
 const ListGroupDefaultCode = `import React from 'react'
 
-import { ListGroup, ListGroupItem } from '@myorg/components-common'
+import { ListGroup, ListGroupItem } from '@myorg/components'
 
 const ListGroupDefault = () => {
   return (

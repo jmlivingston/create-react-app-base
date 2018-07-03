@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Jumbotron, Button } from '@myorg/components-common'
+import { Jumbotron, Button } from '@myorg/components'
 
 const JumbotronDefault = () => {
   return (

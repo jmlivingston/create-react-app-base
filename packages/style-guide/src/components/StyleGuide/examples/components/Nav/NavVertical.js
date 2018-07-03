@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 
-import { Nav, NavItem, NavLink } from '@myorg/components-common'
+import { Nav, NavItem, NavLink } from '@myorg/components'
 
 const NavVertical = () => {
   return (

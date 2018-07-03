@@ -1,6 +1,6 @@
 const BadgeVariationsCode = `import React, { Fragment } from 'react'
 
-import { Badge } from '@myorg/components-common'
+import { Badge } from '@myorg/components'
 
 const BadgeVariations = () => {
   return (

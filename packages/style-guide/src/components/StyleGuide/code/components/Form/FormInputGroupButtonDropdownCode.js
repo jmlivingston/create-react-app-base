@@ -1,6 +1,6 @@
 const FormInputGroupButtonDropdownCode = `import React, { PureComponent } from 'react'
 
-import { InputGroupButtonDropdown, DropdownToggle, DropdownMenu, DropdownItem } from '@myorg/components-common'
+import { InputGroupButtonDropdown, DropdownToggle, DropdownMenu, DropdownItem } from '@myorg/components'
 
 class FormInputGroupButtonDropdown extends PureComponent {
   state = {

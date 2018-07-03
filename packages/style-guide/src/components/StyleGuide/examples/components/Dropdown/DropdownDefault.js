@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react'
 
-import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from '@myorg/components-common'
+import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from '@myorg/components'
 
 class DropdownDefault extends PureComponent {
   state = {

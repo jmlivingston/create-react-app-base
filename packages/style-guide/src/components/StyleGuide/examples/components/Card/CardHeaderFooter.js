@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 
-import { Card, Button, CardHeader, CardFooter, CardBody, CardTitle, CardText } from '@myorg/components-common'
+import { Card, Button, CardHeader, CardFooter, CardBody, CardTitle, CardText } from '@myorg/components'
 
 const CardHeaderFooter = () => {
   return (

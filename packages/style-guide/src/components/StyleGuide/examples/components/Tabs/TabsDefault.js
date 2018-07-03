@@ -12,7 +12,7 @@ import {
   CardText,
   Row,
   Col
-} from '@myorg/components-common'
+} from '@myorg/components'
 import classnames from 'classnames'
 
 class TabsDefault extends PureComponent {

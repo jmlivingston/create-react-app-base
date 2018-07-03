@@ -1,6 +1,6 @@
 const FormInputGroupSizingCode = `import React, { Fragment } from 'react'
 
-import { InputGroup, InputGroupAddon, Input } from '@myorg/components-common'
+import { InputGroup, InputGroupAddon, Input } from '@myorg/components'
 
 const FormInputGroupSizing = () => {
   return (

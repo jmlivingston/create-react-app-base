@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { UncontrolledCarousel } from '@myorg/components-common'
+import { UncontrolledCarousel } from '@myorg/components'
 
 const items = [
   {

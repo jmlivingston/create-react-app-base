@@ -1,6 +1,6 @@
 const MediaDefaultCode = `import React from 'react'
 
-import { Media } from '@myorg/components-common'
+import { Media } from '@myorg/components'
 
 const MediaDefault = () => {
   return (

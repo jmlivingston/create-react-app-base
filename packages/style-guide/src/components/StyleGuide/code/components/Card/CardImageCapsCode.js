@@ -1,6 +1,6 @@
 const CardImageCapsCode = `import React, { Fragment } from 'react'
 
-import { Card, CardBody, CardTitle, CardText, CardImg } from '@myorg/components-common'
+import { Card, CardBody, CardTitle, CardText, CardImg } from '@myorg/components'
 
 const CardImageCaps = () => {
   return (

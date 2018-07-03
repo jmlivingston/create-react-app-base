@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 
-import { Alert } from '@myorg/components-common'
+import { Alert } from '@myorg/components'
 
 const AlertDefault = () => {
   return (

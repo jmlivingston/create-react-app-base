@@ -1,6 +1,6 @@
 import React, { PureComponent, Fragment } from 'react'
 
-import { Table } from '@myorg/components-common'
+import { Table } from '@myorg/components'
 
 class TableDefault extends PureComponent {
   basicData = [

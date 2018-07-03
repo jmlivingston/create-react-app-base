@@ -1,6 +1,6 @@
 const CarouselCustomTagCode = `import React, { Fragment, PureComponent } from 'react'
 
-import { Carousel, CarouselItem, CarouselControl, CarouselIndicators, CarouselCaption } from '@myorg/components-common'
+import { Carousel, CarouselItem, CarouselControl, CarouselIndicators, CarouselCaption } from '@myorg/components'
 
 const items = [
   {

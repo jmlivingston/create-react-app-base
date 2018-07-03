@@ -1,6 +1,6 @@
 const ListGroupCustomContentCode = `import React from 'react'
 
-import { ListGroup, ListGroupItem, ListGroupItemHeading, ListGroupItemText } from '@myorg/components-common'
+import { ListGroup, ListGroupItem, ListGroupItemHeading, ListGroupItemText } from '@myorg/components'
 
 const ListGroupCustomContent = () => {
   return (

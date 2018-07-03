@@ -1,0 +1,53 @@
+{
+  "name": "@myorg/components",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build && npm run build-deploy",
+    "deploy": "git subtree push --prefix deploy origin deploy",
+    "test": "react-scripts test --env=jsdom",
+    "build-deploy": "node ./utility/build-copy.js && gzip -9 -r deploy/client/static && gzip -9 -r deploy/client/service-worker.js",
+    "build-start": "cd deploy && npm install && npm start",
+    "screenshots-build": "node ./utility/build-screenshots.js",
+    "tests-build": "node ./utility/build-test.js"
+  },
+  "dependencies": {
+    "bootstrap": "4.1.1",
+    "bootswatch": "4.1.1",
+    "loaders.css": "0.1.2",
+    "moment": "2.22.2",
+    "prop-types": "15.6.1",
+    "react-clipboard.js": "2.0.0",
+    "react-datepicker": "1.5.0",
+    "react-dom": "16.4.1",
+    "react-loadable": "5.4.0",
+    "react-loaders": "3.0.1",
+    "react-router-dom": "4.3.1",
+    "react-scripts": "2.0.0-next.3e165448",
+    "react-syntax-highlighter": "7.0.4",
+    "react-table": "6.8.6",
+    "react": "16.4.1",
+    "reactstrap": "6.1.0"
+  },
+  "devDependencies": {
+    "cross-env": "5.2.0",
+    "node-sass": "4.9.0",
+    "puppeteer": "1.5.0"
+  },
+  "engines": {
+    "node": ">=7.6.0 <10.0.0 "
+  },
+  "browserslist": {
+    "development": [
+      "last 2 chrome versions",
+      "last 2 firefox versions",
+      "last 2 edge versions"
+    ],
+    "production": [
+      ">0.25%",
+      "not op_mini all",
+      "ie 11"
+    ]
+  }
+}

@@ -1,6 +1,6 @@
 const ButtonStatefulCode = `import React, { Fragment, PureComponent } from 'react'
 
-import { Button, ButtonGroup } from '@myorg/components-common'
+import { Button, ButtonGroup } from '@myorg/components'
 
 class ButtonStateful extends PureComponent {
   state = { checkBoxSelected: [] }

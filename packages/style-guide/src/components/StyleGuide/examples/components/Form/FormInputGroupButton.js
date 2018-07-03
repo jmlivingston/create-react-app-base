@@ -9,7 +9,7 @@ import {
   DropdownToggle,
   DropdownMenu,
   DropdownItem
-} from '@myorg/components-common'
+} from '@myorg/components'
 
 class FormInputGroupButton extends PureComponent {
   state = {
