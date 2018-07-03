@@ -1,6 +1,6 @@
 import React from 'react'
 
-import todo from 'models/todo'
+import { todo } from '@myorg/models'
 
 const Todo = ({ todo }) => {
   return (

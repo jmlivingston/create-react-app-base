@@ -2,11 +2,8 @@ import { BrowserRouter } from 'react-router-dom'
 import Loadable from 'react-loadable'
 import React, { Fragment, PureComponent } from 'react'
 
-import GlobalContainer from 'components/Global/GlobalContainer'
-import GlobalContainerContext from 'components/Global/GlobalContainerContext'
-import GlobalImporter from 'components/Global/GlobalImporter'
+import { GlobalContainer, GlobalContainerContext, GlobalImporter, ThemeImporter } from '@myorg/components'
 import Routes from './Routes'
-import ThemeImporter from 'components/Global/ThemeImporter'
 
 const Footer = Loadable({
   loader: () => import('./Footer'),
@@ -25,6 +22,7 @@ class App extends PureComponent {
         <GlobalContainerContext.Consumer>
           {context => (
             <GlobalImporter
+              appName="app"
               stringNames={['app', 'routes']}
               render={({ strings }) => (
                 <ThemeImporter sassBase={true}>

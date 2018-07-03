@@ -24,7 +24,7 @@ const buildStyleGuide = () => {
     const getPropTypes = file => {
       const string = fs.readFileSync(file).toString()
       const lines = string.split('\n')
-      const line = lines.find(line => line.indexOf('components/Common') !== -1)
+      const line = lines.find(line => line.indexOf('@myorg/common') !== -1)
       const regex = /\{(.*?)\}/
       const importLine = regex.exec(line)
       const nonReactStrapComponents = ['DatePicker']

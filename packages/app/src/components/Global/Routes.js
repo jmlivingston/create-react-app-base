@@ -3,8 +3,7 @@ import { Redirect, Route, Switch } from 'react-router-dom'
 import Loadable from 'react-loadable'
 import React from 'react'
 
-import GlobalImporter from './GlobalImporter'
-import { Loader } from 'components/Common'
+import { GlobalImporter, Loader } from '@myorg/components'
 
 const loadableConfig = {
   delay: 200,
@@ -19,10 +18,12 @@ const Routes = ({ strings }) => (
       component={Loadable({
         ...loadableConfig,
         loading: props => <Loader {...props} message={`${strings.loading} ${strings.routes.home.displayName}...`} />,
-        loader: () => import('components/Home/Home'),
+        loader: () => import('../Home/Home'),
         render(loaded, props) {
           const Home = loaded.default
-          return <GlobalImporter stringNames={['home']} render={({ strings }) => <Home strings={strings} />} />
+          return (
+            <GlobalImporter appName="app" stringNames={['home']} render={({ strings }) => <Home strings={strings} />} />
+          )
         }
       })}
     />
@@ -32,25 +33,10 @@ const Routes = ({ strings }) => (
       component={Loadable({
         ...loadableConfig,
         loading: props => <Loader {...props} message={`${strings.loading} ${strings.routes.home.displayName}...`} />,
-        loader: () => import('components/About/About'),
+        loader: () => import('../About/About'),
         render(loaded, props) {
           const About = loaded.default
-          return <GlobalImporter stringNames={['about']} render={({ strings }) => <About strings={strings} />} />
-        }
-      })}
-    />
-    <Route
-      exact
-      path={strings.routes.languageTester.path}
-      component={Loadable({
-        ...loadableConfig,
-        loading: props => (
-          <Loader {...props} message={`${strings.loading} ${strings.routes.languageTester.displayName}...`} />
-        ),
-        loader: () => import('components/LocalizationTester/LocalizationTester'),
-        render(loaded, props) {
-          const LocalizationTester = loaded.default
-          return <LocalizationTester strings={strings} />
+          return <GlobalImporter appName="app" stringNames={['about']} render={({ strings }) => <About strings={strings} />} />
         }
       })}
     />
@@ -60,9 +46,9 @@ const Routes = ({ strings }) => (
       component={Loadable({
         ...loadableConfig,
         loading: props => <Loader {...props} message={`${strings.loading} ${strings.routes.siteMap.displayName}...`} />,
-        loader: () => import('components/Global/SiteMap'),
+        loader: () => import('@myorg/components'),
         render(loaded, props) {
-          const SiteMap = loaded.default
+          const SiteMap = loaded.SiteMap
           return <SiteMap strings={strings.routes} />
         }
       })}
@@ -72,7 +58,7 @@ const Routes = ({ strings }) => (
       component={Loadable({
         ...loadableConfig,
         loading: props => <Loader {...props} message={`${strings.loading} ${strings.routes.todo.displayName}...`} />,
-        loader: () => import('components/Todo/TodoContainer')
+        loader: () => import('../Todo/TodoContainer')
       })}
     />
     <Route
@@ -83,40 +69,13 @@ const Routes = ({ strings }) => (
         loading: props => (
           <Loader {...props} message={`${strings.loading} ${strings.routes.userSettings.displayName}...`} />
         ),
-        loader: () => import('components/Auth/UserSettings')
-      })}
-    />
-
-    {/* TODO: SEPARATE STYLE GUIDE ROUTES AS THIS IS WAY TOO SLOW  <Route
-      exact
-      path={`${strings.routes.styleGuide.path}`}
-      component={Loadable({
-        ...loadableConfig,
-        loading: props => (
-          <Loader {...props} message={`${strings.loading} ${strings.routes.styleGuide.displayName}...`} />
-        ),
-        loader: () => import('styleGuide/StyleGuideApp'),
-        render(loaded, props) {
-          const StyleGuideApp = loaded.default
-          return <StyleGuideApp {...props} />
+        loader: () => import('@myorg/components'),
+        render(loaded) {
+          const UserSettings = loaded.UserSettings
+          return <UserSettings />
         }
       })}
     />
-    <Route
-      exact
-      path={`${strings.routes.styleGuide.path}/:id`}
-      component={Loadable({
-        ...loadableConfig,
-        loading: props => (
-          <Loader {...props} message={`${strings.loading} ${strings.routes.styleGuide.displayName}...`} />
-        ),
-        loader: () => import('styleGuide/StyleGuideApp'),
-        render(loaded, props) {
-          const StyleGuideApp = loaded.default
-          return <StyleGuideApp {...props} />
-        }
-      })}
-    /> */}
     <Redirect to="/" />
   </Switch>
 )

@@ -1,0 +1,17 @@
+{
+  "loading": "ローディング",
+  "routes": {
+    "home": {
+      "displayName": "ホーム",
+      "path": "/",
+      "inSiteMap": true,
+      "inHeader": true
+    },
+    "languageTester": {
+      "displayName": "言語テスター",
+      "path": "/language-tester",
+      "inSiteMap": true,
+      "inHeader": true
+    }
+  }
+}

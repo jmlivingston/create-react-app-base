@@ -1,47 +1,24 @@
 import { BrowserRouter } from 'react-router-dom'
-import Loadable from 'react-loadable'
 import React, { Fragment, PureComponent } from 'react'
 
-import GlobalContainer from 'components/Global/GlobalContainer'
-import GlobalContainerContext from 'components/Global/GlobalContainerContext'
-import GlobalImporter from 'components/Global/GlobalImporter'
+import Header from './Header'
+import { GlobalContainer, ThemeImporter } from '@myorg/components'
 import Routes from './Routes'
-import ThemeImporter from 'components/Global/ThemeImporter'
-
-const Footer = Loadable({
-  loader: () => import('./Footer'),
-  loading: () => null
-})
-
-const Header = Loadable({
-  loader: () => import('./Header'),
-  loading: () => null
-})
 
 class App extends PureComponent {
   render() {
     return (
       <GlobalContainer>
-        <GlobalContainerContext.Consumer>
-          {context => (
-            <GlobalImporter
-              stringNames={['app', 'routes']}
-              render={({ strings }) => (
-                <ThemeImporter sassBase={true}>
-                  <BrowserRouter>
-                    <Fragment>
-                      <Header strings={strings} user={context.user} context={context} />
-                      <main role="main" className="main container-fluid">
-                        <Routes strings={strings} />
-                      </main>
-                      <Footer strings={strings} user={context.user} />
-                    </Fragment>
-                  </BrowserRouter>
-                </ThemeImporter>
-              )}
-            />
-          )}
-        </GlobalContainerContext.Consumer>
+        <ThemeImporter sassBase={true}>
+          <BrowserRouter>
+            <Fragment>
+              <Header />
+              <main role="main" className="main container-fluid">
+                <Routes />
+              </main>
+            </Fragment>
+          </BrowserRouter>
+        </ThemeImporter>
       </GlobalContainer>
     )
   }

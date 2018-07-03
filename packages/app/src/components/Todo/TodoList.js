@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 
-import todo from 'models/todo'
+import { todo } from '@myorg/models'
 import Todo from './Todo'
 
 const TodoList = ({ todos, onClick }) => (

@@ -2,27 +2,26 @@ import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import React, { PureComponent } from 'react'
 
-import GlobalContainerContext from './GlobalContainerContext'
-import LanguageSelector from 'components/Global/LanguageSelector'
-import ThemeSelector from 'components/Global/ThemeSelector'
-
 import {
   Collapse,
   DropdownItem,
   DropdownMenu,
   DropdownToggle,
+  GlobalContainerContext,
+  LanguageSelector,
+  LogIn,
   Modal,
-  ModalHeader,
   ModalBody,
+  ModalHeader,
   Nav,
   Navbar,
   NavbarBrand,
   NavbarToggler,
   NavItem,
   NavLink,
+  ThemeSelector,
   UncontrolledDropdown
-} from 'components/Common'
-import LogIn from 'components/Auth/LogIn'
+} from '@myorg/components'
 
 class Header extends PureComponent {
   state = {
@@ -61,16 +60,6 @@ class Header extends PureComponent {
                   <NavItem>
                     <NavLink tag={Link} to={this.props.strings.routes.about.path}>
                       {this.props.strings.routes.about.displayName}
-                    </NavLink>
-                  </NavItem>
-                  <NavItem>
-                    <NavLink tag={Link} to={this.props.strings.routes.styleGuide.path}>
-                      {this.props.strings.routes.styleGuide.displayName}
-                    </NavLink>
-                  </NavItem>
-                  <NavItem>
-                    <NavLink tag={Link} to={this.props.strings.routes.languageTester.path}>
-                      {this.props.strings.routes.languageTester.displayName}
                     </NavLink>
                   </NavItem>
                   <NavItem>
