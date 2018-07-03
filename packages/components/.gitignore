@@ -9,6 +9,8 @@
 # production
 /build
 /deploy/node_modules
+/deploy/package-lock.json
+/deploy/yarn.lock
 
 # misc
 .DS_Store
