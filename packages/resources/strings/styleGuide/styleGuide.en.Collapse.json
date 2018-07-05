@@ -1,0 +1,650 @@
+{
+  "children": {
+    "CollapseDefault": {
+      "title": "Collapse - Default",
+      "componentPropTypes": {
+        "Collapse": {
+          "isOpen": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "false",
+              "computed": false
+            }
+          },
+          "children": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "arrayOf",
+                  "value": {
+                    "name": "node"
+                  }
+                },
+                {
+                  "name": "node"
+                }
+              ]
+            },
+            "required": false,
+            "description": ""
+          },
+          "tag": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'div'",
+              "computed": false
+            }
+          },
+          "className": {
+            "type": {
+              "name": "node"
+            },
+            "required": false,
+            "description": ""
+          },
+          "navbar": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          },
+          "appear": {
+            "defaultValue": {
+              "value": "false",
+              "computed": false
+            },
+            "required": false
+          },
+          "enter": {
+            "defaultValue": {
+              "value": "true",
+              "computed": false
+            },
+            "required": false
+          },
+          "exit": {
+            "defaultValue": {
+              "value": "true",
+              "computed": false
+            },
+            "required": false
+          },
+          "timeout": {
+            "defaultValue": {
+              "value": "TransitionTimeouts.Collapse",
+              "computed": true
+            },
+            "required": false
+          }
+        },
+        "Button": {
+          "active": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "block": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "color": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'secondary'",
+              "computed": false
+            }
+          },
+          "disabled": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "outline": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "tag": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'button'",
+              "computed": false
+            }
+          },
+          "innerRef": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "object"
+                },
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": ""
+          },
+          "onClick": {
+            "type": {
+              "name": "func"
+            },
+            "required": false,
+            "description": ""
+          },
+          "size": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "children": {
+            "type": {
+              "name": "node"
+            },
+            "required": false,
+            "description": ""
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          }
+        },
+        "CardBody": {
+          "tag": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'div'",
+              "computed": false
+            }
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          }
+        },
+        "Card": {
+          "tag": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'div'",
+              "computed": false
+            }
+          },
+          "inverse": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "color": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "block": {
+            "type": {
+              "name": "custom",
+              "raw": "deprecated(PropTypes.bool, 'Please use the props \"body\"')"
+            },
+            "required": false,
+            "description": ""
+          },
+          "body": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "outline": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          }
+        }
+      }
+    },
+    "CollapseEvents": {
+      "title": "Collapse - Events",
+      "componentPropTypes": {
+        "Collapse": {
+          "isOpen": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "false",
+              "computed": false
+            }
+          },
+          "children": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "arrayOf",
+                  "value": {
+                    "name": "node"
+                  }
+                },
+                {
+                  "name": "node"
+                }
+              ]
+            },
+            "required": false,
+            "description": ""
+          },
+          "tag": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'div'",
+              "computed": false
+            }
+          },
+          "className": {
+            "type": {
+              "name": "node"
+            },
+            "required": false,
+            "description": ""
+          },
+          "navbar": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          },
+          "appear": {
+            "defaultValue": {
+              "value": "false",
+              "computed": false
+            },
+            "required": false
+          },
+          "enter": {
+            "defaultValue": {
+              "value": "true",
+              "computed": false
+            },
+            "required": false
+          },
+          "exit": {
+            "defaultValue": {
+              "value": "true",
+              "computed": false
+            },
+            "required": false
+          },
+          "timeout": {
+            "defaultValue": {
+              "value": "TransitionTimeouts.Collapse",
+              "computed": true
+            },
+            "required": false
+          }
+        },
+        "Button": {
+          "active": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "block": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "color": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'secondary'",
+              "computed": false
+            }
+          },
+          "disabled": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "outline": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "tag": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'button'",
+              "computed": false
+            }
+          },
+          "innerRef": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "object"
+                },
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": ""
+          },
+          "onClick": {
+            "type": {
+              "name": "func"
+            },
+            "required": false,
+            "description": ""
+          },
+          "size": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "children": {
+            "type": {
+              "name": "node"
+            },
+            "required": false,
+            "description": ""
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          }
+        },
+        "CardBody": {
+          "tag": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'div'",
+              "computed": false
+            }
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          }
+        },
+        "Card": {
+          "tag": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'div'",
+              "computed": false
+            }
+          },
+          "inverse": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "color": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "block": {
+            "type": {
+              "name": "custom",
+              "raw": "deprecated(PropTypes.bool, 'Please use the props \"body\"')"
+            },
+            "required": false,
+            "description": ""
+          },
+          "body": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "outline": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          }
+        }
+      }
+    }
+  }
+}

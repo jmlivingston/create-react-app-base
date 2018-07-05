@@ -3,11 +3,12 @@ const path = require('path')
 const prettier = require('prettier')
 const reactDocs = require('react-docgen')
 
-const codeDir = path.join(__dirname, '../src/styleGuide/code/components')
-const componentsDir = path.join(__dirname, '../src/styleGuide/examples/components')
-const componentsCommonDir = path.join(__dirname, '../src/components/Common')
+const styleGuideBase = path.join(__dirname, '../packages/style-guide/src/components/StyleGuide')
+const codeDir = path.join(styleGuideBase, '/code/components')
+const componentsDir = path.join(styleGuideBase, '/examples/components')
+const componentsCommonDir = path.join(__dirname, '../packages/components/src/components/Common')
 const getFilesFolders = require('./utility.js').getFilesFolders
-const styleGuideConfigFile = path.join(__dirname, '../src/strings/styleGuide/styleGuide.en.json')
+const styleGuideConfigFileBase = path.join(__dirname, '../packages/strings/styleGuide/styleGuide.en')
 
 const prettierConfig = {
   jsxBracketSameLine: true,
@@ -17,14 +18,14 @@ const prettierConfig = {
   parser: 'babylon'
 }
 
-const buildStyleGuide = () => {
+const getStyleGuideConfig = () => {
   return new Promise(resolve => {
     const rootFolders = getFilesFolders(componentsDir, false, 'folder')
 
     const getPropTypes = file => {
       const string = fs.readFileSync(file).toString()
       const lines = string.split('\n')
-      const line = lines.find(line => line.indexOf('@myorg/common') !== -1)
+      const line = lines.find(line => line.indexOf('@myorg/components') !== -1)
       const regex = /\{(.*?)\}/
       const importLine = regex.exec(line)
       const nonReactStrapComponents = ['DatePicker']
@@ -89,10 +90,6 @@ const buildStyleGuide = () => {
       }
     }, {})
 
-    // TODO: Figure out why prettier complains with this JSON. It is valid.
-    // styleGuide = prettier.format(styleGuide, prettierConfig)
-    const styleGuideFormatted = JSON.stringify(styleGuide, null, 2)
-    fs.writeFileSync(styleGuideConfigFile, styleGuideFormatted)
     resolve(styleGuide)
   })
 }
@@ -105,7 +102,7 @@ const buildCodeLoaders = styleGuideConfig => {
       exampleComponents.push(childKey)
       exampleComponentsCode += `const ${childKey} = Loadable({
         loading,
-        loader: () => import('styleGuide/examples/components/${key}/${childKey}')
+        loader: () => import('./${key}/${childKey}')
       })
 
       `
@@ -125,6 +122,17 @@ const buildCodeLoaders = styleGuideConfig => {
   fs.writeFileSync(path.join(componentsDir, 'index.js'), exampleComponentsCodeFormatted)
 }
 
-buildStyleGuide().then(styleGuideConfig => {
+getStyleGuideConfig().then(styleGuideConfig => {
+  Object.keys(styleGuideConfig).forEach(key => {
+    const styleGuideFormatted = JSON.stringify(styleGuideConfig[key], null, 2)
+    fs.writeFileSync(`${styleGuideConfigFileBase}.${key}.json`, styleGuideFormatted)
+  })
+  const keys = Object.keys(styleGuideConfig).reduce((acc, key) => {
+    return {
+      ...acc,
+      [key]: true
+    }
+  }, {})
+  fs.writeFileSync(`${styleGuideConfigFileBase}.keys.json`, JSON.stringify(keys, null, 2))
   buildCodeLoaders(styleGuideConfig)
 })

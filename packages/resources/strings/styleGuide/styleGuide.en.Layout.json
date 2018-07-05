@@ -1,0 +1,179 @@
+{
+  "children": {
+    "LayoutDefault": {
+      "title": "Layout - Default",
+      "componentPropTypes": {
+        "Container": {
+          "tag": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'div'",
+              "computed": false
+            }
+          },
+          "fluid": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          }
+        },
+        "Row": {
+          "tag": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'div'",
+              "computed": false
+            }
+          },
+          "noGutters": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          }
+        },
+        "Col": {
+          "tag": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'div'",
+              "computed": false
+            }
+          },
+          "xs": {
+            "type": {
+              "name": "custom",
+              "raw": "columnProps"
+            },
+            "required": false,
+            "description": ""
+          },
+          "sm": {
+            "type": {
+              "name": "custom",
+              "raw": "columnProps"
+            },
+            "required": false,
+            "description": ""
+          },
+          "md": {
+            "type": {
+              "name": "custom",
+              "raw": "columnProps"
+            },
+            "required": false,
+            "description": ""
+          },
+          "lg": {
+            "type": {
+              "name": "custom",
+              "raw": "columnProps"
+            },
+            "required": false,
+            "description": ""
+          },
+          "xl": {
+            "type": {
+              "name": "custom",
+              "raw": "columnProps"
+            },
+            "required": false,
+            "description": ""
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          },
+          "widths": {
+            "type": {
+              "name": "array"
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "['xs', 'sm', 'md', 'lg', 'xl']",
+              "computed": false
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "children": {
+    "TabsDefault": {
+      "title": "Tabs - Default",
+      "componentPropTypes": {}
+    }
+  }
+}

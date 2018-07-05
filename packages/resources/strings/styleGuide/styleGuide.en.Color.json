@@ -1,0 +1,8 @@
+{
+  "children": {
+    "ColorDefault": {
+      "title": "Color - Default",
+      "componentPropTypes": {}
+    }
+  }
+}

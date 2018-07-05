@@ -21,14 +21,16 @@ class GlobalImporterInnerComponent extends PureComponent {
     const defaultLanguage = APP.DEFAULT_PROFILE.language
     let strings = {}
     const defaultLanguagePromises = this.props.stringNames.map(stringName =>
-      import(`@myorg/strings/${this.props.appName}/${stringName}/${stringName}.${defaultLanguage}.json`)
+      import(`@myorg/resources/strings/${this.props.appName}/${stringName}/${stringName}.${defaultLanguage}.json`)
     )
 
     // Note: Default language always expected and fallback when user language not found.
     // If user language not found, we catch, but ignore error.
     // Stricter rules can be put in place if necessary
     const languagePromises = this.props.stringNames.map(stringName =>
-      import(`@myorg/strings/${this.props.appName}/${stringName}/${stringName}.${this.props.user.language}.json`).catch(() => {})
+      import(`@myorg/resources/strings/${this.props.appName}/${stringName}/${stringName}.${
+        this.props.user.language
+      }.json`).catch(() => {})
     )
 
     await Promise.all(defaultLanguagePromises).then(values => {

@@ -1,0 +1,428 @@
+{
+  "children": {
+    "MediaAlignment": {
+      "title": "Media - Alignment",
+      "componentPropTypes": {
+        "Media": {
+          "body": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "bottom": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "children": {
+            "type": {
+              "name": "node"
+            },
+            "required": false,
+            "description": ""
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          },
+          "heading": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "left": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "list": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "middle": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "object": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "right": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "tag": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": ""
+          },
+          "top": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          }
+        }
+      }
+    },
+    "MediaDefault": {
+      "title": "Media - Default",
+      "componentPropTypes": {
+        "Media": {
+          "body": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "bottom": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "children": {
+            "type": {
+              "name": "node"
+            },
+            "required": false,
+            "description": ""
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          },
+          "heading": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "left": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "list": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "middle": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "object": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "right": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "tag": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": ""
+          },
+          "top": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          }
+        }
+      }
+    },
+    "MediaList": {
+      "title": "Media - List",
+      "componentPropTypes": {
+        "Media": {
+          "body": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "bottom": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "children": {
+            "type": {
+              "name": "node"
+            },
+            "required": false,
+            "description": ""
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          },
+          "heading": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "left": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "list": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "middle": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "object": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "right": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "tag": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": ""
+          },
+          "top": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          }
+        }
+      }
+    },
+    "MediaNested": {
+      "title": "Media - Nested",
+      "componentPropTypes": {
+        "Media": {
+          "body": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "bottom": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "children": {
+            "type": {
+              "name": "node"
+            },
+            "required": false,
+            "description": ""
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          },
+          "heading": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "left": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "list": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "middle": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "object": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "right": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "tag": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": ""
+          },
+          "top": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,844 @@
+{
+  "children": {
+    "PaginationDefault": {
+      "title": "Pagination - Default",
+      "componentPropTypes": {
+        "Pagination": {
+          "children": {
+            "type": {
+              "name": "node"
+            },
+            "required": false,
+            "description": ""
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "listClassName": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          },
+          "size": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "tag": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'nav'",
+              "computed": false
+            }
+          },
+          "listTag": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'ul'",
+              "computed": false
+            }
+          },
+          "aria-label": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'pagination'",
+              "computed": false
+            }
+          }
+        },
+        "PaginationItem": {
+          "active": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "children": {
+            "type": {
+              "name": "node"
+            },
+            "required": false,
+            "description": ""
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          },
+          "disabled": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "tag": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'li'",
+              "computed": false
+            }
+          }
+        },
+        "PaginationLink": {
+          "aria-label": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "children": {
+            "type": {
+              "name": "node"
+            },
+            "required": false,
+            "description": ""
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          },
+          "next": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "previous": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "tag": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'a'",
+              "computed": false
+            }
+          }
+        }
+      }
+    },
+    "PaginationSizingLarge": {
+      "title": "Pagination - SizingLarge",
+      "componentPropTypes": {
+        "Pagination": {
+          "children": {
+            "type": {
+              "name": "node"
+            },
+            "required": false,
+            "description": ""
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "listClassName": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          },
+          "size": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "tag": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'nav'",
+              "computed": false
+            }
+          },
+          "listTag": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'ul'",
+              "computed": false
+            }
+          },
+          "aria-label": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'pagination'",
+              "computed": false
+            }
+          }
+        },
+        "PaginationItem": {
+          "active": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "children": {
+            "type": {
+              "name": "node"
+            },
+            "required": false,
+            "description": ""
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          },
+          "disabled": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "tag": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'li'",
+              "computed": false
+            }
+          }
+        },
+        "PaginationLink": {
+          "aria-label": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "children": {
+            "type": {
+              "name": "node"
+            },
+            "required": false,
+            "description": ""
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          },
+          "next": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "previous": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "tag": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'a'",
+              "computed": false
+            }
+          }
+        }
+      }
+    },
+    "PaginationSizingSmall": {
+      "title": "Pagination - SizingSmall",
+      "componentPropTypes": {
+        "Pagination": {
+          "children": {
+            "type": {
+              "name": "node"
+            },
+            "required": false,
+            "description": ""
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "listClassName": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          },
+          "size": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "tag": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'nav'",
+              "computed": false
+            }
+          },
+          "listTag": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'ul'",
+              "computed": false
+            }
+          },
+          "aria-label": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'pagination'",
+              "computed": false
+            }
+          }
+        },
+        "PaginationItem": {
+          "active": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "children": {
+            "type": {
+              "name": "node"
+            },
+            "required": false,
+            "description": ""
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          },
+          "disabled": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "tag": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'li'",
+              "computed": false
+            }
+          }
+        },
+        "PaginationLink": {
+          "aria-label": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "children": {
+            "type": {
+              "name": "node"
+            },
+            "required": false,
+            "description": ""
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          },
+          "next": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "previous": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "tag": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'a'",
+              "computed": false
+            }
+          }
+        }
+      }
+    },
+    "PaginationState": {
+      "title": "Pagination - State",
+      "componentPropTypes": {
+        "Pagination": {
+          "children": {
+            "type": {
+              "name": "node"
+            },
+            "required": false,
+            "description": ""
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "listClassName": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          },
+          "size": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "tag": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'nav'",
+              "computed": false
+            }
+          },
+          "listTag": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'ul'",
+              "computed": false
+            }
+          },
+          "aria-label": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'pagination'",
+              "computed": false
+            }
+          }
+        },
+        "PaginationItem": {
+          "active": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "children": {
+            "type": {
+              "name": "node"
+            },
+            "required": false,
+            "description": ""
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          },
+          "disabled": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "tag": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'li'",
+              "computed": false
+            }
+          }
+        },
+        "PaginationLink": {
+          "aria-label": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "children": {
+            "type": {
+              "name": "node"
+            },
+            "required": false,
+            "description": ""
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          },
+          "next": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "previous": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "tag": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'a'",
+              "computed": false
+            }
+          }
+        }
+      }
+    }
+  }
+}

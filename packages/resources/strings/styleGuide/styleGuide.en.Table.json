@@ -1,0 +1,128 @@
+{
+  "children": {
+    "TableDefault": {
+      "title": "Table - Default",
+      "componentPropTypes": {
+        "Table": {
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          },
+          "size": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "bordered": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "borderless": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "striped": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "inverse": {
+            "type": {
+              "name": "custom",
+              "raw": "deprecated(PropTypes.bool, 'Please use the prop \"dark\"')"
+            },
+            "required": false,
+            "description": ""
+          },
+          "dark": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "hover": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "responsive": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "bool"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": ""
+          },
+          "tag": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'table'",
+              "computed": false
+            }
+          },
+          "responsiveTag": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'div'",
+              "computed": false
+            }
+          }
+        }
+      }
+    }
+  }
+}

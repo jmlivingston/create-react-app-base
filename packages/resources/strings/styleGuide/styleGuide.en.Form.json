@@ -1,0 +1,5815 @@
+{
+  "children": {
+    "FormCustomControls": {
+      "title": "Form - CustomControls",
+      "componentPropTypes": {
+        "CustomInput": {
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "id": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "string"
+                },
+                {
+                  "name": "number"
+                }
+              ]
+            },
+            "required": true,
+            "description": ""
+          },
+          "type": {
+            "type": {
+              "name": "string"
+            },
+            "required": true,
+            "description": ""
+          },
+          "label": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "inline": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "valid": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "invalid": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "bsSize": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          },
+          "children": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "node"
+                },
+                {
+                  "name": "array"
+                },
+                {
+                  "name": "func"
+                }
+              ]
+            },
+            "required": false,
+            "description": ""
+          }
+        },
+        "Form": {
+          "children": {
+            "type": {
+              "name": "node"
+            },
+            "required": false,
+            "description": ""
+          },
+          "inline": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "tag": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'form'",
+              "computed": false
+            }
+          },
+          "innerRef": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "object"
+                },
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": ""
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          }
+        },
+        "FormGroup": {
+          "children": {
+            "type": {
+              "name": "node"
+            },
+            "required": false,
+            "description": ""
+          },
+          "row": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "check": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "inline": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "disabled": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "tag": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'div'",
+              "computed": false
+            }
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          }
+        },
+        "Label": {
+          "children": {
+            "type": {
+              "name": "node"
+            },
+            "required": false,
+            "description": ""
+          },
+          "hidden": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "check": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "size": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "for": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "tag": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'label'",
+              "computed": false
+            }
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          },
+          "xs": {
+            "type": {
+              "name": "custom",
+              "raw": "columnProps"
+            },
+            "required": false,
+            "description": ""
+          },
+          "sm": {
+            "type": {
+              "name": "custom",
+              "raw": "columnProps"
+            },
+            "required": false,
+            "description": ""
+          },
+          "md": {
+            "type": {
+              "name": "custom",
+              "raw": "columnProps"
+            },
+            "required": false,
+            "description": ""
+          },
+          "lg": {
+            "type": {
+              "name": "custom",
+              "raw": "columnProps"
+            },
+            "required": false,
+            "description": ""
+          },
+          "xl": {
+            "type": {
+              "name": "custom",
+              "raw": "columnProps"
+            },
+            "required": false,
+            "description": ""
+          },
+          "widths": {
+            "type": {
+              "name": "array"
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "['xs', 'sm', 'md', 'lg', 'xl']",
+              "computed": false
+            }
+          }
+        }
+      }
+    },
+    "FormDefault": {
+      "title": "Form - Default",
+      "componentPropTypes": {
+        "Button": {
+          "active": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "block": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "color": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'secondary'",
+              "computed": false
+            }
+          },
+          "disabled": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "outline": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "tag": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'button'",
+              "computed": false
+            }
+          },
+          "innerRef": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "object"
+                },
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": ""
+          },
+          "onClick": {
+            "type": {
+              "name": "func"
+            },
+            "required": false,
+            "description": ""
+          },
+          "size": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "children": {
+            "type": {
+              "name": "node"
+            },
+            "required": false,
+            "description": ""
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          }
+        },
+        "Form": {
+          "children": {
+            "type": {
+              "name": "node"
+            },
+            "required": false,
+            "description": ""
+          },
+          "inline": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "tag": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'form'",
+              "computed": false
+            }
+          },
+          "innerRef": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "object"
+                },
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": ""
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          }
+        },
+        "FormGroup": {
+          "children": {
+            "type": {
+              "name": "node"
+            },
+            "required": false,
+            "description": ""
+          },
+          "row": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "check": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "inline": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "disabled": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "tag": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'div'",
+              "computed": false
+            }
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          }
+        },
+        "Label": {
+          "children": {
+            "type": {
+              "name": "node"
+            },
+            "required": false,
+            "description": ""
+          },
+          "hidden": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "check": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "size": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "for": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "tag": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'label'",
+              "computed": false
+            }
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          },
+          "xs": {
+            "type": {
+              "name": "custom",
+              "raw": "columnProps"
+            },
+            "required": false,
+            "description": ""
+          },
+          "sm": {
+            "type": {
+              "name": "custom",
+              "raw": "columnProps"
+            },
+            "required": false,
+            "description": ""
+          },
+          "md": {
+            "type": {
+              "name": "custom",
+              "raw": "columnProps"
+            },
+            "required": false,
+            "description": ""
+          },
+          "lg": {
+            "type": {
+              "name": "custom",
+              "raw": "columnProps"
+            },
+            "required": false,
+            "description": ""
+          },
+          "xl": {
+            "type": {
+              "name": "custom",
+              "raw": "columnProps"
+            },
+            "required": false,
+            "description": ""
+          },
+          "widths": {
+            "type": {
+              "name": "array"
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "['xs', 'sm', 'md', 'lg', 'xl']",
+              "computed": false
+            }
+          }
+        },
+        "Input": {
+          "children": {
+            "type": {
+              "name": "node"
+            },
+            "required": false,
+            "description": ""
+          },
+          "type": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'text'",
+              "computed": false
+            }
+          },
+          "size": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "bsSize": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "state": {
+            "type": {
+              "name": "custom",
+              "raw": "deprecated(PropTypes.string, 'Please use the props \"valid\" and \"invalid\" to indicate the state.')"
+            },
+            "required": false,
+            "description": ""
+          },
+          "valid": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "invalid": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "tag": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": ""
+          },
+          "innerRef": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "object"
+                },
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": ""
+          },
+          "static": {
+            "type": {
+              "name": "custom",
+              "raw": "deprecated(PropTypes.bool, 'Please use the prop \"plaintext\"')"
+            },
+            "required": false,
+            "description": ""
+          },
+          "plaintext": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "addon": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          }
+        },
+        "FormText": {
+          "children": {
+            "type": {
+              "name": "node"
+            },
+            "required": false,
+            "description": ""
+          },
+          "inline": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "tag": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'small'",
+              "computed": false
+            }
+          },
+          "color": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'muted'",
+              "computed": false
+            }
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          }
+        }
+      }
+    },
+    "FormFeedbackDefault": {
+      "title": "Form - FeedbackDefault",
+      "componentPropTypes": {
+        "Form": {
+          "children": {
+            "type": {
+              "name": "node"
+            },
+            "required": false,
+            "description": ""
+          },
+          "inline": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "tag": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'form'",
+              "computed": false
+            }
+          },
+          "innerRef": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "object"
+                },
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": ""
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          }
+        },
+        "FormGroup": {
+          "children": {
+            "type": {
+              "name": "node"
+            },
+            "required": false,
+            "description": ""
+          },
+          "row": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "check": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "inline": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "disabled": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "tag": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'div'",
+              "computed": false
+            }
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          }
+        },
+        "Label": {
+          "children": {
+            "type": {
+              "name": "node"
+            },
+            "required": false,
+            "description": ""
+          },
+          "hidden": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "check": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "size": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "for": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "tag": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'label'",
+              "computed": false
+            }
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          },
+          "xs": {
+            "type": {
+              "name": "custom",
+              "raw": "columnProps"
+            },
+            "required": false,
+            "description": ""
+          },
+          "sm": {
+            "type": {
+              "name": "custom",
+              "raw": "columnProps"
+            },
+            "required": false,
+            "description": ""
+          },
+          "md": {
+            "type": {
+              "name": "custom",
+              "raw": "columnProps"
+            },
+            "required": false,
+            "description": ""
+          },
+          "lg": {
+            "type": {
+              "name": "custom",
+              "raw": "columnProps"
+            },
+            "required": false,
+            "description": ""
+          },
+          "xl": {
+            "type": {
+              "name": "custom",
+              "raw": "columnProps"
+            },
+            "required": false,
+            "description": ""
+          },
+          "widths": {
+            "type": {
+              "name": "array"
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "['xs', 'sm', 'md', 'lg', 'xl']",
+              "computed": false
+            }
+          }
+        },
+        "Input": {
+          "children": {
+            "type": {
+              "name": "node"
+            },
+            "required": false,
+            "description": ""
+          },
+          "type": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'text'",
+              "computed": false
+            }
+          },
+          "size": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "bsSize": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "state": {
+            "type": {
+              "name": "custom",
+              "raw": "deprecated(PropTypes.string, 'Please use the props \"valid\" and \"invalid\" to indicate the state.')"
+            },
+            "required": false,
+            "description": ""
+          },
+          "valid": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "invalid": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "tag": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": ""
+          },
+          "innerRef": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "object"
+                },
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": ""
+          },
+          "static": {
+            "type": {
+              "name": "custom",
+              "raw": "deprecated(PropTypes.bool, 'Please use the prop \"plaintext\"')"
+            },
+            "required": false,
+            "description": ""
+          },
+          "plaintext": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "addon": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          }
+        },
+        "FormFeedback": {
+          "children": {
+            "type": {
+              "name": "node"
+            },
+            "required": false,
+            "description": ""
+          },
+          "tag": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'div'",
+              "computed": false
+            }
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          },
+          "valid": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "undefined",
+              "computed": true
+            }
+          }
+        },
+        "FormText": {
+          "children": {
+            "type": {
+              "name": "node"
+            },
+            "required": false,
+            "description": ""
+          },
+          "inline": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "tag": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'small'",
+              "computed": false
+            }
+          },
+          "color": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'muted'",
+              "computed": false
+            }
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          }
+        }
+      }
+    },
+    "FormGrid": {
+      "title": "Form - Grid",
+      "componentPropTypes": {
+        "Col": {
+          "tag": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'div'",
+              "computed": false
+            }
+          },
+          "xs": {
+            "type": {
+              "name": "custom",
+              "raw": "columnProps"
+            },
+            "required": false,
+            "description": ""
+          },
+          "sm": {
+            "type": {
+              "name": "custom",
+              "raw": "columnProps"
+            },
+            "required": false,
+            "description": ""
+          },
+          "md": {
+            "type": {
+              "name": "custom",
+              "raw": "columnProps"
+            },
+            "required": false,
+            "description": ""
+          },
+          "lg": {
+            "type": {
+              "name": "custom",
+              "raw": "columnProps"
+            },
+            "required": false,
+            "description": ""
+          },
+          "xl": {
+            "type": {
+              "name": "custom",
+              "raw": "columnProps"
+            },
+            "required": false,
+            "description": ""
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          },
+          "widths": {
+            "type": {
+              "name": "array"
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "['xs', 'sm', 'md', 'lg', 'xl']",
+              "computed": false
+            }
+          }
+        },
+        "Button": {
+          "active": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "block": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "color": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'secondary'",
+              "computed": false
+            }
+          },
+          "disabled": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "outline": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "tag": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'button'",
+              "computed": false
+            }
+          },
+          "innerRef": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "object"
+                },
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": ""
+          },
+          "onClick": {
+            "type": {
+              "name": "func"
+            },
+            "required": false,
+            "description": ""
+          },
+          "size": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "children": {
+            "type": {
+              "name": "node"
+            },
+            "required": false,
+            "description": ""
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          }
+        },
+        "Form": {
+          "children": {
+            "type": {
+              "name": "node"
+            },
+            "required": false,
+            "description": ""
+          },
+          "inline": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "tag": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'form'",
+              "computed": false
+            }
+          },
+          "innerRef": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "object"
+                },
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": ""
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          }
+        },
+        "FormGroup": {
+          "children": {
+            "type": {
+              "name": "node"
+            },
+            "required": false,
+            "description": ""
+          },
+          "row": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "check": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "inline": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "disabled": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "tag": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'div'",
+              "computed": false
+            }
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          }
+        },
+        "Label": {
+          "children": {
+            "type": {
+              "name": "node"
+            },
+            "required": false,
+            "description": ""
+          },
+          "hidden": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "check": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "size": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "for": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "tag": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'label'",
+              "computed": false
+            }
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          },
+          "xs": {
+            "type": {
+              "name": "custom",
+              "raw": "columnProps"
+            },
+            "required": false,
+            "description": ""
+          },
+          "sm": {
+            "type": {
+              "name": "custom",
+              "raw": "columnProps"
+            },
+            "required": false,
+            "description": ""
+          },
+          "md": {
+            "type": {
+              "name": "custom",
+              "raw": "columnProps"
+            },
+            "required": false,
+            "description": ""
+          },
+          "lg": {
+            "type": {
+              "name": "custom",
+              "raw": "columnProps"
+            },
+            "required": false,
+            "description": ""
+          },
+          "xl": {
+            "type": {
+              "name": "custom",
+              "raw": "columnProps"
+            },
+            "required": false,
+            "description": ""
+          },
+          "widths": {
+            "type": {
+              "name": "array"
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "['xs', 'sm', 'md', 'lg', 'xl']",
+              "computed": false
+            }
+          }
+        },
+        "Input": {
+          "children": {
+            "type": {
+              "name": "node"
+            },
+            "required": false,
+            "description": ""
+          },
+          "type": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'text'",
+              "computed": false
+            }
+          },
+          "size": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "bsSize": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "state": {
+            "type": {
+              "name": "custom",
+              "raw": "deprecated(PropTypes.string, 'Please use the props \"valid\" and \"invalid\" to indicate the state.')"
+            },
+            "required": false,
+            "description": ""
+          },
+          "valid": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "invalid": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "tag": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": ""
+          },
+          "innerRef": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "object"
+                },
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": ""
+          },
+          "static": {
+            "type": {
+              "name": "custom",
+              "raw": "deprecated(PropTypes.bool, 'Please use the prop \"plaintext\"')"
+            },
+            "required": false,
+            "description": ""
+          },
+          "plaintext": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "addon": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          }
+        },
+        "FormText": {
+          "children": {
+            "type": {
+              "name": "node"
+            },
+            "required": false,
+            "description": ""
+          },
+          "inline": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "tag": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'small'",
+              "computed": false
+            }
+          },
+          "color": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'muted'",
+              "computed": false
+            }
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          }
+        }
+      }
+    },
+    "FormInline": {
+      "title": "Form - Inline",
+      "componentPropTypes": {
+        "Button": {
+          "active": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "block": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "color": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'secondary'",
+              "computed": false
+            }
+          },
+          "disabled": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "outline": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "tag": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'button'",
+              "computed": false
+            }
+          },
+          "innerRef": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "object"
+                },
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": ""
+          },
+          "onClick": {
+            "type": {
+              "name": "func"
+            },
+            "required": false,
+            "description": ""
+          },
+          "size": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "children": {
+            "type": {
+              "name": "node"
+            },
+            "required": false,
+            "description": ""
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          }
+        },
+        "Form": {
+          "children": {
+            "type": {
+              "name": "node"
+            },
+            "required": false,
+            "description": ""
+          },
+          "inline": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "tag": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'form'",
+              "computed": false
+            }
+          },
+          "innerRef": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "object"
+                },
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": ""
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          }
+        },
+        "FormGroup": {
+          "children": {
+            "type": {
+              "name": "node"
+            },
+            "required": false,
+            "description": ""
+          },
+          "row": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "check": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "inline": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "disabled": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "tag": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'div'",
+              "computed": false
+            }
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          }
+        },
+        "Label": {
+          "children": {
+            "type": {
+              "name": "node"
+            },
+            "required": false,
+            "description": ""
+          },
+          "hidden": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "check": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "size": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "for": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "tag": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'label'",
+              "computed": false
+            }
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          },
+          "xs": {
+            "type": {
+              "name": "custom",
+              "raw": "columnProps"
+            },
+            "required": false,
+            "description": ""
+          },
+          "sm": {
+            "type": {
+              "name": "custom",
+              "raw": "columnProps"
+            },
+            "required": false,
+            "description": ""
+          },
+          "md": {
+            "type": {
+              "name": "custom",
+              "raw": "columnProps"
+            },
+            "required": false,
+            "description": ""
+          },
+          "lg": {
+            "type": {
+              "name": "custom",
+              "raw": "columnProps"
+            },
+            "required": false,
+            "description": ""
+          },
+          "xl": {
+            "type": {
+              "name": "custom",
+              "raw": "columnProps"
+            },
+            "required": false,
+            "description": ""
+          },
+          "widths": {
+            "type": {
+              "name": "array"
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "['xs', 'sm', 'md', 'lg', 'xl']",
+              "computed": false
+            }
+          }
+        },
+        "Input": {
+          "children": {
+            "type": {
+              "name": "node"
+            },
+            "required": false,
+            "description": ""
+          },
+          "type": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'text'",
+              "computed": false
+            }
+          },
+          "size": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "bsSize": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "state": {
+            "type": {
+              "name": "custom",
+              "raw": "deprecated(PropTypes.string, 'Please use the props \"valid\" and \"invalid\" to indicate the state.')"
+            },
+            "required": false,
+            "description": ""
+          },
+          "valid": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "invalid": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "tag": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": ""
+          },
+          "innerRef": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "object"
+                },
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": ""
+          },
+          "static": {
+            "type": {
+              "name": "custom",
+              "raw": "deprecated(PropTypes.bool, 'Please use the prop \"plaintext\"')"
+            },
+            "required": false,
+            "description": ""
+          },
+          "plaintext": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "addon": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          }
+        }
+      }
+    },
+    "FormInlineCheckboxes": {
+      "title": "Form - InlineCheckboxes",
+      "componentPropTypes": {
+        "Form": {
+          "children": {
+            "type": {
+              "name": "node"
+            },
+            "required": false,
+            "description": ""
+          },
+          "inline": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "tag": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'form'",
+              "computed": false
+            }
+          },
+          "innerRef": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "object"
+                },
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": ""
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          }
+        },
+        "FormGroup": {
+          "children": {
+            "type": {
+              "name": "node"
+            },
+            "required": false,
+            "description": ""
+          },
+          "row": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "check": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "inline": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "disabled": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "tag": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'div'",
+              "computed": false
+            }
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          }
+        },
+        "Label": {
+          "children": {
+            "type": {
+              "name": "node"
+            },
+            "required": false,
+            "description": ""
+          },
+          "hidden": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "check": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "size": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "for": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "tag": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'label'",
+              "computed": false
+            }
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          },
+          "xs": {
+            "type": {
+              "name": "custom",
+              "raw": "columnProps"
+            },
+            "required": false,
+            "description": ""
+          },
+          "sm": {
+            "type": {
+              "name": "custom",
+              "raw": "columnProps"
+            },
+            "required": false,
+            "description": ""
+          },
+          "md": {
+            "type": {
+              "name": "custom",
+              "raw": "columnProps"
+            },
+            "required": false,
+            "description": ""
+          },
+          "lg": {
+            "type": {
+              "name": "custom",
+              "raw": "columnProps"
+            },
+            "required": false,
+            "description": ""
+          },
+          "xl": {
+            "type": {
+              "name": "custom",
+              "raw": "columnProps"
+            },
+            "required": false,
+            "description": ""
+          },
+          "widths": {
+            "type": {
+              "name": "array"
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "['xs', 'sm', 'md', 'lg', 'xl']",
+              "computed": false
+            }
+          }
+        },
+        "Input": {
+          "children": {
+            "type": {
+              "name": "node"
+            },
+            "required": false,
+            "description": ""
+          },
+          "type": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'text'",
+              "computed": false
+            }
+          },
+          "size": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "bsSize": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "state": {
+            "type": {
+              "name": "custom",
+              "raw": "deprecated(PropTypes.string, 'Please use the props \"valid\" and \"invalid\" to indicate the state.')"
+            },
+            "required": false,
+            "description": ""
+          },
+          "valid": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "invalid": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "tag": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": ""
+          },
+          "innerRef": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "object"
+                },
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": ""
+          },
+          "static": {
+            "type": {
+              "name": "custom",
+              "raw": "deprecated(PropTypes.bool, 'Please use the prop \"plaintext\"')"
+            },
+            "required": false,
+            "description": ""
+          },
+          "plaintext": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "addon": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          }
+        }
+      }
+    },
+    "FormInputGridSizing": {
+      "title": "Form - InputGridSizing",
+      "componentPropTypes": {
+        "Col": {
+          "tag": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'div'",
+              "computed": false
+            }
+          },
+          "xs": {
+            "type": {
+              "name": "custom",
+              "raw": "columnProps"
+            },
+            "required": false,
+            "description": ""
+          },
+          "sm": {
+            "type": {
+              "name": "custom",
+              "raw": "columnProps"
+            },
+            "required": false,
+            "description": ""
+          },
+          "md": {
+            "type": {
+              "name": "custom",
+              "raw": "columnProps"
+            },
+            "required": false,
+            "description": ""
+          },
+          "lg": {
+            "type": {
+              "name": "custom",
+              "raw": "columnProps"
+            },
+            "required": false,
+            "description": ""
+          },
+          "xl": {
+            "type": {
+              "name": "custom",
+              "raw": "columnProps"
+            },
+            "required": false,
+            "description": ""
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          },
+          "widths": {
+            "type": {
+              "name": "array"
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "['xs', 'sm', 'md', 'lg', 'xl']",
+              "computed": false
+            }
+          }
+        },
+        "Form": {
+          "children": {
+            "type": {
+              "name": "node"
+            },
+            "required": false,
+            "description": ""
+          },
+          "inline": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "tag": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'form'",
+              "computed": false
+            }
+          },
+          "innerRef": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "object"
+                },
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": ""
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          }
+        },
+        "FormGroup": {
+          "children": {
+            "type": {
+              "name": "node"
+            },
+            "required": false,
+            "description": ""
+          },
+          "row": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "check": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "inline": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "disabled": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "tag": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'div'",
+              "computed": false
+            }
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          }
+        },
+        "Label": {
+          "children": {
+            "type": {
+              "name": "node"
+            },
+            "required": false,
+            "description": ""
+          },
+          "hidden": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "check": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "size": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "for": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "tag": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'label'",
+              "computed": false
+            }
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          },
+          "xs": {
+            "type": {
+              "name": "custom",
+              "raw": "columnProps"
+            },
+            "required": false,
+            "description": ""
+          },
+          "sm": {
+            "type": {
+              "name": "custom",
+              "raw": "columnProps"
+            },
+            "required": false,
+            "description": ""
+          },
+          "md": {
+            "type": {
+              "name": "custom",
+              "raw": "columnProps"
+            },
+            "required": false,
+            "description": ""
+          },
+          "lg": {
+            "type": {
+              "name": "custom",
+              "raw": "columnProps"
+            },
+            "required": false,
+            "description": ""
+          },
+          "xl": {
+            "type": {
+              "name": "custom",
+              "raw": "columnProps"
+            },
+            "required": false,
+            "description": ""
+          },
+          "widths": {
+            "type": {
+              "name": "array"
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "['xs', 'sm', 'md', 'lg', 'xl']",
+              "computed": false
+            }
+          }
+        },
+        "Input": {
+          "children": {
+            "type": {
+              "name": "node"
+            },
+            "required": false,
+            "description": ""
+          },
+          "type": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'text'",
+              "computed": false
+            }
+          },
+          "size": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "bsSize": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "state": {
+            "type": {
+              "name": "custom",
+              "raw": "deprecated(PropTypes.string, 'Please use the props \"valid\" and \"invalid\" to indicate the state.')"
+            },
+            "required": false,
+            "description": ""
+          },
+          "valid": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "invalid": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "tag": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": ""
+          },
+          "innerRef": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "object"
+                },
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": ""
+          },
+          "static": {
+            "type": {
+              "name": "custom",
+              "raw": "deprecated(PropTypes.bool, 'Please use the prop \"plaintext\"')"
+            },
+            "required": false,
+            "description": ""
+          },
+          "plaintext": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "addon": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          }
+        }
+      }
+    },
+    "FormInputGroupAddon": {
+      "title": "Form - InputGroupAddon",
+      "componentPropTypes": {
+        "InputGroup": {
+          "tag": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'div'",
+              "computed": false
+            }
+          },
+          "size": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          }
+        },
+        "InputGroupText": {
+          "tag": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'span'",
+              "computed": false
+            }
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          }
+        },
+        "InputGroupAddon": {
+          "tag": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'div'",
+              "computed": false
+            }
+          },
+          "addonType": {
+            "type": {
+              "name": "enum",
+              "value": [
+                {
+                  "value": "'prepend'",
+                  "computed": false
+                },
+                {
+                  "value": "'append'",
+                  "computed": false
+                }
+              ]
+            },
+            "required": true,
+            "description": ""
+          },
+          "children": {
+            "type": {
+              "name": "node"
+            },
+            "required": false,
+            "description": ""
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          }
+        },
+        "Input": {
+          "children": {
+            "type": {
+              "name": "node"
+            },
+            "required": false,
+            "description": ""
+          },
+          "type": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'text'",
+              "computed": false
+            }
+          },
+          "size": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "bsSize": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "state": {
+            "type": {
+              "name": "custom",
+              "raw": "deprecated(PropTypes.string, 'Please use the props \"valid\" and \"invalid\" to indicate the state.')"
+            },
+            "required": false,
+            "description": ""
+          },
+          "valid": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "invalid": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "tag": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": ""
+          },
+          "innerRef": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "object"
+                },
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": ""
+          },
+          "static": {
+            "type": {
+              "name": "custom",
+              "raw": "deprecated(PropTypes.bool, 'Please use the prop \"plaintext\"')"
+            },
+            "required": false,
+            "description": ""
+          },
+          "plaintext": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "addon": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          }
+        }
+      }
+    },
+    "FormInputGroupButton": {
+      "title": "Form - InputGroupButton",
+      "componentPropTypes": {}
+    },
+    "FormInputGroupButtonDropdown": {
+      "title": "Form - InputGroupButtonDropdown",
+      "componentPropTypes": {
+        "InputGroupButtonDropdown": {
+          "addonType": {
+            "type": {
+              "name": "enum",
+              "value": [
+                {
+                  "value": "'prepend'",
+                  "computed": false
+                },
+                {
+                  "value": "'append'",
+                  "computed": false
+                }
+              ]
+            },
+            "required": true,
+            "description": ""
+          },
+          "children": {
+            "type": {
+              "name": "node"
+            },
+            "required": false,
+            "description": ""
+          }
+        },
+        "DropdownToggle": {
+          "caret": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "color": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'secondary'",
+              "computed": false
+            }
+          },
+          "children": {
+            "type": {
+              "name": "node"
+            },
+            "required": false,
+            "description": ""
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          },
+          "disabled": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "onClick": {
+            "type": {
+              "name": "func"
+            },
+            "required": false,
+            "description": ""
+          },
+          "aria-haspopup": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "true",
+              "computed": false
+            }
+          },
+          "split": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "tag": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": ""
+          },
+          "nav": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          }
+        },
+        "DropdownMenu": {
+          "tag": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'div'",
+              "computed": false
+            }
+          },
+          "children": {
+            "type": {
+              "name": "node"
+            },
+            "required": true,
+            "description": ""
+          },
+          "right": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "flip": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "true",
+              "computed": false
+            }
+          },
+          "modifiers": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          },
+          "persist": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          }
+        },
+        "DropdownItem": {
+          "children": {
+            "type": {
+              "name": "node"
+            },
+            "required": false,
+            "description": ""
+          },
+          "active": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "disabled": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "divider": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "tag": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'button'",
+              "computed": false
+            }
+          },
+          "header": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "onClick": {
+            "type": {
+              "name": "func"
+            },
+            "required": false,
+            "description": ""
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          },
+          "toggle": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "true",
+              "computed": false
+            }
+          }
+        }
+      }
+    },
+    "FormInputGroupButtonShorthand": {
+      "title": "Form - InputGroupButtonShorthand",
+      "componentPropTypes": {
+        "InputGroup": {
+          "tag": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'div'",
+              "computed": false
+            }
+          },
+          "size": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          }
+        },
+        "InputGroupAddon": {
+          "tag": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'div'",
+              "computed": false
+            }
+          },
+          "addonType": {
+            "type": {
+              "name": "enum",
+              "value": [
+                {
+                  "value": "'prepend'",
+                  "computed": false
+                },
+                {
+                  "value": "'append'",
+                  "computed": false
+                }
+              ]
+            },
+            "required": true,
+            "description": ""
+          },
+          "children": {
+            "type": {
+              "name": "node"
+            },
+            "required": false,
+            "description": ""
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          }
+        },
+        "Button": {
+          "active": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "block": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "color": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'secondary'",
+              "computed": false
+            }
+          },
+          "disabled": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "outline": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "tag": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'button'",
+              "computed": false
+            }
+          },
+          "innerRef": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "object"
+                },
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": ""
+          },
+          "onClick": {
+            "type": {
+              "name": "func"
+            },
+            "required": false,
+            "description": ""
+          },
+          "size": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "children": {
+            "type": {
+              "name": "node"
+            },
+            "required": false,
+            "description": ""
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          }
+        },
+        "Input": {
+          "children": {
+            "type": {
+              "name": "node"
+            },
+            "required": false,
+            "description": ""
+          },
+          "type": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'text'",
+              "computed": false
+            }
+          },
+          "size": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "bsSize": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "state": {
+            "type": {
+              "name": "custom",
+              "raw": "deprecated(PropTypes.string, 'Please use the props \"valid\" and \"invalid\" to indicate the state.')"
+            },
+            "required": false,
+            "description": ""
+          },
+          "valid": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "invalid": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "tag": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": ""
+          },
+          "innerRef": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "object"
+                },
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": ""
+          },
+          "static": {
+            "type": {
+              "name": "custom",
+              "raw": "deprecated(PropTypes.bool, 'Please use the prop \"plaintext\"')"
+            },
+            "required": false,
+            "description": ""
+          },
+          "plaintext": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "addon": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          }
+        }
+      }
+    },
+    "FormInputGroupOverview": {
+      "title": "Form - InputGroupOverview",
+      "componentPropTypes": {
+        "InputGroup": {
+          "tag": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'div'",
+              "computed": false
+            }
+          },
+          "size": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          }
+        },
+        "InputGroupAddon": {
+          "tag": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'div'",
+              "computed": false
+            }
+          },
+          "addonType": {
+            "type": {
+              "name": "enum",
+              "value": [
+                {
+                  "value": "'prepend'",
+                  "computed": false
+                },
+                {
+                  "value": "'append'",
+                  "computed": false
+                }
+              ]
+            },
+            "required": true,
+            "description": ""
+          },
+          "children": {
+            "type": {
+              "name": "node"
+            },
+            "required": false,
+            "description": ""
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          }
+        },
+        "InputGroupText": {
+          "tag": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'span'",
+              "computed": false
+            }
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          }
+        },
+        "Input": {
+          "children": {
+            "type": {
+              "name": "node"
+            },
+            "required": false,
+            "description": ""
+          },
+          "type": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'text'",
+              "computed": false
+            }
+          },
+          "size": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "bsSize": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "state": {
+            "type": {
+              "name": "custom",
+              "raw": "deprecated(PropTypes.string, 'Please use the props \"valid\" and \"invalid\" to indicate the state.')"
+            },
+            "required": false,
+            "description": ""
+          },
+          "valid": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "invalid": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "tag": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": ""
+          },
+          "innerRef": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "object"
+                },
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": ""
+          },
+          "static": {
+            "type": {
+              "name": "custom",
+              "raw": "deprecated(PropTypes.bool, 'Please use the prop \"plaintext\"')"
+            },
+            "required": false,
+            "description": ""
+          },
+          "plaintext": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "addon": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          }
+        }
+      }
+    },
+    "FormInputGroupSizing": {
+      "title": "Form - InputGroupSizing",
+      "componentPropTypes": {
+        "InputGroup": {
+          "tag": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'div'",
+              "computed": false
+            }
+          },
+          "size": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          }
+        },
+        "InputGroupAddon": {
+          "tag": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'div'",
+              "computed": false
+            }
+          },
+          "addonType": {
+            "type": {
+              "name": "enum",
+              "value": [
+                {
+                  "value": "'prepend'",
+                  "computed": false
+                },
+                {
+                  "value": "'append'",
+                  "computed": false
+                }
+              ]
+            },
+            "required": true,
+            "description": ""
+          },
+          "children": {
+            "type": {
+              "name": "node"
+            },
+            "required": false,
+            "description": ""
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          }
+        },
+        "Input": {
+          "children": {
+            "type": {
+              "name": "node"
+            },
+            "required": false,
+            "description": ""
+          },
+          "type": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'text'",
+              "computed": false
+            }
+          },
+          "size": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "bsSize": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "state": {
+            "type": {
+              "name": "custom",
+              "raw": "deprecated(PropTypes.string, 'Please use the props \"valid\" and \"invalid\" to indicate the state.')"
+            },
+            "required": false,
+            "description": ""
+          },
+          "valid": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "invalid": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "tag": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": ""
+          },
+          "innerRef": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "object"
+                },
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": ""
+          },
+          "static": {
+            "type": {
+              "name": "custom",
+              "raw": "deprecated(PropTypes.bool, 'Please use the prop \"plaintext\"')"
+            },
+            "required": false,
+            "description": ""
+          },
+          "plaintext": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "addon": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          }
+        }
+      }
+    },
+    "FormInputSizing": {
+      "title": "Form - InputSizing",
+      "componentPropTypes": {
+        "Form": {
+          "children": {
+            "type": {
+              "name": "node"
+            },
+            "required": false,
+            "description": ""
+          },
+          "inline": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "tag": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'form'",
+              "computed": false
+            }
+          },
+          "innerRef": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "object"
+                },
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": ""
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          }
+        },
+        "Input": {
+          "children": {
+            "type": {
+              "name": "node"
+            },
+            "required": false,
+            "description": ""
+          },
+          "type": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'text'",
+              "computed": false
+            }
+          },
+          "size": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "bsSize": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "state": {
+            "type": {
+              "name": "custom",
+              "raw": "deprecated(PropTypes.string, 'Please use the props \"valid\" and \"invalid\" to indicate the state.')"
+            },
+            "required": false,
+            "description": ""
+          },
+          "valid": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "invalid": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "tag": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": ""
+          },
+          "innerRef": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "object"
+                },
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": ""
+          },
+          "static": {
+            "type": {
+              "name": "custom",
+              "raw": "deprecated(PropTypes.bool, 'Please use the prop \"plaintext\"')"
+            },
+            "required": false,
+            "description": ""
+          },
+          "plaintext": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "addon": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          }
+        }
+      }
+    },
+    "FormInputType": {
+      "title": "Form - InputType",
+      "componentPropTypes": {
+        "Form": {
+          "children": {
+            "type": {
+              "name": "node"
+            },
+            "required": false,
+            "description": ""
+          },
+          "inline": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "tag": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'form'",
+              "computed": false
+            }
+          },
+          "innerRef": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "object"
+                },
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": ""
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          }
+        },
+        "FormGroup": {
+          "children": {
+            "type": {
+              "name": "node"
+            },
+            "required": false,
+            "description": ""
+          },
+          "row": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "check": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "inline": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "disabled": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "tag": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'div'",
+              "computed": false
+            }
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          }
+        },
+        "Label": {
+          "children": {
+            "type": {
+              "name": "node"
+            },
+            "required": false,
+            "description": ""
+          },
+          "hidden": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "check": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "size": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "for": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "tag": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'label'",
+              "computed": false
+            }
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          },
+          "xs": {
+            "type": {
+              "name": "custom",
+              "raw": "columnProps"
+            },
+            "required": false,
+            "description": ""
+          },
+          "sm": {
+            "type": {
+              "name": "custom",
+              "raw": "columnProps"
+            },
+            "required": false,
+            "description": ""
+          },
+          "md": {
+            "type": {
+              "name": "custom",
+              "raw": "columnProps"
+            },
+            "required": false,
+            "description": ""
+          },
+          "lg": {
+            "type": {
+              "name": "custom",
+              "raw": "columnProps"
+            },
+            "required": false,
+            "description": ""
+          },
+          "xl": {
+            "type": {
+              "name": "custom",
+              "raw": "columnProps"
+            },
+            "required": false,
+            "description": ""
+          },
+          "widths": {
+            "type": {
+              "name": "array"
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "['xs', 'sm', 'md', 'lg', 'xl']",
+              "computed": false
+            }
+          }
+        },
+        "Input": {
+          "children": {
+            "type": {
+              "name": "node"
+            },
+            "required": false,
+            "description": ""
+          },
+          "type": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'text'",
+              "computed": false
+            }
+          },
+          "size": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "bsSize": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "state": {
+            "type": {
+              "name": "custom",
+              "raw": "deprecated(PropTypes.string, 'Please use the props \"valid\" and \"invalid\" to indicate the state.')"
+            },
+            "required": false,
+            "description": ""
+          },
+          "valid": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "invalid": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "tag": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": ""
+          },
+          "innerRef": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "object"
+                },
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": ""
+          },
+          "static": {
+            "type": {
+              "name": "custom",
+              "raw": "deprecated(PropTypes.bool, 'Please use the prop \"plaintext\"')"
+            },
+            "required": false,
+            "description": ""
+          },
+          "plaintext": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "addon": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          }
+        },
+        "FormText": {
+          "children": {
+            "type": {
+              "name": "node"
+            },
+            "required": false,
+            "description": ""
+          },
+          "inline": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "tag": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'small'",
+              "computed": false
+            }
+          },
+          "color": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'muted'",
+              "computed": false
+            }
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          }
+        }
+      }
+    },
+    "FormLabelHidden": {
+      "title": "Form - LabelHidden",
+      "componentPropTypes": {
+        "Button": {
+          "active": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "block": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "color": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'secondary'",
+              "computed": false
+            }
+          },
+          "disabled": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "outline": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "tag": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'button'",
+              "computed": false
+            }
+          },
+          "innerRef": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "object"
+                },
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": ""
+          },
+          "onClick": {
+            "type": {
+              "name": "func"
+            },
+            "required": false,
+            "description": ""
+          },
+          "size": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "children": {
+            "type": {
+              "name": "node"
+            },
+            "required": false,
+            "description": ""
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          }
+        },
+        "Form": {
+          "children": {
+            "type": {
+              "name": "node"
+            },
+            "required": false,
+            "description": ""
+          },
+          "inline": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "tag": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'form'",
+              "computed": false
+            }
+          },
+          "innerRef": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "object"
+                },
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": ""
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          }
+        },
+        "FormGroup": {
+          "children": {
+            "type": {
+              "name": "node"
+            },
+            "required": false,
+            "description": ""
+          },
+          "row": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "check": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "inline": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "disabled": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "tag": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'div'",
+              "computed": false
+            }
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          }
+        },
+        "Label": {
+          "children": {
+            "type": {
+              "name": "node"
+            },
+            "required": false,
+            "description": ""
+          },
+          "hidden": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "check": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "size": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "for": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "tag": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'label'",
+              "computed": false
+            }
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          },
+          "xs": {
+            "type": {
+              "name": "custom",
+              "raw": "columnProps"
+            },
+            "required": false,
+            "description": ""
+          },
+          "sm": {
+            "type": {
+              "name": "custom",
+              "raw": "columnProps"
+            },
+            "required": false,
+            "description": ""
+          },
+          "md": {
+            "type": {
+              "name": "custom",
+              "raw": "columnProps"
+            },
+            "required": false,
+            "description": ""
+          },
+          "lg": {
+            "type": {
+              "name": "custom",
+              "raw": "columnProps"
+            },
+            "required": false,
+            "description": ""
+          },
+          "xl": {
+            "type": {
+              "name": "custom",
+              "raw": "columnProps"
+            },
+            "required": false,
+            "description": ""
+          },
+          "widths": {
+            "type": {
+              "name": "array"
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "['xs', 'sm', 'md', 'lg', 'xl']",
+              "computed": false
+            }
+          }
+        },
+        "Input": {
+          "children": {
+            "type": {
+              "name": "node"
+            },
+            "required": false,
+            "description": ""
+          },
+          "type": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'text'",
+              "computed": false
+            }
+          },
+          "size": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "bsSize": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "state": {
+            "type": {
+              "name": "custom",
+              "raw": "deprecated(PropTypes.string, 'Please use the props \"valid\" and \"invalid\" to indicate the state.')"
+            },
+            "required": false,
+            "description": ""
+          },
+          "valid": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "invalid": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "tag": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": ""
+          },
+          "innerRef": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "object"
+                },
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": ""
+          },
+          "static": {
+            "type": {
+              "name": "custom",
+              "raw": "deprecated(PropTypes.bool, 'Please use the prop \"plaintext\"')"
+            },
+            "required": false,
+            "description": ""
+          },
+          "plaintext": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "addon": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          }
+        }
+      }
+    }
+  }
+}

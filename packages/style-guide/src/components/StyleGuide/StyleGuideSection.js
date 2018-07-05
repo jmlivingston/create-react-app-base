@@ -1,7 +1,12 @@
 import Loadable from 'react-loadable'
 import PropTypes from 'prop-types'
-import React, { Fragment } from 'react'
+import React, { Fragment, PureComponent } from 'react'
 
+// TODO: Research why dynamic import takes so long after an edit.
+// If this DynamicCode component is removed, an edit and recompile is very quick.
+// Note: This is only a problem in dev mode, so not super critical.
+// Per Dan Abramov, this is a known issue with webpack
+// https://github.com/facebook/create-react-app/issues/3148
 const DynamicComponent = ({ parent, child }) => {
   const DynamicComponent = Loadable({
     loading: () => null,
@@ -56,32 +61,50 @@ CodeWrapper.propTypes = {
   parent: PropTypes.string.isRequired
 }
 
-const StyleGuideSection = ({ rootKey, styleGuideConfig }) => {
-  return (
-    <Fragment>
-      <h1>{rootKey}</h1>
-      <hr />
-      {styleGuideConfig &&
-        Object.keys(styleGuideConfig[rootKey].children).map(childKey => (
-          <Fragment key={childKey}>
-            <h2>{styleGuideConfig[rootKey].children[childKey].title}</h2>
-            <DynamicComponent parent={rootKey} child={childKey} />
-            <CodeWrapper parent={rootKey} child={childKey} label="Code" />
-            {Object.keys(styleGuideConfig[rootKey].children[childKey].componentPropTypes).length > 0 && (
-              <Fragment>
-                <h3>Prop Types</h3>
-                <PropTypesTable componentPropTypes={styleGuideConfig[rootKey].children[childKey].componentPropTypes} />
-              </Fragment>
-            )}
-          </Fragment>
-        ))}
-    </Fragment>
-  )
-}
+class StyleGuideSection extends PureComponent {
+  state = {}
 
-StyleGuideSection.propTypes = {
-  rootKey: PropTypes.string.isRequired,
-  styleGuideConfig: PropTypes.object.isRequired
+  static propTypes = {
+    rootKey: PropTypes.string.isRequired
+  }
+
+  componentDidMount = async () => {
+    const styleGuideConfig = await import(`@myorg/resources/strings/styleGuide/styleGuide.en.${
+      this.props.rootKey
+    }.json`)
+    this.setState({
+      styleGuideConfig
+    })
+  }
+
+  render() {
+    return (
+      <Fragment>
+        <h1>{this.props.rootKey}</h1>
+        <hr />
+        {this.state.styleGuideConfig &&
+          Object.keys(this.state.styleGuideConfig.children).map(childKey => (
+            <Fragment key={childKey}>
+              <h2>{this.state.styleGuideConfig.children[childKey].title}</h2>
+              <DynamicComponent parent={this.props.rootKey} child={childKey} />
+              <div className="clearfix" />
+              <hr />
+              <CodeWrapper parent={this.props.rootKey} child={childKey} label="Code" />
+              {Object.keys(this.state.styleGuideConfig.children[childKey].componentPropTypes).length > 0 && (
+                <Fragment>
+                  <h3>Prop Types</h3>
+
+                  <PropTypesTable
+                    componentPropTypes={this.state.styleGuideConfig.children[childKey].componentPropTypes}
+                  />
+                </Fragment>
+              )}
+              <hr />
+            </Fragment>
+          ))}
+      </Fragment>
+    )
+  }
 }
 
 export default StyleGuideSection

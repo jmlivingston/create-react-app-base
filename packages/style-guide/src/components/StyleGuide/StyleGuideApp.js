@@ -5,21 +5,20 @@ import React, { Fragment, PureComponent } from 'react'
 import { Button, Loader, Row, ThemeSelector } from '@myorg/components'
 import './StyleGuideApp.scss'
 
-const StyleGuideSection = ({ rootKey, styleGuideConfig }) => {
+const StyleGuideSection = ({ rootKey }) => {
   const StyleGuideSection = Loadable({
     loader: () => import('./StyleGuideSection'),
     loading: () => <Loader />,
     render(loaded) {
       const StyleGuideSection = loaded.default
-      return <StyleGuideSection rootKey={rootKey} styleGuideConfig={styleGuideConfig} />
+      return <StyleGuideSection rootKey={rootKey} />
     }
   })
   return <StyleGuideSection />
 }
 
 StyleGuideSection.propTypes = {
-  rootKey: PropTypes.string.isRequired,
-  styleGuideConfig: PropTypes.object.isRequired
+  rootKey: PropTypes.string.isRequired
 }
 
 class StyleGuideApp extends PureComponent {
@@ -42,7 +41,7 @@ class StyleGuideApp extends PureComponent {
   }
 
   componentDidMount = async () => {
-    const styleGuideConfig = await import('../../strings/styleGuide/styleGuide.en.json')
+    const styleGuideConfig = await import('@myorg/resources/strings/styleGuide/styleGuide.en.keys.json')
     this.setState({
       styleGuideConfig,
       isLoaded: true,
@@ -57,19 +56,17 @@ class StyleGuideApp extends PureComponent {
           <div className="sidebar-sticky py-2">
             <ThemeSelector />
             <h1>{this.props.params}</h1>
-            {Object.keys(this.state.styleGuideConfig)
-              .filter(key => key !== 'default')
-              .map(rootKey => (
-                <p key={rootKey}>
-                  <Button active={this.state.rootKey === rootKey} onClick={() => this.navigateToUrl(rootKey)} size="sm">
-                    {this.state.rootKey === rootKey ? <strong>{rootKey}</strong> : <Fragment>{rootKey}</Fragment>}
-                  </Button>
-                </p>
-              ))}
+            {Object.keys(this.state.styleGuideConfig).map(rootKey => (
+              <p key={rootKey}>
+                <Button active={this.state.rootKey === rootKey} onClick={() => this.navigateToUrl(rootKey)} size="sm">
+                  {this.state.rootKey === rootKey ? <strong>{rootKey}</strong> : <Fragment>{rootKey}</Fragment>}
+                </Button>
+              </p>
+            ))}
           </div>
         </div>
         <div className="col-md-9 ml-sm-auto col-lg-10 px-4">
-          <StyleGuideSection rootKey={this.state.rootKey} styleGuideConfig={this.state.styleGuideConfig} />
+          <StyleGuideSection rootKey={this.state.rootKey} />
         </div>
       </Row>
     ) : null

@@ -10,6 +10,7 @@
     "app-deploy": "node ./utility/launch.js APP DEPLOY",
     "app-test": "node ./utility/launch.js APP TEST",
     "style-guide-start": "node ./utility/launch.js STYLE_GUIDE START",
+    "style-guide-build-code": "node ./utility/build-style-guide.js",
     "style-guide-build": "node ./utility/launch.js STYLE_GUIDE BUILD",
     "style-guide-build-start": "node ./utility/launch.js STYLE_GUIDE BUILD_START",
     "style-guide-deploy": "node ./utility/launch.js STYLE_GUIDE DEPLOY",

@@ -1,0 +1,25 @@
+{
+  "children": {
+    "DatePickerDefault": {
+      "title": "DatePicker - Default",
+      "componentPropTypes": {
+        "DatePicker": {
+          "onChange": {
+            "type": {
+              "name": "func"
+            },
+            "required": true,
+            "description": ""
+          },
+          "value": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          }
+        }
+      }
+    }
+  }
+}

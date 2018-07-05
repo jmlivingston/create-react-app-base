@@ -1,0 +1,2325 @@
+{
+  "children": {
+    "NavDefault": {
+      "title": "Nav - Default",
+      "componentPropTypes": {
+        "Nav": {
+          "tabs": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "pills": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "vertical": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "bool"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "false",
+              "computed": false
+            }
+          },
+          "horizontal": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "justified": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "fill": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "navbar": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "card": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "tag": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'ul'",
+              "computed": false
+            }
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          }
+        },
+        "NavItem": {
+          "tag": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'li'",
+              "computed": false
+            }
+          },
+          "active": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          }
+        },
+        "NavLink": {
+          "tag": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'a'",
+              "computed": false
+            }
+          },
+          "innerRef": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "object"
+                },
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": ""
+          },
+          "disabled": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "active": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          },
+          "onClick": {
+            "type": {
+              "name": "func"
+            },
+            "required": false,
+            "description": ""
+          },
+          "href": {
+            "type": {
+              "name": "any"
+            },
+            "required": false,
+            "description": ""
+          }
+        }
+      }
+    },
+    "NavNavbarDefault": {
+      "title": "Nav - NavbarDefault",
+      "componentPropTypes": {}
+    },
+    "NavNavbarTogglerDefault": {
+      "title": "Nav - NavbarTogglerDefault",
+      "componentPropTypes": {
+        "Collapse": {
+          "isOpen": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "false",
+              "computed": false
+            }
+          },
+          "children": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "arrayOf",
+                  "value": {
+                    "name": "node"
+                  }
+                },
+                {
+                  "name": "node"
+                }
+              ]
+            },
+            "required": false,
+            "description": ""
+          },
+          "tag": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'div'",
+              "computed": false
+            }
+          },
+          "className": {
+            "type": {
+              "name": "node"
+            },
+            "required": false,
+            "description": ""
+          },
+          "navbar": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          },
+          "appear": {
+            "defaultValue": {
+              "value": "false",
+              "computed": false
+            },
+            "required": false
+          },
+          "enter": {
+            "defaultValue": {
+              "value": "true",
+              "computed": false
+            },
+            "required": false
+          },
+          "exit": {
+            "defaultValue": {
+              "value": "true",
+              "computed": false
+            },
+            "required": false
+          },
+          "timeout": {
+            "defaultValue": {
+              "value": "TransitionTimeouts.Collapse",
+              "computed": true
+            },
+            "required": false
+          }
+        },
+        "Navbar": {
+          "light": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "dark": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "inverse": {
+            "type": {
+              "name": "custom",
+              "raw": "deprecated(PropTypes.bool, 'Please use the prop \"dark\"')"
+            },
+            "required": false,
+            "description": ""
+          },
+          "full": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "fixed": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "sticky": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "color": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "role": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "tag": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'nav'",
+              "computed": false
+            }
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          },
+          "toggleable": {
+            "type": {
+              "name": "custom",
+              "raw": "deprecated(PropTypes.oneOfType([PropTypes.bool, PropTypes.string]), 'Please use the prop \"expand\"')"
+            },
+            "required": false,
+            "description": ""
+          },
+          "expand": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "bool"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "false",
+              "computed": false
+            }
+          }
+        },
+        "NavbarToggler": {
+          "tag": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'button'",
+              "computed": false
+            }
+          },
+          "type": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'button'",
+              "computed": false
+            }
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          },
+          "children": {
+            "type": {
+              "name": "node"
+            },
+            "required": false,
+            "description": ""
+          }
+        },
+        "NavbarBrand": {
+          "tag": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'a'",
+              "computed": false
+            }
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          }
+        },
+        "Nav": {
+          "tabs": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "pills": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "vertical": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "bool"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "false",
+              "computed": false
+            }
+          },
+          "horizontal": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "justified": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "fill": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "navbar": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "card": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "tag": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'ul'",
+              "computed": false
+            }
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          }
+        },
+        "NavItem": {
+          "tag": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'li'",
+              "computed": false
+            }
+          },
+          "active": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          }
+        },
+        "NavLink": {
+          "tag": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'a'",
+              "computed": false
+            }
+          },
+          "innerRef": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "object"
+                },
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": ""
+          },
+          "disabled": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "active": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          },
+          "onClick": {
+            "type": {
+              "name": "func"
+            },
+            "required": false,
+            "description": ""
+          },
+          "href": {
+            "type": {
+              "name": "any"
+            },
+            "required": false,
+            "description": ""
+          }
+        }
+      }
+    },
+    "NavPills": {
+      "title": "Nav - Pills",
+      "componentPropTypes": {
+        "Nav": {
+          "tabs": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "pills": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "vertical": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "bool"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "false",
+              "computed": false
+            }
+          },
+          "horizontal": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "justified": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "fill": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "navbar": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "card": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "tag": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'ul'",
+              "computed": false
+            }
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          }
+        },
+        "NavItem": {
+          "tag": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'li'",
+              "computed": false
+            }
+          },
+          "active": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          }
+        },
+        "Dropdown": {
+          "disabled": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "dropup": {
+            "type": {
+              "name": "custom",
+              "raw": "deprecated(PropTypes.bool, 'Please use the prop \"direction\" with the value \"up\".')"
+            },
+            "required": false,
+            "description": ""
+          },
+          "direction": {
+            "type": {
+              "name": "enum",
+              "value": [
+                {
+                  "value": "'up'",
+                  "computed": false
+                },
+                {
+                  "value": "'down'",
+                  "computed": false
+                },
+                {
+                  "value": "'left'",
+                  "computed": false
+                },
+                {
+                  "value": "'right'",
+                  "computed": false
+                }
+              ]
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'down'",
+              "computed": false
+            }
+          },
+          "group": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "isOpen": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "false",
+              "computed": false
+            }
+          },
+          "nav": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "false",
+              "computed": false
+            }
+          },
+          "active": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "false",
+              "computed": false
+            }
+          },
+          "addonType": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "bool"
+                },
+                {
+                  "name": "enum",
+                  "value": [
+                    {
+                      "value": "'prepend'",
+                      "computed": false
+                    },
+                    {
+                      "value": "'append'",
+                      "computed": false
+                    }
+                  ]
+                }
+              ]
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "false",
+              "computed": false
+            }
+          },
+          "size": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "tag": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "toggle": {
+            "type": {
+              "name": "func"
+            },
+            "required": false,
+            "description": ""
+          },
+          "children": {
+            "type": {
+              "name": "node"
+            },
+            "required": false,
+            "description": ""
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          },
+          "inNavbar": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "false",
+              "computed": false
+            }
+          },
+          "setActiveFromChild": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "false",
+              "computed": false
+            }
+          }
+        },
+        "DropdownItem": {
+          "children": {
+            "type": {
+              "name": "node"
+            },
+            "required": false,
+            "description": ""
+          },
+          "active": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "disabled": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "divider": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "tag": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'button'",
+              "computed": false
+            }
+          },
+          "header": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "onClick": {
+            "type": {
+              "name": "func"
+            },
+            "required": false,
+            "description": ""
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          },
+          "toggle": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "true",
+              "computed": false
+            }
+          }
+        },
+        "DropdownToggle": {
+          "caret": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "color": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'secondary'",
+              "computed": false
+            }
+          },
+          "children": {
+            "type": {
+              "name": "node"
+            },
+            "required": false,
+            "description": ""
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          },
+          "disabled": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "onClick": {
+            "type": {
+              "name": "func"
+            },
+            "required": false,
+            "description": ""
+          },
+          "aria-haspopup": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "true",
+              "computed": false
+            }
+          },
+          "split": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "tag": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": ""
+          },
+          "nav": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          }
+        },
+        "DropdownMenu": {
+          "tag": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'div'",
+              "computed": false
+            }
+          },
+          "children": {
+            "type": {
+              "name": "node"
+            },
+            "required": true,
+            "description": ""
+          },
+          "right": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "flip": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "true",
+              "computed": false
+            }
+          },
+          "modifiers": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          },
+          "persist": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          }
+        },
+        "NavLink": {
+          "tag": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'a'",
+              "computed": false
+            }
+          },
+          "innerRef": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "object"
+                },
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": ""
+          },
+          "disabled": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "active": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          },
+          "onClick": {
+            "type": {
+              "name": "func"
+            },
+            "required": false,
+            "description": ""
+          },
+          "href": {
+            "type": {
+              "name": "any"
+            },
+            "required": false,
+            "description": ""
+          }
+        }
+      }
+    },
+    "NavTabs": {
+      "title": "Nav - Tabs",
+      "componentPropTypes": {
+        "Nav": {
+          "tabs": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "pills": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "vertical": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "bool"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "false",
+              "computed": false
+            }
+          },
+          "horizontal": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "justified": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "fill": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "navbar": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "card": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "tag": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'ul'",
+              "computed": false
+            }
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          }
+        },
+        "NavItem": {
+          "tag": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'li'",
+              "computed": false
+            }
+          },
+          "active": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          }
+        },
+        "Dropdown": {
+          "disabled": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "dropup": {
+            "type": {
+              "name": "custom",
+              "raw": "deprecated(PropTypes.bool, 'Please use the prop \"direction\" with the value \"up\".')"
+            },
+            "required": false,
+            "description": ""
+          },
+          "direction": {
+            "type": {
+              "name": "enum",
+              "value": [
+                {
+                  "value": "'up'",
+                  "computed": false
+                },
+                {
+                  "value": "'down'",
+                  "computed": false
+                },
+                {
+                  "value": "'left'",
+                  "computed": false
+                },
+                {
+                  "value": "'right'",
+                  "computed": false
+                }
+              ]
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'down'",
+              "computed": false
+            }
+          },
+          "group": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "isOpen": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "false",
+              "computed": false
+            }
+          },
+          "nav": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "false",
+              "computed": false
+            }
+          },
+          "active": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "false",
+              "computed": false
+            }
+          },
+          "addonType": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "bool"
+                },
+                {
+                  "name": "enum",
+                  "value": [
+                    {
+                      "value": "'prepend'",
+                      "computed": false
+                    },
+                    {
+                      "value": "'append'",
+                      "computed": false
+                    }
+                  ]
+                }
+              ]
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "false",
+              "computed": false
+            }
+          },
+          "size": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "tag": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "toggle": {
+            "type": {
+              "name": "func"
+            },
+            "required": false,
+            "description": ""
+          },
+          "children": {
+            "type": {
+              "name": "node"
+            },
+            "required": false,
+            "description": ""
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          },
+          "inNavbar": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "false",
+              "computed": false
+            }
+          },
+          "setActiveFromChild": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "false",
+              "computed": false
+            }
+          }
+        },
+        "DropdownItem": {
+          "children": {
+            "type": {
+              "name": "node"
+            },
+            "required": false,
+            "description": ""
+          },
+          "active": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "disabled": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "divider": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "tag": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'button'",
+              "computed": false
+            }
+          },
+          "header": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "onClick": {
+            "type": {
+              "name": "func"
+            },
+            "required": false,
+            "description": ""
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          },
+          "toggle": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "true",
+              "computed": false
+            }
+          }
+        },
+        "DropdownToggle": {
+          "caret": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "color": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'secondary'",
+              "computed": false
+            }
+          },
+          "children": {
+            "type": {
+              "name": "node"
+            },
+            "required": false,
+            "description": ""
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          },
+          "disabled": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "onClick": {
+            "type": {
+              "name": "func"
+            },
+            "required": false,
+            "description": ""
+          },
+          "aria-haspopup": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "true",
+              "computed": false
+            }
+          },
+          "split": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "tag": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": ""
+          },
+          "nav": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          }
+        },
+        "DropdownMenu": {
+          "tag": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'div'",
+              "computed": false
+            }
+          },
+          "children": {
+            "type": {
+              "name": "node"
+            },
+            "required": true,
+            "description": ""
+          },
+          "right": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "flip": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "true",
+              "computed": false
+            }
+          },
+          "modifiers": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          },
+          "persist": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          }
+        },
+        "NavLink": {
+          "tag": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'a'",
+              "computed": false
+            }
+          },
+          "innerRef": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "object"
+                },
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": ""
+          },
+          "disabled": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "active": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          },
+          "onClick": {
+            "type": {
+              "name": "func"
+            },
+            "required": false,
+            "description": ""
+          },
+          "href": {
+            "type": {
+              "name": "any"
+            },
+            "required": false,
+            "description": ""
+          }
+        }
+      }
+    },
+    "NavVertical": {
+      "title": "Nav - Vertical",
+      "componentPropTypes": {
+        "Nav": {
+          "tabs": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "pills": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "vertical": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "bool"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "false",
+              "computed": false
+            }
+          },
+          "horizontal": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "justified": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "fill": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "navbar": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "card": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "tag": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'ul'",
+              "computed": false
+            }
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          }
+        },
+        "NavItem": {
+          "tag": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'li'",
+              "computed": false
+            }
+          },
+          "active": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          }
+        },
+        "NavLink": {
+          "tag": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'a'",
+              "computed": false
+            }
+          },
+          "innerRef": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "object"
+                },
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": ""
+          },
+          "disabled": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "active": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          },
+          "onClick": {
+            "type": {
+              "name": "func"
+            },
+            "required": false,
+            "description": ""
+          },
+          "href": {
+            "type": {
+              "name": "any"
+            },
+            "required": false,
+            "description": ""
+          }
+        }
+      }
+    }
+  }
+}

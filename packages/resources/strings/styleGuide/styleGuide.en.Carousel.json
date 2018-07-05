@@ -1,0 +1,723 @@
+{
+  "children": {
+    "CarouselCustomTag": {
+      "title": "Carousel - CustomTag",
+      "componentPropTypes": {
+        "Carousel": {
+          "activeIndex": {
+            "type": {
+              "name": "number"
+            },
+            "required": false,
+            "description": ""
+          },
+          "next": {
+            "type": {
+              "name": "func"
+            },
+            "required": true,
+            "description": ""
+          },
+          "previous": {
+            "type": {
+              "name": "func"
+            },
+            "required": true,
+            "description": ""
+          },
+          "keyboard": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "true",
+              "computed": false
+            }
+          },
+          "pause": {
+            "type": {
+              "name": "enum",
+              "value": [
+                {
+                  "value": "'hover'",
+                  "computed": false
+                },
+                {
+                  "value": "false",
+                  "computed": false
+                }
+              ]
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'hover'",
+              "computed": false
+            }
+          },
+          "ride": {
+            "type": {
+              "name": "enum",
+              "value": [
+                {
+                  "value": "'carousel'",
+                  "computed": false
+                }
+              ]
+            },
+            "required": false,
+            "description": ""
+          },
+          "interval": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "number"
+                },
+                {
+                  "name": "string"
+                },
+                {
+                  "name": "bool"
+                }
+              ]
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "5000",
+              "computed": false
+            }
+          },
+          "children": {
+            "type": {
+              "name": "array"
+            },
+            "required": false,
+            "description": ""
+          },
+          "mouseEnter": {
+            "type": {
+              "name": "func"
+            },
+            "required": false,
+            "description": ""
+          },
+          "mouseLeave": {
+            "type": {
+              "name": "func"
+            },
+            "required": false,
+            "description": ""
+          },
+          "slide": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "true",
+              "computed": false
+            }
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          }
+        },
+        "CarouselItem": {
+          "tag": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'div'",
+              "computed": false
+            }
+          },
+          "in": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          },
+          "children": {
+            "type": {
+              "name": "node"
+            },
+            "required": false,
+            "description": ""
+          },
+          "slide": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "true",
+              "computed": false
+            }
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "timeout": {
+            "defaultValue": {
+              "value": "TransitionTimeouts.Carousel",
+              "computed": true
+            },
+            "required": false
+          }
+        },
+        "CarouselControl": {
+          "direction": {
+            "type": {
+              "name": "enum",
+              "value": [
+                {
+                  "value": "'prev'",
+                  "computed": false
+                },
+                {
+                  "value": "'next'",
+                  "computed": false
+                }
+              ]
+            },
+            "required": true,
+            "description": ""
+          },
+          "onClickHandler": {
+            "type": {
+              "name": "func"
+            },
+            "required": true,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          },
+          "directionText": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          }
+        },
+        "CarouselIndicators": {
+          "items": {
+            "type": {
+              "name": "array"
+            },
+            "required": true,
+            "description": ""
+          },
+          "activeIndex": {
+            "type": {
+              "name": "number"
+            },
+            "required": true,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          },
+          "onClickHandler": {
+            "type": {
+              "name": "func"
+            },
+            "required": true,
+            "description": ""
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          }
+        },
+        "CarouselCaption": {
+          "captionHeader": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "captionText": {
+            "type": {
+              "name": "string"
+            },
+            "required": true,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          }
+        }
+      }
+    },
+    "CarouselDefault": {
+      "title": "Carousel - Default",
+      "componentPropTypes": {
+        "Carousel": {
+          "activeIndex": {
+            "type": {
+              "name": "number"
+            },
+            "required": false,
+            "description": ""
+          },
+          "next": {
+            "type": {
+              "name": "func"
+            },
+            "required": true,
+            "description": ""
+          },
+          "previous": {
+            "type": {
+              "name": "func"
+            },
+            "required": true,
+            "description": ""
+          },
+          "keyboard": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "true",
+              "computed": false
+            }
+          },
+          "pause": {
+            "type": {
+              "name": "enum",
+              "value": [
+                {
+                  "value": "'hover'",
+                  "computed": false
+                },
+                {
+                  "value": "false",
+                  "computed": false
+                }
+              ]
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'hover'",
+              "computed": false
+            }
+          },
+          "ride": {
+            "type": {
+              "name": "enum",
+              "value": [
+                {
+                  "value": "'carousel'",
+                  "computed": false
+                }
+              ]
+            },
+            "required": false,
+            "description": ""
+          },
+          "interval": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "number"
+                },
+                {
+                  "name": "string"
+                },
+                {
+                  "name": "bool"
+                }
+              ]
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "5000",
+              "computed": false
+            }
+          },
+          "children": {
+            "type": {
+              "name": "array"
+            },
+            "required": false,
+            "description": ""
+          },
+          "mouseEnter": {
+            "type": {
+              "name": "func"
+            },
+            "required": false,
+            "description": ""
+          },
+          "mouseLeave": {
+            "type": {
+              "name": "func"
+            },
+            "required": false,
+            "description": ""
+          },
+          "slide": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "true",
+              "computed": false
+            }
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          }
+        },
+        "CarouselItem": {
+          "tag": {
+            "type": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "'div'",
+              "computed": false
+            }
+          },
+          "in": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          },
+          "children": {
+            "type": {
+              "name": "node"
+            },
+            "required": false,
+            "description": ""
+          },
+          "slide": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "true",
+              "computed": false
+            }
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "timeout": {
+            "defaultValue": {
+              "value": "TransitionTimeouts.Carousel",
+              "computed": true
+            },
+            "required": false
+          }
+        },
+        "CarouselControl": {
+          "direction": {
+            "type": {
+              "name": "enum",
+              "value": [
+                {
+                  "value": "'prev'",
+                  "computed": false
+                },
+                {
+                  "value": "'next'",
+                  "computed": false
+                }
+              ]
+            },
+            "required": true,
+            "description": ""
+          },
+          "onClickHandler": {
+            "type": {
+              "name": "func"
+            },
+            "required": true,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          },
+          "directionText": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          }
+        },
+        "CarouselIndicators": {
+          "items": {
+            "type": {
+              "name": "array"
+            },
+            "required": true,
+            "description": ""
+          },
+          "activeIndex": {
+            "type": {
+              "name": "number"
+            },
+            "required": true,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          },
+          "onClickHandler": {
+            "type": {
+              "name": "func"
+            },
+            "required": true,
+            "description": ""
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          }
+        },
+        "CarouselCaption": {
+          "captionHeader": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          },
+          "captionText": {
+            "type": {
+              "name": "string"
+            },
+            "required": true,
+            "description": ""
+          },
+          "cssModule": {
+            "type": {
+              "name": "object"
+            },
+            "required": false,
+            "description": ""
+          },
+          "className": {
+            "type": {
+              "name": "string"
+            },
+            "required": false,
+            "description": ""
+          }
+        }
+      }
+    },
+    "CarouselUncontrolled": {
+      "title": "Carousel - Uncontrolled",
+      "componentPropTypes": {
+        "UncontrolledCarousel": {
+          "items": {
+            "type": {
+              "name": "array"
+            },
+            "required": true,
+            "description": ""
+          },
+          "indicators": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "true",
+              "computed": false
+            }
+          },
+          "controls": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "true",
+              "computed": false
+            }
+          },
+          "autoPlay": {
+            "type": {
+              "name": "bool"
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+              "value": "true",
+              "computed": false
+            }
+          },
+          "activeIndex": {
+            "type": {
+              "name": "number"
+            },
+            "required": false,
+            "description": ""
+          },
+          "next": {
+            "type": {
+              "name": "func"
+            },
+            "required": false,
+            "description": ""
+          },
+          "previous": {
+            "type": {
+              "name": "func"
+            },
+            "required": false,
+            "description": ""
+          },
+          "goToIndex": {
+            "type": {
+              "name": "func"
+            },
+            "required": false,
+            "description": ""
+          }
+        }
+      }
+    }
+  }
+}
