@@ -22,16 +22,16 @@ it('${name} - renders without crashing', () => {
 }
 
 const dirPaths = [
-  { path: path.join(__dirname, '../packages/app/src/components'), recursive: true },
-  { path: path.join(__dirname, '../packages/components/src/components'), recursive: true },
-  { path: path.join(__dirname, '../packages/style-guide/src/components/Global'), recursive: true },
-  { path: path.join(__dirname, '../packages/style-guide/src/components/StyleGuide'), recursive: false },
-  { path: path.join(__dirname, '../packages/style-guide/src/components/StyleGuide/examples'), recursive: true }
+  { path: path.join(__dirname, '../packages/app/src/components'), isRecursive: true },
+  { path: path.join(__dirname, '../packages/components/src/components'), isRecursive: true },
+  { path: path.join(__dirname, '../packages/style-guide/src/components/Global'), isRecursive: true },
+  { path: path.join(__dirname, '../packages/style-guide/src/components/StyleGuide'), isRecursive: false },
+  { path: path.join(__dirname, '../packages/style-guide/src/components/StyleGuide/examples'), isRecursive: true }
 ]
 
 dirPaths.forEach(dirPath => {
-  const dirName = path.join(__dirname, dirPath)
-  const files = getFilesFolders(dirName).filter(fileFilter)
+  const dirName = path.join(__dirname, dirPath.path)
+  const files = getFilesFolders(dirName.isRecursive).filter(fileFilter)
   files.forEach(file => {
     const baseName = path.basename(file)
     if (!fs.existsSync(file.replace('.js', '.test.js'))) {
