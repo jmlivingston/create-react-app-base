@@ -7,7 +7,7 @@ const styleGuideBase = path.join(__dirname, '../packages/style-guide/src/compone
 const codeDir = path.join(styleGuideBase, '/code/components')
 const componentsDir = path.join(styleGuideBase, '/examples/components')
 const componentsCommonDir = path.join(__dirname, '../packages/components/src/components/Common')
-const getFilesFolders = require('./utility.js').getFilesFolders
+const getFilesFolders = require('./utility-io').getFilesFolders
 const styleGuideConfigFileBase = path.join(__dirname, '../packages/strings/styleGuide/styleGuide.en')
 
 const prettierConfig = {

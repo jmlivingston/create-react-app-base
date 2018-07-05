@@ -57,10 +57,12 @@ try {
           stdio: 'inherit'
         })
         break
+      default:
+        break
     }
   } else {
     console.log('Error: app name and launch type required')
   }
 } catch (error) {
-  console.log('Error: Uknown Error - ' + error)
+  console.log('Error: Unknown Error - ' + error)
 }

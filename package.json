@@ -18,7 +18,8 @@
     "components-start": "node ./utility/launch.js COMPONENTS START",
     "components-test": "node ./utility/launch.js COMPONENTS TEST",
     "lint": "node node_modules/eslint/bin/eslint.js --max-warnings=0 packages/**/src",
-    "precommit": "lint-staged"
+    "precommit": "lint-staged",
+    "ide-tf": "node ./utility/utility-dev.js IDE_TOGGLE_FILES"
   },
   "devDependencies": {
     "husky": "0.14.3",

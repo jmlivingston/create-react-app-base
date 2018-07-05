@@ -1,7 +1,7 @@
 const fs = require('fs')
 const path = require('path')
 
-const getFilesFolders = require('./utility').getFilesFolders
+const getFilesFolders = require('./utility-io').getFilesFolders
 
 const buildCopy = appName => {
   const buildDir = path.join(__dirname, `../packages/${appName}/build`)
