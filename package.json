@@ -19,6 +19,7 @@
     "components-test": "node ./utility/launch.js COMPONENTS TEST",
     "lint": "node node_modules/eslint/bin/eslint.js --max-warnings=0 packages/**/src",
     "precommit": "lint-staged",
+    "build-tests": "node ./utility/build-tests",
     "ide-tf": "node ./utility/utility-dev.js IDE_TOGGLE_FILES"
   },
   "devDependencies": {

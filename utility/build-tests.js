@@ -3,13 +3,9 @@
 const fs = require('fs')
 const path = require('path')
 
+const getFilesFolders = require('./utility-io').getFilesFolders
+
 const fileFilter = file => file.includes('.js') && !file.includes('index.js') && !file.includes('.test.js')
-const getFiles = dir =>
-  fs.readdirSync(dir).reduce((files, file) => {
-    return fs.statSync(path.join(dir, file)).isDirectory()
-      ? files.concat(getFiles(path.join(dir, file))).filter(fileFilter)
-      : files.concat(path.join(dir, file)).filter(fileFilter)
-  }, [])
 
 const getTest = name => {
   return `import 'polyfills'
@@ -25,11 +21,17 @@ it('${name} - renders without crashing', () => {
 `
 }
 
-const dirPaths = ['../src/components']
+const dirPaths = [
+  { path: path.join(__dirname, '../packages/app/src/components'), recursive: true },
+  { path: path.join(__dirname, '../packages/components/src/components'), recursive: true },
+  { path: path.join(__dirname, '../packages/style-guide/src/components/Global'), recursive: true },
+  { path: path.join(__dirname, '../packages/style-guide/src/components/StyleGuide'), recursive: false },
+  { path: path.join(__dirname, '../packages/style-guide/src/components/StyleGuide/examples'), recursive: true }
+]
 
 dirPaths.forEach(dirPath => {
   const dirName = path.join(__dirname, dirPath)
-  const files = getFiles(dirName)
+  const files = getFilesFolders(dirName).filter(fileFilter)
   files.forEach(file => {
     const baseName = path.basename(file)
     if (!fs.existsSync(file.replace('.js', '.test.js'))) {
