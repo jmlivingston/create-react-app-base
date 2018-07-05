@@ -30,8 +30,7 @@ const dirPaths = [
 ]
 
 dirPaths.forEach(dirPath => {
-  const dirName = path.join(__dirname, dirPath.path)
-  const files = getFilesFolders(dirName.isRecursive).filter(fileFilter)
+  const files = getFilesFolders(dirPath.path, dirPath.isRecursive).filter(fileFilter)
   files.forEach(file => {
     const baseName = path.basename(file)
     if (!fs.existsSync(file.replace('.js', '.test.js'))) {
