@@ -3,7 +3,7 @@
   "routes": {
     "about": {
       "displayName": "情報",
-      "path": "/情報",
+      "path": "/about",
       "inSiteMap": true,
       "inHeader": true
     },
@@ -12,22 +12,22 @@
       "path": "/",
       "inSiteMap": true,
       "inHeader": true
-    },  
+    },
     "siteMap": {
       "displayName": "サイトーマップ",
-      "path": "/サイトーマップ",
+      "path": "/site-map",
       "inSiteMap": true,
       "inHeader": true
     },
     "todo": {
       "displayName": "タスク",
-      "path": "/タスク",
+      "path": "/todo",
       "inSiteMap": true,
       "inHeader": true
     },
     "userSettings": {
       "displayName": "ユーザー設定",
-      "path": "/ユーザー設定",
+      "path": "/user-settings",
       "inSiteMap": true,
       "inHeader": true
     }
