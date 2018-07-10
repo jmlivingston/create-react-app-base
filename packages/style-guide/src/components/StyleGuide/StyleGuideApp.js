@@ -2,7 +2,7 @@ import Loadable from 'react-loadable'
 import PropTypes from 'prop-types'
 import React, { Fragment, PureComponent } from 'react'
 
-import { Button, Loader, Row, ThemeSelector } from '@myorg/components'
+import { Button, Input, InputGroup, InputGroupAddon, Loader, Row, ThemeSelector } from '@myorg/components'
 import './StyleGuideApp.scss'
 
 const StyleGuideSection = ({ rootKey }) => {
@@ -23,7 +23,8 @@ StyleGuideSection.propTypes = {
 
 class StyleGuideApp extends PureComponent {
   state = {
-    isLoaded: false
+    isLoaded: false,
+    search: ''
   }
 
   static propTypes = {
@@ -49,20 +50,47 @@ class StyleGuideApp extends PureComponent {
     })
   }
 
+  updateSearch = search => {
+    this.setState({
+      search
+    })
+  }
+
   render() {
     return this.state.isLoaded ? (
       <Row>
-        <div className="col-md-2 d-none d-md-block bg-light sidebar">
+        <div className="col-md-3 col-lg-2 d-none d-md-block bg-light sidebar">
           <div className="sidebar-sticky py-2">
             <ThemeSelector />
             <h1>{this.props.params}</h1>
-            {Object.keys(this.state.styleGuideConfig).map(rootKey => (
-              <p key={rootKey}>
-                <Button active={this.state.rootKey === rootKey} onClick={() => this.navigateToUrl(rootKey)} size="sm">
-                  {this.state.rootKey === rootKey ? <strong>{rootKey}</strong> : <Fragment>{rootKey}</Fragment>}
-                </Button>
-              </p>
-            ))}
+            <InputGroup className="mb-3">
+              <Input
+                placeholder="Search..."
+                value={this.state.search}
+                onChange={element => this.updateSearch(element.target.value)}
+              />
+              {this.state.search && (
+                <InputGroupAddon addonType="append" onClick={() => this.updateSearch('')}>
+                  X
+                </InputGroupAddon>
+              )}
+            </InputGroup>
+            {Object.keys(this.state.styleGuideConfig)
+              .filter(
+                key =>
+                  this.state.search
+                    ? this.state.rootKey === key
+                      ? true
+                      : key.toLocaleLowerCase().indexOf(this.state.search.toLocaleLowerCase()) !== -1
+                    : true
+              )
+              .map(rootKey => (
+                <p key={rootKey}>
+                  <Button active={this.state.rootKey === rootKey} onClick={() => this.navigateToUrl(rootKey)} size="sm">
+                    {this.state.rootKey === rootKey ? <strong>{rootKey}</strong> : <Fragment>{rootKey}</Fragment>}
+                  </Button>
+                </p>
+              ))}
           </div>
         </div>
         <div className="col-md-9 ml-sm-auto col-lg-10 px-4">

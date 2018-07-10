@@ -93,7 +93,6 @@ class StyleGuideSection extends PureComponent {
               {Object.keys(this.state.styleGuideConfig.children[childKey].componentPropTypes).length > 0 && (
                 <Fragment>
                   <h3>Prop Types</h3>
-
                   <PropTypesTable
                     componentPropTypes={this.state.styleGuideConfig.children[childKey].componentPropTypes}
                   />
