@@ -13,7 +13,7 @@ class GlobalContainer extends PureComponent {
 
   setUser = async (user, isLogInOut = false) => {
     const themeLanguageChanged = this.state.user.theme !== user.theme || this.state.user.language !== user.language
-    const response = await auth.user.set(user, isLogInOut)
+    const response = await auth.user.set({ ...APP.DEFAULT_PROFILE, ...user }, isLogInOut)
     this.setState({
       user
     })

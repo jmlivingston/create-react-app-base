@@ -23,6 +23,8 @@ import {
   UncontrolledDropdown
 } from '@myorg/components'
 
+import './Header.scss'
+
 class Header extends PureComponent {
   state = {
     isOpen: false
@@ -75,7 +77,16 @@ class Header extends PureComponent {
                   {this.props.user.firstName ? (
                     <UncontrolledDropdown nav inNavbar>
                       <DropdownToggle nav caret>
-                        {this.props.user.firstName} {this.props.user.lastName}
+                        {this.props.user.avatar && (
+                          <img
+                            src={this.props.user.avatar}
+                            alt={`${this.props.user.firstName} ${this.props.user.lastName}`}
+                            className="header-avatar"
+                          />
+                        )}
+                        <span style={{ marginLeft: this.props.user.avatar ? '45px' : null }}>
+                          {this.props.user.firstName} {this.props.user.lastName}
+                        </span>
                       </DropdownToggle>
                       <DropdownMenu right>
                         <DropdownItem tag={Link} to={this.props.strings.routes.userSettings.path}>
