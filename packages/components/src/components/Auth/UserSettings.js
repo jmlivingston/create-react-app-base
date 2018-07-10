@@ -53,18 +53,19 @@ class UserSettings extends Component {
               <Fragment>
                 <h1>{strings.userSettings}</h1>
                 <Form>
-                  {['firstName', 'lastName'].map(property => (
-                    <FormGroup key={property}>
-                      <Label for={property}>{strings[property]} *</Label>
-                      <Input
-                        name={property}
-                        value={this.state.user[property] !== undefined ? this.state.user[property] : user[property]}
-                        onChange={this.onChange}
-                        placeholder={strings[property]}
-                        invalid={this.state.valid[property]}
-                      />
-                    </FormGroup>
-                  ))}
+                  {user.firstName &&
+                    ['firstName', 'lastName'].map(property => (
+                      <FormGroup key={property}>
+                        <Label for={property}>{strings[property]} *</Label>
+                        <Input
+                          name={property}
+                          value={this.state.user[property] !== undefined ? this.state.user[property] : user[property]}
+                          onChange={this.onChange}
+                          placeholder={strings[property]}
+                          invalid={this.state.valid[property]}
+                        />
+                      </FormGroup>
+                    ))}
                   <FormGroup>
                     <Label>{strings.language}</Label>
                     <LanguageSelector

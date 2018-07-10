@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
-import React, { PureComponent } from 'react'
+import React, { Fragment, PureComponent } from 'react'
 
 import {
   Collapse,
@@ -8,7 +8,6 @@ import {
   DropdownMenu,
   DropdownToggle,
   GlobalContainerContext,
-  LanguageSelector,
   LogIn,
   Modal,
   ModalBody,
@@ -19,7 +18,6 @@ import {
   NavbarToggler,
   NavItem,
   NavLink,
-  ThemeSelector,
   UncontrolledDropdown
 } from '@myorg/components'
 
@@ -97,16 +95,22 @@ class Header extends PureComponent {
                       </DropdownMenu>
                     </UncontrolledDropdown>
                   ) : (
-                    <NavItem>
-                      <span className="nav-link cursor-pointer" onClick={() => this.togglelogInModal()}>
-                        {this.props.strings.logIn}
-                      </span>
-                    </NavItem>
+                    <Fragment>
+                      <NavItem>
+                        <span className="nav-link cursor-pointer" onClick={() => this.togglelogInModal()}>
+                          {this.props.strings.logIn}
+                        </span>
+                      </NavItem>
+                      <NavLink tag={Link} to={this.props.strings.routes.userSettings.path}>
+                        {this.props.strings.settings}
+                      </NavLink>
+                    </Fragment>
                   )}
+                  {/* Note: Uncomment to show theme and language selector in header 
                   <NavItem>
                     <ThemeSelector />
                   </NavItem>
-                  <LanguageSelector />
+                  <LanguageSelector /> */}
                 </Nav>
               </Collapse>
             </Navbar>

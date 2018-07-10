@@ -40,7 +40,7 @@ class LanguageSelector extends PureComponent {
         {context => (
           <Dropdown isOpen={this.state.dropdownOpen} toggle={() => this.toggle()} nav={this.props.nav} inNavbar>
             <DropdownToggle nav={this.props.nav} caret className="text-uppercase">
-              あA {this.props.value || APP.LANGUAGES[context.user.language]}
+              あA {APP.LANGUAGES[this.props.value] || APP.LANGUAGES[context.user.language]}
             </DropdownToggle>
             <DropdownMenu right={this.props.right}>
               {['en', 'ja'].map(lang => (
