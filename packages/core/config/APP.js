@@ -12,6 +12,10 @@ const APP = {
     ACCESS_DENIED: 'You do not have permission.',
     GENERIC: 'An unknown error has occurred.'
   },
+  LANGUAGES: {
+    en: 'English',
+    ja: '日本語'
+  },
   LOADER_NAME: 'line-scale-pulse-out-rapid',
   LOG: {
     TYPES: {

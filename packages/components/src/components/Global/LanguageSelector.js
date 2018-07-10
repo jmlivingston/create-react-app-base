@@ -2,6 +2,7 @@ import PropTypes from 'prop-types'
 import React, { PureComponent } from 'react'
 
 import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from '../Common'
+import { APP } from '@myorg/core'
 import GlobalContainerContext from './GlobalContainerContext'
 
 class LanguageSelector extends PureComponent {
@@ -39,11 +40,14 @@ class LanguageSelector extends PureComponent {
         {context => (
           <Dropdown isOpen={this.state.dropdownOpen} toggle={() => this.toggle()} nav={this.props.nav} inNavbar>
             <DropdownToggle nav={this.props.nav} caret className="text-uppercase">
-              {this.props.value || context.user.language}
+              あA {this.props.value || APP.LANGUAGES[context.user.language]}
             </DropdownToggle>
             <DropdownMenu right={this.props.right}>
-              <DropdownItem onClick={() => this.updateLanguage(context, 'en')}>English</DropdownItem>
-              <DropdownItem onClick={() => this.updateLanguage(context, 'ja')}>Japanese</DropdownItem>
+              {['en', 'ja'].map(lang => (
+                <DropdownItem key={lang} onClick={() => this.updateLanguage(context, lang)}>
+                  {APP.LANGUAGES[lang]}
+                </DropdownItem>
+              ))}
             </DropdownMenu>
           </Dropdown>
         )}
