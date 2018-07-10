@@ -13,8 +13,8 @@ class ThemeImporterInnerComponent extends PureComponent {
     children: PropTypes.node.isRequired,
     sassBase: PropTypes.bool,
     sassNames: PropTypes.arrayOf(PropTypes.string),
-    styleList: PropTypes.object.isRequired,
-    user: PropTypes.object.isRequired
+    styleList: PropTypes.object,
+    user: PropTypes.object
   }
 
   static defaultProps = {
@@ -31,17 +31,19 @@ class ThemeImporterInnerComponent extends PureComponent {
       promises.push(import(`../../styles/themes/${theme}/bootstrap.${fileExtension}`))
       promises.push(import(`../../styles/themes/${theme}/bootstrap-footer.${fileExtension}`))
     } else {
-      promises = this.props.sassNames
-        .filter(sassName => {
-          const hasStyle = this.props.styleList.get()[sassName] === true
-          if (!hasStyle) {
-            this.props.styleList.set(sassName)
-          }
-          return !hasStyle
-        })
-        .map(sassName => {
-          return import(`../../styles/themes/${theme}/components/${sassName}.${fileExtension}`)
-        })
+      if (this.props.styleList) {
+        promises = this.props.sassNames
+          .filter(sassName => {
+            const hasStyle = this.props.styleList.get()[sassName] === true
+            if (!hasStyle) {
+              this.props.styleList.set(sassName)
+            }
+            return !hasStyle
+          })
+          .map(sassName => {
+            return import(`../../styles/themes/${theme}/components/${sassName}.${fileExtension}`)
+          })
+      }
     }
 
     if (promises.length > 0) {

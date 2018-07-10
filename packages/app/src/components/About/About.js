@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import React, { Fragment } from 'react'
 
-const About = ({ strings }) => {
+const About = ({ strings = { title: '', description: '' } }) => {
   return (
     <Fragment>
       <h1>{strings.title}</h1>
@@ -11,7 +11,10 @@ const About = ({ strings }) => {
 }
 
 About.propTypes = {
-  strings: PropTypes.object.isRequired
+  strings: PropTypes.shape({
+    title: PropTypes.string,
+    description: PropTypes.string
+  })
 }
 
 export default About

@@ -11,52 +11,53 @@ const loadableConfig = {
   timeout: 10000
 }
 
-const Routes = ({ strings }) => (
-  <Switch>
-    <Route
-      exact
-      path={strings.routes.home.path}
-      component={Loadable({
-        ...loadableConfig,
-        loading: props => <Loader {...props} message={`${strings.loading} ${strings.routes.home.displayName}...`} />,
-        loader: () => import('../Home/Home'),
-        render(loaded) {
-          const Home = loaded.default
-          return (
-            <GlobalImporter
-              appName="components"
-              stringNames={['home']}
-              render={({ strings }) => <Home strings={strings} />}
-            />
-          )
-        }
-      })}
-    />
-    <Route
-      exact
-      path={strings.routes.languageTester.path}
-      component={Loadable({
-        ...loadableConfig,
-        loading: props => <Loader {...props} message={`${strings.loading} ${strings.routes.home.displayName}...`} />,
-        loader: () => import('../LocalizationTester/LocalizationTester'),
-        render(loaded) {
-          const LocalizationTester = loaded.default
-          return (
-            <GlobalImporter
-              appName="components"
-              stringNames={['localizationTester']}
-              render={({ strings }) => <LocalizationTester strings={strings} />}
-            />
-          )
-        }
-      })}
-    />
-    <Redirect to="/" />
-  </Switch>
-)
+const Routes = ({ strings }) =>
+  strings ? (
+    <Switch>
+      <Route
+        exact
+        path={strings.routes.home.path}
+        component={Loadable({
+          ...loadableConfig,
+          loading: props => <Loader {...props} message={`${strings.loading} ${strings.routes.home.displayName}...`} />,
+          loader: () => import('../Home/Home'),
+          render(loaded) {
+            const Home = loaded.default
+            return (
+              <GlobalImporter
+                appName="components"
+                stringNames={['home']}
+                render={({ strings }) => <Home strings={strings} />}
+              />
+            )
+          }
+        })}
+      />
+      <Route
+        exact
+        path={strings.routes.languageTester.path}
+        component={Loadable({
+          ...loadableConfig,
+          loading: props => <Loader {...props} message={`${strings.loading} ${strings.routes.home.displayName}...`} />,
+          loader: () => import('../LocalizationTester/LocalizationTester'),
+          render(loaded) {
+            const LocalizationTester = loaded.default
+            return (
+              <GlobalImporter
+                appName="components"
+                stringNames={['localizationTester']}
+                render={({ strings }) => <LocalizationTester strings={strings} />}
+              />
+            )
+          }
+        })}
+      />
+      <Redirect to="/" />
+    </Switch>
+  ) : null
 
 Routes.propTypes = {
-  strings: PropTypes.object.isRequired
+  strings: PropTypes.object
 }
 
 export default Routes
