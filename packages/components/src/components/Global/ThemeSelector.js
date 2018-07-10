@@ -36,7 +36,7 @@ class ThemeSelector extends PureComponent {
       <GlobalContainerContext.Consumer>
         {context => (
           <Dropdown isOpen={this.state.dropdownOpen} toggle={() => this.toggle()}>
-            <DropdownToggle nav={this.props.nav} caret className="text-uppercase">
+            <DropdownToggle nav={this.props.nav} caret className="text-capitalize">
               {this.props.value || context.user.theme}
             </DropdownToggle>
             <DropdownMenu>
