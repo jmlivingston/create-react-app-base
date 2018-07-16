@@ -1,4 +1,5 @@
 {
+  "version": "0.0.1",
   "private": true,
   "workspaces": [
     "packages/*"
@@ -20,7 +21,12 @@
     "lint": "node node_modules/eslint/bin/eslint.js --max-warnings=0 packages/**/src",
     "precommit": "lint-staged",
     "build-tests": "node ./utility/build-tests",
-    "ide-tf": "node ./utility/utility-dev.js IDE_TOGGLE_FILES"
+    "ide-tf": "node ./utility/utility-dev.js IDE_TOGGLE_FILES",
+    "docker-build": "docker image build -t react:app . -f ./docker/Dockerfile",
+    "docker-run": "docker container run -it -p 3000:3000 -p 35729:35729 -v $(pwd):/app react:app",
+    "docker-test": "docker container run -it -v $(pwd):/app react:app test",
+    "docker-remove": "docker image rmi react:app -f",
+    "docker-shell": "docker container run -it -v $(pwd):/app react:app bash"
   },
   "devDependencies": {
     "husky": "0.14.3",

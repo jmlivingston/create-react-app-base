@@ -2,6 +2,8 @@ import Loadable from 'react-loadable'
 import PropTypes from 'prop-types'
 import React, { Fragment, PureComponent } from 'react'
 
+import { CardBody, CardHeader, Caret, Collapse } from '@myorg/components'
+
 // TODO: Research why dynamic import takes so long after an edit.
 // If this DynamicCode component is removed, an edit and recompile is very quick.
 // Note: This is only a problem in dev mode, so not super critical.
@@ -71,10 +73,16 @@ class StyleGuideSection extends PureComponent {
   componentDidMount = async () => {
     const styleGuideConfig = await import(`@myorg/resources/strings/styleGuide/styleGuide.en.${
       this.props.rootKey
-    }.json`)
+      }.json`)
     this.setState({
       styleGuideConfig
     })
+  }
+
+  toggle(key) {
+    this.setState(prevState => ({
+      [key]: key ? !prevState[key] : true
+    }))
   }
 
   render() {
@@ -89,7 +97,14 @@ class StyleGuideSection extends PureComponent {
               <DynamicComponent parent={this.props.rootKey} child={childKey} />
               <div className="clearfix" />
               <hr />
-              <CodeWrapper parent={this.props.rootKey} child={childKey} label="Code" />
+              <CardHeader onClick={() => this.toggle(`${childKey}Collapse`)} className="cursor-pointer">
+                Code <Caret isToggled={this.state[`${childKey}Collapse`]} />
+              </CardHeader>
+              <Collapse isOpen={this.state[`${childKey}Collapse`]} timeout={0}>
+                <CardBody>
+                  <CodeWrapper parent={this.props.rootKey} child={childKey} label="Code" />
+                </CardBody>
+              </Collapse>
               {Object.keys(this.state.styleGuideConfig.children[childKey].componentPropTypes).length > 0 && (
                 <Fragment>
                   <h3>Prop Types</h3>

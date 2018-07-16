@@ -10,6 +10,7 @@ import Card from './Card'
 import CardBody from './CardBody'
 import CardColumns from './CardColumns'
 import CardDeck from './CardDeck'
+import Caret from './Caret'
 import CardFooter from './CardFooter'
 import CardGroup from './CardGroup'
 import CardHeader from './CardHeader'
@@ -75,6 +76,7 @@ import PopoverBody from './PopoverBody'
 import PopoverHeader from './PopoverHeader'
 import Progress from './Progress'
 import Row from './Row'
+import Separator from './Separator'
 import TabContent from './TabContent'
 import Table from './Table'
 import TabPane from './TabPane'
@@ -107,6 +109,7 @@ export {
   CardSubtitle,
   CardText,
   CardTitle,
+  Caret,
   Carousel,
   CarouselCaption,
   CarouselControl,
@@ -163,6 +166,7 @@ export {
   PopoverHeader,
   Progress,
   Row,
+  Separator,
   TabContent,
   Table,
   TabPane,

@@ -1,13 +1,17 @@
 import PropTypes from 'prop-types'
-import React, { Fragment } from 'react'
+import React, { Fragment, PureComponent } from 'react'
 
-const Home = ({ strings }) => {
-  return (
-    <Fragment>
-      Test components here...
-    </Fragment>
-  )
+class Home extends PureComponent {
+
+  render() {
+    return (
+      <Fragment>
+        Test components here
+      </Fragment>
+    )
+  }
 }
+
 
 Home.propTypes = {
   strings: PropTypes.object.isRequired

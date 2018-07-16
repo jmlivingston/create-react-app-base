@@ -1,7 +1,27 @@
+@import 'bootstrap/scss/_functions.scss';
+@import 'bootstrap/scss/_variables.scss';
+@import 'bootstrap/scss/mixins/_caret.scss';
+
 .btn + .btn,
 .btn + .btn-group,
 .btn-group + .btn,
 .badge + .badge,
 .btn-group + .btn-group {
   margin-left: 10px;
+}
+
+.caret-down {
+    @include caret('down');
+}
+
+.caret-up {
+    @include caret('up');
+}
+
+.caret-left {
+  @include caret('left');
+}
+
+.caret-right {
+  @include caret('right');
 }

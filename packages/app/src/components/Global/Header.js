@@ -39,9 +39,10 @@ class Header extends PureComponent {
     }))
   }
 
-  togglelogInModal() {
+  togglelogInModal = () => {
     this.setState(prevState => ({
-      islogInModalOpen: !prevState.islogInModalOpen
+      islogInModalOpen: !prevState.islogInModalOpen,
+      isOpen: false
     }))
   }
 
@@ -51,24 +52,24 @@ class Header extends PureComponent {
         {context => (
           <header>
             <Navbar color="dark" dark={true} fixed="top" expand="md">
-              <NavbarBrand tag={Link} to={this.props.strings.routes.home.path}>
+              <NavbarBrand tag={Link} to={this.props.strings.routes.home.path} onClick={this.toggle}>
                 {this.props.strings.routes.home.displayName}
               </NavbarBrand>
-              <NavbarToggler onClick={() => this.toggle()} />
+              <NavbarToggler onClick={this.toggle} />
               <Collapse isOpen={this.state.isOpen} navbar timeout={0}>
                 <Nav className="ml-auto" navbar>
                   <NavItem>
-                    <NavLink tag={Link} to={this.props.strings.routes.about.path}>
+                    <NavLink tag={Link} to={this.props.strings.routes.about.path} onClick={this.toggle}>
                       {this.props.strings.routes.about.displayName}
                     </NavLink>
                   </NavItem>
                   <NavItem>
-                    <NavLink tag={Link} to={this.props.strings.routes.todo.path}>
+                    <NavLink tag={Link} to={this.props.strings.routes.todo.path} onClick={this.toggle}>
                       {this.props.strings.routes.todo.displayName}
                     </NavLink>
                   </NavItem>
                   <NavItem>
-                    <NavLink tag={Link} to={this.props.strings.routes.siteMap.path}>
+                    <NavLink tag={Link} to={this.props.strings.routes.siteMap.path} onClick={this.toggle}>
                       {this.props.strings.routes.siteMap.displayName}
                     </NavLink>
                   </NavItem>
@@ -87,25 +88,25 @@ class Header extends PureComponent {
                         </span>
                       </DropdownToggle>
                       <DropdownMenu right>
-                        <DropdownItem tag={Link} to={this.props.strings.routes.userSettings.path}>
+                        <DropdownItem tag={Link} to={this.props.strings.routes.userSettings.path} onClick={this.toggle}>
                           {this.props.strings.routes.userSettings.displayName}
                         </DropdownItem>
                         <DropdownItem divider />
-                        <DropdownItem onClick={() => context.auth.logOut()}>{this.props.strings.logOut}</DropdownItem>
+                        <DropdownItem onClick={() => { context.auth.logOut(); this.toggle()}}>{this.props.strings.logOut}</DropdownItem>
                       </DropdownMenu>
                     </UncontrolledDropdown>
                   ) : (
-                    <Fragment>
-                      <NavItem>
-                        <span className="nav-link cursor-pointer" onClick={() => this.togglelogInModal()}>
-                          {this.props.strings.logIn}
-                        </span>
-                      </NavItem>
-                      <NavLink tag={Link} to={this.props.strings.routes.userSettings.path}>
-                        {this.props.strings.settings}
-                      </NavLink>
-                    </Fragment>
-                  )}
+                      <Fragment>
+                        <NavItem>
+                          <span className="nav-link cursor-pointer" onClick={this.togglelogInModal}>
+                            {this.props.strings.logIn}
+                          </span>
+                        </NavItem>
+                        <NavLink tag={Link} to={this.props.strings.routes.userSettings.path} onClick={this.toggle}>
+                          {this.props.strings.settings}
+                        </NavLink>
+                      </Fragment>
+                    )}
                   {/* Note: Uncomment to show theme and language selector in header 
                   <NavItem>
                     <ThemeSelector />
@@ -114,10 +115,10 @@ class Header extends PureComponent {
                 </Nav>
               </Collapse>
             </Navbar>
-            <Modal isOpen={this.state.islogInModalOpen} toggle={() => this.togglelogInModal()}>
-              <ModalHeader toggle={() => this.togglelogInModal()}>{this.props.strings.logIn}</ModalHeader>
+            <Modal isOpen={this.state.islogInModalOpen} toggle={this.togglelogInModal}>
+              <ModalHeader toggle={this.togglelogInModal}>{this.props.strings.logIn}</ModalHeader>
               <ModalBody>
-                <LogIn onLoggedIn={() => this.togglelogInModal()} />
+                <LogIn onLoggedIn={this.togglelogInModal} />
               </ModalBody>
             </Modal>
           </header>
