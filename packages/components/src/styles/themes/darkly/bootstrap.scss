@@ -30,4 +30,8 @@
   min-height: calc(100vh - 92px) !important;
 }
 
+hr {
+  border-top-color: $secondary;
+}
+
 @import '../../common/core.scss';

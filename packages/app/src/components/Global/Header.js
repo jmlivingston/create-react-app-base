@@ -69,6 +69,11 @@ class Header extends PureComponent {
                     </NavLink>
                   </NavItem>
                   <NavItem>
+                    <NavLink tag={Link} to={this.props.strings.routes.things.path} onClick={this.toggle}>
+                      {this.props.strings.routes.things.displayName}
+                    </NavLink>
+                  </NavItem>
+                  <NavItem>
                     <NavLink tag={Link} to={this.props.strings.routes.siteMap.path} onClick={this.toggle}>
                       {this.props.strings.routes.siteMap.displayName}
                     </NavLink>
@@ -92,21 +97,27 @@ class Header extends PureComponent {
                           {this.props.strings.routes.userSettings.displayName}
                         </DropdownItem>
                         <DropdownItem divider />
-                        <DropdownItem onClick={() => { context.auth.logOut(); this.toggle()}}>{this.props.strings.logOut}</DropdownItem>
+                        <DropdownItem
+                          onClick={() => {
+                            context.auth.logOut()
+                            this.toggle()
+                          }}>
+                          {this.props.strings.logOut}
+                        </DropdownItem>
                       </DropdownMenu>
                     </UncontrolledDropdown>
                   ) : (
-                      <Fragment>
-                        <NavItem>
-                          <span className="nav-link cursor-pointer" onClick={this.togglelogInModal}>
-                            {this.props.strings.logIn}
-                          </span>
-                        </NavItem>
-                        <NavLink tag={Link} to={this.props.strings.routes.userSettings.path} onClick={this.toggle}>
-                          {this.props.strings.settings}
-                        </NavLink>
-                      </Fragment>
-                    )}
+                    <Fragment>
+                      <NavItem>
+                        <span className="nav-link cursor-pointer" onClick={this.togglelogInModal}>
+                          {this.props.strings.logIn}
+                        </span>
+                      </NavItem>
+                      <NavLink tag={Link} to={this.props.strings.routes.userSettings.path} onClick={this.toggle}>
+                        {this.props.strings.settings}
+                      </NavLink>
+                    </Fragment>
+                  )}
                   {/* Note: Uncomment to show theme and language selector in header 
                   <NavItem>
                     <ThemeSelector />

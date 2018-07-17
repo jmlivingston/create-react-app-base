@@ -39,7 +39,7 @@ const Routes = ({ strings }) =>
           ...loadableConfig,
           loading: props => <Loader {...props} message={`${strings.loading} ${strings.routes.home.displayName}...`} />,
           loader: () => import('../About/About'),
-          render(loaded, props) {
+          render(loaded) {
             const About = loaded.default
             return (
               <GlobalImporter
@@ -60,7 +60,7 @@ const Routes = ({ strings }) =>
             <Loader {...props} message={`${strings.loading} ${strings.routes.siteMap.displayName}...`} />
           ),
           loader: () => import('@myorg/components'),
-          render(loaded, props) {
+          render(loaded) {
             const SiteMap = loaded.SiteMap
             return <SiteMap strings={strings.routes} />
           }
@@ -89,6 +89,21 @@ const Routes = ({ strings }) =>
           }
         })}
       />
+
+      <Route
+        exact
+        path={strings.routes.things.path}
+        component={Loadable({
+          ...loadableConfig,
+          loading: props => <Loader {...props} message={`${strings.loading}`} />,
+          loader: () => import('../Thing/ThingContainer'),
+          render(loaded) {
+            const ThingContainer = loaded.default
+            return <ThingContainer filterIndex={0} />
+          }
+        })}
+      />
+
       <Redirect to="/" />
     </Switch>
   ) : null

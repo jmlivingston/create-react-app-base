@@ -19,6 +19,12 @@
       "inSiteMap": true,
       "inHeader": true
     },
+    "things": {
+      "displayName": "もの",
+      "path": "/things",
+      "inSiteMap": true,
+      "inHeader": true
+    },
     "todo": {
       "displayName": "タスク",
       "path": "/todo",
