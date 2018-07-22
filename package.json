@@ -5,6 +5,7 @@
     "packages/*"
   ],
   "scripts": {
+    "start": "node ./utility/launch.js COMPONENTS START",
     "app-start": "node ./utility/launch.js APP START",
     "app-build": "node ./utility/launch.js APP BUILD",
     "app-build-start": "node ./utility/launch.js APP BUILD_START",

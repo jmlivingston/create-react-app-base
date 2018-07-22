@@ -17,11 +17,11 @@ After cloning run `yarn` in the terminal to install the required npm packages.
 
 ## Running
 
-[npm scripts](https://docs.npmjs.com/misc/scripts) are used throughout the project, so you can simply run ```yarn run``` or refer to the respective package. file for specific commands. There are three primary apps, all of which are based on create-react-app:
+[npm scripts](https://docs.npmjs.com/misc/scripts) are used throughout the project, so you can simply run ```yarn run``` or refer to the package.json file for specific commands. There are three primary apps, all of which are based on create-react-app:
 
-- app - The primary app.
-- components - Used to build common components.
-- style-guide - Style Guide for UX/UI and Development.
+- app - The primary app. ```yarn app-start```
+- components - Used to build common components. ```yarn components-start```
+- style-guide - Style Guide for UX/UI and Development. ```yarn style-guide-start```
 
 ---
 
