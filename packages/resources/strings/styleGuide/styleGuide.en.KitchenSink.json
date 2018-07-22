@@ -1,7 +1,7 @@
 {
   "children": {
-    "KitchenSink": {
-      "title": "KitchenSink - ",
+    "KitchenSinkDefault": {
+      "title": "KitchenSink - Default",
       "componentPropTypes": {}
     }
   }

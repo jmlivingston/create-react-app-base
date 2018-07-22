@@ -1,7 +1,7 @@
 {
   "children": {
-    "DropDownCustom": {
-      "title": "DropDownCustom",
+    "DropdownCustom": {
+      "title": "Dropdown - Custom",
       "componentPropTypes": {
         "Dropdown": {
           "disabled": {

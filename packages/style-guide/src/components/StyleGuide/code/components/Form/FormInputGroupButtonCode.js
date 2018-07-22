@@ -17,7 +17,7 @@ class FormInputGroupButton extends PureComponent {
     splitButtonOpen: false
   }
 
-  toggleDropDown() {
+  toggleDropdown() {
     this.setState({
       dropdownOpen: !this.state.dropdownOpen
     })
@@ -44,7 +44,7 @@ class FormInputGroupButton extends PureComponent {
           <InputGroupButtonDropdown
             addonType="append"
             isOpen={this.state.dropdownOpen}
-            toggle={() => this.toggleDropDown()}>
+            toggle={() => this.toggleDropdown()}>
             <DropdownToggle caret>Button Dropdown</DropdownToggle>
             <DropdownMenu>
               <DropdownItem header>Header</DropdownItem>

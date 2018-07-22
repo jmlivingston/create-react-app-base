@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react'
 
 import { Dropdown, DropdownMenu, DropdownToggle } from '@myorg/components'
 
-class DropDownCustom extends PureComponent {
+class DropdownCustom extends PureComponent {
   state = {
     dropdownOpen: false
   }
@@ -33,4 +33,4 @@ class DropDownCustom extends PureComponent {
   }
 }
 
-export default DropDownCustom
+export default DropdownCustom

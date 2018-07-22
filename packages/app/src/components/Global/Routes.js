@@ -96,10 +96,10 @@ const Routes = ({ strings }) =>
         component={Loadable({
           ...loadableConfig,
           loading: props => <Loader {...props} message={`${strings.loading}`} />,
-          loader: () => import('../Thing/ThingContainer'),
+          loader: () => import('../FilterExample/FilterExampleContainerContext'),
           render(loaded) {
-            const ThingContainer = loaded.default
-            return <ThingContainer filterIndex={0} />
+            const FilterExample = loaded.default
+            return <FilterExample filterIndex={0} />
           }
         })}
       />

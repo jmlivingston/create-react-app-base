@@ -8,7 +8,7 @@ const codeDir = path.join(styleGuideBase, '/code/components')
 const componentsDir = path.join(styleGuideBase, '/examples/components')
 const componentsCommonDir = path.join(__dirname, '../packages/components/src/components/Common')
 const getFilesFolders = require('./utility-io').getFilesFolders
-const styleGuideConfigFileBase = path.join(__dirname, '../packages/strings/styleGuide/styleGuide.en')
+const styleGuideConfigFileBase = path.join(__dirname, '../packages/resources/strings/styleGuide/styleGuide.en')
 
 const prettierConfig = {
   jsxBracketSameLine: true,
@@ -63,29 +63,37 @@ const getStyleGuideConfig = () => {
       return {
         ...rootObj,
         [path.basename(rootFolder)]: {
-          children: getFilesFolders(rootFolder, false, 'file').reduce((childrenObj, childFile) => {
-            const constName = path.basename(childFile).replace('.js', 'Code')
-            let fileString =
-              'const ' +
-              constName +
-              ' = `' +
-              fs
-                .readFileSync(childFile)
-                .toString()
-                .replace(/`/g, '\\`') +
-              '`\n\nexport default ' +
-              constName
-            fileString = prettier.format(fileString, prettierConfig)
-            fs.writeFileSync(childFile.replace(componentsDir, codeDir).replace('.js', 'Code.js'), fileString)
-            const childName = path.basename(childFile).replace('.js', '')
-            return {
-              ...childrenObj,
-              [childName]: {
-                title: childName.replace(path.basename(rootFolder), path.basename(rootFolder) + ' - '),
-                componentPropTypes: getPropTypes(childFile)
+          children: getFilesFolders(rootFolder, false, 'file')
+            .filter(
+              file =>
+                file.indexOf('.test.js') === -1 &&
+                file.indexOf('index.js') === -1 &&
+                file.indexOf('Container.js') === -1
+            )
+            .reduce((childrenObj, childFile) => {
+              const constName = path.basename(childFile).replace('.js', 'Code')
+              let fileString =
+                'const ' +
+                constName +
+                ' = `' +
+                fs
+                  .readFileSync(childFile)
+                  .toString()
+                  .replace(/`/g, '\\`') +
+                '`\n\nexport default ' +
+                constName
+              // const childFileCode = fs.readFileSync(childFile).toString()
+              fileString = prettier.format(fileString, prettierConfig)
+              fs.writeFileSync(childFile.replace(componentsDir, codeDir).replace('.js', 'Code.js'), fileString)
+              const childName = path.basename(childFile).replace('.js', '')
+              return {
+                ...childrenObj,
+                [childName]: {
+                  title: childName.replace(path.basename(rootFolder), path.basename(rootFolder) + ' - '),
+                  componentPropTypes: getPropTypes(childFile)
+                }
               }
-            }
-          }, {})
+            }, {})
         }
       }
     }, {})
@@ -122,6 +130,38 @@ const buildCodeLoaders = styleGuideConfig => {
   fs.writeFileSync(path.join(componentsDir, 'index.js'), exampleComponentsCodeFormatted)
 }
 
+const buildStyleGuideWrappers = styleGuideConfig => {
+  Object.keys(styleGuideConfig).forEach(key => {
+    const children = Object.keys(styleGuideConfig[key].children)
+
+    const styleGuideWrapper = `import React, { Fragment } from 'react'
+
+${children.map(child => `import ${child} from './${child}'`).join('\n')}
+
+${children.map(child => `import ${child}Code from '../../../code/components/${key}/${child}Code'`).join('\n')}
+    
+import StyleGuideWrapper from '../../../StyleGuideWrapper'
+    
+const ${key} = props => {
+  return (
+    <Fragment>
+      ${children
+        .map(
+          child =>
+            `<StyleGuideWrapper title="${key}" name="${child}" component={<${child} />} code={${child}Code} {...props} />`
+        )
+        .join('\n\t\t\t\t')}
+    </Fragment>
+  )
+}
+
+export default ${key}
+    
+`
+    fs.writeFileSync(path.join(componentsDir, key, key + 'Container.js'), styleGuideWrapper)
+  })
+}
+
 getStyleGuideConfig().then(styleGuideConfig => {
   Object.keys(styleGuideConfig).forEach(key => {
     const styleGuideFormatted = JSON.stringify(styleGuideConfig[key], null, 2)
@@ -135,4 +175,5 @@ getStyleGuideConfig().then(styleGuideConfig => {
   }, {})
   fs.writeFileSync(`${styleGuideConfigFileBase}.keys.json`, JSON.stringify(keys, null, 2))
   buildCodeLoaders(styleGuideConfig)
+  buildStyleGuideWrappers(styleGuideConfig)
 })
