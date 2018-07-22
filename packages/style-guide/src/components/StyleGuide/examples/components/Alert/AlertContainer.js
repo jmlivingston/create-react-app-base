@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 
 import AlertContent from './AlertContent'
 import AlertDefault from './AlertDefault'
@@ -11,20 +11,25 @@ import AlertDefaultCode from '../../../code/components/Alert/AlertDefaultCode'
 import AlertDismissCode from '../../../code/components/Alert/AlertDismissCode'
 import AlertLinkCode from '../../../code/components/Alert/AlertLinkCode'
 import AlertUncontrolledDismissCode from '../../../code/components/Alert/AlertUncontrolledDismissCode'
-    
+
+import StyleGuideComponent from '../../../StyleGuideComponent'
 import StyleGuideWrapper from '../../../StyleGuideWrapper'
-    
+
 const Alert = props => {
   return (
-    <Fragment>
-      <StyleGuideWrapper title="Alert" name="AlertContent" component={<AlertContent />} code={AlertContentCode} {...props} />
-				<StyleGuideWrapper title="Alert" name="AlertDefault" component={<AlertDefault />} code={AlertDefaultCode} {...props} />
-				<StyleGuideWrapper title="Alert" name="AlertDismiss" component={<AlertDismiss />} code={AlertDismissCode} {...props} />
-				<StyleGuideWrapper title="Alert" name="AlertLink" component={<AlertLink />} code={AlertLinkCode} {...props} />
-				<StyleGuideWrapper title="Alert" name="AlertUncontrolledDismiss" component={<AlertUncontrolledDismiss />} code={AlertUncontrolledDismissCode} {...props} />
-    </Fragment>
+    <StyleGuideWrapper title="Alert" {...props}>
+      <StyleGuideComponent title="Alert" name="AlertContent" component={<AlertContent />} code={AlertContentCode} />
+      <StyleGuideComponent title="Alert" name="AlertDefault" component={<AlertDefault />} code={AlertDefaultCode} />
+      <StyleGuideComponent title="Alert" name="AlertDismiss" component={<AlertDismiss />} code={AlertDismissCode} />
+      <StyleGuideComponent title="Alert" name="AlertLink" component={<AlertLink />} code={AlertLinkCode} />
+      <StyleGuideComponent
+        title="Alert"
+        name="AlertUncontrolledDismiss"
+        component={<AlertUncontrolledDismiss />}
+        code={AlertUncontrolledDismissCode}
+      />
+    </StyleGuideWrapper>
   )
 }
 
 export default Alert
-    

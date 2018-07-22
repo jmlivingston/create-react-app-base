@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 
 import PaginationDefault from './PaginationDefault'
 import PaginationSizingLarge from './PaginationSizingLarge'
@@ -9,19 +9,39 @@ import PaginationDefaultCode from '../../../code/components/Pagination/Paginatio
 import PaginationSizingLargeCode from '../../../code/components/Pagination/PaginationSizingLargeCode'
 import PaginationSizingSmallCode from '../../../code/components/Pagination/PaginationSizingSmallCode'
 import PaginationStateCode from '../../../code/components/Pagination/PaginationStateCode'
-    
+
+import StyleGuideComponent from '../../../StyleGuideComponent'
 import StyleGuideWrapper from '../../../StyleGuideWrapper'
-    
+
 const Pagination = props => {
   return (
-    <Fragment>
-      <StyleGuideWrapper title="Pagination" name="PaginationDefault" component={<PaginationDefault />} code={PaginationDefaultCode} {...props} />
-				<StyleGuideWrapper title="Pagination" name="PaginationSizingLarge" component={<PaginationSizingLarge />} code={PaginationSizingLargeCode} {...props} />
-				<StyleGuideWrapper title="Pagination" name="PaginationSizingSmall" component={<PaginationSizingSmall />} code={PaginationSizingSmallCode} {...props} />
-				<StyleGuideWrapper title="Pagination" name="PaginationState" component={<PaginationState />} code={PaginationStateCode} {...props} />
-    </Fragment>
+    <StyleGuideWrapper title="Pagination" {...props}>
+      <StyleGuideComponent
+        title="Pagination"
+        name="PaginationDefault"
+        component={<PaginationDefault />}
+        code={PaginationDefaultCode}
+      />
+      <StyleGuideComponent
+        title="Pagination"
+        name="PaginationSizingLarge"
+        component={<PaginationSizingLarge />}
+        code={PaginationSizingLargeCode}
+      />
+      <StyleGuideComponent
+        title="Pagination"
+        name="PaginationSizingSmall"
+        component={<PaginationSizingSmall />}
+        code={PaginationSizingSmallCode}
+      />
+      <StyleGuideComponent
+        title="Pagination"
+        name="PaginationState"
+        component={<PaginationState />}
+        code={PaginationStateCode}
+      />
+    </StyleGuideWrapper>
   )
 }
 
 export default Pagination
-    

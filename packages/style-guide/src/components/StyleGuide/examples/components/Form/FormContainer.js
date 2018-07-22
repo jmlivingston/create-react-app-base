@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 
 import FormCustomControls from './FormCustomControls'
 import FormDefault from './FormDefault'
@@ -33,31 +33,91 @@ import FormInputGroupSizingCode from '../../../code/components/Form/FormInputGro
 import FormInputSizingCode from '../../../code/components/Form/FormInputSizingCode'
 import FormInputTypeCode from '../../../code/components/Form/FormInputTypeCode'
 import FormLabelHiddenCode from '../../../code/components/Form/FormLabelHiddenCode'
-    
+
+import StyleGuideComponent from '../../../StyleGuideComponent'
 import StyleGuideWrapper from '../../../StyleGuideWrapper'
-    
+
 const Form = props => {
   return (
-    <Fragment>
-      <StyleGuideWrapper title="Form" name="FormCustomControls" component={<FormCustomControls />} code={FormCustomControlsCode} {...props} />
-				<StyleGuideWrapper title="Form" name="FormDefault" component={<FormDefault />} code={FormDefaultCode} {...props} />
-				<StyleGuideWrapper title="Form" name="FormFeedbackDefault" component={<FormFeedbackDefault />} code={FormFeedbackDefaultCode} {...props} />
-				<StyleGuideWrapper title="Form" name="FormGrid" component={<FormGrid />} code={FormGridCode} {...props} />
-				<StyleGuideWrapper title="Form" name="FormInline" component={<FormInline />} code={FormInlineCode} {...props} />
-				<StyleGuideWrapper title="Form" name="FormInlineCheckboxes" component={<FormInlineCheckboxes />} code={FormInlineCheckboxesCode} {...props} />
-				<StyleGuideWrapper title="Form" name="FormInputGridSizing" component={<FormInputGridSizing />} code={FormInputGridSizingCode} {...props} />
-				<StyleGuideWrapper title="Form" name="FormInputGroupAddon" component={<FormInputGroupAddon />} code={FormInputGroupAddonCode} {...props} />
-				<StyleGuideWrapper title="Form" name="FormInputGroupButton" component={<FormInputGroupButton />} code={FormInputGroupButtonCode} {...props} />
-				<StyleGuideWrapper title="Form" name="FormInputGroupButtonDropdown" component={<FormInputGroupButtonDropdown />} code={FormInputGroupButtonDropdownCode} {...props} />
-				<StyleGuideWrapper title="Form" name="FormInputGroupButtonShorthand" component={<FormInputGroupButtonShorthand />} code={FormInputGroupButtonShorthandCode} {...props} />
-				<StyleGuideWrapper title="Form" name="FormInputGroupOverview" component={<FormInputGroupOverview />} code={FormInputGroupOverviewCode} {...props} />
-				<StyleGuideWrapper title="Form" name="FormInputGroupSizing" component={<FormInputGroupSizing />} code={FormInputGroupSizingCode} {...props} />
-				<StyleGuideWrapper title="Form" name="FormInputSizing" component={<FormInputSizing />} code={FormInputSizingCode} {...props} />
-				<StyleGuideWrapper title="Form" name="FormInputType" component={<FormInputType />} code={FormInputTypeCode} {...props} />
-				<StyleGuideWrapper title="Form" name="FormLabelHidden" component={<FormLabelHidden />} code={FormLabelHiddenCode} {...props} />
-    </Fragment>
+    <StyleGuideWrapper title="Form" {...props}>
+      <StyleGuideComponent
+        title="Form"
+        name="FormCustomControls"
+        component={<FormCustomControls />}
+        code={FormCustomControlsCode}
+      />
+      <StyleGuideComponent title="Form" name="FormDefault" component={<FormDefault />} code={FormDefaultCode} />
+      <StyleGuideComponent
+        title="Form"
+        name="FormFeedbackDefault"
+        component={<FormFeedbackDefault />}
+        code={FormFeedbackDefaultCode}
+      />
+      <StyleGuideComponent title="Form" name="FormGrid" component={<FormGrid />} code={FormGridCode} />
+      <StyleGuideComponent title="Form" name="FormInline" component={<FormInline />} code={FormInlineCode} />
+      <StyleGuideComponent
+        title="Form"
+        name="FormInlineCheckboxes"
+        component={<FormInlineCheckboxes />}
+        code={FormInlineCheckboxesCode}
+      />
+      <StyleGuideComponent
+        title="Form"
+        name="FormInputGridSizing"
+        component={<FormInputGridSizing />}
+        code={FormInputGridSizingCode}
+      />
+      <StyleGuideComponent
+        title="Form"
+        name="FormInputGroupAddon"
+        component={<FormInputGroupAddon />}
+        code={FormInputGroupAddonCode}
+      />
+      <StyleGuideComponent
+        title="Form"
+        name="FormInputGroupButton"
+        component={<FormInputGroupButton />}
+        code={FormInputGroupButtonCode}
+      />
+      <StyleGuideComponent
+        title="Form"
+        name="FormInputGroupButtonDropdown"
+        component={<FormInputGroupButtonDropdown />}
+        code={FormInputGroupButtonDropdownCode}
+      />
+      <StyleGuideComponent
+        title="Form"
+        name="FormInputGroupButtonShorthand"
+        component={<FormInputGroupButtonShorthand />}
+        code={FormInputGroupButtonShorthandCode}
+      />
+      <StyleGuideComponent
+        title="Form"
+        name="FormInputGroupOverview"
+        component={<FormInputGroupOverview />}
+        code={FormInputGroupOverviewCode}
+      />
+      <StyleGuideComponent
+        title="Form"
+        name="FormInputGroupSizing"
+        component={<FormInputGroupSizing />}
+        code={FormInputGroupSizingCode}
+      />
+      <StyleGuideComponent
+        title="Form"
+        name="FormInputSizing"
+        component={<FormInputSizing />}
+        code={FormInputSizingCode}
+      />
+      <StyleGuideComponent title="Form" name="FormInputType" component={<FormInputType />} code={FormInputTypeCode} />
+      <StyleGuideComponent
+        title="Form"
+        name="FormLabelHidden"
+        component={<FormLabelHidden />}
+        code={FormLabelHiddenCode}
+      />
+    </StyleGuideWrapper>
   )
 }
 
 export default Form
-    

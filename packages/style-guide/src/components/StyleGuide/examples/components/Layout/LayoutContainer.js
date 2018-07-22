@@ -1,18 +1,18 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 
 import LayoutDefault from './LayoutDefault'
 
 import LayoutDefaultCode from '../../../code/components/Layout/LayoutDefaultCode'
-    
+
+import StyleGuideComponent from '../../../StyleGuideComponent'
 import StyleGuideWrapper from '../../../StyleGuideWrapper'
-    
+
 const Layout = props => {
   return (
-    <Fragment>
-      <StyleGuideWrapper title="Layout" name="LayoutDefault" component={<LayoutDefault />} code={LayoutDefaultCode} {...props} />
-    </Fragment>
+    <StyleGuideWrapper title="Layout" {...props}>
+      <StyleGuideComponent title="Layout" name="LayoutDefault" component={<LayoutDefault />} code={LayoutDefaultCode} />
+    </StyleGuideWrapper>
   )
 }
 
 export default Layout
-    

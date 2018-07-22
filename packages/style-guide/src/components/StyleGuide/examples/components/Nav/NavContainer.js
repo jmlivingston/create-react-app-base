@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 
 import NavDefault from './NavDefault'
 import NavNavbarDefault from './NavNavbarDefault'
@@ -13,21 +13,31 @@ import NavNavbarTogglerDefaultCode from '../../../code/components/Nav/NavNavbarT
 import NavPillsCode from '../../../code/components/Nav/NavPillsCode'
 import NavTabsCode from '../../../code/components/Nav/NavTabsCode'
 import NavVerticalCode from '../../../code/components/Nav/NavVerticalCode'
-    
+
+import StyleGuideComponent from '../../../StyleGuideComponent'
 import StyleGuideWrapper from '../../../StyleGuideWrapper'
-    
+
 const Nav = props => {
   return (
-    <Fragment>
-      <StyleGuideWrapper title="Nav" name="NavDefault" component={<NavDefault />} code={NavDefaultCode} {...props} />
-				<StyleGuideWrapper title="Nav" name="NavNavbarDefault" component={<NavNavbarDefault />} code={NavNavbarDefaultCode} {...props} />
-				<StyleGuideWrapper title="Nav" name="NavNavbarTogglerDefault" component={<NavNavbarTogglerDefault />} code={NavNavbarTogglerDefaultCode} {...props} />
-				<StyleGuideWrapper title="Nav" name="NavPills" component={<NavPills />} code={NavPillsCode} {...props} />
-				<StyleGuideWrapper title="Nav" name="NavTabs" component={<NavTabs />} code={NavTabsCode} {...props} />
-				<StyleGuideWrapper title="Nav" name="NavVertical" component={<NavVertical />} code={NavVerticalCode} {...props} />
-    </Fragment>
+    <StyleGuideWrapper title="Nav" {...props}>
+      <StyleGuideComponent title="Nav" name="NavDefault" component={<NavDefault />} code={NavDefaultCode} />
+      <StyleGuideComponent
+        title="Nav"
+        name="NavNavbarDefault"
+        component={<NavNavbarDefault />}
+        code={NavNavbarDefaultCode}
+      />
+      <StyleGuideComponent
+        title="Nav"
+        name="NavNavbarTogglerDefault"
+        component={<NavNavbarTogglerDefault />}
+        code={NavNavbarTogglerDefaultCode}
+      />
+      <StyleGuideComponent title="Nav" name="NavPills" component={<NavPills />} code={NavPillsCode} />
+      <StyleGuideComponent title="Nav" name="NavTabs" component={<NavTabs />} code={NavTabsCode} />
+      <StyleGuideComponent title="Nav" name="NavVertical" component={<NavVertical />} code={NavVerticalCode} />
+    </StyleGuideWrapper>
   )
 }
 
 export default Nav
-    

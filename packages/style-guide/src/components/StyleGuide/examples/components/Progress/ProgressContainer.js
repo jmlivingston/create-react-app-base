@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 
 import ProgressAnimated from './ProgressAnimated'
 import ProgressColor from './ProgressColor'
@@ -15,22 +15,52 @@ import ProgressLabelsCode from '../../../code/components/Progress/ProgressLabels
 import ProgressMaxCode from '../../../code/components/Progress/ProgressMaxCode'
 import ProgressMultiCode from '../../../code/components/Progress/ProgressMultiCode'
 import ProgressStripedCode from '../../../code/components/Progress/ProgressStripedCode'
-    
+
+import StyleGuideComponent from '../../../StyleGuideComponent'
 import StyleGuideWrapper from '../../../StyleGuideWrapper'
-    
+
 const Progress = props => {
   return (
-    <Fragment>
-      <StyleGuideWrapper title="Progress" name="ProgressAnimated" component={<ProgressAnimated />} code={ProgressAnimatedCode} {...props} />
-				<StyleGuideWrapper title="Progress" name="ProgressColor" component={<ProgressColor />} code={ProgressColorCode} {...props} />
-				<StyleGuideWrapper title="Progress" name="ProgressDefault" component={<ProgressDefault />} code={ProgressDefaultCode} {...props} />
-				<StyleGuideWrapper title="Progress" name="ProgressLabels" component={<ProgressLabels />} code={ProgressLabelsCode} {...props} />
-				<StyleGuideWrapper title="Progress" name="ProgressMax" component={<ProgressMax />} code={ProgressMaxCode} {...props} />
-				<StyleGuideWrapper title="Progress" name="ProgressMulti" component={<ProgressMulti />} code={ProgressMultiCode} {...props} />
-				<StyleGuideWrapper title="Progress" name="ProgressStriped" component={<ProgressStriped />} code={ProgressStripedCode} {...props} />
-    </Fragment>
+    <StyleGuideWrapper title="Progress" {...props}>
+      <StyleGuideComponent
+        title="Progress"
+        name="ProgressAnimated"
+        component={<ProgressAnimated />}
+        code={ProgressAnimatedCode}
+      />
+      <StyleGuideComponent
+        title="Progress"
+        name="ProgressColor"
+        component={<ProgressColor />}
+        code={ProgressColorCode}
+      />
+      <StyleGuideComponent
+        title="Progress"
+        name="ProgressDefault"
+        component={<ProgressDefault />}
+        code={ProgressDefaultCode}
+      />
+      <StyleGuideComponent
+        title="Progress"
+        name="ProgressLabels"
+        component={<ProgressLabels />}
+        code={ProgressLabelsCode}
+      />
+      <StyleGuideComponent title="Progress" name="ProgressMax" component={<ProgressMax />} code={ProgressMaxCode} />
+      <StyleGuideComponent
+        title="Progress"
+        name="ProgressMulti"
+        component={<ProgressMulti />}
+        code={ProgressMultiCode}
+      />
+      <StyleGuideComponent
+        title="Progress"
+        name="ProgressStriped"
+        component={<ProgressStriped />}
+        code={ProgressStripedCode}
+      />
+    </StyleGuideWrapper>
   )
 }
 
 export default Progress
-    

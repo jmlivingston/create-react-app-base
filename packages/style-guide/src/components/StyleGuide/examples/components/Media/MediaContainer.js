@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 
 import MediaAlignment from './MediaAlignment'
 import MediaDefault from './MediaDefault'
@@ -9,19 +9,24 @@ import MediaAlignmentCode from '../../../code/components/Media/MediaAlignmentCod
 import MediaDefaultCode from '../../../code/components/Media/MediaDefaultCode'
 import MediaListCode from '../../../code/components/Media/MediaListCode'
 import MediaNestedCode from '../../../code/components/Media/MediaNestedCode'
-    
+
+import StyleGuideComponent from '../../../StyleGuideComponent'
 import StyleGuideWrapper from '../../../StyleGuideWrapper'
-    
+
 const Media = props => {
   return (
-    <Fragment>
-      <StyleGuideWrapper title="Media" name="MediaAlignment" component={<MediaAlignment />} code={MediaAlignmentCode} {...props} />
-				<StyleGuideWrapper title="Media" name="MediaDefault" component={<MediaDefault />} code={MediaDefaultCode} {...props} />
-				<StyleGuideWrapper title="Media" name="MediaList" component={<MediaList />} code={MediaListCode} {...props} />
-				<StyleGuideWrapper title="Media" name="MediaNested" component={<MediaNested />} code={MediaNestedCode} {...props} />
-    </Fragment>
+    <StyleGuideWrapper title="Media" {...props}>
+      <StyleGuideComponent
+        title="Media"
+        name="MediaAlignment"
+        component={<MediaAlignment />}
+        code={MediaAlignmentCode}
+      />
+      <StyleGuideComponent title="Media" name="MediaDefault" component={<MediaDefault />} code={MediaDefaultCode} />
+      <StyleGuideComponent title="Media" name="MediaList" component={<MediaList />} code={MediaListCode} />
+      <StyleGuideComponent title="Media" name="MediaNested" component={<MediaNested />} code={MediaNestedCode} />
+    </StyleGuideWrapper>
   )
 }
 
 export default Media
-    

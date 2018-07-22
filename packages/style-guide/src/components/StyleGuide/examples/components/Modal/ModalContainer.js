@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 
 import ModalBackdrop from './ModalBackdrop'
 import ModalCustomTimeout from './ModalCustomTimeout'
@@ -13,21 +13,26 @@ import ModalDefaultCode from '../../../code/components/Modal/ModalDefaultCode'
 import ModalExternalCode from '../../../code/components/Modal/ModalExternalCode'
 import ModalFadelessCode from '../../../code/components/Modal/ModalFadelessCode'
 import ModalNestedCode from '../../../code/components/Modal/ModalNestedCode'
-    
+
+import StyleGuideComponent from '../../../StyleGuideComponent'
 import StyleGuideWrapper from '../../../StyleGuideWrapper'
-    
+
 const Modal = props => {
   return (
-    <Fragment>
-      <StyleGuideWrapper title="Modal" name="ModalBackdrop" component={<ModalBackdrop />} code={ModalBackdropCode} {...props} />
-				<StyleGuideWrapper title="Modal" name="ModalCustomTimeout" component={<ModalCustomTimeout />} code={ModalCustomTimeoutCode} {...props} />
-				<StyleGuideWrapper title="Modal" name="ModalDefault" component={<ModalDefault />} code={ModalDefaultCode} {...props} />
-				<StyleGuideWrapper title="Modal" name="ModalExternal" component={<ModalExternal />} code={ModalExternalCode} {...props} />
-				<StyleGuideWrapper title="Modal" name="ModalFadeless" component={<ModalFadeless />} code={ModalFadelessCode} {...props} />
-				<StyleGuideWrapper title="Modal" name="ModalNested" component={<ModalNested />} code={ModalNestedCode} {...props} />
-    </Fragment>
+    <StyleGuideWrapper title="Modal" {...props}>
+      <StyleGuideComponent title="Modal" name="ModalBackdrop" component={<ModalBackdrop />} code={ModalBackdropCode} />
+      <StyleGuideComponent
+        title="Modal"
+        name="ModalCustomTimeout"
+        component={<ModalCustomTimeout />}
+        code={ModalCustomTimeoutCode}
+      />
+      <StyleGuideComponent title="Modal" name="ModalDefault" component={<ModalDefault />} code={ModalDefaultCode} />
+      <StyleGuideComponent title="Modal" name="ModalExternal" component={<ModalExternal />} code={ModalExternalCode} />
+      <StyleGuideComponent title="Modal" name="ModalFadeless" component={<ModalFadeless />} code={ModalFadelessCode} />
+      <StyleGuideComponent title="Modal" name="ModalNested" component={<ModalNested />} code={ModalNestedCode} />
+    </StyleGuideWrapper>
   )
 }
 
 export default Modal
-    

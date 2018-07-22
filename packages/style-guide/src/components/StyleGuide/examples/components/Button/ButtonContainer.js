@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 
 import ButtonDefault from './ButtonDefault'
 import ButtonDropdownDefault from './ButtonDropdownDefault'
@@ -17,23 +17,53 @@ import ButtonGroupDefaultCode from '../../../code/components/Button/ButtonGroupD
 import ButtonOutlineCode from '../../../code/components/Button/ButtonOutlineCode'
 import ButtonStatefulCode from '../../../code/components/Button/ButtonStatefulCode'
 import ButtonToolbarDefaultCode from '../../../code/components/Button/ButtonToolbarDefaultCode'
-    
+
+import StyleGuideComponent from '../../../StyleGuideComponent'
 import StyleGuideWrapper from '../../../StyleGuideWrapper'
-    
+
 const Button = props => {
   return (
-    <Fragment>
-      <StyleGuideWrapper title="Button" name="ButtonDefault" component={<ButtonDefault />} code={ButtonDefaultCode} {...props} />
-				<StyleGuideWrapper title="Button" name="ButtonDropdownDefault" component={<ButtonDropdownDefault />} code={ButtonDropdownDefaultCode} {...props} />
-				<StyleGuideWrapper title="Button" name="ButtonDropdownMulti" component={<ButtonDropdownMulti />} code={ButtonDropdownMultiCode} {...props} />
-				<StyleGuideWrapper title="Button" name="ButtonDropdownMultiSplit" component={<ButtonDropdownMultiSplit />} code={ButtonDropdownMultiSplitCode} {...props} />
-				<StyleGuideWrapper title="Button" name="ButtonGroupDefault" component={<ButtonGroupDefault />} code={ButtonGroupDefaultCode} {...props} />
-				<StyleGuideWrapper title="Button" name="ButtonOutline" component={<ButtonOutline />} code={ButtonOutlineCode} {...props} />
-				<StyleGuideWrapper title="Button" name="ButtonStateful" component={<ButtonStateful />} code={ButtonStatefulCode} {...props} />
-				<StyleGuideWrapper title="Button" name="ButtonToolbarDefault" component={<ButtonToolbarDefault />} code={ButtonToolbarDefaultCode} {...props} />
-    </Fragment>
+    <StyleGuideWrapper title="Button" {...props}>
+      <StyleGuideComponent title="Button" name="ButtonDefault" component={<ButtonDefault />} code={ButtonDefaultCode} />
+      <StyleGuideComponent
+        title="Button"
+        name="ButtonDropdownDefault"
+        component={<ButtonDropdownDefault />}
+        code={ButtonDropdownDefaultCode}
+      />
+      <StyleGuideComponent
+        title="Button"
+        name="ButtonDropdownMulti"
+        component={<ButtonDropdownMulti />}
+        code={ButtonDropdownMultiCode}
+      />
+      <StyleGuideComponent
+        title="Button"
+        name="ButtonDropdownMultiSplit"
+        component={<ButtonDropdownMultiSplit />}
+        code={ButtonDropdownMultiSplitCode}
+      />
+      <StyleGuideComponent
+        title="Button"
+        name="ButtonGroupDefault"
+        component={<ButtonGroupDefault />}
+        code={ButtonGroupDefaultCode}
+      />
+      <StyleGuideComponent title="Button" name="ButtonOutline" component={<ButtonOutline />} code={ButtonOutlineCode} />
+      <StyleGuideComponent
+        title="Button"
+        name="ButtonStateful"
+        component={<ButtonStateful />}
+        code={ButtonStatefulCode}
+      />
+      <StyleGuideComponent
+        title="Button"
+        name="ButtonToolbarDefault"
+        component={<ButtonToolbarDefault />}
+        code={ButtonToolbarDefaultCode}
+      />
+    </StyleGuideWrapper>
   )
 }
 
 export default Button
-    

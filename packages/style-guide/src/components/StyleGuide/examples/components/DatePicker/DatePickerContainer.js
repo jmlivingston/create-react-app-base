@@ -1,18 +1,23 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 
 import DatePickerDefault from './DatePickerDefault'
 
 import DatePickerDefaultCode from '../../../code/components/DatePicker/DatePickerDefaultCode'
-    
+
+import StyleGuideComponent from '../../../StyleGuideComponent'
 import StyleGuideWrapper from '../../../StyleGuideWrapper'
-    
+
 const DatePicker = props => {
   return (
-    <Fragment>
-      <StyleGuideWrapper title="DatePicker" name="DatePickerDefault" component={<DatePickerDefault />} code={DatePickerDefaultCode} {...props} />
-    </Fragment>
+    <StyleGuideWrapper title="DatePicker" {...props}>
+      <StyleGuideComponent
+        title="DatePicker"
+        name="DatePickerDefault"
+        component={<DatePickerDefault />}
+        code={DatePickerDefaultCode}
+      />
+    </StyleGuideWrapper>
   )
 }
 
 export default DatePicker
-    

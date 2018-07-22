@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 
 import CardAlignment from './CardAlignment'
 import CardBackgrounds from './CardBackgrounds'
@@ -25,27 +25,52 @@ import CardImageCapsCode from '../../../code/components/Card/CardImageCapsCode'
 import CardImageOverlayCode from '../../../code/components/Card/CardImageOverlayCode'
 import CardOutlineCode from '../../../code/components/Card/CardOutlineCode'
 import CardSizingCode from '../../../code/components/Card/CardSizingCode'
-    
+
+import StyleGuideComponent from '../../../StyleGuideComponent'
 import StyleGuideWrapper from '../../../StyleGuideWrapper'
-    
+
 const Card = props => {
   return (
-    <Fragment>
-      <StyleGuideWrapper title="Card" name="CardAlignment" component={<CardAlignment />} code={CardAlignmentCode} {...props} />
-				<StyleGuideWrapper title="Card" name="CardBackgrounds" component={<CardBackgrounds />} code={CardBackgroundsCode} {...props} />
-				<StyleGuideWrapper title="Card" name="CardColumnsDefault" component={<CardColumnsDefault />} code={CardColumnsDefaultCode} {...props} />
-				<StyleGuideWrapper title="Card" name="CardContentTypes" component={<CardContentTypes />} code={CardContentTypesCode} {...props} />
-				<StyleGuideWrapper title="Card" name="CardDecks" component={<CardDecks />} code={CardDecksCode} {...props} />
-				<StyleGuideWrapper title="Card" name="CardDefault" component={<CardDefault />} code={CardDefaultCode} {...props} />
-				<StyleGuideWrapper title="Card" name="CardGroups" component={<CardGroups />} code={CardGroupsCode} {...props} />
-				<StyleGuideWrapper title="Card" name="CardHeaderFooter" component={<CardHeaderFooter />} code={CardHeaderFooterCode} {...props} />
-				<StyleGuideWrapper title="Card" name="CardImageCaps" component={<CardImageCaps />} code={CardImageCapsCode} {...props} />
-				<StyleGuideWrapper title="Card" name="CardImageOverlay" component={<CardImageOverlay />} code={CardImageOverlayCode} {...props} />
-				<StyleGuideWrapper title="Card" name="CardOutline" component={<CardOutline />} code={CardOutlineCode} {...props} />
-				<StyleGuideWrapper title="Card" name="CardSizing" component={<CardSizing />} code={CardSizingCode} {...props} />
-    </Fragment>
+    <StyleGuideWrapper title="Card" {...props}>
+      <StyleGuideComponent title="Card" name="CardAlignment" component={<CardAlignment />} code={CardAlignmentCode} />
+      <StyleGuideComponent
+        title="Card"
+        name="CardBackgrounds"
+        component={<CardBackgrounds />}
+        code={CardBackgroundsCode}
+      />
+      <StyleGuideComponent
+        title="Card"
+        name="CardColumnsDefault"
+        component={<CardColumnsDefault />}
+        code={CardColumnsDefaultCode}
+      />
+      <StyleGuideComponent
+        title="Card"
+        name="CardContentTypes"
+        component={<CardContentTypes />}
+        code={CardContentTypesCode}
+      />
+      <StyleGuideComponent title="Card" name="CardDecks" component={<CardDecks />} code={CardDecksCode} />
+      <StyleGuideComponent title="Card" name="CardDefault" component={<CardDefault />} code={CardDefaultCode} />
+      <StyleGuideComponent title="Card" name="CardGroups" component={<CardGroups />} code={CardGroupsCode} />
+      <StyleGuideComponent
+        title="Card"
+        name="CardHeaderFooter"
+        component={<CardHeaderFooter />}
+        code={CardHeaderFooterCode}
+      />
+      <StyleGuideComponent title="Card" name="CardImageCaps" component={<CardImageCaps />} code={CardImageCapsCode} />
+      <StyleGuideComponent
+        title="Card"
+        name="CardImageOverlay"
+        component={<CardImageOverlay />}
+        code={CardImageOverlayCode}
+      />
+      <StyleGuideComponent title="Card" name="CardOutline" component={<CardOutline />} code={CardOutlineCode} />
+      <StyleGuideComponent title="Card" name="CardSizing" component={<CardSizing />} code={CardSizingCode} />
+    </StyleGuideWrapper>
   )
 }
 
 export default Card
-    

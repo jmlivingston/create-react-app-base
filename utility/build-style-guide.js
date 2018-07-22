@@ -68,6 +68,7 @@ const getStyleGuideConfig = () => {
               file =>
                 file.indexOf('.test.js') === -1 &&
                 file.indexOf('index.js') === -1 &&
+                file.indexOf('.DS_Store') === -1 &&
                 file.indexOf('Container.js') === -1
             )
             .reduce((childrenObj, childFile) => {
@@ -82,7 +83,6 @@ const getStyleGuideConfig = () => {
                   .replace(/`/g, '\\`') +
                 '`\n\nexport default ' +
                 constName
-              // const childFileCode = fs.readFileSync(childFile).toString()
               fileString = prettier.format(fileString, prettierConfig)
               fs.writeFileSync(childFile.replace(componentsDir, codeDir).replace('.js', 'Code.js'), fileString)
               const childName = path.basename(childFile).replace('.js', '')
@@ -130,35 +130,37 @@ const buildCodeLoaders = styleGuideConfig => {
   fs.writeFileSync(path.join(componentsDir, 'index.js'), exampleComponentsCodeFormatted)
 }
 
-const buildStyleGuideWrappers = styleGuideConfig => {
+const buildStyleGuideComponents = styleGuideConfig => {
   Object.keys(styleGuideConfig).forEach(key => {
     const children = Object.keys(styleGuideConfig[key].children)
 
-    const styleGuideWrapper = `import React, { Fragment } from 'react'
+    const StyleGuideComponent = `import React from 'react'
 
 ${children.map(child => `import ${child} from './${child}'`).join('\n')}
 
 ${children.map(child => `import ${child}Code from '../../../code/components/${key}/${child}Code'`).join('\n')}
     
+import StyleGuideComponent from '../../../StyleGuideComponent'
 import StyleGuideWrapper from '../../../StyleGuideWrapper'
-    
+
 const ${key} = props => {
   return (
-    <Fragment>
+    <StyleGuideWrapper title="${key}" {...props}>
       ${children
         .map(
           child =>
-            `<StyleGuideWrapper title="${key}" name="${child}" component={<${child} />} code={${child}Code} {...props} />`
+            `<StyleGuideComponent title="${key}" name="${child}" component={<${child} />} code={${child}Code} />`
         )
         .join('\n\t\t\t\t')}
-    </Fragment>
+    </StyleGuideWrapper>
   )
 }
 
 export default ${key}
     
 `
-    fs.writeFileSync(path.join(componentsDir, key, key + 'Container.js'), styleGuideWrapper)
+    const styleGuideComponentFormatted = prettier.format(StyleGuideComponent, prettierConfig)
+    fs.writeFileSync(path.join(componentsDir, key, key + 'Container.js'), styleGuideComponentFormatted)
   })
 }
 
@@ -175,5 +177,5 @@ getStyleGuideConfig().then(styleGuideConfig => {
   }, {})
   fs.writeFileSync(`${styleGuideConfigFileBase}.keys.json`, JSON.stringify(keys, null, 2))
   buildCodeLoaders(styleGuideConfig)
-  buildStyleGuideWrappers(styleGuideConfig)
+  buildStyleGuideComponents(styleGuideConfig)
 })
