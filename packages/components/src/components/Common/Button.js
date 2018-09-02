@@ -14,3 +14,26 @@ const Button = props => {
 Button.propTypes = ReactStrapButton.propTypes
 
 export default Button
+
+
+
+
+// import { Button as ReactStrapButton } from 'reactstrap'
+// import { css } from 'emotion'
+// import React from 'react'
+
+// import code from '../../styles/themes/darkly/components/buttons'
+
+// const className = css(code)
+
+// const Button = props => {
+//   return (
+//     <div className={className}>
+//       <ReactStrapButton {...props} />
+//     </div>
+//   )
+// }
+
+// Button.propTypes = ReactStrapButton.propTypes
+
+// export default Button

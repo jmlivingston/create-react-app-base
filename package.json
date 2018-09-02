@@ -21,6 +21,7 @@
     "components-test": "node ./utility/launch.js COMPONENTS TEST",
     "lint": "node node_modules/eslint/bin/eslint.js --max-warnings=0 packages/**/src",
     "precommit": "lint-staged",
+    "build-sass-jss": "node ./utility/build-sass-jss",
     "build-tests": "node ./utility/build-tests",
     "ide-tf": "node ./utility/utility-dev.js IDE_TOGGLE_FILES",
     "docker-build": "docker image build -t react:app . -f ./docker/Dockerfile",
@@ -31,8 +32,10 @@
   },
   "devDependencies": {
     "husky": "0.14.3",
+    "jss-cli": "^5.0.1",
     "lerna": "^2.11.0",
     "lint-staged": "7.2.0",
+    "node-sass": "^4.9.3",
     "prettier": "1.13.5",
     "puppeteer": "1.5.0",
     "react-docgen": "3.0.0-beta12"

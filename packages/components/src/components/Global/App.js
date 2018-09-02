@@ -32,9 +32,9 @@ class App extends PureComponent {
                   <BrowserRouter>
                     <Fragment>
                       <Header strings={strings} user={context.user} context={context} />
-                      <main role="main" className="main container-fluid">
-                        <Routes strings={strings} />
-                      </main>
+                        <main role="main" className="main container-fluid">
+                          <Routes strings={strings} />
+                        </main>
                       <Footer strings={strings} user={context.user} />
                     </Fragment>
                   </BrowserRouter>
